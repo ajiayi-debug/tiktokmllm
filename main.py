@@ -2,7 +2,7 @@ from models import *
 
 def main():
     P = prompt_video("Did the last person open the bottle without using a knife?")
-    vid = "sj81PWrerDk.mp4"
+    vid = video_frame("sj81PWrerDk.mp4",64)
     inputs = process_inputs(P, vid)
     output_result = output(inputs)
     return output_result
