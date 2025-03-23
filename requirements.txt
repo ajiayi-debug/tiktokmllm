@@ -1,0 +1,4 @@
+accelerate --upgrade
+bitsandbytes
+git+https://github.com/huggingface/transformers.git
+av
