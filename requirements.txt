@@ -1,0 +1,11 @@
+datasets
+transformers==4.40.1
+av
+imageio
+decord
+opencv-python
+tqdm
+torch
+sentencepiece
+timm
+oauth2client
