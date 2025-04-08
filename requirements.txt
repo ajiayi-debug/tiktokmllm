@@ -9,9 +9,3 @@ torch
 sentencepiece
 timm
 oauth2client
-openai==1.69.0
-python-dotenv
-pandas
-fastparquet
-huggingface_hub
-datasets
