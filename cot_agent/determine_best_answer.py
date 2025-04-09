@@ -11,9 +11,50 @@ import pandas as pd
 from tqdm.asyncio import tqdm_asyncio
 from collections import Counter
 
-def best_answer_prompt(video_description, question, list_of_answer, description=True):
-    if description:
-        prompt = f"""You are in charge of choosing the best answer among a list of {len(list_of_answer)} chain of thought answers to the following question: 
+def best_answer_prompt(video_description, question, list_of_answer, description=True, synthesize=False):
+    if synthesize:
+        if description:
+            prompt = f"""You are an expert assistant tasked with synthesizing the best possible answer to the following question related to a video.
+
+Question: {question}
+Video Description: {video_description}
+
+You are provided with {len(list_of_answer)} chain-of-thought answers that reason through the question:
+
+{list_of_answer}
+
+Your task:
+- Synthesize the best final answer using the most relevant and logical elements from all the answers.
+- Your answer must follow the rubrics below:
+    1) Answer the question accurately based on the video description.
+    2) Follow a logical reasoning structure.
+    3) Be coherent, complete, and concise.
+
+If important explanations are found in the chain-of-thought reasoning steps but are missing from the final answer, integrate them appropriately.
+
+Your synthesized final answer:"""
+        else:
+            prompt = f"""You are an expert assistant tasked with synthesizing the best possible answer to the following question.
+
+Question: {question}
+
+You are provided with {len(list_of_answer)} chain-of-thought answers that reason through the question:
+
+{list_of_answer}
+
+Your task:
+- Synthesize the best final answer using the most relevant and logical elements from all the answers.
+- Your answer must follow the rubrics below:
+    1) Answer the question accurately.
+    2) Follow a logical reasoning structure.
+    3) Be coherent, complete, and concise.
+
+If important explanations are found in the chain-of-thought reasoning steps but are missing from the final answer, integrate them appropriately.
+
+Your synthesized final answer:"""
+    else:
+        if description:
+            prompt = f"""You are in charge of choosing the best answer among a list of {len(list_of_answer)} chain of thought answers to the following question: 
 {question}
 The question is related to a video whereby its description is as follows: {video_description}
 The list of chain of thought answers are as follows: {list_of_answer}
@@ -26,8 +67,8 @@ Rubrics:
 Output the final answer of the chosen chain of thought answer. (Meaning don't include the step-by-step thought process of the answers)
 If the final answer is missing any explanation that the question requires but the explanation can be found in the chain of thought process, include a summary of the chain of thought process in the final answer.
 Your chosen final answer:"""
-    else:
-        prompt = f"""You are in charge of choosing the best answer among a list of {len(list_of_answer)} chain of thought answers to the following question: 
+        else:
+            prompt = f"""You are in charge of choosing the best answer among a list of {len(list_of_answer)} chain of thought answers to the following question: 
 {question}
 The list of chain of thought answers are as follows: {list_of_answer}
 Choose the best chain of thought answer that follows as closely as possible to the following rubrics:
@@ -39,7 +80,9 @@ Rubrics:
 Output the final answer of the chosen chain of thought answer. (Meaning don't include the step-by-step thought process of the answers)
 If the final answer is missing any explanation that the question requires but the explanation can be found in the chain of thought process, include a summary of the chain of thought process in the final answer.
 Your chosen final answer:"""
+
     return prompt
+
 
 
 # Safely parse prediction column into list
@@ -63,56 +106,43 @@ def extract_retry_after(exception):
                 logging.warning(f"Retry-After header not integer: {retry_after}")
     return None
 
-# Single batch handler with retry/backoff
-async def process_batch_gpt(model, batch, description, max_retry=5):
-    size = len(batch)
-    retry_count = 0
-    base_wait = 20
-    last_exception = None
+# Single batch handler: fallback immediately to first answer on error
+async def process_batch_gpt(model, batch, description):
+    results = []
     local_errors = []
 
-    while retry_count < max_retry:
-        try:
-            results = []
-            for row in batch:
-                qid = row['qid']
-                video_description = row['video_description']
-                question = row['question'] + row['question_prompt']
-                list_of_answer = parse_pred(row['pred'])
-
-                if not list_of_answer:
-                    results.append({"qid": qid, "pred": "Error: Empty answer list."})
-                    continue
-                if model=="gpt-4o-mini":
-                    prompt = best_answer_prompt(video_description, question, list_of_answer, description)
-                    chosen_answer = await openai_gpt4o_mini_async(prompt)
-                    results.append({"qid": qid, "pred": chosen_answer})
-                else:
-                    prompt = best_answer_prompt(video_description, question, list_of_answer, description)
-                    chosen_answer = await openai_o3_mini_async(prompt)
-                    results.append({"qid": qid, "pred": chosen_answer})
-            return pd.DataFrame(results), local_errors
-
-        except Exception as e:
-            last_exception = e
-            delay = extract_retry_after(e) or (2 ** retry_count + random.uniform(0, 3))
-            logging.warning(f"Retry {retry_count + 1}/{max_retry} due to error: {e}. Sleeping {delay:.2f}s")
-            await asyncio.sleep(delay)
-            retry_count += 1
-
-    # Fallback for failed batch
-    error_rows = []
     for row in batch:
         qid = row['qid']
+        video_description = row['video_description']
+        question = row['question'] + row['question_prompt']
         list_of_answer = parse_pred(row['pred'])
-        fallback = list_of_answer[0] if list_of_answer else "Error: No fallback available"
-        error_rows.append({"qid": qid, "pred": fallback})
-        local_errors.append({
-            "qid": qid,
-            "error": str(last_exception),
-            "fallback_used": True
-        })
-    return pd.DataFrame(error_rows), local_errors
+
+        if not list_of_answer:
+            results.append({"qid": qid, "pred": "Error: Empty answer list."})
+            local_errors.append({
+                "qid": qid,
+                "error": "Empty prediction list",
+                "fallback_used": True
+            })
+            continue
+
+        try:
+            prompt = best_answer_prompt(video_description, question, list_of_answer, description)
+            if model == "gpt-4o-mini":
+                chosen_answer = await openai_gpt4o_mini_async(prompt)
+            else:
+                chosen_answer = await openai_o3_mini_async(prompt)
+            results.append({"qid": qid, "pred": chosen_answer})
+        except Exception as e:
+            fallback = list_of_answer[0]
+            results.append({"qid": qid, "pred": fallback})
+            local_errors.append({
+                "qid": qid,
+                "error": str(e),
+                "fallback_used": True
+            })
+
+    return pd.DataFrame(results), local_errors
 
 # Master batch orchestrator
 async def process_all_batches_gpt(df, model="gpt-4o-mini", batch_size=10, description=True, max_parallel=4):
@@ -140,19 +170,19 @@ async def process_all_batches_gpt(df, model="gpt-4o-mini", batch_size=10, descri
     return final_df, pd.DataFrame(error_log)
 
 
-# Process a single row
-async def process_row(row, description):
-    qid = row['qid']
-    video_description = row['video_description']
-    question = row['question'] + row['question_prompt']
-    list_of_answer = row['pred']
-    prompt = best_answer_prompt(video_description, question, list_of_answer, description)
-    try:
-        chosen_answer = await openai_gpt4o_mini_async(prompt)
-    except Exception as e:
-        list_of_answer = ast.literal_eval(row['pred'])
-        chosen_answer = list_of_answer[0]
-    return {"qid": qid, "pred": chosen_answer}
+# # Process a single row
+# async def process_row(row, description):
+#     qid = row['qid']
+#     video_description = row['video_description']
+#     question = row['question'] + row['question_prompt']
+#     list_of_answer = row['pred']
+#     prompt = best_answer_prompt(video_description, question, list_of_answer, description)
+#     try:
+#         chosen_answer = await openai_gpt4o_mini_async(prompt)
+#     except Exception as e:
+#         list_of_answer = ast.literal_eval(row['pred'])
+#         chosen_answer = list_of_answer[0]
+#     return {"qid": qid, "pred": chosen_answer}
 
 # # Process one batch of rows
 # async def process_batch(batch_rows, description):
