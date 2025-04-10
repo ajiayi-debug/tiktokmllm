@@ -11,6 +11,19 @@ import pandas as pd
 from tqdm.asyncio import tqdm_asyncio
 from collections import Counter
 
+import os
+import pandas as pd
+import hashlib
+
+def generate_checkpoint_name(input_csv, model, batch_size, description):
+    base_name = os.path.basename(input_csv).replace(".csv", "")
+    desc_flag = "desc" if description else "nodesc"
+    identifier = f"{base_name}_{model}_{batch_size}_{desc_flag}"
+    hash_id = hashlib.md5(identifier.encode()).hexdigest()[:8]
+    return f"checkpoint_{hash_id}.csv"
+
+
+
 def best_answer_prompt(video_description, question, list_of_answer, description=True, synthesize=False):
     if synthesize:
         if description:
@@ -107,7 +120,7 @@ def extract_retry_after(exception):
     return None
 
 # Single batch handler: fallback immediately to first answer on error
-async def process_batch_gpt(model, batch, description):
+async def process_batch_gpt(model, batch, description, synthesize):
     results = []
     local_errors = []
 
@@ -127,7 +140,7 @@ async def process_batch_gpt(model, batch, description):
             continue
 
         try:
-            prompt = best_answer_prompt(video_description, question, list_of_answer, description)
+            prompt = best_answer_prompt(video_description, question, list_of_answer, description, synthesize)
             if model == "gpt-4o-mini":
                 chosen_answer = await openai_gpt4o_mini_async(prompt)
             else:
@@ -145,7 +158,7 @@ async def process_batch_gpt(model, batch, description):
     return pd.DataFrame(results), local_errors
 
 # Master batch orchestrator
-async def process_all_batches_gpt(df, model="gpt-4o-mini", batch_size=10, description=True, max_parallel=4):
+async def process_all_batches_gpt(df, model="gpt-4o-mini", batch_size=10, description=True, synthesize=False, max_parallel=4):
     error_log = []
     results = []
 
@@ -153,7 +166,7 @@ async def process_all_batches_gpt(df, model="gpt-4o-mini", batch_size=10, descri
 
     async def safe_process(batch):
         async with semaphore:
-            return await process_batch_gpt(model, batch, description)
+            return await process_batch_gpt(model, batch, description, synthesize)
 
     # Prepare batches
     batches = [df.iloc[i:i + batch_size].to_dict('records') for i in range(0, len(df), batch_size)]
@@ -198,9 +211,42 @@ async def process_all_batches_gpt(df, model="gpt-4o-mini", batch_size=10, descri
 #         results.extend(batch_result)
 #     return pd.DataFrame(results)
 
-# Run the entire process
-def obtain_final_result(input_csv, output_csv, batch_size=10, description=True, model="gpt-4o-mini"):
+# # Run the entire process
+# def obtain_final_result(input_csv, output_csv, batch_size=10, description=True, model="gpt-4o-mini"):
+#     df = pd.read_csv(input_csv)
+#     result_df = asyncio.run(process_all_batches_gpt(df,model,batch_size=batch_size, description=description))
+#     result_df.to_csv(output_csv, index=False)
+#     print(f"Output saved to {output_csv}")
+
+
+def obtain_final_result(input_csv, output_csv, batch_size=10, description=True, model="gpt-4o-mini", synthesize=False):
     df = pd.read_csv(input_csv)
-    result_df = asyncio.run(process_all_batches_gpt(df,model,batch_size=batch_size, description=description))
-    result_df.to_csv(output_csv, index=False)
-    print(f"Output saved to {output_csv}")
+    checkpoint_path = generate_checkpoint_name(input_csv, model, batch_size, description)
+
+    # Check for existing checkpoint
+    if os.path.exists(checkpoint_path):
+        print(f"Resuming from checkpoint: {checkpoint_path}")
+        done_df = pd.read_csv(checkpoint_path)
+        completed_ids = set(done_df['qid'])
+        df = df[~df['qid'].isin(completed_ids)]  # only process unfinished
+    else:
+        done_df = pd.DataFrame()
+
+    # If all done, skip
+    if df.empty:
+        print("All entries already processed.")
+        done_df.to_csv(output_csv, index=False)
+        return
+
+    # Run remaining processing
+    result_df, error_df = asyncio.run(
+        process_all_batches_gpt(df, model=model, batch_size=batch_size, description=description, synthesize=synthesize)
+    )
+
+    # Append results and save checkpoint
+    final_df = pd.concat([done_df, result_df], ignore_index=True)
+    final_df.to_csv(checkpoint_path, index=False)
+    final_df.to_csv(output_csv, index=False)
+
+    print(f"Checkpoint saved to {checkpoint_path}")
+    print(f"Final output saved to {output_csv}")
