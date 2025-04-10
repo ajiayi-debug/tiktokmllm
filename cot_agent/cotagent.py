@@ -6,7 +6,9 @@ from preprocessqns import *
 
 def main():
     #load dataset
-    df=load_dataset("lmms-lab/AISG_Challenge")
+    df=load_Dataset("lmms-lab/AISG_Challenge", traintestsplit='test')
     df.to_csv("data.csv")
 
 
+if __name__ == "__main__":
+    main()

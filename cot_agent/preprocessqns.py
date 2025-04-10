@@ -4,7 +4,7 @@ import asyncio
 import pandas as pd
 import random
 
-def load_dataset(name, traintestsplit):
+def load_Dataset(name, traintestsplit):
     ds = load_dataset(name)
     df=ds[traintestsplit].to_pandas()
     df.to_csv("data.csv")
