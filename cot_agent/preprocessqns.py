@@ -11,6 +11,10 @@ def load_Dataset(name, traintestsplit):
     df.to_csv("data.csv")
     return df
 
+def convert_to_excel(json, name):
+    df=pd.read_json(json)
+    df.to_csv(name)
+    return df
 
 def stepbystep_prompt(qns):
     return f"""Break down the following questions into steps such that a visual Large Language Model can follow the steps to solve the question with the video. 
