@@ -58,6 +58,7 @@ async def universal_qns_processor(
 
                 prompt = prompt_fn(qns)
 
+                success = False
                 for attempt in range(max_retries):
                     try:
                         if model == "gpt-4o-mini":
@@ -66,15 +67,14 @@ async def universal_qns_processor(
                             result = await openai_o3_mini_async(prompt)
 
                         batch_outputs.append(result)
+                        success = True
                         break
                     except Exception as e:
-                        if attempt < max_retries - 1:
-                            wait = 2 ** attempt + random.random()
-                            print(f"Retrying ({attempt+1}/{max_retries}) after error: {e} — waiting {wait:.2f}s")
-                            await asyncio.sleep(wait)
-                        else:
-                            print(f"Failed after {max_retries} attempts: {e}")
-                            batch_outputs.append("ERROR")
+                        if attempt == max_retries - 1:
+                            batch_outputs.append(qns)  # fallback after final failure
+                if not success:
+                    continue  # skip to next row
+
             return batch_outputs
 
     # Kick off all batch tasks with tqdm progress
