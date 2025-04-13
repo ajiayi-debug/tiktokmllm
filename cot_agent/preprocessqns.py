@@ -4,6 +4,7 @@ import asyncio
 import pandas as pd
 import random
 from tqdm.asyncio import tqdm_asyncio
+import json
 
 def load_Dataset(name, traintestsplit):
     ds = load_dataset(name)
@@ -91,3 +92,33 @@ async def universal_qns_processor(
     flat_results = [item for sublist in all_batch_outputs for item in sublist]
     df[result_column] = flat_results
     return df
+
+
+def add_videodescription(data_csv,video_description_json, final_name):
+    # Load the CSV file
+    csv_path = data_csv
+    df = pd.read_csv(csv_path)
+
+    # Load the JSON file
+    json_path = video_description_json
+    with open(json_path, 'r') as f:
+        video_descriptions = json.load(f)
+
+    # Convert list of descriptions to a single string (if needed)
+    video_descriptions_flat = {k: " ".join(v) if isinstance(v, list) else v for k, v in video_descriptions.items()}
+
+    # Create a new column based on matching video_id
+    df['video_description'] = df['video_id'].map(video_descriptions_flat)
+
+    # Save the new dataframe (optional)
+    df.to_csv(final_name, index=False)
+
+def remove_video_description(answer_df,answer_final_df):
+    # Load the file
+    df = pd.read_csv(answer_df)
+
+    # Drop the column
+    df = df.drop(columns=["video_description"], errors="ignore")  # ignore if already removed
+
+    # Save the updated file
+    df.to_csv(answer_final_df, index=False)
