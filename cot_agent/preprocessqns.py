@@ -5,6 +5,7 @@ import pandas as pd
 import random
 from tqdm.asyncio import tqdm_asyncio
 import json
+import re
 
 def load_Dataset(name, traintestsplit):
     ds = load_dataset(name)
@@ -122,3 +123,17 @@ def remove_video_description(answer_df,answer_final_df):
 
     # Save the updated file
     df.to_csv(answer_final_df, index=False)
+
+
+
+def extract_list(text, regex):
+    if not isinstance(text, str):
+        return text
+    match = re.search(regex, text, re.DOTALL)
+    if match:
+        try:
+            return eval(match.group(0))  # or use ast.literal_eval
+        except:
+            return text
+    return text
+
