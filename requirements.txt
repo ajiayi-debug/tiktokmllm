@@ -1,3 +1,16 @@
 openai
 python-dotenv
 gdown
+datasets
+--upgrade-strategy eager
+qwen-vl-utils
+#transformers>=4.37.2 #for intern
+git+https://github.com/huggingface/transformers #for qwen
+accelerate
+tqdm
+wheel
+# flash-attn --no-build-isolation
+#pls manually install flash attention
+torch
+torchvision
+decord
