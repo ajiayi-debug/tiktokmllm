@@ -7,6 +7,8 @@ def main():
     obtain_final_result('data/normalise_ans_to_qns.csv','data/o3_answer_using_text.csv',func=finalise_from_answer)
     df=pd.read_csv('data/o3_answer_using_text.csv')
     remove_col(df, 'pred', 'data/o3_answer_using_text.csv')
+    change_col_name('data/o3_answer_using_text.csv','answer','pred')
+    remove_col(df, 'Unnamed: 0', 'data/o3_answer_using_text.csv')
 
 if __name__ == "__main__":
     main()

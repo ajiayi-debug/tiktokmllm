@@ -168,3 +168,12 @@ def remove_col(df,column_name,df_name):
     df.drop(columns=[column_name], inplace=True)
     df.to_csv(df_name,index=False)
     return df
+
+
+def change_col_name(csv, column_name, new_col_name):
+    import pandas as pd
+
+    df = pd.read_csv(csv)
+    df.rename(columns={column_name: new_col_name}, inplace=True)
+    df.to_csv(csv, index=False)  
+    return df
