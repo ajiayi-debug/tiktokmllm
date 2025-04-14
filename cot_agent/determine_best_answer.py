@@ -182,43 +182,6 @@ async def process_all_batches_gpt(df, model="gpt-4o-mini", batch_size=10, descri
     final_df = pd.concat(results, ignore_index=True)
     return final_df, pd.DataFrame(error_log)
 
-
-# # Process a single row
-# async def process_row(row, description):
-#     qid = row['qid']
-#     video_description = row['video_description']
-#     question = row['question'] + row['question_prompt']
-#     list_of_answer = row['pred']
-#     prompt = best_answer_prompt(video_description, question, list_of_answer, description)
-#     try:
-#         chosen_answer = await openai_gpt4o_mini_async(prompt)
-#     except Exception as e:
-#         list_of_answer = ast.literal_eval(row['pred'])
-#         chosen_answer = list_of_answer[0]
-#     return {"qid": qid, "pred": chosen_answer}
-
-# # Process one batch of rows
-# async def process_batch(batch_rows, description):
-#     tasks = [process_row(row, description) for row in batch_rows]
-#     return await asyncio.gather(*tasks)
-
-# # Process all batches with tqdm
-# async def process_all_batches(df, batch_size=10, description=True):
-#     results = []
-#     for i in tqdm_asyncio(range(0, len(df), batch_size), desc="Processing Batches"):
-#         batch = [row for _, row in df.iloc[i:i+batch_size].iterrows()]
-#         batch_result = await process_batch(batch, description)
-#         results.extend(batch_result)
-#     return pd.DataFrame(results)
-
-# # Run the entire process
-# def obtain_final_result(input_csv, output_csv, batch_size=10, description=True, model="gpt-4o-mini"):
-#     df = pd.read_csv(input_csv)
-#     result_df = asyncio.run(process_all_batches_gpt(df,model,batch_size=batch_size, description=description))
-#     result_df.to_csv(output_csv, index=False)
-#     print(f"Output saved to {output_csv}")
-
-
 def obtain_final_result(input_csv, output_csv, batch_size=10, description=True, model="gpt-4o-mini", synthesize=False):
     df = pd.read_csv(input_csv)
     checkpoint_path = generate_checkpoint_name(input_csv, model, batch_size, description)
@@ -250,3 +213,6 @@ def obtain_final_result(input_csv, output_csv, batch_size=10, description=True, 
 
     print(f"Checkpoint saved to {checkpoint_path}")
     print(f"Final output saved to {output_csv}")
+
+
+
