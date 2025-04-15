@@ -14,3 +14,4 @@ wheel
 torch
 torchvision
 decord
+google-genai
