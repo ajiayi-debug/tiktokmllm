@@ -13,7 +13,7 @@ class Gemini:
         self.client = genai.Client(api_key=self.api_key)
         self.model = model
 
-    def generate_from_video(self, video_uri, questions, num_repeats=1):
+    def generate_from_video(self, video_uri, questions, temperature=0, num_repeats=1):
         predictions = []
         for _ in range(num_repeats):
             for question in questions:
@@ -31,7 +31,7 @@ class Gemini:
                 ]
 
                 generate_content_config = types.GenerateContentConfig(
-                    temperature=0,
+                    temperature=temperature,
                     response_mime_type="text/plain",
                 )
 
@@ -75,6 +75,35 @@ class Gemini:
             config=generate_content_config,
         ):
             print(chunk.text, end="")
+
+    def generate(self, input_text, temperature=0.7):
+        contents = [
+            types.Content(
+                role="user",
+                parts=[
+                    types.Part.from_text(text=input_text),
+                ],
+            ),
+        ]
+
+        generate_content_config = types.GenerateContentConfig(
+            temperature=temperature,
+            response_mime_type="text/plain",
+        )
+
+        try:
+            output = ""
+            for chunk in self.client.models.generate_content_stream(
+                model=self.model,
+                contents=contents,
+                config=generate_content_config,
+            ):
+                output += chunk.text
+            return output.strip()
+        except Exception as e:
+            print(f"Gemini text generation error: {e}")
+            return "Error"
+
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ import time
 
 import time
 
-def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65):
+def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperature=0):
     gemini = Gemini()
     predictions = []
 
@@ -17,7 +17,7 @@ def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65):
         for attempt in range(2):  # try once, then retry after error
             try:
                 print(f"Asking: {question}")
-                output = gemini.generate_from_video(video_uri, [question], num_repeats=num_repeats)[0]
+                output = gemini.generate_from_video(video_uri, [question], temperature=temperature, num_repeats=num_repeats)[0]
                 print(output)
                 predictions.append(output)
                 break  # success!
@@ -40,6 +40,7 @@ def process_all_video_questions_list_gemini(
     checkpoint_path="geminipredictions.json",
     video_dir="Benchmark-AllVideos-HQ-Encoded-challenge",
     batch_size=5,
+    temperature=0,
     filter_qids=None
 ):
     """
@@ -87,7 +88,7 @@ def process_all_video_questions_list_gemini(
                 print(f"Failed to build question for QID {qid}: {e}")
                 predictions.append({"qid": qid, "prediction": "Error"})
         try:
-            outputs = gemini_video_fn(video_path, questions, num_repeats=iterations)
+            outputs = gemini_video_fn(video_path, questions, num_repeats=iterations, temperature=temperature)
             print(outputs)
         except Exception as e:
             print(f"Error on video {video_id}: {e}")
