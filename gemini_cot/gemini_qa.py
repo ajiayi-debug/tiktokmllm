@@ -6,8 +6,7 @@ from collections import defaultdict
 import csv
 from gemini import Gemini
 import time
-
-import time
+import pandas as pd
 
 def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperature=0):
     gemini = Gemini()
@@ -22,7 +21,7 @@ def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperatu
                 predictions.append(output)
                 break  # success!
             except Exception as e:
-                print(f"⚠️ Error on question: {question}\n➡️ {e}")
+                print(f"Error on question: {question}\n: {e}")
                 if attempt == 0:
                     print(f"Waiting {wait_time}s before retrying...")
                     time.sleep(wait_time)
@@ -33,6 +32,14 @@ def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperatu
         time.sleep(wait_time)
 
     return predictions
+
+
+def format_gemini_prompt(question, prompt):
+    return f"""\
+{str(question or '').strip()}
+{str(prompt or '').strip()}"""
+
+
 
 def process_all_video_questions_list_gemini(
     ds,
@@ -83,7 +90,8 @@ def process_all_video_questions_list_gemini(
             try:
                 question = s.get("question") or ""
                 prompt = s.get("question_prompt") or ""
-                questions.append(question + prompt)
+                formatted_prompt = format_gemini_prompt(question, prompt)
+                questions.append(formatted_prompt)
             except Exception as e:
                 print(f"Failed to build question for QID {qid}: {e}")
                 predictions.append({"qid": qid, "prediction": "Error"})
@@ -180,3 +188,82 @@ def merge_predictions(original_path, retry_path, merged_output_path):
     print(f"\nMerged predictions saved to: {merged_output_path}")
     print(f"Total predictions: {len(merged)}")
 
+
+
+
+def process_all_video_questions_list_gemini_df(
+    ds,
+    iterations=1,
+    checkpoint_path="geminipredictions.json",
+    video_dir="Benchmark-AllVideos-HQ-Encoded-challenge",
+    batch_size=5,
+    temperature=0,
+    filter_qids=None
+):
+    """
+    Processes grouped questions per video using a vision-language model.
+
+    Args:
+        df: A pandas DataFrame with columns 'qid', 'youtube_url', 'question' and optionally 'question_prompt'
+        iterations: Number of times model repeats output for each question
+        checkpoint_path: Path to save intermediate and final predictions
+        video_dir: Folder containing videos named as <video_id>.mp4 (unused if using URLs)
+        batch_size: Number of predictions before intermediate save
+        temperature: Temperature setting for generation
+        filter_qids: Optional set of QIDs to process
+    """
+
+    # Load checkpoint
+    if os.path.exists(checkpoint_path):
+        with open(checkpoint_path, "r") as f:
+            predictions = json.load(f)
+        processed_qids = {p["qid"] for p in predictions}
+        print(f"Loaded {len(predictions)} predictions from checkpoint.")
+    else:
+        predictions = []
+        processed_qids = set()
+
+    # Filter and group by video
+    df_filtered = ds[~ds['qid'].isin(processed_qids)]
+    if filter_qids is not None:
+        df_filtered = df_filtered[df_filtered['qid'].isin(filter_qids)]
+
+    video_to_samples = defaultdict(list)
+    for _, row in df_filtered.iterrows():
+        video_to_samples[row['youtube_url']].append(row)
+
+    # Inference loop
+    for video_url, samples in tqdm(video_to_samples.items(), desc="Processing grouped videos"):
+        print(video_url)
+
+        questions = []
+        for s in samples:
+            qid = s.get("qid", "UNKNOWN") if isinstance(s, dict) else s["qid"]
+            try:
+                question = s["question"]
+                prompt = s["question_prompt"]
+                formatted_prompt = format_gemini_prompt(question, prompt)
+                questions.append(formatted_prompt)
+            except Exception as e:
+                print(f"Failed to build question for QID {qid}: {e}")
+                predictions.append({"qid": qid, "prediction": "Error"})
+
+        try:
+            outputs = gemini_video_fn(video_url, questions, num_repeats=iterations, temperature=temperature)
+            print(outputs)
+        except Exception as e:
+            print(f"Error on video {video_url}: {e}")
+            traceback.print_exc()
+            for s in samples:
+                predictions.append({"qid": s["qid"], "prediction": "Error"})
+            _save_checkpoint(predictions, checkpoint_path)
+            continue
+
+        for s, response in zip(samples, outputs):
+            predictions.append({"qid": s["qid"], "prediction": response})
+            print(f"{s['qid']}: {response}")
+
+        if len(predictions) % batch_size == 0:
+            _save_checkpoint(predictions, checkpoint_path)
+
+    _save_checkpoint(predictions, checkpoint_path)

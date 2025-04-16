@@ -8,6 +8,8 @@ import time
 load_dotenv()
 
 
+
+
 class Gemini:
     def __init__(self, api_key=None, model="gemini-2.5-pro-preview-03-25"):
         self.api_key = api_key or os.environ.get("GEMINI_API_KEY")

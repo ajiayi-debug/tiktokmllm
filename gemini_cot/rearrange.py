@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-df=pd.read_csv('data/GeminiPredictions.csv')
+df=pd.read_csv('data/GeminiPredictionsFinal.csv')
 df_data=pd.read_csv('data/data.csv')
 
 # Reorder df based on df_data's qid order
