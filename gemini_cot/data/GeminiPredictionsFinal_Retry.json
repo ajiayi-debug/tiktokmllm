@@ -1,0 +1,34 @@
+[
+  {
+    "qid": "0273-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0368-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0500-0",
+    "prediction": "There are **2** ping-pong balls shown in the video.\n\n**Explanation:**\n\n1.  A **white** ping-pong ball is hit between two candles (around 0:11).\n2.  An **orange** ping-pong ball is bounced onto a dart (around 0:15) and later bounced into a blue bottle (around 0:22).\n\nOther balls shown (tennis balls, soccer balls, volleyball) are not ping-pong balls."
+  },
+  {
+    "qid": "0575-0",
+    "prediction": "Based on the video:\n\n1.  **Item:** Pink flip-flops.\n2.  **Explanation:** The little girl is wearing a pair of bright pink flip-flops on her feet."
+  },
+  {
+    "qid": "0575-1",
+    "prediction": "Based on the video, the two things the little girl has on her feet are:\n\n1.  **Pink flip-flops:** She is wearing these sandals on both feet initially.\n2.  **A phone:** She is standing on a phone with one foot, hidden underneath her flip-flop, until the man retrieves it.\n\n**"
+  },
+  {
+    "qid": "0612-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0652-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0762-7",
+    "prediction": "C"
+  }
+]

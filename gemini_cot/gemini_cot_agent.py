@@ -13,7 +13,7 @@ def CotAgent(df):
     )
 
     # Load QIDs with errors
-    error_qids = load_error_qids("data/GeminiPredictions.json")
+    error_qids = load_error_qids("data/GeminiPredictionsFinal.json")
 
     # Retry only those
     process_all_video_questions_list_gemini_df(

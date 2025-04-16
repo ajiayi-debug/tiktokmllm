@@ -43,7 +43,10 @@ class Gemini:
                         contents=contents,
                         config=generate_content_config,
                     ):
-                        output += chunk.text
+                        if chunk.text is not None:
+                            output += chunk.text
+                        else:
+                            output += ""
                     predictions.append(output.strip())
                 except Exception as e:
                     print(f"Gemini API error: {e}")
@@ -125,7 +128,10 @@ class Gemini:
                 contents=contents,
                 config=generate_content_config,
             ):
-                output += chunk.text
+                if chunk.text is not None:
+                    output += chunk.text
+                else:
+                    output += ""
             return output.strip()
 
         except Exception as e:
@@ -155,7 +161,10 @@ class Gemini:
                 contents=contents,
                 config=generate_content_config,
             ):
-                output += chunk.text
+                if chunk.text is not None:
+                    output += chunk.text
+                else:
+                    output += ""
             return output.strip()
         except Exception as e:
             print(f"Gemini text generation error: {e}")
