@@ -8,27 +8,69 @@ from gemini import Gemini
 import time
 import pandas as pd
 
-def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperature=0):
+# def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperature=0):
+#     gemini = Gemini()
+#     predictions = []
+
+#     for question in questions:
+#         for attempt in range(2):  # try once, then retry after error
+#             try:
+#                 print(f"Asking: {question}")
+#                 output = gemini.generate_from_video(video_uri, [question], temperature=temperature, num_repeats=num_repeats)[0]
+#                 print(output)
+#                 predictions.append(output)
+#                 break  # success!
+#             except Exception as e:
+#                 print(f"Error on question: {question}\n: {e}")
+#                 if attempt == 0:
+#                     print(f"Waiting {wait_time}s before retrying...")
+#                     time.sleep(wait_time)
+#                 else:
+#                     print("Failed after retry.")
+#                     predictions.append("Error")
+#         # Enforce delay after each question regardless of success or fail
+#         time.sleep(wait_time)
+
+#     return predictions
+
+
+def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperature=0, local_video_path=None):
     gemini = Gemini()
     predictions = []
 
     for question in questions:
-        for attempt in range(2):  # try once, then retry after error
+        for attempt in range(2):  # 1st: YouTube, 2nd: upload fallback (403 only)
             try:
                 print(f"Asking: {question}")
-                output = gemini.generate_from_video(video_uri, [question], temperature=temperature, num_repeats=num_repeats)[0]
+                output = gemini.generate_from_video(
+                    video_uri, [question],
+                    temperature=temperature,
+                    num_repeats=num_repeats
+                )[0]
                 print(output)
                 predictions.append(output)
-                break  # success!
+                break
             except Exception as e:
-                print(f"Error on question: {question}\n: {e}")
-                if attempt == 0:
-                    print(f"Waiting {wait_time}s before retrying...")
-                    time.sleep(wait_time)
+                err_str = str(e)
+                is_403 = "403" in err_str or "PERMISSION_DENIED" in err_str
+
+                print(f"Error on question: {question}\n→ {err_str}")
+
+                if attempt == 0 and is_403 and local_video_path:
+                    try:
+                        print(f"403 PERMISSION_DENIED — uploading and generating from local file: {local_video_path}")
+                        output = gemini.generate_from_uploaded_video_file(local_video_path, question, temperature=temperature)
+                        print(output)
+                        predictions.append(output)
+                        break
+                    except Exception as upload_err:
+                        print(f"Upload fallback failed: {upload_err}")
+                        predictions.append("Error")
+                        break
                 else:
-                    print("Failed after retry.")
                     predictions.append("Error")
-        # Enforce delay after each question regardless of success or fail
+                    break
+
         time.sleep(wait_time)
 
     return predictions
@@ -90,13 +132,15 @@ def process_all_video_questions_list_gemini(
             try:
                 question = s.get("question") or ""
                 prompt = s.get("question_prompt") or ""
+                video=s.get("video_id") or ""
+                video_mp4=video+".mp4"
                 formatted_prompt = format_gemini_prompt(question, prompt)
                 questions.append(formatted_prompt)
             except Exception as e:
                 print(f"Failed to build question for QID {qid}: {e}")
                 predictions.append({"qid": qid, "prediction": "Error"})
         try:
-            outputs = gemini_video_fn(video_path, questions, num_repeats=iterations, temperature=temperature)
+            outputs = gemini_video_fn(video_path, questions, num_repeats=iterations, temperature=temperature, local_video_path=video_mp4)
             print(outputs)
         except Exception as e:
             print(f"Error on video {video_id}: {e}")
@@ -191,6 +235,84 @@ def merge_predictions(original_path, retry_path, merged_output_path):
 
 
 
+# def process_all_video_questions_list_gemini_df(
+#     ds,
+#     iterations=1,
+#     checkpoint_path="geminipredictions.json",
+#     video_dir="Benchmark-AllVideos-HQ-Encoded-challenge",
+#     batch_size=5,
+#     temperature=0,
+#     filter_qids=None
+# ):
+#     """
+#     Processes grouped questions per video using a vision-language model.
+
+#     Args:
+#         df: A pandas DataFrame with columns 'qid', 'youtube_url', 'question' and optionally 'question_prompt'
+#         iterations: Number of times model repeats output for each question
+#         checkpoint_path: Path to save intermediate and final predictions
+#         video_dir: Folder containing videos named as <video_id>.mp4 (unused if using URLs)
+#         batch_size: Number of predictions before intermediate save
+#         temperature: Temperature setting for generation
+#         filter_qids: Optional set of QIDs to process
+#     """
+
+#     # Load checkpoint
+#     if os.path.exists(checkpoint_path):
+#         with open(checkpoint_path, "r") as f:
+#             predictions = json.load(f)
+#         processed_qids = {p["qid"] for p in predictions}
+#         print(f"Loaded {len(predictions)} predictions from checkpoint.")
+#     else:
+#         predictions = []
+#         processed_qids = set()
+
+#     # Filter and group by video
+#     df_filtered = ds[~ds['qid'].isin(processed_qids)]
+#     if filter_qids is not None:
+#         df_filtered = df_filtered[df_filtered['qid'].isin(filter_qids)]
+
+#     video_to_samples = defaultdict(list)
+#     for _, row in df_filtered.iterrows():
+#         video_to_samples[row['youtube_url']].append(row)
+
+#     # Inference loop
+#     for video_url, samples in tqdm(video_to_samples.items(), desc="Processing grouped videos"):
+#         print(video_url)
+
+#         questions = []
+#         for s in samples:
+#             qid = s.get("qid", "UNKNOWN") if isinstance(s, dict) else s["qid"]
+#             try:
+#                 question = s["question"]
+#                 prompt = s["question_prompt"]
+#                 formatted_prompt = format_gemini_prompt(question, prompt)
+#                 questions.append(formatted_prompt)
+#             except Exception as e:
+#                 print(f"Failed to build question for QID {qid}: {e}")
+#                 predictions.append({"qid": qid, "prediction": "Error"})
+
+#         try:
+#             outputs = gemini_video_fn(video_url, questions, num_repeats=iterations, temperature=temperature)
+#             print(outputs)
+#         except Exception as e:
+#             print(f"Error on video {video_url}: {e}")
+#             traceback.print_exc()
+#             for s in samples:
+#                 predictions.append({"qid": s["qid"], "prediction": "Error"})
+#             _save_checkpoint(predictions, checkpoint_path)
+#             continue
+
+#         for s, response in zip(samples, outputs):
+#             predictions.append({"qid": s["qid"], "prediction": response})
+#             print(f"{s['qid']}: {response}")
+
+#         if len(predictions) % batch_size == 0:
+#             _save_checkpoint(predictions, checkpoint_path)
+
+#     _save_checkpoint(predictions, checkpoint_path)
+
+
 def process_all_video_questions_list_gemini_df(
     ds,
     iterations=1,
@@ -238,18 +360,30 @@ def process_all_video_questions_list_gemini_df(
 
         questions = []
         for s in samples:
-            qid = s.get("qid", "UNKNOWN") if isinstance(s, dict) else s["qid"]
+            qid = s.get("qid", "UNKNOWN")
             try:
                 question = s["question"]
-                prompt = s["question_prompt"]
+                prompt = s.get("question_prompt", "")
                 formatted_prompt = format_gemini_prompt(question, prompt)
                 questions.append(formatted_prompt)
             except Exception as e:
                 print(f"Failed to build question for QID {qid}: {e}")
                 predictions.append({"qid": qid, "prediction": "Error"})
 
+        # Prepare fallback to local .mp4
+        video_id = samples[0].get("video_id") or samples[0].get("qid").split("_")[0]  # safe fallback
+        local_video_path = os.path.join(video_dir, f"{video_id}.mp4")
+        if not os.path.exists(local_video_path):
+            local_video_path = None
+
         try:
-            outputs = gemini_video_fn(video_url, questions, num_repeats=iterations, temperature=temperature)
+            outputs = gemini_video_fn(
+                video_uri=video_url,
+                questions=questions,
+                num_repeats=iterations,
+                temperature=temperature,
+                local_video_path=local_video_path
+            )
             print(outputs)
         except Exception as e:
             print(f"Error on video {video_url}: {e}")

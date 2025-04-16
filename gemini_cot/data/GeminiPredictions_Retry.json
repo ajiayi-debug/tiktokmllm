@@ -22,5 +22,13 @@
   {
     "qid": "0117-3",
     "prediction": "Yes, there are exactly three toy cars shown in the video clip.\n\n**Explanation:** The clip clearly shows one red toy car, one blue toy car, and one yellow toy car."
+  },
+  {
+    "qid": "0118-1",
+    "prediction": "Based on the video:\n\nThe person **pushed the first blue bottle** with their hand.\n\n**Explanation:** The push provided the initial force needed to overcome friction and inertia, causing the first bottle, and subsequently the others lined up behind it, to slide off the edge of the concrete ledge."
+  },
+  {
+    "qid": "0129-7",
+    "prediction": "C"
   }
 ]
