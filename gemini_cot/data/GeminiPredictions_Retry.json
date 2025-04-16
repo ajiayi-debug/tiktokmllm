@@ -30,5 +30,45 @@
   {
     "qid": "0129-7",
     "prediction": "C"
+  },
+  {
+    "qid": "0146-0",
+    "prediction": "Based on the video, the color of the car changes **3 times**.\n\n**Explanation:**\n\n1.  The car starts as **light blue**.\n2.  It changes to **purple/mauve** as the second person walks by.\n3.  It changes to **dark green** as the man in the green suit walks by.\n4.  It changes to **red** as the woman in the red outfit walks by."
+  },
+  {
+    "qid": "0146-1",
+    "prediction": "The car's color shifts **3 times** in the video.\n\n**Explanation:**\n\n1.  It starts as **light blue**, then shifts to **purple/lilac** as the person in the purple outfit walks by.\n2.  It then shifts from purple/lilac to **green** as the man in the green suit walks by.\n3.  Finally, it shifts from green to **red** as the woman in the red outfit walks by."
+  },
+  {
+    "qid": "0146-2",
+    "prediction": "No.\n\n**Explanation:**\n\n1.  The car changes color **three** times, displaying a total of **four** different colors.\n2.  The sequence of colors shown is: **Light Blue**, then **Purple**, then **Green**, then **Red**.\n3.  The sequence of changes clearly starts with the car being Light Blue, not black."
+  },
+  {
+    "qid": "0146-3",
+    "prediction": "Yes, the car in the video changes color three times, starting with blue.\n\n**Explanation:**\n\n1.  The car is initially light blue.\n2.  As a person in purple walks by, it changes to purple/lilac. (Change 1)\n3.  As a person in green walks by, it changes to green. (Change 2)\n4.  As a person in red walks by, it changes to red. (Change 3)"
+  },
+  {
+    "qid": "0146-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0151-2",
+    "prediction": "Yes.\n\n**Explanation:** Around the 0:33 - 0:41 mark in the video, the person demonstrating how to poke a straw through a potato is wearing a red top (which looks like a collared shirt or sweater) and has long, brown hair."
+  },
+  {
+    "qid": "0179-2",
+    "prediction": "**Answer:** **It's impossible to say without more information.**\n\n**Explanation:**\n\nWhether a person cuts a stem in one swing depends entirely on several factors:\n\n1.  **The thickness and toughness of the stem:** A thin flower stem is easily cut in one go, while a thick woody branch or small tree trunk might require multiple swings or cuts.\n2.  **The tool being used:** Sharp shears, a knife, or an axe might cut through certain stems in one swing, whereas dull tools or tools inappropriate for the stem's size would likely require more effort.\n3.  **The person's strength and technique:** A strong, well-aimed swing is more likely to succeed in one go than a weak or hesitant one.\n\nWithout knowing the specifics of the situation (what kind of stem, what tool, who is cutting), I cannot determine if it was done in a single swing."
+  },
+  {
+    "qid": "0198-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0273-7",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0288-7",
+    "prediction": "E"
   }
 ]
