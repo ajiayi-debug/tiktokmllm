@@ -3,6 +3,7 @@ import os
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
+import time
 
 load_dotenv()
 
@@ -13,7 +14,7 @@ class Gemini:
         self.client = genai.Client(api_key=self.api_key)
         self.model = model
 
-    def generate_from_video(self, video_uri, questions, temperature=0, num_repeats=1):
+    def generate_from_video(self, video_uri, questions, temperature=0, num_repeats=1, wait_time=30):
         predictions = []
         for _ in range(num_repeats):
             for question in questions:
@@ -47,7 +48,7 @@ class Gemini:
                 except Exception as e:
                     print(f"Gemini API error: {e}")
                     raise e  # ← critical: re-raise so the caller (you) can handle it
-
+                time.sleep(wait_time)
         # If multiple repeats, we could return majority vote, but now just return one set
         return predictions
 

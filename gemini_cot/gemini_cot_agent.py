@@ -21,7 +21,7 @@ def CotAgent(df):
         iterations=1,
         checkpoint_path="data/GeminiPredictions_Retry.json",
         video_dir="Benchmark-AllVideos-HQ-Encoded-challenge",
-        batch_size=5,
+        batch_size=1,
         filter_qids=error_qids
     )
 
