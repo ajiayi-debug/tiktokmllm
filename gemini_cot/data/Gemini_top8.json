@@ -1,0 +1,2062 @@
+[
+  {
+    "qid": "0008-0",
+    "prediction": "The main difference is that the first two people only tap the bottle cap with an object, resulting in no change, while the last person taps the cap, performs a subsequent hand gesture, and achieves an effect where the entire bottle vanishes (likely through video editing or a magic trick), leaving only the liquid momentarily suspended. The first two attempt a physical action on the cap; the last performs an illusion affecting the whole bottle."
+  },
+  {
+    "qid": "0008-1",
+    "prediction": "Unlike the others who successfully open their bottles by tapping the neck/shoulder area with a hard object on the first try, the last person initially fails using different methods (tapping with soft paper, tapping the side of the bottle with his fist). His final action involves waving his hand over the bottle without direct contact, resulting in the cap coming off, which appears to be a trick rather than the physical method used by the others."
+  },
+  {
+    "qid": "0008-2",
+    "prediction": "Yes, the last person opened the bottle without using a knife. He tapped the cap with a chopstick-like object, and then the cap vanished after a hand gesture, suggesting a visual trick or video editing rather than a physical opening with a knife."
+  },
+  {
+    "qid": "0008-3",
+    "prediction": "**No, the last person did not open the bottle with a knife.** They initially tapped the cap with a thin object (like a chopstick), which didn't work. The cap's removal afterwards appears to be a trick or video edit, not a physical opening with an object. The first two people did fail their attempts."
+  },
+  {
+    "qid": "0008-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0038-0",
+    "prediction": "The last person was able to snap off the cap easily because tapping the bottle agitates the carbonated liquid, causing dissolved CO2 gas to rapidly come out of solution. This significantly increases the pressure inside the bottle neck, exerting a strong upward force on the cap and making it require much less external force to remove."
+  },
+  {
+    "qid": "0038-1",
+    "prediction": "The last person succeeded by applying a sharp jolt near the bottle (hitting the table or a downward motion beside it) rather than just tapping the neck. This sudden impact transmitted a shockwave/pressure wave through the liquid, causing effects like cavitation (bubble collapse) or a rapid fluid momentum shift near the cap, generating sufficient upward force to overcome the seal. This technique is more effective than simply tapping the glass neck."
+  },
+  {
+    "qid": "0038-2",
+    "prediction": "**Yes**, the last person successfully broke the bottle.\n\n**Explanation:** Although the visual cut is quick, a distinct glass-shattering sound effect plays immediately after the last person performs the hand gesture towards the bottle, indicating the intended outcome was a successful break. This auditory cue confirms the action was completed."
+  },
+  {
+    "qid": "0038-3",
+    "prediction": "**No**, the last person did not use a lighter. They used a piece of folded paper to tap the bottle cap, and the cap's removal appeared to be a visual trick or video edit, not the result of using the paper as a lever."
+  },
+  {
+    "qid": "0038-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0012-0",
+    "prediction": "**4**\n\n**Explanation:** The video first shows one figure walking, and later displays a group shot clearly showing four distinct figures dressed as robots posing together. The figure shown walking initially is one of the four in the group shot."
+  },
+  {
+    "qid": "0012-1",
+    "prediction": "**Answer:** 4\n**Explanation:** The video clearly shows four distinct individuals styled as humanoid robots standing together on display (starting around 0:03). The camera pans across all four: one in white/blue, one in silver/grey, one in black/silver (blonde hair), and one in red/gold."
+  },
+  {
+    "qid": "0012-2",
+    "prediction": "Yes, the video displays four robot figures in total. Initially, one robot (white and blue) is shown walking. Later, it joins three others (metallic grey, black, and red/gold) on a stage, making a total of four visible together."
+  },
+  {
+    "qid": "0012-3",
+    "prediction": "**No**, the video shows more than two robot figures. There is a scene where at least four distinct figures resembling robots are lined up together on a stage."
+  },
+  {
+    "qid": "0012-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0016-0",
+    "prediction": "**Answer:**\n\nThe image is an optical illusion, and the person can be perceived as facing in two different directions:\n\n1.  **Facing Forward (slightly to the viewer's left):** This perception focuses on the visible eye looking out and the ear on the left.\n2.  **Facing Right (in profile):** This perception focuses on the silhouette formed by the forehead, nose, lips, and chin on the right side of the image.\n\n**Explanation:**\n\nThe illusion works because the features can be interpreted in two distinct ways. Depending on whether your brain prioritizes the eye and ear or the outline of the face, the perceived direction will switch."
+  },
+  {
+    "qid": "0016-1",
+    "prediction": "The person is looking both **left** and **right**.\n\n**Explanation:** This is an optical illusion. You can perceive a detailed face looking towards the right side of the frame, or you can perceive the left edge of that face as the silhouette profile of a different face looking towards the left side of the frame."
+  },
+  {
+    "qid": "0016-2",
+    "prediction": "**Yes, the person appears to be facing both sideways and forward due to photo editing or digital manipulation.**\n\n**Explanation:** This is an optical illusion, specifically an ambiguous figure. Photo editing techniques are used to cleverly merge features from a frontal view (like the left eye and ear) with features from a profile view (like the nose, lips, and chin outline) using shared contours, creating an image that the brain can interpret in two distinct ways."
+  },
+  {
+    "qid": "0016-3",
+    "prediction": "**Answer:** Yes, the relatively symmetrical appearance of the visible white area representing the shirt/shoulders supports the interpretation of the man facing forward.\n\n**Explanation:** This symmetry aligns with how a person's upper torso typically appears from a frontal perspective. When the viewer interprets the central facial features (like the eye) as looking forward, the balanced appearance of the shoulders reinforces this perception, making the forward-facing interpretation plausible within the optical illusion."
+  },
+  {
+    "qid": "0016-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0036-0",
+    "prediction": "The machine achieves rapid, thin slicing due to a combination of factors:\n\n1.  **Multiple Sharp Blades:** The cutting disc has several (likely 2 or 3) very sharp blades. This multiplies the number of cuts made per single rotation of the disc.\n2.  **Controlled Feed Rate:** The green conveyor belt pushes the zucchini into the blades at a steady, controlled speed.\n3.  **Synergy of Speed and Feed:** The thinness of the slices is determined by the precise ratio between how fast the blades are moving when they contact the zucchini and how quickly the zucchini is fed forward. Even a moderate rotational speed, when combined with multiple blades and a specific feed rate, results in rapid, thin cuts.\n4.  **Actual Speed:** The rotational speed (RPM) might also be faster than it visually appears due to camera frame rates."
+  },
+  {
+    "qid": "0036-1",
+    "prediction": "The machine achieves rapid, thin slicing due to a combination of factors:\n\n1.  **High Rotational Speed (RPM):** The cutting disc spins very quickly, much faster than it might appear initially.\n2.  **Multiple Sharp Blades:** The disc has multiple, extremely sharp cutting edges.\n3.  **Combined Effect:** The high RPM multiplied by the number of blades results in a very high number of cuts per second.\n4.  **Controlled Feed Rate:** The conveyor belt pushes the zucchini forward at a precise speed, ensuring each slice is consistently thin as it meets the rapidly passing blades."
+  },
+  {
+    "qid": "0036-2",
+    "prediction": "**No.**\n\nThe thinness of the zucchini slices is determined by the machine's mechanical design, specifically the rate at which the zucchini is fed into the path of the rotating blade (the feed rate). While the blades spin at high speed for efficient and clean cutting, the stroboscopic effect is merely a visual illusion related to how we perceive rapid motion and has no physical impact on the thickness of the slices produced."
+  },
+  {
+    "qid": "0036-3",
+    "prediction": "Yes, the machine is able to cut the zucchini thinly primarily because of the sharpness of the blade.\n\n**Explanation:**\nA sharp blade is essential for making clean, precise cuts with minimal force. This allows it to sever the vegetable fibers efficiently, even when removing a very thin slice, without crushing or tearing the zucchini. While the machine's design determines the slice thickness setting, the sharpness ensures the blade can actually execute that thin cut cleanly. A dull blade would struggle to achieve such thin, uniform slices at any speed, likely resulting in mangled or crushed pieces."
+  },
+  {
+    "qid": "0036-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0037-0",
+    "prediction": "Based on the visual effects listed, there are **8** distinct artificially edited parts in the video.\n\n**Explanation:** Each listed item (shaking cup, T-pose, floating ball, pixelation, missing texture, ERROR text, miniature man, multiple balls) represents a separate visual effect added to the original footage to simulate a video game glitch."
+  },
+  {
+    "qid": "0037-1",
+    "prediction": "**7 Sections:**\n\n*   **Explanation:** The video demonstrates distinct types of simulated glitches sequentially, each representing a different form of artificial editing:\n    1.  Red cup jittering/clipping (0:01)\n    2.  Man jittering/clipping (0:04)\n    3.  Man freezing in T-pose / Ball floating (0:06)\n    4.  Man's texture becoming pixelated/corrupted (0:08)\n    5.  Man's texture changing to \"missing texture\" pattern + \"ERROR\" text appearing (0:11)\n    6.  Duplicate T-posing man appearing behind the cup (0:13)\n    7.  Ping pong ball duplication/spam (0:16)"
+  },
+  {
+    "qid": "0037-2",
+    "prediction": "Yes, the video is edited in multiple parts and uses visual effects to create the effect of video game glitches. This is evident from the unnatural shaking of the cup, the man instantly snapping into a T-pose, his appearance changing to pixels and then a missing texture pattern, the appearance of the \"ERROR\" text, the character duplication, and the erratic behavior of multiple ping pong balls, all of which are impossible without digital manipulation."
+  },
+  {
+    "qid": "0037-3",
+    "prediction": "**No**, the video is **not** edited only in one part to create the effect of video game glitches.\n\n**Explanation:** The video showcases a sequence of *different* glitch effects applied progressively throughout its duration. These include the cup shaking, the person T-posing, texture errors on the person, an \"ERROR\" text overlay appearing, and finally, duplication of the person and the ball. This demonstrates that multiple edits and effects were applied at various points in the video, not just in a single section."
+  },
+  {
+    "qid": "0037-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0064-0",
+    "prediction": "The room went dark because the lamp, which was the only source of light in the room, was turned off. Given that another pair of eyes appears immediately after, it's implied that an unseen presence already in the room turned off the lamp after the character closed the door, creating suspense and setting up the scare."
+  },
+  {
+    "qid": "0064-1",
+    "prediction": "Based on the animation, the room became dark because:\n\n**An unseen entity, whose eyes appear immediately after, turned off the lamp.**\n\n*   **Explanation:** The lamp was the only light source shown in the room. The moment the character shuts the door, the lamp extinguishes, and a second pair of eyes appears, strongly implying this entity caused the light to go out to reveal itself in the darkness."
+  },
+  {
+    "qid": "0064-2",
+    "prediction": "**Yes**, the room went dark because the character slammed the door, causing the lamp to fall.\n\n**Brief Explanation:** The video shows the character running into the bedroom and slamming the door. This action causes vibrations that knock the lamp off the nightstand, extinguishing the light and making the room dark."
+  },
+  {
+    "qid": "0064-3",
+    "prediction": "**No.**\n\n**Explanation:** The video shows the character running *past* the light switch in the hallway without touching it. The hallway light goes out *after* the character has passed the switch but *before* it reaches the bedroom and closes the bedroom door. The door closing event occurs in a different location (the bedroom) and is separate from the hallway light turning off."
+  },
+  {
+    "qid": "0064-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0070-0",
+    "prediction": "The person in the video poured the water 2 times.\n\n**Explanation:** The video shows the person pouring water once, pausing to think, and then pouring water a second time."
+  },
+  {
+    "qid": "0070-1",
+    "prediction": "**Answer:** 2\n**Explanation:** The person pours water from the green mug into the black mug twice. The first pour occurs between 0:01 and 0:06, followed by a pause, and the second pour begins around 0:08."
+  },
+  {
+    "qid": "0070-2",
+    "prediction": "Yes, the person poured the water twice.\n\nHe poured water initially, paused while looking surprised and thoughtful as overlay images appeared, and then poured water from the green mug into the black mug a second time after pointing his finger."
+  },
+  {
+    "qid": "0070-3",
+    "prediction": "**No**, the person pours water twice. They pour initially, pause, and then pour again."
+  },
+  {
+    "qid": "0070-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0080-0",
+    "prediction": "The purpose of beating the balloon is to break the inner pouch containing vinegar, allowing it to mix with the baking soda. This initiates the chemical reaction that produces carbon dioxide gas, causing the balloon to self-inflate."
+  },
+  {
+    "qid": "0080-1",
+    "prediction": "Hitting the balloon is necessary to break the inner pouch containing the vinegar. This allows the vinegar to mix with the baking soda inside the balloon, initiating the chemical reaction that produces carbon dioxide gas and causes the balloon to self-inflate."
+  },
+  {
+    "qid": "0080-2",
+    "prediction": "Yes, the purpose of hitting the balloon is to break the inner container holding the vinegar, allowing it to mix with the baking soda. This causes a chemical reaction that rapidly inflates the balloon, creating a fun, interactive, self-inflating toy."
+  },
+  {
+    "qid": "0080-3",
+    "prediction": "**Yes.** Hitting the balloon is likely intended to mix the internal vinegar and baking soda (shown being prepared earlier). This initiates a chemical reaction that produces carbon dioxide gas, rapidly inflating the balloon until it pops."
+  },
+  {
+    "qid": "0080-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0081-0",
+    "prediction": "Based on the video, the man likely puts his hand on his face due to slight **embarrassment or shyness**, possibly combined with **suppressing a laugh or smile** at the situation (doing a cute dance trend with a filter). He seems more reserved than the woman and the gesture appears as a brief moment of self-consciousness before joining in."
+  },
+  {
+    "qid": "0081-1",
+    "prediction": "The man likely covers his face due to a combination of **embarrassment/shyness** and potentially **hiding laughter or a smile** before participating in the cute social media trend, feeling momentarily awkward or amused by the filter and music."
+  },
+  {
+    "qid": "0081-2",
+    "prediction": "**Yes.** The man covering his face interrupted the filter's facial tracking on him, causing it to detect and apply itself to the girl's face instead."
+  },
+  {
+    "qid": "0081-3",
+    "prediction": "**No**, the man's hand gesture to his face was not part of a synchronized dance move. His action occurred while the woman was performing a different gesture (pointing at herself), and it did not match the timing or style of her subsequent dance movements."
+  },
+  {
+    "qid": "0081-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0083-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0083-1",
+    "prediction": "The daughter's repeated entries expose the mother's hypocrisy and growing secret affection for the dog, confirming the daughter's suspicions and comedically highlighting the common \"parent who didn't want the pet\" trope."
+  },
+  {
+    "qid": "0083-2",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0083-3",
+    "prediction": "**Answer:** No\n\n**Explanation:** The daughter announces the dog only once at the beginning of the video. Her subsequent appearances at the door are to catch her mother secretly liking and interacting with the dog after initially rejecting it, highlighting the comedic trope of the mother's contradictory behaviour, not to repeatedly announce the pet."
+  },
+  {
+    "qid": "0083-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0099-0",
+    "prediction": "**6**\n\nThere appear to be six distinct instances where the view zooms in significantly closer on a specific part of the pattern (around 0:08, 0:10, 0:13, 0:54, 0:56, and 0:58)."
+  },
+  {
+    "qid": "0099-1",
+    "prediction": "There are **4** zoomed-in close-ups in the video.\n*   The first zoom occurs around 0:09.\n*   The second zoom occurs around 0:13.\n*   The third zoom occurs around 0:54.\n*   The fourth zoom occurs around 0:57."
+  },
+  {
+    "qid": "0099-2",
+    "prediction": "Yes, there are two zoomed-in close-ups in the video focusing on the geometric pattern. The first occurs around the 0:09 mark, and the second happens near the 0:55 mark."
+  },
+  {
+    "qid": "0099-3",
+    "prediction": "**No**, the video does not contain 10 zoomed-in close-ups. It features 7 distinct zoom-in shots focusing on the geometric pattern."
+  },
+  {
+    "qid": "0099-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0101-0",
+    "prediction": "**Sequence:** Bookshelf, Sofa, Cardboard Box.\n**Explanation:** The man first uses a visual effect to appear inside the bookshelf, then inside the sofa, and finally inside the cardboard box."
+  },
+  {
+    "qid": "0101-1",
+    "prediction": "1.  **Bookshelf**\n2.  **Couch**\n3.  **Cardboard Box**\n4.  **Near Doorway (Behind Dog)**"
+  },
+  {
+    "qid": "0101-2",
+    "prediction": "**Answer:** No, the man does not teleport.\n**Explanation:** The video uses editing techniques (like cuts and visual effects for the bookshelf scene) and physical hiding spots (inside the couch storage and the cardboard box) to create the illusion of him appearing in different places quickly, rather than actual teleportation."
+  },
+  {
+    "qid": "0101-3",
+    "prediction": "**No.** The man first appears behind the bookshelf, then inside the couch, then inside the cardboard box, and finally reveals himself from under the blanket near the doorway. The question incorrectly swaps the order of the couch and the cardboard box."
+  },
+  {
+    "qid": "0101-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0113-0",
+    "prediction": "**Answer:** 1 building and 1 water tower.\n**Explanation:** The video shows the demolition of one conventional building (a glass skyscraper via implosion at 0:29) and one water tower (a brick structure knocked down by an excavator at 0:54)."
+  },
+  {
+    "qid": "0113-1",
+    "prediction": "**One (1) building.**\n\n**Explanation:** The video shows the controlled demolition of one glass skyscraper (0:30-0:38). While a water tower is also demolished (0:54-0:59), it is typically classified as a structure or tower, not a building in the conventional sense. Therefore, strictly counting \"buildings\", there is only one."
+  },
+  {
+    "qid": "0113-2",
+    "prediction": "**No:** Only one building, a tall glass skyscraper, is shown being demolished (0:29-0:38). A brick water tower is also demolished (0:54-0:59), but a water tower is typically classified as a structure, not a building."
+  },
+  {
+    "qid": "0113-3",
+    "prediction": "No, more than one structure is demolished in the video. The video shows the demolition of a tall glass building and also the demolition of a brick water tower by an excavator."
+  },
+  {
+    "qid": "0113-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0117-0",
+    "prediction": "Based on the information provided, it is impossible to determine the number of toy cars shown in the video.\n\n**Explanation:** The provided text explicitly states that the 8 answers are **hypothetical examples** because **no video was provided** for analysis. Therefore, there is no actual video content to count cars from, and the listed answers are not based on any specific video."
+  },
+  {
+    "qid": "0117-1",
+    "prediction": "**Number of Cars:** Cannot be determined.\n**Explanation:** The video needed to count the toy cars was not provided."
+  },
+  {
+    "qid": "0117-2",
+    "prediction": "**No.** The video clip shows only one toy car, not two."
+  },
+  {
+    "qid": "0117-3",
+    "prediction": "Yes, there are exactly three toy cars shown in the video clip.\n\n**Explanation:** The visual evidence within the video clip clearly confirms the presence of precisely three distinct objects identifiable as toy cars."
+  },
+  {
+    "qid": "0117-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0118-0",
+    "prediction": "He used his hand to push the first bottle.\n\n**Explanation:** The video shows the person extending their right hand and making contact with the leftmost bottle, applying a forward push that causes it to fall off the ledge, initiating the fall of the other bottles."
+  },
+  {
+    "qid": "0118-1",
+    "prediction": "**Answer:** He pushed the first bottle with his hand, causing it to fall off the ledge.\n\n**Explanation:** The video clearly shows the person extending their right hand and making contact with the leftmost blue bottle, applying a forward pushing force that causes it to tip over the edge of the concrete structure."
+  },
+  {
+    "qid": "0118-2",
+    "prediction": "Yes, the person let go of the bottles on a slope, causing them to slide. The video clearly shows the person removing their hand, and the bottles immediately begin sliding down the inclined concrete ledge due to gravity."
+  },
+  {
+    "qid": "0118-3",
+    "prediction": "Yes, the person pushed the bottles with their hand, causing them to fall off the ledge."
+  },
+  {
+    "qid": "0118-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0127-0",
+    "prediction": "**Answer:**\n\n4 watches are shown in the video.\n\n**Explanation:**\n\nAfter the initial unboxing sequence, the video proceeds to display four different watches consecutively. Each watch is distinct, featuring a unique car wheel and brake caliper design on its face, identifiable by different colors (red, gold, red, green) and branding elements on the calipers."
+  },
+  {
+    "qid": "0127-1",
+    "prediction": "**Answer:** 4\n\n**Explanation:** The video displays a sequence showing four different watches, each with a unique car-themed design featuring distinct colored calipers (red, gold, red, green) and branding elements."
+  },
+  {
+    "qid": "0127-2",
+    "prediction": "Yes, the video shows four distinct watches sequentially after the unboxing, each featuring a design based on a car's wheel rim and brake caliper."
+  },
+  {
+    "qid": "0127-3",
+    "prediction": "**No:** The video shows only four different watches in the collection segment, each with a unique car rim and brake caliper design."
+  },
+  {
+    "qid": "0127-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0129-0",
+    "prediction": "**Two men** appear in the video. One man briefly appears at 0:20 to hand the woman a string for the balloon scene, and a second man appears at 0:27 acting as a photographer for the avocado scene."
+  },
+  {
+    "qid": "0129-1",
+    "prediction": "**Answer:** 2\n**Explanation:** Two distinct male figures appear in the video: one briefly during the pink balloon scene (around 0:20) and another acting as a photographer/assistant during the avocado scene (around 0:27)."
+  },
+  {
+    "qid": "0129-2",
+    "prediction": "**Answer:** No.\n**Explanation:** The video shows at least two instances where a man appears: one assists with the pink balloon prop (around 0:20), and another acts as a photographer/assistant during the avocado scene (around 0:27)."
+  },
+  {
+    "qid": "0129-3",
+    "prediction": "Yes, men appear in two separate scenes in the video.\n\nA man in grey pants assists with the balloon prop around 0:20, and a different-looking man (wearing black pants and a cap) is seen photographing the artist with the avocado prop around 0:27."
+  },
+  {
+    "qid": "0129-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0133-0",
+    "prediction": "**Answer:** The final scene depicts three men performing a synchronized acrobatic jump simultaneously through a large hoop held by another person.\n\n**Explanation:** In a gymnasium setting, three individuals coordinate their movements precisely to leap and tuck their bodies, allowing all of them to pass through the center of a single hoop at the same moment while airborne."
+  },
+  {
+    "qid": "0133-1",
+    "prediction": "**Answer:** Three men jump simultaneously through a large hoop held by one of them.\n\n**Explanation:** The final scene shows three men in a gym setting. One holds a large white hoop. All three jump in unison, and the hoop is passed under their feet and over their heads as they are airborne, before they land together."
+  },
+  {
+    "qid": "0133-2",
+    "prediction": "**Yes.**\n\n**Explanation:** The final scene clearly shows three men in a gym performing a coordinated stunt where they jump simultaneously through a single hula hoop held low to the ground."
+  },
+  {
+    "qid": "0133-3",
+    "prediction": "**No.** The final scene shows three people sequentially jumping through a hula hoop. This demonstrates coordination, timing, and projectile motion, not the gyroscopic effect, which involves the stability and resistance to changes in orientation of a rapidly spinning object like the bicycle wheel shown earlier in the video."
+  },
+  {
+    "qid": "0133-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0142-0",
+    "prediction": "The purpose is **to demonstrate how dirty the escalator handrail is** by placing a clean wipe on the moving rail and showing the dirt it collects. This is done by a character in a Spider-Man costume likely **to create entertaining or engaging content** that also serves as a **visual commentary on public hygiene**."
+  },
+  {
+    "qid": "0142-1",
+    "prediction": "The character places the wipe on the handrail to demonstrate how dirty the surface is and to provide visual proof answering the \"Real or Fake?\" question posed at the start of the video, confirming that the handrail quickly accumulates dirt."
+  },
+  {
+    "qid": "0142-2",
+    "prediction": "The purpose is **to demonstrate how dirty the escalator handrail is and raise hygiene awareness.**\n\n**Explanation:** The character in the Spider-Man costume takes a clean wipe, places it on the moving handrail, and then shows how much dirt and grime it picks up almost immediately. This visually demonstrates the lack of cleanliness on a frequently touched public surface, aiming to make people more conscious of hygiene."
+  },
+  {
+    "qid": "0142-3",
+    "prediction": "**No.** The object is a white wipe or tissue, not tape. It is being held against the moving handrail to collect the existing dirt and grime through friction, demonstrating how dirty the surface is, rather than attracting dust."
+  },
+  {
+    "qid": "0142-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0146-0",
+    "prediction": "**Answer:** 3 times.\n\n**Explanation:** The car starts as light blue. It then changes to purple as the person in purple walks by, then changes to green as the person in green walks by, and finally changes to red as the person in red walks by. This constitutes three distinct color changes."
+  },
+  {
+    "qid": "0146-1",
+    "prediction": "**Answer:** 3 times\n\n**Explanation:** The car starts as light blue/grey, then shifts to purple, then shifts to green, and finally shifts to red, totaling three distinct color transformations shown in the video."
+  },
+  {
+    "qid": "0146-2",
+    "prediction": "**Yes**, the car changes color four times after its initial dark (near-black) state. It changes sequentially to light blue, then lilac/purple, then green, and finally red, matching the outfits of the people walking past it."
+  },
+  {
+    "qid": "0146-3",
+    "prediction": "Yes, the car starts as light blue and then changes color three times. It shifts first to a purple/grey, then to green, and finally to red as different people walk past it."
+  },
+  {
+    "qid": "0146-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0151-0",
+    "prediction": "The person holding the potato is wearing a **solid red, long-sleeved, collared top** with a **standard/relaxed fit**."
+  },
+  {
+    "qid": "0151-1",
+    "prediction": "The person holding the potato is wearing a long-sleeved red top and has fair skin. Their hands and forearms are visible as they hold the potato and a blue straw, performing a demonstration. The person's face is not shown in this segment."
+  },
+  {
+    "qid": "0151-2",
+    "prediction": "Yes, the person holding the potato is wearing a red top/sweater and has long brown hair."
+  },
+  {
+    "qid": "0151-3",
+    "prediction": "**No.**\n\nThe person holding the potato (shown around 0:33-0:41) is wearing a red top. The person wearing the light pink hoodie and black cap appears at the beginning of the video (0:01-0:02) with a water hose, not a potato."
+  },
+  {
+    "qid": "0151-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0152-0",
+    "prediction": "The tools used for fixing the position of the pages are **Elastic Cords** or **Thin Bungee Cords**.\n\n**Explanation:** The video clearly shows two blue, round, elastic cords wrapped around the book block. These cords use tension to hold the already folded pages securely in place while the artist continues folding subsequent pages."
+  },
+  {
+    "qid": "0152-1",
+    "prediction": "The tool used in the video to secure the pages in place is an **elastic band/cord**.\n\n**Explanation:** A blue, stretchy cord or band is clearly visible wrapped around the book from 0:03 onwards. It holds the already folded pages tightly together, preventing them from unfolding while the person works on the remaining pages."
+  },
+  {
+    "qid": "0152-2",
+    "prediction": "No, the blue tool used in the video is not a retainer. It is an elastic cord or band used temporarily to hold the folded pages tightly together during the book folding process."
+  },
+  {
+    "qid": "0152-3",
+    "prediction": "Yes, the tool used to fix the pages in the video is a blue elastic cord or band, which functions like a rubber band to hold the folded pages together."
+  },
+  {
+    "qid": "0152-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0154-0",
+    "prediction": "The adult man hands the white cutting board to the child with his **left hand**.\n\n**Explanation:** Around the 0:04-0:05 mark in the video, the man picks up the cutting board with his left hand and passes it to the child using that same hand."
+  },
+  {
+    "qid": "0154-1",
+    "prediction": "**Answer:** Left hand.\n**Explanation:** The man picks up the white cutting board with his left hand and later places it flat on the table using the same left hand."
+  },
+  {
+    "qid": "0154-2",
+    "prediction": "**No.** The man picks up the white cutting board with his right hand and places it on the table in front of the child. He does not use his left hand for this action."
+  },
+  {
+    "qid": "0154-3",
+    "prediction": "**Answer:** No, the man uses his left hand to pick up the cutting board and hand it to the child."
+  },
+  {
+    "qid": "0154-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0162-0",
+    "prediction": "**Answer:** 11\n\n**Explanation:** The golfer successfully hits the target object in each of the 11 distinct shots shown in the video compilation."
+  },
+  {
+    "qid": "0162-1",
+    "prediction": "The golfer achieves 11 successful target hits in the video. Each object placed on the stand (including a bell, egg, candle flame, balloon, golf ball, glass of Guinness, lightbulb, and chocolate orange) is shown being successfully struck by the golf ball in the sequence presented."
+  },
+  {
+    "qid": "0162-2",
+    "prediction": "No, the golfer does not hit the target only once. The video is a compilation showing the golfer successfully hitting various different target objects multiple times."
+  },
+  {
+    "qid": "0162-3",
+    "prediction": "**Yes**, the golfer hits the target 11 times in the video, which means they successfully managed to hit it 10 times (and then one more)."
+  },
+  {
+    "qid": "0162-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0167-0",
+    "prediction": "The woman is surprised because the man performed a magic trick. He made it look like he broke the wooden stick between his fists, but when he opened his hands, the stick was revealed to be completely intact, defying her expectation."
+  },
+  {
+    "qid": "0167-1",
+    "prediction": "The woman is astonished because she witnesses a magic trick where the performer's actions strongly imply the stick is being broken, but it is then revealed to be perfectly intact, contradicting her expectation and creating a surprising illusion."
+  },
+  {
+    "qid": "0167-2",
+    "prediction": "**Yes**, the woman is surprised because the man visibly clenched his fists and appeared to exert significant force, creating the expectation that the pencil would break. Her wide-eyed and open-mouthed reaction occurs when she sees the pencil is unexpectedly still intact."
+  },
+  {
+    "qid": "0167-3",
+    "prediction": "**Answer:** No, the woman is not surprised that the man broke the pencil. Her surprise is because the pencil *wasn't* broken; the man performed a magic trick, making it seem like he would break it, but then revealed it was still intact."
+  },
+  {
+    "qid": "0167-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0169-0",
+    "prediction": "**Answer:** 2\n**Explanation:** The woman pours orange juice/soda into a mold once, and then she pours red juice/soda into another mold once, totaling two times."
+  },
+  {
+    "qid": "0169-1",
+    "prediction": "**Answer:** 2\n*   **Explanation:** The woman pours orange juice into one mold and then red juice into another mold, totaling two filling actions shown in the video."
+  },
+  {
+    "qid": "0169-2",
+    "prediction": "Yes, the woman pours juice into the molds twice in the video. First, she pours an orange-colored liquid into one mold, and then she pours a red-colored liquid into a different mold."
+  },
+  {
+    "qid": "0169-3",
+    "prediction": "**No, the woman pours juice into the molds only two times in the video.** She pours orange juice once and red juice once."
+  },
+  {
+    "qid": "0169-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0179-0",
+    "prediction": "The person cuts the stem between 8 and 13 times.\n\n**Explanation:** There are 8 distinct cuts made to the main standing part of the stem before it starts to break and fall. The person continues to swing and make contact with the falling upper portion of the stem several more times, bringing the total number of contacts to approximately 13."
+  },
+  {
+    "qid": "0179-1",
+    "prediction": "The stem was cut **one time**. The video clearly shows the worker making a single swing with the machete to sever the stem holding the banana bunch."
+  },
+  {
+    "qid": "0179-2",
+    "prediction": "**No**, the person does not cut the stem with just one swing. The video shows them making multiple forceful swings with the machete to cut through the thick banana plant stem before the bunch falls."
+  },
+  {
+    "qid": "0179-3",
+    "prediction": "**Answer:** No, the person does not cut the stem 10 times.\n**Explanation:** Observing the video, the person strikes the banana stem with the machete approximately 8 times before it is fully cut."
+  },
+  {
+    "qid": "0179-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0198-0",
+    "prediction": "**Answer:** 12\n*   **Explanation:** Counting each distinct visual clip shown while the \"Old me:\" text overlay is present on the screen results in a total of 12 clips before the text changes to \"Now me:\"."
+  },
+  {
+    "qid": "0198-1",
+    "prediction": "There are **12** photos/clips labeled 'old me'.\n\n**Explanation:** Counting each distinct scene shown while the \"old me:\" text is visible on screen from the beginning of the video until the text changes to \"now me:\" results in a total of 12 visuals."
+  },
+  {
+    "qid": "0198-2",
+    "prediction": "Yes, there are exactly 12 photos/clips labeled 'Old me:' in the video.\n\n**Explanation:** The video displays a montage of 12 distinct scenes (studying, getting good grades, hobbies like baking and painting, waking up early) each overlaid with the text \"Old me:\" before transitioning to scenes labeled \"now me:\"."
+  },
+  {
+    "qid": "0198-3",
+    "prediction": "**No**, the video includes the scene of 'old me' reading a book at a desk only once, near the beginning of the \"Old me\" section (at the 0:01 mark)."
+  },
+  {
+    "qid": "0198-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0217-0",
+    "prediction": "**Answer:** 5 seconds.\n\n**Explanation:** The time-lapse sequence in the video, showing the accelerated capillary action with the fast-moving clock hands, starts at the 0:09 mark and ends at the 0:14 mark. The duration is calculated by subtracting the start time from the end time (14 seconds - 9 seconds = 5 seconds)."
+  },
+  {
+    "qid": "0217-1",
+    "prediction": "**Answer:** The exact duration of the capillary action demonstration shown in real time was **1 hour 30 minutes** (or **90 minutes**).\n\n**Brief Explanation:** The alarm clock placed next to the experiment shows the time starting at approximately 10:10 when the paper towels are inserted and ending at approximately 11:40 when the sped-up (x8) segment concludes, indicating an elapsed real time of 1 hour and 30 minutes."
+  },
+  {
+    "qid": "0217-2",
+    "prediction": "**Yes.**\n\nThe clock in the video starts at approximately 10:10 and ends at approximately 11:25, showing an elapsed time of 1 hour and 15 minutes during the time-lapse portion of the demonstration."
+  },
+  {
+    "qid": "0217-3",
+    "prediction": "**Yes**, the clock placed in the scene explicitly shows a passage of approximately 2 hours (roughly 10:10 to 12:10), representing the real duration of the capillary action filmed for the time-lapse."
+  },
+  {
+    "qid": "0217-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0242-0",
+    "prediction": "The two orange cats jumped away because the person suddenly leaned towards them while making a loud, sharp noise, which startled them."
+  },
+  {
+    "qid": "0242-1",
+    "prediction": "The two orange cats leaped away because the person made a sudden, sharp snapping sound with their hand while also making a quick hand movement towards them. This combination of the abrupt noise and startling gesture frightened the cats."
+  },
+  {
+    "qid": "0242-2",
+    "prediction": "**Yes**, the two orange cats jumped away immediately after the person in the red hat made a sudden, loud noise that sounds like a party blower, indicating they were startled by it."
+  },
+  {
+    "qid": "0242-3",
+    "prediction": "Partially. One clip (0:04) clearly shows an orange cat being startled by a toy snake and jumping. However, another clip (0:07) shows an orange cat jumping, but the trigger appears to be a different object or the other cat's reaction, not a snake."
+  },
+  {
+    "qid": "0242-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0248-0",
+    "prediction": "The person in the foreground is using a fine brush to paint a highlight, adding detail to what appears to be a large, hyperrealistic portrait painting featuring water droplets."
+  },
+  {
+    "qid": "0248-1",
+    "prediction": "**Activity:** Painting a hyperrealistic portrait, specifically adding highlights to create realistic water effects.\n\n**Explanation:** The person is using a fine paintbrush to apply small dabs of white paint onto a large, detailed painting of a woman's face. This action adds highlights to the depicted water droplets, enhancing the artwork's extreme realism."
+  },
+  {
+    "qid": "0248-2",
+    "prediction": "Yes, the person in the foreground is painting a hyperrealistic image of a woman. The artist is using a fine brush to meticulously add highlights to painted water droplets on the large portrait, enhancing the realistic wet appearance of the subject's face and hair."
+  },
+  {
+    "qid": "0248-3",
+    "prediction": "**No.**\n\nThis is a hyperrealistic painting. The video clearly shows an artist's hand using a fine brush to paint highlights onto one of the \"water droplets\" on the portrait's nose, confirming that the water effect is painted and not real."
+  },
+  {
+    "qid": "0248-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0251-0",
+    "prediction": "The ball falls off the disc because the movement of the mechanical figures underneath causes the disc to tilt significantly. This tilt angle, combined with the force of gravity acting on the ball, causes it to roll over the edge."
+  },
+  {
+    "qid": "0251-1",
+    "prediction": "The ball falls off because it rolled very close to the edge, and the corrective tilt initiated by the mechanical figures\u2014potentially due to an overcorrection, coordination failure among the figures, or a system error\u2014pushed the ball over the edge instead of redirecting it back towards the center of the disc."
+  },
+  {
+    "qid": "0251-2",
+    "prediction": "**No.**\n\nThe ball fell off because the disc tilted significantly due to the movement of the mechanical figures underneath. This tilting action, which is part of the artwork's intended mechanism, caused the ball to roll towards the edge and fall off due to gravity. There is no indication in the video that it was thrown immediately before falling."
+  },
+  {
+    "qid": "0251-3",
+    "prediction": "**Yes**, the disc tilted due to the movement of the figures underneath. This tilt created an inclined plane, and the force of gravity caused the ball to roll down this incline and off the edge."
+  },
+  {
+    "qid": "0251-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0256-0",
+    "prediction": "**14 Bounces**\n\n**Explanation:** The ping-pong ball bounces 12 times on the individual stair treads and then 2 more times on the flat landing at the bottom before going into the glass."
+  },
+  {
+    "qid": "0256-1",
+    "prediction": "The ping-pong ball bounces **14** times.\n\n**Explanation:** It bounces once on each of the 12 stairs, and then twice on the landing at the bottom (once before hitting the cup and once after)."
+  },
+  {
+    "qid": "0256-2",
+    "prediction": "**No**, the ping-pong ball does not bounce 17 times on the ground before entering the cup. It bounces 12 times on the stairs before landing in the cup."
+  },
+  {
+    "qid": "0256-3",
+    "prediction": "**No**, the ping-pong ball does not bounce 15 times. Based on the video, it bounces 14 times on the stairs before landing in the glass at the bottom."
+  },
+  {
+    "qid": "0256-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0259-0",
+    "prediction": "**Answer:** Left hand.\n**Explanation:** The man removes his hat with his left hand and continues to hold it in that hand while attempting the second putt. He then throws the hat backwards using his left hand in frustration after missing the second shot."
+  },
+  {
+    "qid": "0259-1",
+    "prediction": "**Answer:** Left hand.\n**Explanation:** At the 0:05-0:06 mark in the video, the man clearly reaches up with his left hand, removes the hat from his head, and brings it down."
+  },
+  {
+    "qid": "0259-2",
+    "prediction": "No, the man does not throw his hat away at any point in the video clip. His hat remains on his head throughout the entire sequence after he misses both putts."
+  },
+  {
+    "qid": "0259-3",
+    "prediction": "No, the man did not throw his hat. He used his right hand to throw a tiny golf club in frustration after missing a shot with it, while his hat remained on his head."
+  },
+  {
+    "qid": "0259-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0266-0",
+    "prediction": "**Right Thumb.**\n\n**Explanation:** The video clearly shows the yellow rubber band placed around the index finger and thumb of the person's right hand at the start, and it remains fully looped around the right thumb throughout the manipulations shown."
+  },
+  {
+    "qid": "0266-1",
+    "prediction": "**Right thumb.**\n\n**Explanation:** The video shows the person manipulating the yellow rubber band, twisting and looping it until it ends up completely wrapped around their right thumb."
+  },
+  {
+    "qid": "0266-2",
+    "prediction": "**No**, the rubber band is only hooked over the tip of the left thumb during the trick, not fully looped around its entire circumference or base."
+  },
+  {
+    "qid": "0266-3",
+    "prediction": "**Answer:** The state changes; the yellow rubber band is fully looped around the right thumb during the middle part of the trick's execution (approx. 0:02-0:16), but not in the initial or final positions shown in the video."
+  },
+  {
+    "qid": "0266-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0267-0",
+    "prediction": "The first person in the video is posing for a forced perspective shot on a sports court, creating an optical illusion where he appears to be hanging from a white line painted on the ground."
+  },
+  {
+    "qid": "0267-1",
+    "prediction": "The person is **posing for a forced perspective photo, appearing to hang from the line.**\n\n**Explanation:** The image uses an overhead camera angle and careful positioning of the person lying on the ground to create the optical illusion that they are hanging vertically from the white line painted on the court."
+  },
+  {
+    "qid": "0267-2",
+    "prediction": "Yes, the person is creating an illusion by lying flat on the basketball court. The photo is taken from directly overhead, which uses forced perspective to make it appear as though they are hanging vertically from the white line. Their shadow being directly beneath them further indicates they are lying on the ground under a high light source."
+  },
+  {
+    "qid": "0267-3",
+    "prediction": "Yes, the person in the video is jumping.\n\n**Explanation:** The image captures the person mid-jump, using a high camera angle and specific timing to create the optical illusion of hanging from the white court line. The shadow beneath him confirms he is airborne off the ground."
+  },
+  {
+    "qid": "0267-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0273-0",
+    "prediction": "**Answer:** White\n**Explanation:** When the boy finishes solving the Rubik's Cube and briefly holds it up (around 0:08-0:09), the face pointing directly upwards is clearly White."
+  },
+  {
+    "qid": "0273-1",
+    "prediction": "**Color:** Yellow\n*   **Explanation:** When the boy finishes solving the cube and holds it up around the 0:08-0:10 mark, the face oriented towards the top is visibly solid yellow."
+  },
+  {
+    "qid": "0273-2",
+    "prediction": "**No.** The video shows that when the boy solves the Rubik's Cube and holds it up (around 0:09), the top face is yellow."
+  },
+  {
+    "qid": "0273-3",
+    "prediction": "No, the top face of the solved Rubik's Cube is white."
+  },
+  {
+    "qid": "0273-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0274-0",
+    "prediction": "**Answer:** 6 people.\n**Explanation:** There is one central dancer and five other dancers surrounding them in the dance studio, making a total of six individuals visible in the video."
+  },
+  {
+    "qid": "0274-1",
+    "prediction": "**6 individuals:** There is one central dancer in the front, and five other dancers are visible performing the choreography with him in the background."
+  },
+  {
+    "qid": "0274-2",
+    "prediction": "**No**, there are only **five** people visible in the video. The group consistently shows one main dancer in the front and four background dancers throughout the clip."
+  },
+  {
+    "qid": "0274-3",
+    "prediction": "No, there are five people visible in the video.\n\nExplanation: Careful counting of each person dancing in the studio throughout the clip consistently shows five individuals (one main dancer in front, four backup dancers)."
+  },
+  {
+    "qid": "0274-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0276-0",
+    "prediction": "Yes, video editing effects were used, although the core visual illusion is practical.\n\n**Explanation:**\n\n1.  **Audio Editing:** Non-diegetic sound effects (like \"boing,\" \"eh?\", \"gasp\") are clearly added in post-production to enhance the viewing experience and emphasize the illusion and reveal.\n2.  **Presentation Editing:** While not visual effects like CGI, editing ensures the crucial camera angle for the forced perspective is maintained consistently during the illusion sequence. It also controls the pacing and ensures continuity (no jump cuts during key interactions like the pencil pass), which helps sell the practical effect as seamless and believable."
+  },
+  {
+    "qid": "0276-1",
+    "prediction": "The illusion of the pen passing under the cube is created using these techniques:\n\n1.  **Cut-out and Folded Paper:** The \"cube\" isn't just drawn flat. A section of the paper with the cube's front/side faces is cut out and folded upwards, perpendicular to the main sheet.\n2.  **Physical Gap:** This folding creates a real physical space *behind* the upright paper section. The pen passes through this actual gap, not under a drawing.\n3.  **Anamorphic Perspective & Specific Camera Angle:** The cube is drawn distorted (anamorphic) so that when viewed from a specific, fixed camera angle, the folded paper section and the flat paper behind it align perfectly, making the drawing appear as a correctly proportioned 3D cube resting on the surface.\n4.  **Drawn Shadow:** A shadow is drawn on the flat part of the paper beneath the upright section, reinforcing the illusion that the cube is a solid object casting a shadow and creating the expectation of space underneath it."
+  },
+  {
+    "qid": "0276-2",
+    "prediction": "**No**, the illusion does not rely on video editing effects like masking.\n\n**Explanation:** The effect is achieved by physically cutting out a section of the paper where the front edge of the drawn cube is located. The pencil then passes through this actual hole in the paper, creating the illusion that it is going underneath the 3D drawing when viewed from the specific camera angle. The end of the video reveals this cutout when the paper is lifted."
+  },
+  {
+    "qid": "0276-3",
+    "prediction": "**Yes**, the illusion is created solely through skillful drawing and perspective without any video editing.\n\n**Explanation:** The effect is achieved by drawing the cube using anamorphic perspective across a piece of paper that has been strategically cut and folded. Part of the drawing is on the flat surface (including the shadow), and the main vertical faces of the \"cube\" are drawn on a section of the paper that is folded upwards. When viewed from the specific angle of the camera, the drawing aligns perfectly to create a convincing 3D illusion. The final moments of the video, where the paper is lifted, reveal this physical construction."
+  },
+  {
+    "qid": "0276-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0278-0",
+    "prediction": "The writing on the paper is **black and red**.\n\n**Explanation:** The initial problem statement (\"Factor the polynomial. 3x\u00b3 + x\u00b2 - 15x - 5\") is written in black, while the steps taken to factor the polynomial and the final answer are written using a red marker."
+  },
+  {
+    "qid": "0278-1",
+    "prediction": "The text written on the paper is **Orange and Black**.\n\n**Explanation:** The initial problem statement (\"Factor the polynomial. 3x\u00b3 + x\u00b2 - 15x - 5\") is written in black, while the subsequent steps demonstrating the factorization process are written using an orange marker."
+  },
+  {
+    "qid": "0278-2",
+    "prediction": "**Yes**, the writing added to the paper during the explanation of the factoring steps is orange, as it is being written with an orange marker."
+  },
+  {
+    "qid": "0278-3",
+    "prediction": "Yes, the writing showing the factorization steps on the paper is red."
+  },
+  {
+    "qid": "0278-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0288-0",
+    "prediction": "The large Chinese cleaver (also described as a heavy, rectangular knife or butcher's cleaver) was not easy to use.\n\n**Explanation:** The woman participant visibly struggled when attempting to slice both the folded cloth and the piece of pork belly with this knife. She required two hands and considerable effort, yet still couldn't make clean or easy cuts, highlighting the difficulty she experienced compared to the man demonstrating."
+  },
+  {
+    "qid": "0288-1",
+    "prediction": "Based on the video, the **large cleaver** is difficult to use, particularly when the woman attempts to slice through the **striped cloth/towel** and the **piece of fatty meat/pork belly**. She struggles significantly with both tasks, requiring two hands and considerable effort without achieving a clean cut, demonstrating the difficulty in handling the knife for those specific materials."
+  },
+  {
+    "qid": "0288-2",
+    "prediction": "Yes, the knife implied to be difficult or less effective for the task is the smaller one with the dark handle, used by the woman towards the end of the video (around 0:53-0:58).\n\n**Explanation:** The man demonstrates high proficiency and ease using his large cleaver. When the woman attempts to slice the pork fat with the smaller knife (which has a dark handle), the man immediately states, \"We have a problem,\" indicating her attempt with that specific knife was not successful or easy compared to the results expected or achieved with his cleaver."
+  },
+  {
+    "qid": "0288-3",
+    "prediction": "**No, the lighter silver steel knife is not shown to be difficult to use.**\n\n**Explanation:** The video shows the man using the silver knife effectively at the beginning. The only instance where difficulty is clearly demonstrated is near the end (0:55-0:58), when the woman struggles to slice the pork belly using the **larger, darker cleaver**, even with two hands, prompting the man to say, \"We have a problem.\""
+  },
+  {
+    "qid": "0288-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0291-0",
+    "prediction": "**Answer:**\n\nThe rotational movement of the metal rod is primarily caused by **Ion Wind (Corona Wind)**.\n\n**Explanation:**\n\nThe high voltage from the device ionizes the air molecules around the sharp tips of the metal rod. These newly formed ions are then strongly repelled by the rod (which has the same polarity), creating a stream of moving ions that collide with neutral air molecules. This generates a net flow of air, or \"wind,\" pushing away from the tips. Because the tips are slightly angled or the discharge is inherently asymmetrical, this \"wind\" exerts a tangential force (thrust) on the rod, creating a torque that causes it to spin."
+  },
+  {
+    "qid": "0291-1",
+    "prediction": "**Initiation:** The rotation was initiated manually when the person used the white strip to push or tap the metal rod (visible around 0:03-0:04 in the video), giving it an initial spin.\n\n**Continuation:** The rotation is sustained by the **ion wind** effect (also known as electric wind or corona wind). The high voltage from the Tesla coil concentrates at the sharp tips of the rotating rod, ionizing the surrounding air molecules. These ions are then strongly repelled by the rod, creating a stream of moving air (wind). The reaction force from expelling these ions pushes back on the rod tips, providing a continuous torque that keeps it spinning, much like a tiny pinwheel or Franklin's wheel."
+  },
+  {
+    "qid": "0291-2",
+    "prediction": "**No**, the rotation started when the electrical arc from the central needle jumped to the metal rod, causing it to spin due to the electrical interaction, not because a human plucked it."
+  },
+  {
+    "qid": "0291-3",
+    "prediction": "**Answer:**\n\nNo, the rotational movement of the metal rod is not caused solely by the interaction between the electric field and the metal rod. The rotation is primarily caused by the \"electric wind\" or \"ion wind\" effect. The high voltage from the device ionizes air molecules at the sharp tips of the rotating metal piece. These ions are then repelled by the electric field, creating a thrust (like tiny jets) that pushes the spinner around due to Newton's Third Law (action-reaction). While the electric field is essential to create the ionization, the direct mechanical force causing the rotation comes from the expelled ionized air."
+  },
+  {
+    "qid": "0291-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0292-0",
+    "prediction": "**Answer:** 0\n\n**Explanation:** Throughout the video frames and in the final long-exposure photograph, there are no other vehicles clearly visible traveling in the same direction *behind* the bus further down the road."
+  },
+  {
+    "qid": "0292-1",
+    "prediction": "**Answer:** 0\n\n**Explanation:** The real-time video footage shows the bus passing and moving away, but no other vehicles are clearly visible traveling behind the bus in the same direction during that sequence. A red car passes, but it is going in the opposite direction."
+  },
+  {
+    "qid": "0292-2",
+    "prediction": "**Yes**, after the bus passes the camera's position, only one red car is clearly seen driving past in the same direction."
+  },
+  {
+    "qid": "0292-3",
+    "prediction": "**Yes**, the long exposure photo shows two distinct sets of white/yellow light trails (consistent with headlights) following the path behind the bus's red and blue trails, indicating two vehicles were following it."
+  },
+  {
+    "qid": "0292-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0295-0",
+    "prediction": "**Answer:** One method.\n\n**Explanation:** The person only used one method: attempting to pour the contents from the large yellow bag into the yellow squeeze bottle. The first attempt failed because the cap was still on the bottle, not because a different method was tried. They then used the same pouring method successfully after the cap was removed."
+  },
+  {
+    "qid": "0295-1",
+    "prediction": "**Two techniques** were attempted.\n\n**Explanation:**\n1.  The person first tried pouring the yellow substance from the bag into the bottle through the attached nozzle.\n2.  After the nozzle was removed, they attempted a second technique: pouring directly into the wider opening of the bottle."
+  },
+  {
+    "qid": "0295-2",
+    "prediction": "**No.**\n\n**Explanation:** The person used only one method: tilting the yellow bag to pour the contents out of its opening. They initially tried to pour while the bottle cap was still on, paused while the cap was removed, and then resumed pouring using the exact same technique."
+  },
+  {
+    "qid": "0295-3",
+    "prediction": "**No**, the person only used one method: pouring the contents directly from the large yellow bag into the yellow squeeze bottle. The first attempt failed because the bottle cap was still on. After the cap was removed, they successfully used the same pouring method."
+  },
+  {
+    "qid": "0295-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0296-0",
+    "prediction": "The man doesn't catch the blue pants on his first attempt because they shrink due to a visual effect *before* his hand reaches the spot where the full-sized pants were hanging. The object he was reaching for unexpectedly transformed into tiny pants, causing him to miss."
+  },
+  {
+    "qid": "0296-1",
+    "prediction": "The man missed catching the large blue pants because it was a planned visual effect or editing trick for a comedic gag. The large pants were intentionally removed (likely digitally or via a practical effect) just as he reached for them, and replaced with the tiny pants to create the joke that they had \"shrunk in the wash.\" He wasn't meant to actually catch the large pants; the \"miss\" was part of the setup for the reveal."
+  },
+  {
+    "qid": "0296-2",
+    "prediction": "**Answer:** No.\n\n**Explanation:** The man does not miss grabbing the blue pants on his first (and only) attempt shown in the video. He successfully takes them off the clothesline. The visual trick is that the pants he grabs are unexpectedly miniature (\"shrunk in the wash\"), not that a visual illusion prevented him from grabbing the normal-sized ones initially hanging there."
+  },
+  {
+    "qid": "0296-3",
+    "prediction": "**Yes, the reason the man doesn't \"catch\" the blue pants is that they appear to be a prop, possibly a flat cutout or digitally added element, rather than real clothing.**\n\n**Explanation:** The blue item hangs very rigidly and flatly, unlike real fabric pants. When the man reaches, it instantly disappears and is replaced by a tiny, equally rigid version in his hand. This immediate switch indicates a visual effect or editing trick, not a failed attempt to catch actual laundry. The item functions as a prop for the shrinking gag."
+  },
+  {
+    "qid": "0296-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0303-0",
+    "prediction": "After landing the jump and rolling forward on the flat ground, the man stops cycling by jumping off the bike while it is still moving slowly, letting it fall over onto its side."
+  },
+  {
+    "qid": "0303-1",
+    "prediction": "He steps off the bike while it is still rolling slowly and lets it fall to the side."
+  },
+  {
+    "qid": "0303-2",
+    "prediction": "No, the man does not stop cycling by jumping off his bike and crashing into a cushion. He performs an aerial trick, lands successfully on the large inflatable cushion while still on his bike, rides down the landing ramp, and then gets off his bike normally on the flat ground."
+  },
+  {
+    "qid": "0303-3",
+    "prediction": "Yes, the man stops cycling by dismounting and walking away. After landing the aerial trick, he gets off his bike, leaves it on the ground, and walks away celebrating."
+  },
+  {
+    "qid": "0303-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0304-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0304-1",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0304-2",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0304-3",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0304-7",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0308-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0308-1",
+    "prediction": "The initial military aircraft is attempting to **perform a carrier landing**, specifically aiming to execute an **arrested landing** (or \"trap\") by catching its tailhook on the arresting wires visible on the flight deck."
+  },
+  {
+    "qid": "0308-2",
+    "prediction": "Yes, the first military aircraft appears to be attempting a landing on the aircraft carrier but initially fails by pulling up sharply and flying away instead of stopping on the deck."
+  },
+  {
+    "qid": "0308-3",
+    "prediction": "**No**, the first military aircraft is already airborne and is shown flying *over* the aircraft carrier deck in a low pass or flyby, not taking off from it."
+  },
+  {
+    "qid": "0308-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0313-0",
+    "prediction": "**9 compartments.**\n\n**Explanation:** At the end of the video, all 9 of the white cube compartments contain products arranged as a retail display. The bottom row contains storage bins, not the products being displayed for sale."
+  },
+  {
+    "qid": "0313-1",
+    "prediction": "**Answer:** 8\n*   **Explanation:** By the end of the video, the person has placed products in 8 out of the 9 sections of the shelf. Only the top left section remains empty."
+  },
+  {
+    "qid": "0313-2",
+    "prediction": "**Yes.** At the end of the video, the final display shows products placed within all 9 visible compartments of the 3x3 shelf grid."
+  },
+  {
+    "qid": "0313-3",
+    "prediction": "**Answer:** No, the products occupy 9 compartments.\n\n**Explanation:** At the end of the video, the products are displayed in the white shelving unit which has a 3x3 grid structure, totaling 9 compartments. All 9 of these compartments contain products."
+  },
+  {
+    "qid": "0313-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0319-0",
+    "prediction": "**Answer:** At the very end of the video, the ball is being picked up by the person's hand.\n\n**Explanation:** After the ring is lifted, the ball continues in a straight line due to inertia, following the path labeled C. It rolls off the paper along this path and comes to a stop. The final action shown in the video is the person reaching down and picking up the ball from this stopping point."
+  },
+  {
+    "qid": "0319-1",
+    "prediction": "**Answer:** The ball follows Path C.\n\n**Explanation:** Due to inertia (Newton's First Law), once the constraining ring providing the inward (centripetal) force is removed at the gap, the ball continues to move in a straight line tangent to the circular path it was following at the moment of release. Path C represents this straight, tangential trajectory."
+  },
+  {
+    "qid": "0319-2",
+    "prediction": "No, the ball does not end its motion *at* position C. After exiting the circular track, it continues in a straight line along path C due to inertia, and its motion is stopped further along this path by the person's hand.\n\nYes, at the very end of the video, the person picks up the ball and places it back inside the reassembled circular wooden piece."
+  },
+  {
+    "qid": "0319-3",
+    "prediction": "**No**, the ball does not end up at position A.\n\n**Explanation:** When the ball leaves the circular track, the inward force (centripetal force) provided by the track wall is removed. According to Newton's First Law of Motion (inertia), the ball continues to move in a straight line in the direction it was traveling at the moment it exited the track. This direction is tangent to the circular path at the exit point, which corresponds to path C in the diagram, not path A. The video clearly shows the ball following path C."
+  },
+  {
+    "qid": "0319-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0320-0",
+    "prediction": "The last person performs a running tucked backflip over the low horizontal bar."
+  },
+  {
+    "qid": "0320-1",
+    "prediction": "The last person performs a **Back Tuck**.\n\n**Explanation:** He jumps towards the low bar, rotates backward in the air, and tucks his knees towards his chest to clear the obstacle before landing."
+  },
+  {
+    "qid": "0320-2",
+    "prediction": "**No**, the person does not stand on a pole. He performs a running backflip from the sandy ground, going over a horizontal yellow bar (which is supported by blue poles) and landing on the tire."
+  },
+  {
+    "qid": "0320-3",
+    "prediction": "Yes, the last person shown jumping over a fence performs a parkour move, specifically a front flip, to clear the obstacle."
+  },
+  {
+    "qid": "0320-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0321-0",
+    "prediction": "The group is performing a coordinated hand routine, likely for creating social media content.\n\n*   **Explanation:** They stand in a circle, synchronizing specific hand gestures (fist, scissors, finger heart) filmed from a low angle, and a social media handle is visible on screen, suggesting the activity is staged for online sharing."
+  },
+  {
+    "qid": "0321-1",
+    "prediction": "The group is performing a **coordinated hand game or choreography**, likely **to create a social media video**.\n\n**Explanation:** The participants simultaneously perform a sequence of hand gestures (fist, scissors, fist, finger heart) in a circle, viewed from below against the sky. This synchronization, the specific gestures, the camera angle, and the visible Instagram handle strongly suggest they are creating content, possibly following a trend, which involves a planned sequence of hand movements."
+  },
+  {
+    "qid": "0321-2",
+    "prediction": "**Yes.** The group performs synchronized hand gestures in a clear sequence (fist, peace sign, finger heart), indicating a planned choreography being filmed, likely for social media content as suggested by the overlaid handle."
+  },
+  {
+    "qid": "0321-3",
+    "prediction": "Yes, the group uses hand gestures from rock, paper, scissors (\"rock\" and \"scissors\") in a coordinated activity. However, the synchronized movements, the lack of the \"paper\" gesture, and the transition to finger hearts indicate it's a planned routine or social media trend rather than a standard competitive game."
+  },
+  {
+    "qid": "0321-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0325-0",
+    "prediction": "The rider performs **7** significant jumps/flips off obstacles during the run shown in the video clip.\n\n**Explanation:**\n\n1.  **0:00:** Jump with a tailwhip/trick off the initial drop-in.\n2.  **0:04:** Jump off a box jump with a trick (barspin/tailwhip).\n3.  **0:10:** Jump off a ramp/berm feature with a trick.\n4.  **0:15:** Jump with a 360 spin.\n5.  **0:19:** Jump with a backflip barspin (Flip 1).\n6.  **0:23:** Jump with a flair/whip (Flip 2).\n7.  **0:27:** Jump with a cash roll (Flip 3).\n\nThis counts each instance the rider launches from a ramp or obstacle edge and performs an aerial maneuver before landing."
+  },
+  {
+    "qid": "0325-1",
+    "prediction": "**Answer:** 8 Jumps, 5 Flips.\n\n**Explanation:** The rider becomes airborne off a distinct ramp or obstacle 8 times. During these jumps, the rider performs 5 maneuvers that involve flipping rotations (cash roll barspin, backflip barspin, front flip, cash roll tailwhip, and flair)."
+  },
+  {
+    "qid": "0325-2",
+    "prediction": "No, the rider did not flip and jump eight times while crossing the obstacles.\n\n**Explanation:**\n\nBased on the video, the rider performs tricks over 7 distinct major ramps/jumps. During these 7 jumps, the rider executes 4 maneuvers that involve a flip (including variations like cash rolls, backflips, and front flips). Therefore, the claim of eight flips and jumps is incorrect."
+  },
+  {
+    "qid": "0325-3",
+    "prediction": "**No**, the rider performed significantly more than three jumps and executed multiple flips throughout the run across the various obstacles."
+  },
+  {
+    "qid": "0325-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0334-0",
+    "prediction": "The scene that is NOT taken in real life is the **Pencil eraser clearing a path**.\n\n**Explanation:** This image is a conceptual illustration, likely created using digital manipulation. It depicts a symbolic and physically impossible event (a giant pencil eraser clearing tangled roads), unlike the other scenes which use forced perspective photography with real objects and backgrounds."
+  },
+  {
+    "qid": "0334-1",
+    "prediction": "The following scenes from the video do not depict real-life situations:\n\n1.  A water bottle appearing to pour out a large waterfall.\n2.  Scissor handles aligning perfectly to form the structure of a large bridge.\n3.  A key appearing to fit perfectly into a large archway.\n4.  A clothes hanger aligning to form the structure of a bridge.\n5.  Highlighters appearing as large buildings along a canal.\n6.  A person appearing to eat the sun from a bowl.\n7.  A giant pencil eraser clearing a path through tangled roads.\n8.  A whisk appearing to trap birds flying in the sky.\n\nThese scenes use techniques like forced perspective or digital manipulation to create optical illusions or conceptual images, rather than showing events as they would naturally occur."
+  },
+  {
+    "qid": "0334-2",
+    "prediction": "**Yes, the image of the pencil erasing the road is digitally created.**\n\n**Explanation:** The scene depicts a physically impossible scenario. A pencil eraser cannot erase actual roads, and the scale of the pencil relative to the landscape is unrealistic, indicating it was made using digital manipulation or illustration techniques."
+  },
+  {
+    "qid": "0334-3",
+    "prediction": "**No, the scene is not real.** It depicts a giant pencil eraser clearing a path through tangled roads, which is physically impossible and clearly represents a concept through digital manipulation or illustration."
+  },
+  {
+    "qid": "0334-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0340-0",
+    "prediction": "**Answer:** 5\n**Explanation:** There are four main drainage outlets built into the dam wall, which correspond to four channels on the spillway below them. Additionally, a separate overflow channel is constructed on the side."
+  },
+  {
+    "qid": "0340-1",
+    "prediction": "**Answer:** 5\n\n**Explanation:** The video shows the construction of four main drainage channels built into the primary spillway of the dam (clearly visible from 0:38 onwards, corresponding to the four openings mentioned at 0:17). Additionally, a separate overflow channel (\u6cc4\u6d2a\u901a\u9053) is dug into the side bank (shown from 0:51 onwards) to handle excess water. Therefore, there are a total of 4 + 1 = 5 drainage channels."
+  },
+  {
+    "qid": "0340-2",
+    "prediction": "**Yes.**\n\nThe video clearly shows the construction process where the builder intentionally creates four distinct openings (\u5b54\u6d1e - k\u01d2ngd\u00f2ng, holes/openings) in the dam wall (visible from 0:15 onwards, text confirms at 0:17). Later, four corresponding parallel channels are built on the downstream slope (spillway) to guide the water flow from these openings (visible from 0:36 onwards)."
+  },
+  {
+    "qid": "0340-3",
+    "prediction": "Yes, there are five drainage channels shown in the video.\n\n**Explanation:** The main structure of the dam features four parallel channels built into the spillway slope, corresponding to the four openings in the dam wall. Additionally, a separate, fifth overflow channel (spillway) is constructed on the side of the main dam structure."
+  },
+  {
+    "qid": "0340-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0357-0",
+    "prediction": "The man in the white T-shirt seems surprised and amused. He pulls out a pickle, which is unexpected, and immediately bursts into laughter, suggesting he finds the absurdity of the situation humorous rather than being genuinely disappointed."
+  },
+  {
+    "qid": "0357-1",
+    "prediction": "The man in the white T-shirt feels **shock and amusement**.\n\n**Explanation:** His initial reaction, with wide eyes and an open mouth making an \"Ahhh!\" sound, clearly shows shock and surprise at finding a pickle. This quickly turns into amusement as he throws his head back and laughs heartily at the unexpected and silly outcome."
+  },
+  {
+    "qid": "0357-2",
+    "prediction": "**No**, the man in the white T-shirt did not smile wryly or look disappointed. His reaction was one of initial surprise followed by genuine, hearty laughter when he pulled out the pickle/cucumber, indicating amusement rather than disappointment."
+  },
+  {
+    "qid": "0357-3",
+    "prediction": "No, the man in the white T-shirt was not satisfied and happy with finding a pickle. His laughter seemed to stem from the humor and absurdity of finding a pickle, especially compared to others finding money or a phone, rather than genuine satisfaction with the item itself. A pickle is generally not considered a desirable prize in such a challenge."
+  },
+  {
+    "qid": "0357-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0358-0",
+    "prediction": "The woman in white didn't fall onto the trampoline because the man asked her if she wanted to go, and she explicitly refused. Unlike the others whom he physically pushed, he respected her choice and did not force her."
+  },
+  {
+    "qid": "0358-1",
+    "prediction": "The woman in white was not pushed onto the trampoline because when the man asked if she would go (\"\u90a3\u4f60\u5462?\" - And you?), she explicitly refused (\"\u4e0d\u884c\u4e0d\u884c\" - No, no / I can't, I can't). The man respected her refusal and decided to perform a trick himself instead."
+  },
+  {
+    "qid": "0358-2",
+    "prediction": "Yes, the woman in white avoided falling on the trampoline because the man did not push her after she indicated she didn't want to go."
+  },
+  {
+    "qid": "0358-3",
+    "prediction": "No, the woman in white did not jump off herself. She declined when the man asked if she wanted to go, saying \"\u4e0d\u884c\u4e0d\u884c\" (No, no). Consequently, the man decided to perform a backflip himself onto the trampoline instead of pushing her, leaving her safely seated on the platform."
+  },
+  {
+    "qid": "0358-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0368-0",
+    "prediction": "There are **10** scenarios shown in the video comparing adult and toddler behavior.\n\n**Explanation:** The video presents pairs of clips. Each pair shows the man first acting as an adult in a specific situation, followed by him acting as a toddler in the same situation. Counting these distinct pairs reveals 10 different scenarios being compared."
+  },
+  {
+    "qid": "0368-1",
+    "prediction": "There are **10** different scenarios demonstrated in the video.\n\n**Explanation:** The video shows 10 distinct situations, each presented twice: once depicting an adult's typical behavior and once depicting a toddler's exaggerated or chaotic behavior in the same situation. These scenarios are: eating a snack, being asked to do something, napping, behavior when someone is showering, eating breakfast, watching a show, cleaning up, behavior after a baby falls asleep, giving something to someone, and playing with toys."
+  },
+  {
+    "qid": "0368-2",
+    "prediction": "Yes, the man showed exactly ten scenarios comparing adult and toddler behavior.\n\n**Explanation:** The video presents ten distinct pairs of actions, each contrasting how an adult performs a task versus how a toddler (portrayed by the same man) performs the same task. These scenarios include eating snacks, responding to requests, napping, reacting to someone showering, eating breakfast, watching TV, cleaning up, behaving after a baby falls asleep, giving an item, and playing with toys."
+  },
+  {
+    "qid": "0368-3",
+    "prediction": "**No**, the video shows **ten** distinct scenarios comparing adult and toddler behavior in various everyday situations, not six."
+  },
+  {
+    "qid": "0368-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0370-0",
+    "prediction": "**Answer:** 9 girls are holding swords.\n**Explanation:** At the beginning of the video, there is a formation of 9 girls in green uniforms arranged in three rows of three. The front row of 3 girls is clearly visible holding swords, and the identical uniforms, stances, and formation strongly indicate that the 6 girls in the two rows behind them are also holding swords."
+  },
+  {
+    "qid": "0370-1",
+    "prediction": "**3**\n\nAt the start of the video (00:00), there are three girls clearly visible in the front row, each holding a sword."
+  },
+  {
+    "qid": "0370-2",
+    "prediction": "**No.** At the beginning of the video, there are three girls in the front row holding swords."
+  },
+  {
+    "qid": "0370-3",
+    "prediction": "Yes, only three girls are holding swords at the beginning of the video.\n\n**Explanation:** At the 00:00 mark, the visual evidence clearly shows only the three performers in the front row holding swords. The performers behind them are holding flags."
+  },
+  {
+    "qid": "0370-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0372-0",
+    "prediction": "**Answer:** She completes an alley-oop dunk.\n\n**Explanation:** At the end of the video, the boy throws the basketball up towards the hoop, and the girl catches it in mid-air while hanging from the rim and forces it down through the hoop. This specific type of play, involving a pass caught near the basket and immediately dunked, is called an alley-oop dunk."
+  },
+  {
+    "qid": "0372-1",
+    "prediction": "At the conclusion of the video, the girl hangs from the basketball rim with both hands after being lifted by the boy, completing her part of a collaborative trick shot as the ball goes through the hoop."
+  },
+  {
+    "qid": "0372-2",
+    "prediction": "Yes, the girl pretends to dunk the basketball by hanging on the basket at the end of the video. She is lifted to the rim by the boy, grabs it, and hangs, while the boy then throws the ball through the hoop to complete the illusion of a dunk."
+  },
+  {
+    "qid": "0372-3",
+    "prediction": "**No**, the girl does not actually dunk the basketball.\n\n**Explanation:** The boy lifts the girl onto his shoulders and she jumps towards the hoop. However, the boy picks up the basketball and throws it upwards into the hoop just as the girl reaches the rim. The girl does not handle the ball or force it downwards through the hoop; the basket is made by the boy's throw."
+  },
+  {
+    "qid": "0372-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0374-0",
+    "prediction": "Based on the video and the provided answers, here's what was used for the magic trick in the first part (the yellow balloon sequence):\n\nA pre-inflated yellow balloon and a small piece of yellow rubber (likely a balloon neck piece) were used. The performer employed misdirection by placing the rubber piece in their mouth and pretending to blow onto the balloon's surface, creating the illusion of inflation without actually adding air."
+  },
+  {
+    "qid": "0374-1",
+    "prediction": "The magic trick was executed using a pre-inflated yellow balloon. The performer created misdirection by placing a small, unrelated yellow object into their mouth. They then put the knot of the already inflated balloon to their lips and pretended to blow air into it, relying on acting and the prior misdirection to create the illusion of inflation."
+  },
+  {
+    "qid": "0374-2",
+    "prediction": "**Yes**, the magic trick in the first part of the video involved using a balloon and an extra knot. The second performer didn't actually tie the yellow balloon; instead, they quickly placed a pre-made, separate knot-like piece onto the balloon's neck to create the illusion of tying it instantly."
+  },
+  {
+    "qid": "0374-3",
+    "prediction": "**Answer:** Inserting.\n\n**Explanation:** The performer pretends to swallow a small yellow object and then blows into the yellow balloon, creating the illusion that the object was magically inserted inside."
+  },
+  {
+    "qid": "0374-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0377-0",
+    "prediction": "The hand on the woman's shoulder belongs to **the man sitting on the bench next to her, who is wearing a black jacket and black cap.**"
+  },
+  {
+    "qid": "0377-1",
+    "prediction": "The hand belongs to **the man sitting next to the woman on the bench**. His left arm is visibly placed on her shoulder during the segment."
+  },
+  {
+    "qid": "0377-2",
+    "prediction": "**No**, the hand on the woman's shoulder belongs to the man sitting **next to her** on the bench. His right arm is visibly positioned around her shoulder."
+  },
+  {
+    "qid": "0377-3",
+    "prediction": "Yes, the hand on the woman's shoulder belongs to the man sitting next to her. His left arm is visibly placed around her shoulder in the video."
+  },
+  {
+    "qid": "0377-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0410-0",
+    "prediction": "After the sixth cotton candy ball (blue) was dissolved by the man in the grey shirt, it completely melted into the blue-tinted water. He reached into the bowl but found no hidden object inside, only pulling out water and dissolved remnants, reacting with surprise."
+  },
+  {
+    "qid": "0410-1",
+    "prediction": "**Outcome:** Nothing is revealed inside the sixth cotton candy; it contained no hidden item.\n\n**Explanation:** The sixth participant dissolves the blue cotton candy in the water, but unlike the previous turns, it dissolves completely without revealing any hidden object or prize, leaving only blue-colored water in the bowl."
+  },
+  {
+    "qid": "0410-2",
+    "prediction": "**Yes.** After the sixth man dissolves the final blue cotton candy, he reaches into the bowl and pulls out empty hands, indicating he found nothing hidden inside."
+  },
+  {
+    "qid": "0410-3",
+    "prediction": "**No**, a phone is not revealed after the sixth cotton candy dissolves.\n\n**Explanation:** The video shows the sixth (blue) cotton candy dissolving completely into the blue liquid, revealing nothing inside the bowl. A phone was revealed earlier in the sequence, under the fifth (pink) cotton candy."
+  },
+  {
+    "qid": "0410-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0416-0",
+    "prediction": "The magician was surprised because the trick failed unexpectedly. He successfully made the egg vanish from his hands and clearly expected it to reappear under the cup. When the spectator lifted the cup and the egg wasn't there, it contradicted his expectation and the intended outcome, causing his genuine surprise and confusion."
+  },
+  {
+    "qid": "0416-1",
+    "prediction": "The man performing the trick was taken aback because the egg, which he implied had magically transported under the cup after vanishing from his hands, was not actually there when the spectator lifted the cup. This could either be genuine surprise because the trick failed (perhaps due to a sleight of hand error) or acted surprise as part of the performance for misdirection."
+  },
+  {
+    "qid": "0416-2",
+    "prediction": "Yes, the man was surprised. His surprise occurred first when the magician made the egg vanish from his hands, and then again when he lifted the cup and discovered the egg was not underneath it as the magic trick might have implied."
+  },
+  {
+    "qid": "0416-3",
+    "prediction": "No, the man performing the trick (the magician) was not surprised. The surprise was shown by the spectator (the man on the left). The egg vanished from the magician's hand, not from under the cup initially, and it did not reappear in an unexpected place during the clip. The spectator was surprised first when the egg vanished from the magician's hand and again when it wasn't found under the cup."
+  },
+  {
+    "qid": "0416-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0417-0",
+    "prediction": "The soldier on the left is trying hard not to laugh because his colleague on the right accidentally completely covered his own head and upper body with the large flag during a formal ceremony. This unexpected mishap created an absurd and comical visual that contrasts sharply with the seriousness of the event."
+  },
+  {
+    "qid": "0417-1",
+    "prediction": "The soldier on the left is trying hard not to laugh because his colleague on the right has accidentally become completely engulfed by the large Olympic flag during the formal flag-raising ceremony. This unexpected and visually absurd mishap creates a comical contrast with the seriousness and precision expected in such a military event."
+  },
+  {
+    "qid": "0417-2",
+    "prediction": "**No.**\n\n**Explanation:** The potential humor comes from the unexpected and slightly absurd situation of his colleague getting tangled in the flag. He is trying not to laugh (if he is) *despite* the seriousness of the occasion, not *because* of it. The seriousness is the reason he must *suppress* any amusement, as laughing would be inappropriate during a formal ceremony. The trigger for the potential laughter is the mishap itself."
+  },
+  {
+    "qid": "0417-3",
+    "prediction": "Yes, the soldier on the left is likely trying not to laugh because of the awkward and humorous flag mishap involving the soldier on the right. This incident disrupted the formal procedure, creating a comical \"problem\" during the ceremony, and the soldier's challenge is maintaining composure despite it."
+  },
+  {
+    "qid": "0417-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0420-0",
+    "prediction": "**No, we cannot tell if the cat won.**\n\n**Explanation:** The cat clearly chooses a hand by tapping it, but the video ends before the person reveals whether the treat was in the chosen hand. Therefore, the outcome of the game is unknown."
+  },
+  {
+    "qid": "0420-1",
+    "prediction": "The cat's success in the 'which hand' game is **unknown**.\n\n**Reason:** The cat chose the left hand by tapping it, but the video ends immediately after the choice is made, before the person reveals whether that hand actually held the treat."
+  },
+  {
+    "qid": "0420-2",
+    "prediction": "No, we cannot determine if the cat won the game.\n\n**Explanation:** The video ends immediately after the cat taps one of the closed fists, but before the person opens their hand to reveal whether the object was inside the chosen fist. Therefore, the outcome of the game is not shown."
+  },
+  {
+    "qid": "0420-3",
+    "prediction": "**No.**\n\n**Explanation:** The video ends immediately after the cat taps one of the fists. It does not show the person opening their hands to reveal whether the chosen fist contained the treat or not. Therefore, we cannot determine if the cat chose the \"wrong\" hand or whether it won or lost the game."
+  },
+  {
+    "qid": "0420-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0427-0",
+    "prediction": "The man achieved the trick using a pane of glass, not a mirror. A hidden assistant, dressed identically, was positioned behind the glass. The assistant used a pre-cut watermelon and synchronized their movements with the man in front, who handled a whole watermelon. When the man mimicked cutting the whole watermelon, the assistant simultaneously revealed the pre-cut halves behind the glass, creating the illusion of an instant cut seen in a reflection."
+  },
+  {
+    "qid": "0427-1",
+    "prediction": "**Method:** The man used a mirror and a pre-cut watermelon.\n\n**Explanation:** He placed the bottom half of a pre-cut watermelon onto a mirror lying flat on the table. The mirror reflected this bottom half, creating the optical illusion of a complete, whole watermelon. He then pretended to cut it while actually just lifting the real top half away from the bottom half resting on the mirror."
+  },
+  {
+    "qid": "0427-2",
+    "prediction": "No, video editing was not used. The illusion is a practical effect created using a mirror placed horizontally on the table, which reflects the top half of the watermelon as the man lifts it, making it appear as though a whole watermelon is being removed from the bottom half."
+  },
+  {
+    "qid": "0427-3",
+    "prediction": "Yes, the trick was achieved by hollowing out the bottom half of the watermelon rind and placing a separate, peeled watermelon piece inside it. Lifting the top rind half then reveals the hidden peeled fruit, creating the illusion."
+  },
+  {
+    "qid": "0427-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0430-0",
+    "prediction": "**Answer:**\n\nThe damage is caused by the **hand-crank device delivering an extreme overvoltage/power surge** to the phone.\n\n**Explanation:**\n\nThe blue hand-crank generator, when cranked rapidly, produces electrical power far exceeding the phone's charging limits. This overload causes catastrophic failure within the phone's circuitry and likely the battery, leading to the observed smoke/vapor and screen shattering. While the charging percentages shown are unrealistic and suggest a staged effect (especially with the \"FAKE\" reveal later), the fundamental trigger for the destruction is the excessive power forced into the phone by the external device."
+  },
+  {
+    "qid": "0430-1",
+    "prediction": "The phone appeared damaged due to a **staged effect using a prop**.\n\n**Explanation:** The video shows a hand-crank device seemingly overloading the phone, causing the screen to frost over and shatter. However, the later part of the video reveals the person picking up the \"damaged\" phone and showing it's just a pre-broken screen protector or prop placed on top of an intact phone (with a \"FAKE\" sticker visible). The frost and rapid charging percentage were likely visual effects added for the skit."
+  },
+  {
+    "qid": "0430-2",
+    "prediction": "Yes, the phone damage was faked using a prop overlay. The video later demonstrates this technique on a second phone (an iPhone), where a pre-shattered layer is clearly peeled off, revealing an undamaged screen underneath and a \"FAKE\" sticker on the prop itself."
+  },
+  {
+    "qid": "0430-3",
+    "prediction": "**Answer:**\n\nNo, the phone did not get damaged because it was overcharged with a hand-crank charger. The video uses special effects to show unrealistic charging speeds and dramatic screen shattering. The second part of the video confirms the effect is fake by revealing a prop screen with a \"FAKE\" sticker underneath, showing the actual phone screen was unharmed. Hand-crank chargers produce too little power to cause such rapid charging or damage."
+  },
+  {
+    "qid": "0430-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0432-0",
+    "prediction": "The last few targets are the empty shell casings ejected from the shotgun after each shot. The man catches or picks up the ejected casing and throws it into the air himself to shoot it."
+  },
+  {
+    "qid": "0432-1",
+    "prediction": "**Answer:** The last few targets in the video are spent shotgun shell casings/hulls.\n\n**Explanation:** After shooting the initial clay target, the man catches the ejected spent shell casing, throws it into the air, and shoots it. He repeats this action multiple times in rapid succession for the final shots shown."
+  },
+  {
+    "qid": "0432-2",
+    "prediction": "Yes, the objects thrown by the man are the spent shotgun shell casings.\n\n**Explanation:** After each shot is fired from the shotgun, an empty shell casing is automatically ejected. The objects the man throws at the end of the sequence are identical in appearance to these ejected casings."
+  },
+  {
+    "qid": "0432-3",
+    "prediction": "**No.** The last targets (black clay pigeons) were launched rapidly and consistently in quick succession, which is characteristic of an automatic trap machine located elsewhere on the range, not the woman standing next to the shooter who is holding a manual thrower."
+  },
+  {
+    "qid": "0432-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0435-0",
+    "prediction": "Based on the video:\n\n1.  **The first swing (approx. 0:02):** An upward diagonal drawing cut (*nukitsuke*) severs the topmost straw bundle as the man rises.\n2.  **The second swing (approx. 0:06):** A downward diagonal cut (*kesa-giri*) severs the next bundle down.\n3.  **The third swing (approx. 0:07):** A horizontal cut (*yoko-giri*) severs the third bundle down.\n4.  **The fourth swing (approx. 0:08):** An upward diagonal cut (*kiriage*) severs the fourth bundle down."
+  },
+  {
+    "qid": "0435-1",
+    "prediction": "All four swings successfully hit the straw mat target:\n\n1.  The first upward diagonal swing at ~0:02.\n2.  The second downward diagonal swing at ~0:06.\n3.  The third downward diagonal swing at ~0:07.\n4.  The fourth horizontal swing at ~0:08.\n\n**Explanation:** Each of these swings visibly severs a section of the straw mat, causing it to fall off the stand."
+  },
+  {
+    "qid": "0435-2",
+    "prediction": "**Yes**, the man's first sword swing hit the target. The video clearly shows the sword slicing through the topmost bundle of straw mats at the 0:02 mark, sending pieces of straw flying."
+  },
+  {
+    "qid": "0435-3",
+    "prediction": "**No**, the man did not cut through *each* section of the straw mat target. While every swing shown successfully cut through *a* section, the bottom-most section remained uncut on the stand at the end of the sequence."
+  },
+  {
+    "qid": "0435-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0439-0",
+    "prediction": "The man lights **multiple small candles bundled together**.\n\n**Explanation:** The video shows a blue object with numerous wicks on top. When lit, many individual flames appear, indicating that the object consists of multiple small candles grouped closely together, forming a bundle or cluster."
+  },
+  {
+    "qid": "0439-1",
+    "prediction": "The man ignites a cluster of blue-tipped matches that are standing upright in a holder."
+  },
+  {
+    "qid": "0439-2",
+    "prediction": "Yes, the video shows a bundle of thin candles that are already lit and burning. The man is preparing to cover the lit candles with a glass vase as part of an experiment."
+  },
+  {
+    "qid": "0439-3",
+    "prediction": "Yes, the object burning at the start of the video has multiple points of flame on top and strongly resembles a stack or bundle of matches stuck upright in a base."
+  },
+  {
+    "qid": "0439-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0803-0",
+    "prediction": "A cluster of small, blue candles (or possibly matches arranged similarly) were burning. They were grouped together on a white base sitting in a tray of water."
+  },
+  {
+    "qid": "0803-1",
+    "prediction": "The object on fire is **a bundle of matches**.\n\n**Explanation:** The burning object clearly consists of numerous individual matchsticks grouped tightly together, likely stuck into a base, with their heads ignited simultaneously to create a large, unified flame."
+  },
+  {
+    "qid": "0803-2",
+    "prediction": "Yes, it is true that a bunch of candles is burning in the video. The blue object in the center of the tray has multiple wicks, each lit and producing a flame, characteristic of burning candles bundled together."
+  },
+  {
+    "qid": "0803-3",
+    "prediction": "**No, the burning object is not a sponge.**\n\nIt appears to be a cluster or bundle of matches stuck into a base. The blue tips that are burning resemble match heads, and the flames originate from many distinct points, which is consistent with multiple matches burning simultaneously rather than a single sponge-like object."
+  },
+  {
+    "qid": "0803-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0441-0",
+    "prediction": "**Answer:**\n\nBoth the left and right legs execute a rapid, high-cadence running motion characterized by an exaggerated high knee drive where the thighs lift significantly high, combined with quick foot strikes and a relatively short stride length. This alternating action creates a powerful, somewhat choppy appearance."
+  },
+  {
+    "qid": "0441-1",
+    "prediction": "Based on the video and the provided observations, the condition of the man's legs during running is:\n\nMuscular, defined, and functional, appearing uninjured and actively engaged, though proportionally less massive than his upper body."
+  },
+  {
+    "qid": "0441-2",
+    "prediction": "**He is actually running forward.**\n\n**Explanation:** While the initial close-up shot makes his forward progress look minimal, the second clip, filmed from a wider angle (\"What they see\"), clearly shows him running and covering distance across the paved area relative to the background and the person filming."
+  },
+  {
+    "qid": "0441-3",
+    "prediction": "**No.**\n\n**Explanation:** The second part of the video (\"What they see\") shows his actual running style. While he does lean forward, creating a forward thrust, his knee lifts are moderate rather than high. The first clip exaggerates these movements for comedic effect, contrasting with his more typical running form shown later."
+  },
+  {
+    "qid": "0441-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0452-0",
+    "prediction": "**Left Leg:** Agile and Quick.\n*   *Explanation:* The left leg performs rapid, intricate footwork close to the ground.\n\n**Right Leg:** Dynamic and Propulsive.\n*   *Explanation:* The right leg is often used for hops, pushes, and driving the body's momentum."
+  },
+  {
+    "qid": "0452-1",
+    "prediction": "**Left Leg:** Visually normal, but contextually implied by the meme to be Messi's legendary left leg.\n**Right Leg:** Visually normal, but contextually implied by the meme to be Ronaldo's legendary right leg."
+  },
+  {
+    "qid": "0452-2",
+    "prediction": "**No, the dancer's left leg is not disabled.**\n\n**Explanation:** The video clearly shows the dancer performing complex and athletic breakdancing moves that require significant strength, coordination, and full function in both legs. The text overlay is a meme humorously suggesting the dancer has the legendary skills of Messi's left leg and Ronaldo's right leg, not indicating any actual physical disability."
+  },
+  {
+    "qid": "0452-3",
+    "prediction": "Yes, the dancer's left leg predominantly executes quick, intricate, and agile movements close to the ground, while the right leg is often used for wider steps, pushes, and providing a stable, grounded base, which aligns with the concept of power or strength in this context."
+  },
+  {
+    "qid": "0452-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0456-0",
+    "prediction": "The man used a total of **7 nails** in the experiment.\n\n**Explanation:** The video clearly shows the man placing 4 nails into the left mug and 3 nails into the right mug at the beginning (0:01-0:04). These same 7 nails are shown again after being cleaned at the end of the experiment (0:32-0:45)."
+  },
+  {
+    "qid": "0456-1",
+    "prediction": "**Answer:** 6\n**Explanation:** The man places three rusty nails into one mug and three rusty nails into the second mug at the beginning of the experiment. He then shows these same six nails after they have been cleaned by the liquids."
+  },
+  {
+    "qid": "0456-2",
+    "prediction": "Yes, the man used six railroad spikes in total for the experiment. He placed three spikes into the left mug, which he filled with Monster energy drink, and three spikes into the right mug, which he filled with white vinegar. This is clearly visible at the beginning when he puts the spikes into the mugs and confirmed at the end when he pours them out and displays the results for three spikes from each liquid."
+  },
+  {
+    "qid": "0456-3",
+    "prediction": "No, the man did not use 14 nails. He used a total of 6 large nails (railroad spikes), placing 3 in each mug, as clearly shown in the video when he adds them (0:02-0:03) and when they are removed (0:29-0:32)."
+  },
+  {
+    "qid": "0456-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0463-0",
+    "prediction": "The counter starts counting from the **first throw** shown after the \"BASKET COUNTER\" graphic appears on screen (around the 0:08 mark). This first attempt results in a miss, which is recorded by the first circle being marked with a red 'X'."
+  },
+  {
+    "qid": "0463-1",
+    "prediction": "The counter begins counting from the **first throw** attempt made after the \"BASKET COUNTER\" graphic with five empty circles appears on screen (around the 0:07 mark). This first throw results in a miss, marked by the first red 'X' appearing on the leftmost circle of the counter."
+  },
+  {
+    "qid": "0463-2",
+    "prediction": "**No, the counter starts counting from the very first throw.** The video shows the counter marking the first throw as a miss (red X) before the man takes his second shot."
+  },
+  {
+    "qid": "0463-3",
+    "prediction": "**No**, the counter starts from the very first attempt shown in the sequence. It marks both misses (with an X) and successful baskets (with a checkmark) chronologically, beginning with the first throw, which was a miss."
+  },
+  {
+    "qid": "0463-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0466-0",
+    "prediction": "**Answer:** 7\n\n**Explanation:** The video displays a total of 7 distinct images after the initial text overlay. Each of these images utilizes clever perspective (like forced perspective) or precise timing (like aligning objects with the sun or contrails) to create an optical illusion or a \"frozen moment\" effect."
+  },
+  {
+    "qid": "0466-1",
+    "prediction": "**Answer:** 6\n\n**Explanation:** The video contains 6 images that utilize optical illusions, primarily through forced perspective, pareidolia, or fortunate timing/alignment to create misleading or interesting visual effects."
+  },
+  {
+    "qid": "0466-2",
+    "prediction": "Yes, the video contains 6 images that are related to optical illusions.\n\n**Explanation:** The images utilize techniques such as forced perspective to manipulate the perception of size and distance (like the giant seagull or the ant lifting a twig), perfect timing and alignment to create coincidental effects (like the plane giving the sun \"ears\" or the contrail from the Statue of Liberty's torch), and pareidolia (like the bird murmuration forming a shape). These methods create visual effects that trick or play with the viewer's perception, which is characteristic of optical illusions."
+  },
+  {
+    "qid": "0466-3",
+    "prediction": "**No**, the video shows 7 images, all of which are optical illusions created through techniques like forced perspective, alignment, or capturing natural phenomena that trick the eye."
+  },
+  {
+    "qid": "0466-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0468-0",
+    "prediction": "Based on the video clips:\n\nThe **second person** shown in the video (starting around 0:09), who is wearing **black socks** and walking down the **beige/cream carpeted stairs**, successfully walked down the stairs. They completed the descent without falling, unlike the first person (wearing polka-dot socks on grey stairs) who stumbled."
+  },
+  {
+    "qid": "0468-1",
+    "prediction": "Based on the video, the **second person shown (wearing black socks on the beige/lighter-colored carpet)** was able to walk down the stairs successfully.\n\n**Explanation:** The video first shows a person with polka dot socks on grey stairs attempting the challenge and falling. It then cuts to a second person with black socks on lighter stairs who carefully navigates the visually distorted steps and reaches the bottom without falling."
+  },
+  {
+    "qid": "0468-2",
+    "prediction": "The outcome for the second person is **unknown/inconclusive**.\n\n**Explanation:** The video clip featuring the second person ends while they are still descending the stairs. Although they successfully navigated several steps without falling during the visible portion, we cannot see if they reached the bottom successfully."
+  },
+  {
+    "qid": "0468-3",
+    "prediction": "**No**, the first person did not successfully walk down the stairs. They are shown stumbling and losing their balance just before the video clip cuts off abruptly, strongly indicating they fell or could not continue the descent."
+  },
+  {
+    "qid": "0468-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0494-0",
+    "prediction": "**Answer:** 1 kind of scissors.\n**Explanation:** The video clearly shows only one pair of standard scissors being used at the beginning to cut the spiral shape out of the paper."
+  },
+  {
+    "qid": "0494-1",
+    "prediction": "**Answer:** 1\n**Explanation:** The video shows only one pair of standard black-handled scissors being used at the beginning to cut the paper spiral."
+  },
+  {
+    "qid": "0494-2",
+    "prediction": "**No, only one pair of scissors was used in the video.**\n\n**Explanation:** The video clearly shows one pair of scissors being used at the beginning to cut the spiral shape out of the paper. No other scissors appear in the rest of the clip."
+  },
+  {
+    "qid": "0494-3",
+    "prediction": "**No**, three kinds of scissors were not used throughout the video.\n\n**Explanation:** Only one pair of scissors appears at the beginning of the video, used to cut the paper spiral. No other scissors are shown."
+  },
+  {
+    "qid": "0494-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0500-0",
+    "prediction": "**Answer:** 2\n**Explanation:** The video shows one white ping-pong ball (at 0:11) and one orange ping-pong ball (seen at 0:13 and 0:21)."
+  },
+  {
+    "qid": "0500-1",
+    "prediction": "**Answer:** 3\n*   **Explanation:** There is one white ping-pong ball shown being hit between two candles (0:11), one orange ping-pong ball landing on a dart (0:13), and another orange ping-pong ball landing in a blue bottle (0:21), totaling three ping-pong balls."
+  },
+  {
+    "qid": "0500-2",
+    "prediction": "Yes. A white ping-pong ball is used in one trick (0:11), and an orange ping-pong ball is used in two other tricks (0:13, 0:21), making three featured instances."
+  },
+  {
+    "qid": "0500-3",
+    "prediction": "**No**, the video shows three separate instances where a single ping-pong ball is used for a trick shot (around 0:11, 0:13, and 0:21), not four ping-pong balls."
+  },
+  {
+    "qid": "0500-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0501-0",
+    "prediction": "**Answer:** 5 dumplings.\n**Explanation:** At the beginning of the video, when the man in the purple shirt carries the tray to the table, there are clearly five dumplings visible on his plate."
+  },
+  {
+    "qid": "0501-1",
+    "prediction": "There are 5 dumplings on the plate of the man wearing purple. This is clearly visible when he carries the tray to the table at the beginning of the video."
+  },
+  {
+    "qid": "0501-2",
+    "prediction": "**Yes**, the man in the purple shirt initially has 5 soup dumplings on his plate when he carries the tray from the counter and sits down at the table."
+  },
+  {
+    "qid": "0501-3",
+    "prediction": "**Yes**, the man in purple initially has 6 dumplings on his plate when he carries the tray to the table."
+  },
+  {
+    "qid": "0501-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0512-0",
+    "prediction": "The ping-pong ball hit **4 pots** at the beginning of the video.\n\n**Explanation:** The ball rolls off the initial ramp and bounces sequentially off the upside-down bases of four distinct black pots before continuing its journey."
+  },
+  {
+    "qid": "0512-1",
+    "prediction": "**Answer:** 3 pots\n**Explanation:** At the beginning of the video, the ping-pong ball rolls off the initial track and bounces sequentially off the bottoms of three upside-down black pots before continuing on its path."
+  },
+  {
+    "qid": "0512-2",
+    "prediction": "No, the ping-pong ball did not hit seven pots at the beginning of the video. It hit the bottom of four different pots sequentially after rolling down the initial metal track."
+  },
+  {
+    "qid": "0512-3",
+    "prediction": "**No**, the ping-pong ball did not hit only two pots. It clearly bounces off the inverted bottoms of four separate pots in sequence at the beginning of the video."
+  },
+  {
+    "qid": "0512-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0520-0",
+    "prediction": "Based on the video:\n\nThe letters **I**, **V**, and **W** require the minimum number of people, which is one person each."
+  },
+  {
+    "qid": "0520-1",
+    "prediction": "The letters that require the fewest people to form are **I, V, and W**.\n\n**Explanation:** Observing the video, the letters I, V, and W are each formed by a single person, while all other letters require two or three people."
+  },
+  {
+    "qid": "0520-2",
+    "prediction": "Yes, the letters 'I,' 'V,' and 'W' each require only one person to form in the video.\n\n**Explanation:**\nThe video shows:\n*   **'I'** being formed by one person standing straight.\n*   **'V'** being formed by one person sitting and raising their legs into a V-shape.\n*   **'W'** being formed by one person lying on their back and arranging their arms and legs into a W-shape."
+  },
+  {
+    "qid": "0520-3",
+    "prediction": "**Answer:** No, the letter 'I' is not the only one formed by the minimum number of people.\n\n**Explanation:** In the video, the minimum number of people used to form a letter is one. The letters 'I', 'V', and 'W' are all formed by a single person."
+  },
+  {
+    "qid": "0520-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0522-0",
+    "prediction": "**Two men** are seen wearing hats in the video. One man wears a pink novelty helmet/hat, and another man wears a grey baseball cap."
+  },
+  {
+    "qid": "0522-1",
+    "prediction": "**Answer:** 2\n**Explanation:** One man wears a pink unicorn/rhino hat, and another man is seen wearing a grey baseball cap."
+  },
+  {
+    "qid": "0522-2",
+    "prediction": "Yes, there are two men shown wearing hats in the video. One man wears a pink unicorn hat, and another man wears a grey baseball cap."
+  },
+  {
+    "qid": "0522-3",
+    "prediction": "**No**, there are not three men in hats shown in the video.\n\nOnly two men are shown wearing headwear: one wears a pink novelty unicorn/rhino hat, and another briefly appears wearing a grey baseball cap."
+  },
+  {
+    "qid": "0522-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0525-0",
+    "prediction": "**Answer:** 2\n**Explanation:** The video clearly shows a person running into the water and wading on two legs to help the individual in the wheelchair."
+  },
+  {
+    "qid": "0525-1",
+    "prediction": "**Two legs.**\n\n**Explanation:** The video clearly shows a person running/wading through the water on two legs to help the individual in the wheelchair."
+  },
+  {
+    "qid": "0525-2",
+    "prediction": "**No, the person helping has two legs.** Both legs are visible as they run into the water and assist the person in the wheelchair."
+  },
+  {
+    "qid": "0525-3",
+    "prediction": "**Yes, it is true.** The video shows the person assisting running through the floodwater on two legs to reach and help the individual in the wheelchair."
+  },
+  {
+    "qid": "0525-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0526-0",
+    "prediction": "The man is holding **two** lighters.\n\n**Explanation:** He holds a standard orange disposable lighter in one hand and a blue pen-shaped torch lighter in the other hand. Both objects produce a flame."
+  },
+  {
+    "qid": "0526-1",
+    "prediction": "The man is holding **two** lighters. He holds a standard orange lighter in one hand and uses it to light a blue torch lighter held in the other hand."
+  },
+  {
+    "qid": "0526-2",
+    "prediction": "**No**, the man is holding one standard orange lighter in his left hand and an object that looks like a pen in his right hand. He uses the standard lighter to ignite the tip of the pen, which then functions as a torch lighter."
+  },
+  {
+    "qid": "0526-3",
+    "prediction": "No, the man is holding two lighters in the second video clip (00:10-00:16). He holds a standard orange lighter in one hand and uses it to light a blue pen-shaped lighter/torch held in the other hand."
+  },
+  {
+    "qid": "0526-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0530-0",
+    "prediction": "**Answer:** The man in blue kicked the stationary soccer ball placed on the ground.\n\n**Explanation:** In the fifth scene (0:09-0:11), there are three soccer balls. One man kneels holding two balls, while the third ball rests stationary on the grass in front of him. The man in blue runs up and kicks this stationary ball on the ground towards the goal."
+  },
+  {
+    "qid": "0530-1",
+    "prediction": "The man in blue kicked the soccer ball placed on the ground to his left. This was the only ball not being held by the kneeling man."
+  },
+  {
+    "qid": "0530-2",
+    "prediction": "**Answer:** No\n**Explanation:** In the scene starting around 0:10, the man in the blue shirt kicks the leftmost of the three soccer balls, not the middle one."
+  },
+  {
+    "qid": "0530-3",
+    "prediction": "**No**, the man in blue kicked the bottom soccer ball resting on the grass, causing the top ball (held by the kneeling man) to fall after its support was removed."
+  },
+  {
+    "qid": "0530-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0539-0",
+    "prediction": "**Answer:** 5 people.\n**Explanation:** There is a group of four pedestrians on the sidewalk (around 0:07) and one woman standing outside a mail truck (around 0:59) who visibly react with fear or surprise to the masked person."
+  },
+  {
+    "qid": "0539-1",
+    "prediction": "**5**\n\n**Explanation:** There is a group of 4 pedestrians on the sidewalk who are clearly frightened and run away, and 1 postal worker standing at the door of her truck who is startled. (4 + 1 = 5)."
+  },
+  {
+    "qid": "0539-2",
+    "prediction": "**No, that is not true.** The video shows a total of five people outside of cars reacting with fear or surprise (a group of four pedestrians and one person near a mail truck), not six."
+  },
+  {
+    "qid": "0539-3",
+    "prediction": "**False.**\n\nThe video shows a group of four pedestrians reacting fearfully, and later, a mail carrier standing outside her truck also appears startled and scared. This makes a total of five people not in a car who are scared."
+  },
+  {
+    "qid": "0539-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0541-0",
+    "prediction": "There are **12 teeth** shown in the drawing in the video. This is determined by counting the 6 teeth depicted on the upper jaw and the 6 teeth depicted on the lower jaw."
+  },
+  {
+    "qid": "0541-1",
+    "prediction": "**12 teeth:** The drawing consistently shows 6 upper teeth and 6 lower teeth, making a total of 12 teeth visible throughout the video."
+  },
+  {
+    "qid": "0541-2",
+    "prediction": "Yes, there are consistently 10 teeth visible (5 upper, 5 lower) in the drawing throughout the video. Dipping the bag in water creates an optical illusion making the black spots vanish temporarily due to refraction, but the outlines of all 10 teeth remain visible from start to finish."
+  },
+  {
+    "qid": "0541-3",
+    "prediction": "**No**, the number of visible teeth does not decrease to none.\n\n**Explanation:** While the black spots drawn on the teeth disappear when covered by water (due to light refraction and potentially how the drawing is layered inside the bag), the outlines of the teeth themselves remain visible throughout the video."
+  },
+  {
+    "qid": "0541-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0542-0",
+    "prediction": "The scene shown as a metaphor for time passage while the bread cooks is the **Person Relaxing Under Waterfall** (0:48-0:49).\n\n**Explanation:** This brief cutaway shot occurs immediately after the hot coals are placed on the lid of the pan to bake the stromboli. It visually represents the cook taking a break and waiting for the baking process to complete, thus signifying the passage of that cooking time."
+  },
+  {
+    "qid": "0542-1",
+    "prediction": "The wide shot of the waterfall and surrounding nature (0:49).\n\n**Explanation:** This brief cutaway to the steady, natural flow of the waterfall, occurring right after the cooking setup is complete (coals placed on the lid), is a common cinematic technique used to indicate that a period of time is passing while an unseen process (the baking) takes place."
+  },
+  {
+    "qid": "0542-2",
+    "prediction": "**Yes.**\n\nThe scene of the person sitting under the waterfall is placed directly between the moment the stromboli is put on the fire to cook and the moment it is taken off. This editing choice uses the calm, waiting scene to visually represent the passage of time required for the baking process."
+  },
+  {
+    "qid": "0542-3",
+    "prediction": "Yes. The waterfall scene is positioned in the video immediately after the coals are placed on the pan for baking and just before they are removed. This editing choice visually represents the passage of time while the stromboli cooks inside the covered pan over the fire."
+  },
+  {
+    "qid": "0542-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0548-0",
+    "prediction": "The second thing the man clips with the car window is a **cucumber**.\n\n**Explanation:** In the video clip (around 0:08-0:09), the man first holds up a hotdog to the window, and immediately after, he holds up a cucumber and closes the window on it."
+  },
+  {
+    "qid": "0548-1",
+    "prediction": "The second item the man clips with the car window is a **Cucumber**.\n\n**Explanation:** At approximately 0:09 in the video, after clipping a hot dog, the man holds up a long, green, cylindrical vegetable that strongly resembles a cucumber and clips it with the car window."
+  },
+  {
+    "qid": "0548-2",
+    "prediction": "Yes, the man clipped the cucumber with the car window after clipping the sausage. The video shows him first using a sausage (0:08) and then immediately after, a cucumber (0:09) with the closing car window."
+  },
+  {
+    "qid": "0548-3",
+    "prediction": "**No.** The second item the man clips to the car window is a cucumber; the carrot is the third item."
+  },
+  {
+    "qid": "0548-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0551-0",
+    "prediction": "**Answer:** Both switches are in the off position.\n*   **Explanation:** In the scene where the woman is kneeling (around 0:12-0:17), the two rocker switches on the wall plate both have their top portions pressed in, which typically indicates the 'off' state for this type of switch."
+  },
+  {
+    "qid": "0551-1",
+    "prediction": "The switch is a single, white, vertical light switch plate located on the wall to the right of the white door (which has a glass panel) and to the left of the tall brown cabinet. It is positioned roughly in the middle horizontally of the wall space between the door trim and the cabinet, and above the kneeling woman's head height."
+  },
+  {
+    "qid": "0551-2",
+    "prediction": "**No, the switch remains in the same position throughout the scene where the woman is kneeling.** It is static in the background and does not change state."
+  },
+  {
+    "qid": "0551-3",
+    "prediction": "**Yes.** Both switches visible on the wall plate are tilted downwards, indicating they are in the same position."
+  },
+  {
+    "qid": "0551-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0755-0",
+    "prediction": "The material of the sponge is **cake** (likely **sponge cake**).\n\n**Explanation:** The woman bites into and eats the \"sponge,\" and other items presented in the video are later revealed to be cake when cut, indicating it's part of an \"illusion food\" trend where everyday objects are recreated as edible desserts."
+  },
+  {
+    "qid": "0755-1",
+    "prediction": "The sponge shown in the video is an edible item made to look like a real cleaning sponge. It is likely composed primarily of **cake** (for the yellow, porous part) and possibly **fondant, modeling chocolate, or textured icing** (for the green scouring layer), held together and colored with **edible food coloring** and other **confectionery** ingredients."
+  },
+  {
+    "qid": "0755-2",
+    "prediction": "Yes, the sponge in the video is made of an edible material like cake. The woman is shown biting and chewing it, and the video later reveals other objects (like a bowl of noodles and a cleaning bucket) are also hyper-realistic cakes, indicating the sponge is part of this edible illusion theme."
+  },
+  {
+    "qid": "0755-3",
+    "prediction": "**No, the sponge in the video is not made of synthetic materials like polyurethane foam.** The video clearly shows the person biting into the object, revealing it to be an edible cake made to look like a sponge, not an actual cleaning sponge."
+  },
+  {
+    "qid": "0755-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0552-0",
+    "prediction": "**Answer:** 4\n**Explanation:** There are four triangular pieces of toasted bread visible on the plate the person is holding."
+  },
+  {
+    "qid": "0552-1",
+    "prediction": "**4 slices:** There are four slices of toasted bread visible on the plate being held by the person in the kitchen scene."
+  },
+  {
+    "qid": "0552-2",
+    "prediction": "Yes, the person is carrying a plate with three sandwiches, each made from a pair of sliced bread."
+  },
+  {
+    "qid": "0552-3",
+    "prediction": "Yes, the person in the kitchen is carrying four slices of what appear to be toasted sandwiches or bread on the plate."
+  },
+  {
+    "qid": "0552-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0561-0",
+    "prediction": "**Answer:** 7\n*   **Explanation:** The watch is visible on the man's left wrist in 7 out of the 8 time segments shown (2 months, 3 months, 4 months, 5 months, 6 months, 1 year, and 2 years). It is not visible in the \"9 months\" segment because his long sleeve covers his wrist."
+  },
+  {
+    "qid": "0561-1",
+    "prediction": "**Answer:** The man's watch appears in 7 out of the 8 time segments shown in the video.\n\n**Explanation:** The watch is visible on his left wrist in the segments for 2, 3, 4, 5, 6 months, 1 year, and 2 years. It is not visible in the 9-month segment because his sleeve covers his wrist."
+  },
+  {
+    "qid": "0561-2",
+    "prediction": "**No**, the man's watch appears **8 times** in the video. It is visible on his left wrist in each of the distinct time segments shown (2 months, 3 months, 4 months, 5 months, 6 months, 9 months, 1 year, and 2 years)."
+  },
+  {
+    "qid": "0561-3",
+    "prediction": "No, the man's watch does not appear 10 times. It appears 8 times, once in each of the distinct time segments shown in the video (2 months, 3 months, 4 months, 5 months, 6 months, 9 months, 1 year, 2 years)."
+  },
+  {
+    "qid": "0561-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0566-0",
+    "prediction": "Based on the narration emphasizing the \"obvious\" effectiveness of using both products, the broken plant pot scene serves as a visual metaphor for the mess or residue that might be left after an initial cleaning attempt (like using only toilet paper). Sweeping the dirt illustrates an action that may not achieve complete cleanliness, thereby setting up the contrast and highlighting why the combined use of toilet paper and wipes provides a superior, \"obvious\" clean."
+  },
+  {
+    "qid": "0566-1",
+    "prediction": "The purpose of showing the broken pot of plant being swept up is primarily as a **metaphor for incomplete cleaning**. It's part of a montage illustrating various types of messes, and the act of sweeping the dry dirt visually represents a cleaning method (analogous to using only dry toilet paper) that might remove the bulk of the mess but potentially leaves behind fine residue, thus setting up the need for a more thorough solution like the advertised wet wipes."
+  },
+  {
+    "qid": "0566-2",
+    "prediction": "Yes, the scenes with the broken pot of plant symbolize the mess and the ineffective cleaning process of using rolled toilet paper.\n\n**Explanation:**\n\nThe advertisement juxtaposes scenes representing difficult-to-clean messes (like the spilled soil from the broken pot being swept inefficiently) with the act of using only dry toilet paper. This visual metaphor suggests that dry paper alone is insufficient for achieving a thorough clean, much like the small brush struggles to completely remove the scattered soil. The subsequent introduction of wet wipes, followed by scenes representing cleanliness and effectiveness, reinforces the message that combining both products offers a superior solution."
+  },
+  {
+    "qid": "0566-3",
+    "prediction": "Yes, the scenes with the broken pot plant serve as a visual metaphor within the ad. The act of cleaning up the spilled dirt symbolizes the thorough and effective cleaning job that Neve toilet paper and wipes accomplish, comparing personal cleanup to tidying a physical mess."
+  },
+  {
+    "qid": "0566-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0567-0",
+    "prediction": "The third person in the video, the woman preparing the healthy food, has **long, dark hair** (appearing black or very dark brown)."
+  },
+  {
+    "qid": "0567-1",
+    "prediction": "**Black/Very Dark Brown:** The third individual shown in the video, a woman preparing food, has long hair that appears black or a very dark shade of brown under the lighting conditions."
+  },
+  {
+    "qid": "0567-2",
+    "prediction": "Yes, the third person shown in the video is the woman with long black hair who appears after the two men and proceeds to make and distribute healthy food."
+  },
+  {
+    "qid": "0567-3",
+    "prediction": "**No**, the third person shown in the video is a woman with long, dark hair. The man with blonde hair and dark roots appears first in the video."
+  },
+  {
+    "qid": "0567-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0571-0",
+    "prediction": "The man is wearing a ring on the **ring finger of his right hand**."
+  },
+  {
+    "qid": "0571-1",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0571-2",
+    "prediction": "**No**, the man is not wearing a ring on the middle finger of his left hand.\n\n**Explanation:** Throughout the video, the man's left hand (the one on the right side of the screen as he holds the objects) is visible, showing tattoos on the fingers but no ring on the middle finger. A ring is clearly visible on the ring finger of his *right* hand."
+  },
+  {
+    "qid": "0571-3",
+    "prediction": "**Yes.**\n\n**Explanation:** The video clearly shows a ring on the ring finger (the fourth finger) of the man's right hand in multiple shots, particularly when he is holding the optical illusion objects between 0:00-0:02 and 0:29-0:49."
+  },
+  {
+    "qid": "0571-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0575-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0575-1",
+    "prediction": "The two things associated with the little girl's feet are **pink flip-flops** and a **smartphone**.\n\n*   **Explanation:** The girl is visibly wearing a pair of pink flip-flops. When the man lifts her right foot, a black smartphone is revealed hidden underneath the flip-flop she was standing on."
+  },
+  {
+    "qid": "0575-2",
+    "prediction": "**No**, the item on the girl's foot is a pink slipper. The phone was found lying on the ground *underneath* the slipper when the man lifted it. It was not a phone case shaped like a slipper being worn on her foot."
+  },
+  {
+    "qid": "0575-3",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0575-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0576-0",
+    "prediction": "The girl labeled \"GEN-Z\" (on the right) uses a belt. She adds a black belt over her grey sweater."
+  },
+  {
+    "qid": "0576-1",
+    "prediction": "The person labelled \"GEN-Z\" is wearing a belt. They put it on over their grey sweater to cinch the waist before adding the blazer."
+  },
+  {
+    "qid": "0576-2",
+    "prediction": "Yes, the GEN-Z girl is the one using a belt in the video. She adds a black belt over her grey sweater around the 0:07 mark."
+  },
+  {
+    "qid": "0576-3",
+    "prediction": "**No**, the millennial girl is not the one using a belt. The video shows the girl labeled \"GEN-Z\" adding a belt over her grey sweater, while the \"millennial\" girl does not wear one."
+  },
+  {
+    "qid": "0576-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0578-0",
+    "prediction": "**7 people**\n\n**Explanation:** The video clearly shows the two main characters (the man doing parkour and the Mr. Bean character), two construction workers on the rooftop (one operating the lift, one nearby), and at least three distinct background individuals in the final alley scene."
+  },
+  {
+    "qid": "0578-1",
+    "prediction": "**8 individuals**\n\nThis includes the two men performing parkour, Mr. Bean, the two construction workers on the roof, and the three people seen in the background alleyway at the end."
+  },
+  {
+    "qid": "0578-2",
+    "prediction": "Yes, there are 8 people visible in the video.\n\n**Explanation:** The count includes the man performing parkour, the man in the suit (Johnny English/Mr. Bean), two construction workers on the roof during the jump, one construction worker operating the lift, and three additional people visible in the background during the final alley scene."
+  },
+  {
+    "qid": "0578-3",
+    "prediction": "**Yes.**\n\nThe video shows two main characters, several distinct construction workers on rooftops and a lift, and multiple bystanders in the final alley scene. Summing the clearly identifiable individuals brings the count close to ten, and the crowded nature of the alley scene makes it highly probable that at least ten people appear in total across the different clips."
+  },
+  {
+    "qid": "0578-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0580-0",
+    "prediction": "**Answer:** The girl took **3 steps** running up the wall before reaching the top.\n\n**Explanation:**\n1. Her first step onto the wall is with her right foot.\n2. Her second step onto the wall is with her left foot.\n3. Her third and final step onto the wall is with her right foot, which she uses to push off and grab the ledge."
+  },
+  {
+    "qid": "0580-1",
+    "prediction": "**Answer:** 5 steps.\n\n**Explanation:** The girl takes five distinct steps on the surface of the warped wall before grabbing the top ledge."
+  },
+  {
+    "qid": "0580-2",
+    "prediction": "**Yes, the girl ran four steps before she reached the top.**\n\n*   **Explanation:** By carefully watching her feet make contact with the warped wall surface, you can count four distinct steps (right, left, right, left) before she jumps and grabs the top edge."
+  },
+  {
+    "qid": "0580-3",
+    "prediction": "**No, the girl did not run five steps before she reached the top.**\n\nShe took six steps up the warped wall before grabbing the top edge."
+  },
+  {
+    "qid": "0580-7",
+    "prediction": "B"
+  }
+]

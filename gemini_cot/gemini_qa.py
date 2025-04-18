@@ -8,73 +8,119 @@ from gemini import Gemini
 import time
 import pandas as pd
 
-# def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperature=0):
+
+# def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperature=0, local_video_path=None, iterate_prompt=""):
 #     gemini = Gemini()
 #     predictions = []
 
 #     for question in questions:
-#         for attempt in range(2):  # try once, then retry after error
+#         for attempt in range(2):  # 1st: YouTube, 2nd: upload fallback (403 only)
 #             try:
 #                 print(f"Asking: {question}")
-#                 output = gemini.generate_from_video(video_uri, [question], temperature=temperature, num_repeats=num_repeats)[0]
+#                 output = gemini.generate_from_video(
+#                     video_uri, [question],
+#                     temperature=temperature,
+#                     iterate_prompt=iterate_prompt
+#                 )[0]
 #                 print(output)
 #                 predictions.append(output)
-#                 break  # success!
+#                 break
 #             except Exception as e:
-#                 print(f"Error on question: {question}\n: {e}")
-#                 if attempt == 0:
-#                     print(f"Waiting {wait_time}s before retrying...")
-#                     time.sleep(wait_time)
+#                 err_str = str(e)
+#                 is_403 = "403" in err_str or "PERMISSION_DENIED" in err_str
+
+#                 print(f"Error on question: {question}\n→ {err_str}")
+
+#                 if attempt == 0 and is_403 and local_video_path:
+#                     try:
+#                         print(f"403 PERMISSION_DENIED — uploading and generating from local file: {local_video_path}")
+#                         output = gemini.generate_from_uploaded_video_file(local_video_path, question, temperature=temperature, iterate_prompt=iterate_prompt)
+#                         print(output)
+#                         predictions.append(output)
+#                         break
+#                     except Exception as upload_err:
+#                         print(f"Upload fallback failed: {upload_err}")
+#                         predictions.append("Error")
+#                         break
 #                 else:
-#                     print("Failed after retry.")
 #                     predictions.append("Error")
-#         # Enforce delay after each question regardless of success or fail
+#                     break
+
 #         time.sleep(wait_time)
 
 #     return predictions
 
 
-def gemini_video_fn(video_uri, questions, num_repeats=1, wait_time=65, temperature=0, local_video_path=None):
+def gemini_video_fn(
+    video_uri,
+    questions,
+    num_repeats=1,
+    wait_time=30,
+    temperature=0,
+    local_video_path=None,
+    iterate_prompt="",
+    video_upload=False  
+):
     gemini = Gemini()
     predictions = []
 
     for question in questions:
-        for attempt in range(2):  # 1st: YouTube, 2nd: upload fallback (403 only)
+        if video_upload:
             try:
-                print(f"Asking: {question}")
-                output = gemini.generate_from_video(
-                    video_uri, [question],
+                print(f"(Upload-only mode) Asking: {question}")
+                output = gemini.generate_from_uploaded_video_file(
+                    local_video_path, question,
                     temperature=temperature,
-                    num_repeats=num_repeats
-                )[0]
+                    iterate_prompt=iterate_prompt,
+                    wait_time=wait_time
+                )
                 print(output)
                 predictions.append(output)
-                break
             except Exception as e:
-                err_str = str(e)
-                is_403 = "403" in err_str or "PERMISSION_DENIED" in err_str
+                print(f"Upload-only failed: {e}")
+                predictions.append("Error")
+        else:
+            for attempt in range(2):  # 1st: YouTube, 2nd: upload fallback
+                try:
+                    print(f"Asking: {question}")
+                    output = gemini.generate_from_video(
+                        video_uri, [question],
+                        temperature=temperature,
+                        iterate_prompt=iterate_prompt,
+                        wait_time=wait_time
+                    )[0]
+                    print(output)
+                    predictions.append(output)
+                    break
+                except Exception as e:
+                    err_str = str(e)
+                    is_403 = "403" in err_str or "PERMISSION_DENIED" in err_str
 
-                print(f"Error on question: {question}\n→ {err_str}")
+                    print(f"Error on question: {question}\n→ {err_str}")
 
-                if attempt == 0 and is_403 and local_video_path:
-                    try:
-                        print(f"403 PERMISSION_DENIED — uploading and generating from local file: {local_video_path}")
-                        output = gemini.generate_from_uploaded_video_file(local_video_path, question, temperature=temperature)
-                        print(output)
-                        predictions.append(output)
-                        break
-                    except Exception as upload_err:
-                        print(f"Upload fallback failed: {upload_err}")
+                    if attempt == 0 and is_403 and local_video_path:
+                        try:
+                            print(f"403 PERMISSION_DENIED — uploading and generating from local file: {local_video_path}")
+                            output = gemini.generate_from_uploaded_video_file(
+                                local_video_path, question,
+                                temperature=temperature,
+                                iterate_prompt=iterate_prompt,
+                                wait_time=wait_time
+                            )
+                            print(output)
+                            predictions.append(output)
+                            break
+                        except Exception as upload_err:
+                            print(f"Upload fallback failed: {upload_err}")
+                            predictions.append("Error")
+                            break
+                    else:
                         predictions.append("Error")
                         break
-                else:
-                    predictions.append("Error")
-                    break
 
         time.sleep(wait_time)
 
     return predictions
-
 
 def format_gemini_prompt(question, prompt):
     return f"""\
@@ -90,7 +136,10 @@ def process_all_video_questions_list_gemini(
     video_dir="Benchmark-AllVideos-HQ-Encoded-challenge",
     batch_size=5,
     temperature=0,
-    filter_qids=None
+    filter_qids=None,
+    iterate_prompt="",
+    video_upload=False,
+    wait_time=30
 ):
     """
     Processes grouped questions per video using a vision-language model.
@@ -140,7 +189,7 @@ def process_all_video_questions_list_gemini(
                 print(f"Failed to build question for QID {qid}: {e}")
                 predictions.append({"qid": qid, "prediction": "Error"})
         try:
-            outputs = gemini_video_fn(video_path, questions, num_repeats=iterations, temperature=temperature, local_video_path=video_mp4)
+            outputs = gemini_video_fn(video_path, questions, num_repeats=iterations, wait_time=wait_time, temperature=temperature, local_video_path=video_mp4, iterate_prompt=iterate_prompt, video_upload=video_upload)
             print(outputs)
         except Exception as e:
             print(f"Error on video {video_id}: {e}")
@@ -320,7 +369,10 @@ def process_all_video_questions_list_gemini_df(
     video_dir="Benchmark-AllVideos-HQ-Encoded-challenge",
     batch_size=5,
     temperature=0,
-    filter_qids=None
+    filter_qids=None,
+    iterate_prompt="",
+    video_upload=False,
+    wait_time=30
 ):
     """
     Processes grouped questions per video using a vision-language model.
@@ -381,8 +433,11 @@ def process_all_video_questions_list_gemini_df(
                 video_uri=video_url,
                 questions=questions,
                 num_repeats=iterations,
+                wait_time=wait_time,
                 temperature=temperature,
-                local_video_path=local_video_path
+                local_video_path=local_video_path,
+                iterate_prompt=iterate_prompt,
+                video_upload=video_upload
             )
             print(outputs)
         except Exception as e:
