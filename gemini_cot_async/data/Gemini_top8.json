@@ -2638,5 +2638,185 @@
   {
     "qid": "0675-7",
     "prediction": "B"
+  },
+  {
+    "qid": "0679-0",
+    "prediction": "**Answer:** The lady feels shocked and surprised.\n\n**Explanation:** Her wide-open mouth, wide eyes, and fixed stare at the now seatless stool post are clear indicators of shock and surprise in reaction to the man unexpectedly unscrewing and taking the stool seat."
+  },
+  {
+    "qid": "0679-1",
+    "prediction": "**Reaction:** Shock and Bewilderment.\n\n**Explanation:** The woman's eyes widen significantly and her mouth drops open as she witnesses the man remove the top of the stool. She stops eating and stares in disbelief at the remaining stool pole, eventually pointing at it, indicating both shock at the unexpected event and bewilderment as to why or how it happened."
+  },
+  {
+    "qid": "0679-2",
+    "prediction": "Yes, the woman feels surprised at the end of the video. Her facial expression, with her mouth wide open and eyes widened in shock, clearly indicates surprise when she notices the man has removed the top of the stool he was sitting on."
+  },
+  {
+    "qid": "0679-3",
+    "prediction": "**No, the woman does not appear upset or frustrated.**\n\nHer reaction, characterized by wide eyes, an open mouth, and pointing at the broken stool, clearly indicates shock and surprise at the sudden and unexpected event, rather than anger or frustration."
+  },
+  {
+    "qid": "0679-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0689-0",
+    "prediction": "Based on the video, the man in the purple T-shirt changed the other man's lock screen wallpaper to his own photo primarily **as a prank intended for humor and to create entertaining social media content.**\n\n**Explanation:** The act is clearly a practical joke designed to get a surprised reaction from his friend. The prankster's laughter and wink towards the camera at the end strongly suggest the entire interaction was filmed specifically to be shared online as a funny video."
+  },
+  {
+    "qid": "0689-1",
+    "prediction": "Based on the video, the man in the purple T-shirt altered the lock screen wallpaper primarily **as a simple, harmless prank for fun and amusement, aiming to playfully tease his friend and get a surprised or confused reaction.** It's also highly likely this was done **to create entertaining social media content**, given the filming style and the prankster's interaction with the camera at the end."
+  },
+  {
+    "qid": "0689-2",
+    "prediction": "Yes, the man in the purple T-shirt changed the lock screen wallpaper to his own photo.\n\n**Explanation:** The video shows him taking the phone, selecting a photo of himself from the gallery, using a menu option to set it as the wallpaper/lock screen, and then showing the phone back to the original owner, who reacts with surprise and confusion."
+  },
+  {
+    "qid": "0689-3",
+    "prediction": "**Yes.** The video shows the man in the purple T-shirt selecting his own photo on the other person's phone, navigating the settings to set it as the lock screen wallpaper, and then revealing the change to the phone's owner while laughing and winking, clearly indicating it was done as a prank."
+  },
+  {
+    "qid": "0689-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0690-0",
+    "prediction": "The child is lying on the ground to watch the shell game her parents are playing on the coffee table directly above her. Her position gives her a unique, upward view of the game, and it appears to be part of a staged skit or video the family is creating."
+  },
+  {
+    "qid": "0690-1",
+    "prediction": "Based on the video, the best reason the child is on the floor is that it's **part of a game or skit the family is filming for comedic effect.**\n\n**Explanation:** The presence of the phone on a stand recording the scene, combined with the adults' exaggerated actions during the shell game and the child's unusual but seemingly intentional position directly under the table, strongly suggests they are creating staged content, likely for entertainment or social media, and her placement adds to the humor or uniqueness of the video."
+  },
+  {
+    "qid": "0690-2",
+    "prediction": "Yes, the child is lying on the ground to secretly take the money during the trick.\n\n**Explanation:** The child's position on the floor provides the necessary cover and proximity to reach under the table or bowl and remove the money while the adults are distracted by the shell game. The video shows the child reaching towards the table area just before the money is revealed to be missing, indicating their active participation in the staged trick."
+  },
+  {
+    "qid": "0690-3",
+    "prediction": "The child is lying on the ground as part of **playing**.\n\n**Explanation:** The child is actively looking up at the adults and the shell game they are playing on the coffee table. Her position and focused gaze indicate she is observing or participating as an audience member in the playful activity, rather than simply relaxing or resting."
+  },
+  {
+    "qid": "0690-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0695-0",
+    "prediction": "**The woman won the game.**\n\nShe successfully arranged her top row of cups (Orange, Green, Purple, Blue) to perfectly match the bottom row before the man did, and the off-camera voice confirmed her win by saying, \"You got it!\""
+  },
+  {
+    "qid": "0695-1",
+    "prediction": "**The woman won the competition.**\n\n**Explanation:** The game requires players to arrange four colored cups in a specific, hidden order. An off-screen voice announces how many cups are in the correct position after each attempt. The woman, on her final turn (around 0:41), arranged the cups as Orange, Green, Purple, Blue, and the voice announced \"4,\" indicating all cups were correctly placed. She celebrated immediately after, confirming her win. The man never achieved a score of 4."
+  },
+  {
+    "qid": "0695-2",
+    "prediction": "**Yes, the woman won the game because she arranged her cups in the correct order.** The off-screen voice announced \"Four\" after her final turn, signifying that all four of her cups were in the correct positions, matching the hidden sequence and thus winning the game."
+  },
+  {
+    "qid": "0695-3",
+    "prediction": "No, the man did not win the game. The woman won because she was the first to correctly arrange her cups to match the hidden sequence, achieving a score of \"Four\". The game is won by correctly matching the sequence, not by the speed at which the cups are arranged during a turn."
+  },
+  {
+    "qid": "0695-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0706-0",
+    "prediction": "The purpose of the man's actions in the first half of the video is **to capture the raw footage and specific movements needed as the base layer for a special effects video.**\n\n**Explanation:** He is performing choreographed actions in front of the camera, which are then shown in the second half with added visual effects (like energy, a duplicate figure, and environmental effects) to create a short action/fantasy sequence."
+  },
+  {
+    "qid": "0706-1",
+    "prediction": "Based on the video, the man is recording himself performing specific, dynamic actions and poses on the beach. This footage is intended to be the base layer or raw material onto which visual effects (like the clone, energy bursts, and ground cracking seen later) will be added during post-production to create the final edited video clip."
+  },
+  {
+    "qid": "0706-2",
+    "prediction": "**Yes**, the man in the first half of the video is shooting footage for a video with special effects.\n\n**Explanation:** The first half shows the man performing specific, dynamic actions in front of a camera on a tripod. The second half reveals the final product where visual effects (like a shadow clone, energy bursts, and ground cracking) have been added to that exact footage, demonstrating that the initial filming was done specifically to create the special effects sequence."
+  },
+  {
+    "qid": "0706-3",
+    "prediction": "**Yes**, the man is setting up a camera on a tripod to record himself. The video shows him adjusting the camera, stepping back, and then performing dynamic movements that resemble martial arts or fight choreography in front of the camera."
+  },
+  {
+    "qid": "0706-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0707-0",
+    "prediction": "The purpose of the person running towards the camera is **to create a dynamic transition and prominently showcase the drink.**\n\n**Explanation:** The run adds energy to the performance and directs the viewer's attention. It culminates in bringing the drink very close to the camera, making it the clear focal point of that moment in the video."
+  },
+  {
+    "qid": "0707-1",
+    "prediction": "The person runs towards the camera to showcase the drink he is holding and to create a dynamic video transition effect, moving the drink closer to fill the frame before cutting to a close-up shot of it."
+  },
+  {
+    "qid": "0707-2",
+    "prediction": "**No.** The close-up of the drink is a separate shot that was clearly edited into the video during post-production. It wasn't captured by the person running towards the camera in the main wide shot; the abrupt cut and different framing indicate it's a distinct clip inserted later."
+  },
+  {
+    "qid": "0707-3",
+    "prediction": "No, the person runs *away* from the camera. His specific introductory action is holding up his drink and pointing towards it/himself while facing the camera immediately after starting the recording."
+  },
+  {
+    "qid": "0707-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0708-0",
+    "prediction": "The cat screams in comedic frustration because its plan to destroy all the bath products was completely foiled when the owner revealed a large bag full of replacements, rendering the cat's destructive efforts futile."
+  },
+  {
+    "qid": "0708-1",
+    "prediction": "The cat is yelling out of exaggerated horror and frustration at the sight of numerous new bath products.\n\n**Explanation:** The video shows the cat disliking its bath and causing chaos with bath products. When the owner reveals a large haul of *new* bath items, the cat's final \"yell\" (likely a hiss or yawn edited for comedic effect) signifies its mock despair and protest at the anticipation of many more unwanted baths."
+  },
+  {
+    "qid": "0708-2",
+    "prediction": "Yes.\n\n**Explanation:** The video's humorous narrative shows the cat seemingly taking revenge for bath time by destroying bath products. The edited \"scream\" at the end occurs immediately after the owner reveals a large new supply of the same type of products, implying the cat is reacting with exaggerated dismay or frustration to its destructive efforts being instantly negated."
+  },
+  {
+    "qid": "0708-3",
+    "prediction": "No, the cat is not screaming because it is upset about the mess.\n\n**Explanation:** The video shows the cat deliberately pushing the bath products into the tub, thereby creating the mess itself. The final shot of the cat \"screaming\" (which is likely an edited clip of a hiss or yawn) is used for comedic effect to portray mischievousness or defiance, not genuine upset about the situation it caused."
+  },
+  {
+    "qid": "0708-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0721-0",
+    "prediction": "**Answer:** The man in sunglasses appears to be holding a LOT Polish Airlines airplane (likely a Boeing 787 Dreamliner).\n\n**Explanation:** The video clip at 0:23 uses forced perspective to create an optical illusion where the man, standing on the ground with his hand raised, looks like he is holding the large passenger airplane flying low in the sky above him. The airline LOT is clearly visible on the aircraft."
+  },
+  {
+    "qid": "0721-1",
+    "prediction": "He is holding his left hand palm-up directly beneath a low-flying airplane, while extending his right arm out, using forced perspective to create the optical illusion that he is supporting or holding the aircraft while posing for a photo."
+  },
+  {
+    "qid": "0721-2",
+    "prediction": "**No, the man is not actually holding the airplane.** This is a photographic illusion called forced perspective, where the man is much closer to the camera than the distant airplane, making it appear as if he is interacting with it."
+  },
+  {
+    "qid": "0721-3",
+    "prediction": "No, the man in sunglasses is not holding a toy airplane. This is an example of forced perspective photography, where a real, full-sized airplane in the background is aligned with the man's hand in the foreground to create an optical illusion, making it appear as though he is holding it."
+  },
+  {
+    "qid": "0721-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0724-0",
+    "prediction": "The pen appears to pass through the banknote without breaking it because it's an illusion created by a specific folding technique. The pen doesn't actually pierce the paper.\n\nThe banknote is folded to create a hidden channel or gap. A common method is to fold the note in half lengthwise, then fold it widthwise, but ensuring one half is slightly offset or tucked behind the other. This creates a space *behind* the visible front surface of the note, through which the pen is slid, giving the illusion of penetration without causing any damage."
+  },
+  {
+    "qid": "0724-1",
+    "prediction": "Okay, here's how the banknote is folded for the pen trick:\n\n1.  **Fold Lengthwise:** The banknote is first folded in half along its length.\n2.  **Fold Widthwise (with a Gap):** It's then folded in half widthwise, but this fold is done *imperfectly*. The edges are slightly offset or misaligned so that a small gap or channel is created along this central widthwise crease.\n\n**Explanation:** The pen doesn't actually pierce the paper. It slides through the hidden gap created by the misaligned widthwise fold."
+  },
+  {
+    "qid": "0724-2",
+    "prediction": "Yes, the banknote remains intact because the pen goes through the opening created by folding the banknote, not through the middle of the paper itself. This creates the illusion that the pen has pierced the note without actually damaging it."
+  },
+  {
+    "qid": "0724-3",
+    "prediction": "**Yes.** The banknote is not broken because the pen is a specially designed magic prop. It typically has a hidden mechanism, such as separating into two pieces (often held by magnets) or containing a slot, which allows the folded banknote to be positioned *within* the pen's structure, creating the illusion that the pen has passed through it without causing any damage."
+  },
+  {
+    "qid": "0724-7",
+    "prediction": "C"
   }
 ]
