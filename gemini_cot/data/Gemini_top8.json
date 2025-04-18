@@ -2058,5 +2058,325 @@
   {
     "qid": "0580-7",
     "prediction": "B"
+  },
+  {
+    "qid": "0588-0",
+    "prediction": "**Answer:** 4 drawers.\n\n**Explanation:** The white table visible around the 0:08 mark, which has the globe on top, clearly shows two smaller drawers across the top row and two larger drawers below them, totaling four drawers."
+  },
+  {
+    "qid": "0588-1",
+    "prediction": "**Answer:** 4\n\n**Explanation:** The white dresser visible between 0:07 and 0:10 has two small drawers on the top row and two larger drawers below them, for a total of four drawers."
+  },
+  {
+    "qid": "0588-2",
+    "prediction": "Yes, the white desk with the globe on top has five drawers. There are two smaller drawers across the top and three larger drawers stacked vertically below them."
+  },
+  {
+    "qid": "0588-3",
+    "prediction": "**Yes**, the desk with the globe has four drawers.\n\n*   **Explanation:** The video shows the white desk has two smaller drawers across the top and two larger drawers below them."
+  },
+  {
+    "qid": "0588-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0589-0",
+    "prediction": "No, the person did not eat all the chocolate in six hours.\n\nWhile the video uses time markers showing the chocolate disappearing by the 6-hour mark, consuming such a large quantity (stated as 100 liters worth) in that timeframe is physically unrealistic. The video likely uses editing techniques like time-lapses or cuts, and the displayed duration is part of the performance rather than the actual time taken."
+  },
+  {
+    "qid": "0589-1",
+    "prediction": "**No.** The video explicitly shows a timestamp of \"6 hours\" while a significant amount of chocolate is still left in the tank."
+  },
+  {
+    "qid": "0589-2",
+    "prediction": "**No.** At the 6-hour mark shown in the video (around 0:06-0:09), the level of chocolate remaining in the tank is visibly well below the halfway point, indicating that significantly more than half had already been consumed."
+  },
+  {
+    "qid": "0589-3",
+    "prediction": "**No.**\n\nThe video shows time markers up to \"6 hours\" during the chocolate eating segment. The \"12 hours\" timestamp appears at the end of the *second* challenge, which involved drinking coconut water with a fork."
+  },
+  {
+    "qid": "0589-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0590-0",
+    "prediction": "At the end of the video, the man in the black jacket screamed because the man in the red sweater placed a large toy spider directly on his forehead after he had fallen down the stairs."
+  },
+  {
+    "qid": "0590-1",
+    "prediction": "The man in the black jacket screamed because the man in the red sweater placed a large (likely fake) spider directly on his forehead after he had fallen down the stairs. This was the final trap set for him, causing him to scream out of shock, surprise, and fear upon seeing it."
+  },
+  {
+    "qid": "0590-2",
+    "prediction": "Yes, the man in the black jacket screamed because the man in the red shirt placed a toy spider on his face while he was lying on the floor at the bottom of the stairs after being chased."
+  },
+  {
+    "qid": "0590-3",
+    "prediction": "**No**, the man in the black jacket screamed because the other man placed a large fake spider directly on his face while he was lying on the ground at the bottom of the stairs."
+  },
+  {
+    "qid": "0590-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0595-0",
+    "prediction": "The boy (Michiel) scored with the large blue exercise ball, the soccer ball, and the tennis ball. The video shows him successfully getting each of these items into the pool, and the on-screen scoreboard confirms each successful attempt with a green checkmark next to the corresponding icon under his name."
+  },
+  {
+    "qid": "0595-1",
+    "prediction": "The boy (Michiel) used the **Blue Ball, Soccer Ball, and Tennis Ball** to score.\n\n*Explanation:* The video shows Michiel successfully getting the blue ball, then the soccer ball, and finally the tennis ball into the net next to the pool. Each successful shot is marked with a green checkmark above the corresponding ball icon under his name."
+  },
+  {
+    "qid": "0595-2",
+    "prediction": "**Answer:** Yes.\n**Explanation:** The video shows Michiel successfully scoring with the blue exercise ball (kicking it in), the soccer ball (heading it in), and the tennis ball (throwing it in). The on-screen scoreboard confirms his success with green checkmarks for all three attempts."
+  },
+  {
+    "qid": "0595-3",
+    "prediction": "**No**, the boy did not score with a basketball, volleyball, or baseball.\n\n**Explanation:** The video clearly shows the boy (Michiel) scoring goals by throwing or kicking a large blue exercise ball, a soccer ball, and a tennis ball into the net before falling into the pool. These are the items indicated by the icons next to his name, not the balls mentioned in the question."
+  },
+  {
+    "qid": "0595-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0597-0",
+    "prediction": "Based on the video, the person holding the camera is:\n\n**Actively filming outdoors while running or jogging backwards, facing the subjects to follow their action. This requires physical capability, balance, and coordination.**"
+  },
+  {
+    "qid": "0597-1",
+    "prediction": "The person operating the camera is an unseen individual running backwards in front of the actors.\n\n**Explanation:** The video consistently shows the subjects running towards the camera's point of view, indicating the camera operator must be moving backward at a similar speed to keep them framed throughout the various skits."
+  },
+  {
+    "qid": "0597-2",
+    "prediction": "**Answer:** No. The person holding the camera (the photographer) is wearing white sneakers, but their jacket appears to be beige or tan, not light gray."
+  },
+  {
+    "qid": "0597-3",
+    "prediction": "**Answer:** No, it is not possible to determine if the person holding the camera is wearing a white t-shirt and black sneakers.\n\n**Explanation:** The video is filmed from a first-person perspective, meaning the person holding the camera is not visible in the footage. While their shadow can sometimes be seen, it lacks the detail needed to confirm the specific items or colors of their clothing and shoes."
+  },
+  {
+    "qid": "0597-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0600-0",
+    "prediction": "**Buttocks / Rear End.**\n\n**Explanation:** The video shows the boy losing his balance while attempting the trick. He bends forward at the waist, and the large orange ball, positioned behind him, rolls forward and strikes him squarely on his buttocks/rear end area."
+  },
+  {
+    "qid": "0600-1",
+    "prediction": "The orange ball made contact with the boy's **right foot** when he intentionally kicked it forward."
+  },
+  {
+    "qid": "0600-2",
+    "prediction": "**No:** The orange ball remains stationary on the ground throughout the video and does not hit the boy."
+  },
+  {
+    "qid": "0600-3",
+    "prediction": "**No.** The boy kicks the orange ball forward, and it rolls away from him along the grass. It does not hit him on the back."
+  },
+  {
+    "qid": "0600-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0603-0",
+    "prediction": "Based on the video, the person who failed twice in a row (at 0:31 and 0:41) and lost their final heart-shaped pattern has the following characteristics:\n\n*   Wears a Blue T-shirt and Blue Track Pants (with white stripes).\n*   Is Barefoot.\n*   Has Dark Hair and Facial Hair.\n*   Performs Acrobatic Moves (like flips/tumbles) within a Blue Hoop.\n*   Loses Blue Pixelated Hearts when failing.\n*   Gets Splashed with Water from a blue balloon upon his final loss."
+  },
+  {
+    "qid": "0603-1",
+    "prediction": "Based on the video, the person who failed twice in a row and lost the final heart-shaped pattern:\n\n*   Wears a blue t-shirt.\n*   Is barefoot.\n*   Has short, dark hair, a beard, and a mustache.\n*   Uses the blue hula hoop.\n*   Is associated with the blue balloon and blue heart icons.\n*   Fails on two consecutive attempts involving non-backflip acrobatic moves (around 0:29 and 0:39).\n*   Gets splashed with water when his final blue balloon pops."
+  },
+  {
+    "qid": "0603-2",
+    "prediction": "**Yes**, the person in the blue shirt and dark blue pants failed their stunt attempt at 0:31 and failed again on their next turn at 0:40, thus failing twice in a row relative to their own turns and losing their last two hearts."
+  },
+  {
+    "qid": "0603-3",
+    "prediction": "**No.**\n\n**Explanation:** The person wearing the red shirt with the white 'm' logo and standing in the pink hula hoop failed twice during the game (at 0:02 and 0:18), but these failures were not consecutive. The person who failed twice in a row was the player wearing the blue shirt and standing in the blue hula hoop (at 0:32 and 0:42), which resulted in them losing the game."
+  },
+  {
+    "qid": "0603-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0607-0",
+    "prediction": "At the end of the video, the man is falling from the ceiling.\n\n*Explanation:* The device anchoring his right foot to the ceiling breaks loose, causing him to lose support and begin falling downwards as the video cuts off."
+  },
+  {
+    "qid": "0607-1",
+    "prediction": "The man is actually right-side up on the floor, performing a handstand variation with his hands on the black objects. The video has been rotated 180 degrees to create the illusion that he is hanging from the ceiling."
+  },
+  {
+    "qid": "0607-2",
+    "prediction": "**No.**\n\nThe man is hanging upside down from the actual ceiling using specialized gear attached to his feet. Evidence includes the basketball falling downwards towards the floor (away from him), the normal orientation of furniture on the floor below him, balloons floating upwards towards the ceiling he is attached to, and his eventual fall downwards when one foot detaches."
+  },
+  {
+    "qid": "0607-3",
+    "prediction": "**No**, the man is hanging upside down from the ceiling. He is gripping devices attached to the ceiling with his hands, not standing on equipment with his feet."
+  },
+  {
+    "qid": "0607-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0620-0",
+    "prediction": "**Answer:** The man is hanging upside down from the ceiling in what appears to be a living room or den.\n\n**Explanation:** The video shows the man inverted, with his feet attached to the ceiling via specialized gear-like devices. He is clearly indoors in a furnished room, not standing on the floor."
+  },
+  {
+    "qid": "0620-1",
+    "prediction": "Based on the visual evidence in the video, particularly how the man \"falls\" upwards and the balloons float \"downwards\" towards the apparent ceiling near the end, the video is inverted.\n\nTherefore, the man's actual position is **standing or crouching right-side up on the floor.** The camera is upside down, making the floor appear to be the ceiling."
+  },
+  {
+    "qid": "0620-2",
+    "prediction": "**No.**\n\nThe man is hanging upside down from the actual ceiling using specialized gear attached to his feet. Evidence includes the basketball falling downwards towards the floor (away from him), the normal orientation of furniture on the floor below him, balloons floating upwards towards the ceiling he is attached to, and his eventual fall downwards when one foot detaches."
+  },
+  {
+    "qid": "0620-3",
+    "prediction": "**No**, the man is hanging upside down from the ceiling. He is gripping devices attached to the ceiling with his hands, not standing on equipment with his feet."
+  },
+  {
+    "qid": "0620-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0609-0",
+    "prediction": "A player is eliminated when the object falls off the edge of the table closest to them."
+  },
+  {
+    "qid": "0609-1",
+    "prediction": "Based on the video, elimination is decided when the red object reaches the edge of the table closest to a player, causing that player to remove their hands from the table surface."
+  },
+  {
+    "qid": "0609-2",
+    "prediction": "**Yes**, elimination is based on participants moving their hands prematurely while the girl is still holding and maneuvering the ball, trying to trick them into flinching."
+  },
+  {
+    "qid": "0609-3",
+    "prediction": "Yes, the elimination is determined by who the ball stops closest to.\n\n**Explanation:** The video shows players spinning the ball on the table. When the ball comes to rest, the person it is nearest to appears to be eliminated from that round, as indicated by the players' reactions and the subsequent reduction in participants."
+  },
+  {
+    "qid": "0609-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0610-0",
+    "prediction": "The woman threw the package out the window as a comedic exaggeration within the skit. It visually demonstrates the extreme convenience and hyper-speed service provided by the two men, fitting the video's theme of them instantly fulfilling her needs in an over-the-top manner. Throwing it acts as the quickest way to \"send\" it in this absurd scenario, initiating the task for the helpers who are immediately ready to catch and deliver it."
+  },
+  {
+    "qid": "0610-1",
+    "prediction": "Based on the video's context where two men provide instant, exaggerated service, the best reason the woman tossed the package out the window is:\n\n**To delegate the task of mailing the addressed package to her hyper-efficient helpers.** Tossing it out the window serves as a comically exaggerated and immediate way to hand off the task, fitting the video's theme of instant, over-the-top service provided by the men."
+  },
+  {
+    "qid": "0610-2",
+    "prediction": "**No.** The video is playing in reverse. The actual event depicted is the men running towards the house and tossing the package into the window for the woman, likely representing a mail delivery."
+  },
+  {
+    "qid": "0610-3",
+    "prediction": "**No, she was not trying to get rid of the package in the sense of discarding it.**\n\n**Explanation:** The video shows her addressing the package first, indicating an intent to send it. Immediately after she throws it out the window, two men run to catch/retrieve it and run off, suggesting a coordinated and rapid handover rather than disposal."
+  },
+  {
+    "qid": "0610-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0612-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "0612-1",
+    "prediction": "The paper is divided into two sections to allow for a direct, side-by-side comparison.\n\n**Explanation:** This division visually contrasts the results of coloring the same portrait using unconventional, free materials (labeled \"$0 Pencils,\" like burnt matches, coffee, grass) on the left side versus using expensive, professional colored pencils (labeled \"$300 Pencils\") on the right side. It highlights the differences in outcome, technique, and potentially the value proposition between zero-cost resourcefulness and high-cost art supplies."
+  },
+  {
+    "qid": "0612-2",
+    "prediction": "**Yes**, the purpose of dividing the paper is to create a direct visual comparison between coloring the portrait using unconventional, everyday items (represented as \"$0 Pencils\" because they are essentially free or very low-cost substitutes) and coloring it using expensive, professional-grade colored pencils (labeled \"$300 Pencils\"). This split format deliberately contrasts the results and techniques of using improvised materials versus high-cost, traditional art supplies side-by-side on the same subject."
+  },
+  {
+    "qid": "0612-3",
+    "prediction": "Yes, the division is explicitly for comparing the results achieved using expensive, professional colored pencils ($300 Pencils) versus using unconventional, essentially free materials (represented metaphorically as \"$0 Pencils\").\n\n**Explanation:** The \"$0 Pencils\" side does not use actual pencils but rather substitutes like burnt matches, coffee, crushed grass, fruit, and toothpaste to create colors and effects, directly contrasting these resourceful, no-cost methods with the standard, expensive art supplies used on the other side."
+  },
+  {
+    "qid": "0612-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0614-0",
+    "prediction": "Based on the video, the man's trembling hands at the beginning appear to be due to **nervousness or anxiety**, likely related to his planned interaction with the waitress (giving her a gift later). It's also highly possible this is **part of an acting performance for a staged scenario**, where the trembling is intentionally shown to portray nervousness before the gift-giving moment."
+  },
+  {
+    "qid": "0614-1",
+    "prediction": "Based on the video, the man's hands tremble likely due to **nervousness, anxiety, or excitement** related to the social interaction with the waitress, especially considering he later gives her a gift. It's also possible this is **intentional acting** for the video's narrative."
+  },
+  {
+    "qid": "0614-2",
+    "prediction": "Yes, the man is pretending to have trembling hands.\n\n**Explanation:** His tremors are pronounced while he tries to pour his drink and eat, leading the waitress to help him. Immediately after she assists, his hands become perfectly steady, he interacts normally, retrieves a gift from his bag, and gives it to her as a reward. This sudden recovery and the reward structure indicate the trembling was an act, likely for a social experiment or video content testing kindness."
+  },
+  {
+    "qid": "0614-3",
+    "prediction": "Based on the video and the provided explanations, the man's trembling hands are most likely due to a **combination of nervousness and excitement**.\n\n**Explanation:** He appears both eager (excited) to give the waitress the gift and potentially anxious (nervous) about her reaction, the timing, and performing the gesture in a public restaurant setting. These emotions often occur together in situations involving social anticipation and vulnerability."
+  },
+  {
+    "qid": "0614-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0616-0",
+    "prediction": "**Answer:** The white ball reaches the finish line first.\n\n**Explanation:** Although the blue and black balls start earlier, the white ball navigates the obstacles more effectively and enters the final narrow channel at the end of the track before the other two balls."
+  },
+  {
+    "qid": "0616-1",
+    "prediction": "**Answer:** The white ball crosses the finish line first.\n\n**Explanation:** Although the white ball started last, its path through the obstacle course was faster, allowing it to overtake the blue and black balls and reach the final narrow channel ahead of them."
+  },
+  {
+    "qid": "0616-2",
+    "prediction": "Yes, the white ball is the first to reach the finish line. Although it starts last, it navigates the obstacles more efficiently and overtakes the other two balls to finish first."
+  },
+  {
+    "qid": "0616-3",
+    "prediction": "No, the blue ball does not reach the finish line first.\n\n**Explanation:** Although the blue ball starts slightly earlier, the white/yellow ball overtakes it during the race and reaches the finish line ahead of the blue ball."
+  },
+  {
+    "qid": "0616-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0621-0",
+    "prediction": "For Mini Michiel, it's the **right foot**. He leans his right side against the wall, and his right foot is planted closer to the wall first to support the lean.\n\nFor Michiel, it's the **left foot**. He leans his left side against the wall, and his left foot is planted closer to the wall first to support the lean."
+  },
+  {
+    "qid": "0621-1",
+    "prediction": "Based on the video and the provided observations:\n\n*   **Mini Michiel:** Left foot\n*   **Celine:** Right foot\n*   **Bram:** Right foot\n*   **Laura:** Right foot\n*   **Michiel:** Left foot"
+  },
+  {
+    "qid": "0621-2",
+    "prediction": "**Yes.** All participants lean towards their left side simultaneously. The left foot is the foot on the side that is leaning towards the wall from the beginning of the action."
+  },
+  {
+    "qid": "0621-3",
+    "prediction": "**Answer:** No.\n**Explanation:** The person who successfully leans against the wall and whose feet are most clearly visible adjusting (Mini Michiel) appears to move their left foot back towards the wall slightly before their right foot."
+  },
+  {
+    "qid": "0621-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0625-0",
+    "prediction": "**Answer:** Horizontally left, towards the center.\n\n**Brief Explanation:** The second ball appears on the right side of the central vertical track at approximately the 0:02 mark. Its initial displacement is clearly horizontal, moving from the right towards the left, which is also towards the center of the circular area."
+  },
+  {
+    "qid": "0625-1",
+    "prediction": "**Answer:** Horizontally to the left.\n\n**Explanation:** After the first ball moves down, the second ball appears on the right side of a newly revealed horizontal track and moves along that track towards the left."
+  },
+  {
+    "qid": "0625-2",
+    "prediction": "**No**, the second ball only moves in one direction along the horizontal groove. It appears on the right side and moves left towards the center, where it stops; it does not move back to the right."
+  },
+  {
+    "qid": "0625-3",
+    "prediction": "No, the second ball does not follow a circular path or move in a loop. It moves in a straight line along the horizontal track segment from right to left towards the center."
+  },
+  {
+    "qid": "0625-7",
+    "prediction": "A"
   }
 ]
