@@ -48,14 +48,13 @@ async def gemini_video_fn_async(
                         )
                     )
                 except Exception as e:
-                    if "403" in str(e) and local_video_path:
-                        return await g.generate_from_uploaded_video_file(
-                            local_video_path,
-                            q,
-                            temperature=temperature,
-                            wait_time=wait_time,
-                        )
-                    raise
+                    
+                    return await g.generate_from_uploaded_video_file(
+                        local_video_path,
+                        q,
+                        temperature=temperature,
+                        wait_time=wait_time,
+                    )
             except Exception as final_err:
                 print("Fail", final_err)
                 return "Error"

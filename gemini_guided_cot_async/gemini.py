@@ -93,8 +93,8 @@ class GeminiAsync:
             print("Step‑1 answers:\n", multi, "\n")
 
             # pull out [Final answer: ... ]
-            pattern = r"(?<=\[Final answer:)(.*?)(?=\])"
-            match = re.search(pattern, multi, flags=re.DOTALL)
+            pattern = r"\[\s*Final\s+Answer:\s*(.*?)\s*\]"   # allow spaces, any case
+            match   = re.search(pattern, multi, flags=re.DOTALL | re.IGNORECASE)
 
             if match:
                 answer = match.group(1).strip()

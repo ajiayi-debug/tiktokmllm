@@ -54,4 +54,4 @@ async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry,final_output
 if __name__ == "__main__":
     #df=load_dataset("lmms-lab/AISG_Challenge")
     df=pd.read_csv('data/data.csv')
-    asyncio.run(CotAgent(df, "Gemini_guided", "Gemini_guided_retry", "Gemini_guided_Final", number_of_iterations=1,video_upload=True, wait_time=10))
+    asyncio.run(CotAgent(df, "Gemini_guided", "Gemini_guided_retry", "Gemini_guided_Final", number_of_iterations=1,video_upload=False, wait_time=10))
