@@ -63,7 +63,8 @@ class Gemini:
                 print(f"Gemini API error during multi-answer generation: {e}")
                 all_predictions.append("Error")
                 continue
-
+            
+            time.sleep(wait_time)
             # Step 2: Ask Gemini to pick the best one
             if iterate_prompt != "":
                 best_prompt = choose_best_answer_prompt(question, multi_answer_output.strip())

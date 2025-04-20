@@ -48,7 +48,7 @@ async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry,final_output
         csv_path=f"data/{final_output}.csv"
     )
 
-    reorder(f"data/{final_output}.csv",df,f"data/{final_output}_rearranged.csv")
+    reorder(f"data/{final_output}.csv",df,f"{final_output}_rearranged.csv")
 
 
 

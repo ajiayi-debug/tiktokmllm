@@ -3238,5 +3238,565 @@
   {
     "qid": "0816-7",
     "prediction": "D"
+  },
+  {
+    "qid": "0818-0",
+    "prediction": "Folded bills"
+  },
+  {
+    "qid": "0818-1",
+    "prediction": "She is holding green paper money."
+  },
+  {
+    "qid": "0818-2",
+    "prediction": "Yes, the little girl is holding a piece of cash in her hand."
+  },
+  {
+    "qid": "0818-3",
+    "prediction": "No, the little girl is not holding a small bottle. She appears to be holding money (currency) in her hand."
+  },
+  {
+    "qid": "0818-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0827-0",
+    "prediction": "There are 2 pandas in the video.\n**Explanation:** The second clip in the video, starting around the 4-second mark, clearly shows one larger panda and one smaller panda cub interacting in an enclosure."
+  },
+  {
+    "qid": "0827-1",
+    "prediction": "**Two pandas are shown.**\n\n*   Explanation: The second clip in the video shows one large adult panda and one smaller panda cub."
+  },
+  {
+    "qid": "0827-2",
+    "prediction": "Yes, there is only one real panda in the video.\n\n**Explanation:** The video shows two separate clips. The first features a person in a unicorn mask with a horse. The second clip shows one large, real giant panda interacting with a person wearing a panda costume."
+  },
+  {
+    "qid": "0827-3",
+    "prediction": "Yes, the video shows two pandas in the second clip, one adult and one baby/cub."
+  },
+  {
+    "qid": "0827-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0833-0",
+    "prediction": "The fourth segment aims to show **how to create a levitation photo effect, revealing the behind-the-scenes process and the use of compositing/editing.**\n\n**Explanation:** The video explicitly shows the setup phase where the person is supported by a stool and helper, contrasting it with the final edited image where the person appears to float horizontally above their own body on the sand, demonstrating the technique used to achieve this illusion."
+  },
+  {
+    "qid": "0833-1",
+    "prediction": "**Answer:**\n\nThe fourth segment depicts the setup and the final edited photograph for a levitation illusion under a pier. In the final image, a man is shown lying on the sand, while a semi-transparent version of himself appears to be floating horizontally above him.\n\n**Explanation:**\n\nThe video first shows the behind-the-scenes setup: one man lies on the sand, while another helps him balance horizontally on a stool under the pier, and a photographer prepares the shot. It then cuts to the final edited image where the stool is removed, and the man appears to be levitating or having an \"out-of-body\" experience, floating above his physical body on the sand. This combines elements from descriptions 1, 2, 3, and 7."
+  },
+  {
+    "qid": "0833-2",
+    "prediction": "**Yes**, the fourth segment (0:19-0:24) shows the setup for and the final edited image of a man lying on the sand under a pier, with a semi-transparent image of himself floating above, visually representing the idea of a soul or spirit."
+  },
+  {
+    "qid": "0833-3",
+    "prediction": "**Answer:** No\n**Explanation:** The fourth segment (approximately 0:18-0:24) shows the setup and final result of a levitation-style photograph being taken under a pier. It does not feature a person holding a glass jar with a drink."
+  },
+  {
+    "qid": "0833-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0835-0",
+    "prediction": "Visible in the woman's mouth are her tongue (which has a small, round, bluish/metallic piercing stud on it), teeth, gums, palate, inner cheeks, and uvula.\n\n**Explanation:** These structures are clearly observable during the moments the woman opens her mouth wide for the adjustment, particularly the distinct tongue piercing stud."
+  },
+  {
+    "qid": "0835-1",
+    "prediction": "Inside the woman's mouth, a **blue tongue piercing (stud)** is clearly visible on the surface of her **tongue**. Her **teeth**, **gums**, and the general **oral mucosa** (inner lining of the mouth) are also visible when she opens her mouth during the adjustment."
+  },
+  {
+    "qid": "0835-2",
+    "prediction": "Yes, a blue tongue stud is visible in the woman's mouth. It can be clearly seen on her tongue when she opens her mouth wide during the TMJ jaw adjustment, particularly around the 0:11 and 0:41 second marks."
+  },
+  {
+    "qid": "0835-3",
+    "prediction": "**No.**\n\n**Explanation:** There is no dental appliance or mouth guard visible in the woman's mouth. A small, blue, round object is visible on the surface of her tongue when her mouth is open wide, which is consistent with a tongue piercing stud, not a dental device."
+  },
+  {
+    "qid": "0835-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0841-0",
+    "prediction": "**Answer:** The woman wiped her **right eye** first.\n\n**Explanation:** The video clearly shows at the 0:03 mark that the parrot is first used to wipe the tears under the woman's right eye (which is on the viewer's left)."
+  },
+  {
+    "qid": "0841-1",
+    "prediction": "**Her left eye.**\n\n**Explanation:** The first clear and deliberate wiping motion with the parrot occurs under the woman's left eye (the eye on the right side of the screen from the viewer's perspective) starting around the 0:07 mark."
+  },
+  {
+    "qid": "0841-2",
+    "prediction": "**Answer:** No.\n**Explanation:** The video shows the woman first using the parrot to dab the tears near her left eye (the eye on the viewer's right)."
+  },
+  {
+    "qid": "0841-3",
+    "prediction": "**Answer:** No.\n\n**Explanation:** The video shows the woman removing her glasses and then using the parrot to wipe tears from her right eye first. Her left eye is not shown being wiped by the parrot in the clip."
+  },
+  {
+    "qid": "0841-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0848-0",
+    "prediction": "**Answer:** The top silhouette is the real cat (\"void cat\").\n\n**Explanation:** The top silhouette shows independent, three-dimensional movement characteristic of a living animal, while the bottom silhouette is a flatter projection onto the surface below, mimicking the top figure's movements, which is consistent with how a shadow behaves."
+  },
+  {
+    "qid": "0848-1",
+    "prediction": "**Answer:** The top silhouette is the actual cat (the \"void car\"), and the bottom silhouette is its shadow.\n\n**Explanation:** The top figure displays the independent movement and form of the cat, while the bottom figure is the flat projection cast onto the surface beneath it, mimicking the cat's shape and motion."
+  },
+  {
+    "qid": "0848-2",
+    "prediction": "Yes, the top silhouette is the real cat. The bottom silhouette is its shadow, cast onto the surface below and mirroring the cat's shape and movement."
+  },
+  {
+    "qid": "0848-3",
+    "prediction": "Yes, the top shape is the real cat. The bottom shape is flatter, slightly distorted, and moves in sync beneath the top shape, consistent with how a shadow is cast by an object onto the surface below it."
+  },
+  {
+    "qid": "0848-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0854-0",
+    "prediction": "The operator engages in conversation with the visitors primarily **to enhance the surprise and thrill of the drop.**\n\n**Explanation:** By chatting casually or even misleading the riders (e.g., suggesting a malfunction), the operator distracts them and lowers their guard. This makes the sudden, unexpected activation of the drop far more shocking and intense, amplifying the fear, adrenaline rush, and overall memorability of the experience."
+  },
+  {
+    "qid": "0854-1",
+    "prediction": "The operator talks to the visitors to distract them and catch them off guard before activating the drop. This creates surprise and shock, enhancing the thrill of the ride and making the experience more memorable by preventing the riders from mentally preparing for the exact moment of the drop."
+  },
+  {
+    "qid": "0854-2",
+    "prediction": "**Answer:** Yes.\n**Explanation:** The video's text explicitly states that the operator chats with visitors and then suddenly presses the start button, catching them psychologically unprepared. It also mentions he sometimes tricks visitors by saying the machine has malfunctioned, starting it when they are scared, which is clearly intended to increase their nervousness and fear for a more memorable experience."
+  },
+  {
+    "qid": "0854-3",
+    "prediction": "**No**, the operator's conversation is not meant to help visitors feel prepared. The video commentary and the provided analysis indicate that the chat is used as a distraction or misdirection technique to make the sudden start of the ride more surprising and thrilling by catching the riders off guard."
+  },
+  {
+    "qid": "0854-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0857-0",
+    "prediction": "The woman is imitating a **Barbie doll falling over**.\n\n*   **Explanation:** Her stiff backward falls mimic how a rigid plastic doll would tip over. This action, combined with the \"Barbie Girl\" song playing (specifically referencing \"Barbie girl\" and \"life in plastic\"), strongly suggests she is playfully acting out the movement of an inanimate doll falling."
+  },
+  {
+    "qid": "0857-1",
+    "prediction": "Based on the video and the provided interpretations, the woman appears to be **acting like a doll**, specifically referencing the \"Barbie Girl\" song playing.\n\n**Explanation:** Her repeated backward falls onto the sand, often going limp, mimic the way a toy doll might be dropped or tossed around during play, lacking its own control and resembling ragdoll physics. This action directly correlates with the lyrics and theme of the song \"Barbie Girl.\""
+  },
+  {
+    "qid": "0857-2",
+    "prediction": "**No.** The woman in the video falls backward and then forward onto a sand dune. Her movements appear playful or related to losing balance on the steep, soft sand, rather than mimicking the impact or reaction of being shot. There are no gestures or specific body movements typically associated with simulating being shot."
+  },
+  {
+    "qid": "0857-3",
+    "prediction": "No, the woman is not imitating fainting. Her actions show her intentionally and playfully throwing herself backward and forward onto the soft sand dune in a controlled manner, rather than simulating the sudden, involuntary loss of consciousness and limp collapse associated with fainting."
+  },
+  {
+    "qid": "0857-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0858-0",
+    "prediction": "**Answer:** The man initially sat on the sitter's right armrest.\n\n**Explanation:** Although visually from the camera's angle it might appear he is sitting on the left armrest, the narration explicitly clarifies the optical illusion at 0:29, stating that he actually sat on the chair's right armrest (\u6905\u5b50\u7684\u53f3\u6276\u624b) from the perspective of someone sitting down."
+  },
+  {
+    "qid": "0858-1",
+    "prediction": "Based on the video and the narration:\n\nThe man first tried to sit on the armrest that appears on the **viewer's left**. The narrator clarifies that due to the optical illusion, this structure is actually the chair's **right** armrest."
+  },
+  {
+    "qid": "0858-2",
+    "prediction": "Yes, the man initially sat on the right armrest of the chair. The video explains that while it looks like he is sitting on the left armrest due to the optical illusion design of the chair, he actually sat on the right armrest."
+  },
+  {
+    "qid": "0858-3",
+    "prediction": "**No**, the man did not initially sit on the left armrest.\n\n**Explanation:** While the initial camera angle makes it appear as though he sits on the left armrest, this is due to an optical illusion created by the chair's design. The video's narration explicitly clarifies that he actually sat on the chair's right armrest."
+  },
+  {
+    "qid": "0858-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0865-0",
+    "prediction": "**Answer:** Two worms.\n\n**Explanation:** At the end of the video, there are two distinct worm-like creatures visible on the ground: one brownish worm near the bird's beak and a green one (possibly a caterpillar) further away."
+  },
+  {
+    "qid": "0865-1",
+    "prediction": "**Two worms.**\n\n**Explanation:** At the conclusion of the video, both the brownish worm the bird was attempting to eat and a separate green worm (or caterpillar) nearby are visible on the ground."
+  },
+  {
+    "qid": "0865-2",
+    "prediction": "No, there are two worm-like creatures visible at the end of the video. One is a brown worm near the bird's beak, and the other is a green caterpillar slightly further away."
+  },
+  {
+    "qid": "0865-3",
+    "prediction": "Yes, at the end of the video, two worms are visible. One worm is held in the bird's beak, and another worm is lying on the ground nearby."
+  },
+  {
+    "qid": "0865-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0868-0",
+    "prediction": "The tool swung at the beginning of the video is **red**. It appears to be a screwdriver with a red handle."
+  },
+  {
+    "qid": "0868-1",
+    "prediction": "The tool used by the person at the start of the video is a screwdriver with a **red and black handle**.\n\n**Explanation:** The handle of the screwdriver is predominantly red, but it also features a distinct black section where the handle meets the metal shaft."
+  },
+  {
+    "qid": "0868-2",
+    "prediction": "**No**, the tool swung around the 0:03 mark is a standard claw hammer. It has a silver/grey metal head and a light brown wooden handle, not a silver-brownish metal head. The tool used at the very beginning (0:00) is a screwdriver, which is pushed, not swung."
+  },
+  {
+    "qid": "0868-3",
+    "prediction": "Yes, the tool swung at the beginning of the video has a red handle. It is a screwdriver being used to try and make a hole in the bottom of a bowl."
+  },
+  {
+    "qid": "0868-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0870-0",
+    "prediction": "Based on the video, the man gave his belongings to the photographer because:\n\nThe interaction appears staged for the video. The man complied with the photographer's non-verbal prompts (pointing at the items) as part of a planned sequence, likely driven by desperation and the hope of receiving better assistance (food, money, umbrella) in return for giving up his inadequate shelter and collection hat."
+  },
+  {
+    "qid": "0870-1",
+    "prediction": "The man is likely participating in a **staged performance** and **following instructions** from the person filming. He hands over his belongings because the scene requires it to create the video's narrative arc, showing initial hardship followed by receiving help, aiming for emotional impact."
+  },
+  {
+    "qid": "0870-2",
+    "prediction": "**No**, the man did not give his belongings to the photographer out of kindness to help *them*.\n\n**Explanation:** The video clearly shows the man and child in a state of need, receiving assistance (food, money, snacks, an umbrella) from the person filming (the photographer). The man hands over the piece of cardboard he was using for shelter only after the photographer gestures towards it, and this happens within the context of him receiving aid. His action is better understood as compliance or interaction with someone helping him, rather than an act of generosity directed *towards* the photographer. The flow of help is entirely from the photographer to the man and child."
+  },
+  {
+    "qid": "0870-3",
+    "prediction": "**No**, the man did not give his belongings to the photographer. The video shows the photographer providing aid to the man and child, giving them food, snacks, drinks, an umbrella, and money without receiving anything in return. The interaction was an act of charity, not an exchange."
+  },
+  {
+    "qid": "0870-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0871-0",
+    "prediction": "Based on the video, the best description is:\n\n**A person interacting with a pink object, followed by a digital distortion effect.**\n\n**Explanation:** Initially, a person is seen bending down towards a pink object in the middle of the road. Subsequently, a visual effect is applied that dramatically stretches the person's image vertically."
+  },
+  {
+    "qid": "0871-1",
+    "prediction": "**Answer:** A person using a video filter.\n\n**Explanation:** The object in the center of the road is a person whose image is being dramatically stretched vertically by a video filter or visual effect."
+  },
+  {
+    "qid": "0871-2",
+    "prediction": "**No, the video does not show a chalk drawing.**\n\n**Explanation:** The figure in the video is a real person whose image has been heavily distorted by a visual effect or filter, causing extreme vertical stretching as they bend down towards a pink object on the road. The movement clearly indicates it is video footage of a person, not a static chalk drawing."
+  },
+  {
+    "qid": "0871-3",
+    "prediction": "**No:** The person in the video is holding one large, pink object, not two bags."
+  },
+  {
+    "qid": "0871-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0872-0",
+    "prediction": "**To the right.**\n\n*   *Explanation:* After placing both packs down beside the seated man, the standing man uses his hand to slide the top pack towards the right side of the video frame."
+  },
+  {
+    "qid": "0872-1",
+    "prediction": "**No Direction / Not Moved**\n\n**Explanation:** The younger man places two packs of water bottles on the ground. The seated man then takes individual bottles *out* of the pack on the right (from the camera's viewpoint) to give to people, but the pack itself remains stationary on the ground and is not moved as a whole unit."
+  },
+  {
+    "qid": "0872-2",
+    "prediction": "**No**, the man did not move the upper water bottle pack to the left after placing them down. He placed both packs down together as a single stack and did not adjust the position of the upper pack relative to the lower one afterwards."
+  },
+  {
+    "qid": "0872-3",
+    "prediction": "**Answer:** No.\n\n**Explanation:** The younger man places two packs of water bottles down, one on top of the other. The older man then takes individual bottles from the top pack, but he does not move the entire upper pack to the right after it was initially placed."
+  },
+  {
+    "qid": "0872-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0875-0",
+    "prediction": "There is **one cell phone** on the piano. It is black and located on the left side of the piano, near the keyboard."
+  },
+  {
+    "qid": "0875-1",
+    "prediction": "**Answer:** 1\n**Explanation:** There is one cell phone clearly visible placed on the left side of the piano surface throughout the video."
+  },
+  {
+    "qid": "0875-2",
+    "prediction": "**Answer:** No.\n\n**Explanation:** There are two cell phones visible near the piano. One phone has a green case, but the other phone has a dark-colored case (with a circular attachment), not a light-colored case."
+  },
+  {
+    "qid": "0875-3",
+    "prediction": "**Yes**, there appears to be only one cell phone resting on the piano, and it is positioned on the far left side, to the left of the pianist's hands."
+  },
+  {
+    "qid": "0875-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0879-0",
+    "prediction": "After the fourth second, the figures are all stationary Lego minifigures positioned on different parts of the same white physical object. It has been demonstrated (by the pencil) that they are part of an optical illusion and are *not* actually standing on a single, continuous plane, despite appearing to do so from the camera's perspective."
+  },
+  {
+    "qid": "0879-1",
+    "prediction": "Starting from the fourth second, the figures share these characteristics:\n\n*   They are revealed to be on **disconnected structures** (7) and therefore **not on the same plane** (1).\n*   They remain **Lego minifigures** (2) positioned on parts of a **white structure** (3) as part of an **optical illusion setup** (4).\n\n**Explanation:** From the fourth second, the camera angle changes, breaking the optical illusion of the Penrose triangle. This reveals that the Lego figures, which initially appeared to be on a single continuous plane, are actually positioned on separate, disconnected pieces of the white structure. They remain identifiable as Lego figures throughout this reveal."
+  },
+  {
+    "qid": "0879-2",
+    "prediction": "**No.** The object is a Penrose triangle, which is an optical illusion. The surfaces the figures are standing on only appear to be connected and part of the same plane due to the specific camera angle; they cannot physically exist as a single continuous plane in 3D space."
+  },
+  {
+    "qid": "0879-3",
+    "prediction": "**No.**\n\n**Explanation:** The object is a Penrose triangle, which is an optical illusion. The surfaces the two figures are standing on only *appear* to be connected and on the same plane due to the specific camera angle. In physical reality, these surfaces are separate and not coplanar."
+  },
+  {
+    "qid": "0879-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "0880-0",
+    "prediction": "**Answer:**\nWhen the person holds up the mirror with their hand, the state of direction changes by introducing a reflection of the arrow which points in the opposite horizontal direction (left) compared to the real arrow (right).\n\n**Explanation:**\nThis happens because a plane mirror creates a virtual image that is laterally inverted (flipped horizontally) relative to the object. Therefore, the reflection of the right-pointing arrow appears to point left."
+  },
+  {
+    "qid": "0880-1",
+    "prediction": "**Answer:**\n\nThe perceived direction of the structure remains unchanged, consistently appearing to point to the right, even when it is lifted by hand and physically rotated 180 degrees.\n\n**Explanation:**\n\nThis phenomenon is an optical illusion caused by the specific ambiguous 3D geometry of the object. From the viewing angle shown, the shape is designed such that even after a 180-degree rotation around its vertical axis, its silhouette or most prominent features still present an image that the brain interprets as pointing to the right. The mirror test later in the video confirms the physical rotation (the reflection points left), but the direct view of the object maintains the rightward-pointing illusion."
+  },
+  {
+    "qid": "0880-2",
+    "prediction": "Yes, the structure loses its directional illusion when held up towards the camera.\n\n**Explanation:** The illusion works because the specific 3D shape, when viewed from a relatively level angle, consistently projects a 2D image that looks like an arrow pointing in one direction, even when rotated. Tilting the object towards the camera changes the viewing perspective significantly. This altered angle reveals the actual complex curves and geometry of the object, breaking the specific projection needed to maintain the illusion of a simple, consistently pointing arrow."
+  },
+  {
+    "qid": "0880-3",
+    "prediction": "**No.** The structure's direction changes because it is physically rotated 180 degrees by the hand when lifted off its mount. The mirror simply reflects the arrow's actual orientation at any given moment, exhibiting the standard left-right reversal characteristic of a plane mirror; the mirror itself does not cause the change in the object's direction when lifted."
+  },
+  {
+    "qid": "0880-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0886-0",
+    "prediction": "**Answer:** The watch is worn on the man's left wrist.\n\n**Explanation:** The watch is clearly visible on his left wrist throughout the video as he handles the cans and the tube."
+  },
+  {
+    "qid": "0886-1",
+    "prediction": "**Answer:** The man is wearing the watch on his left wrist.\n**Explanation:** The watch is visible on his left wrist throughout the video, particularly when he raises his hands at the start and while handling the tube. His right wrist is bare."
+  },
+  {
+    "qid": "0886-2",
+    "prediction": "**No, the watch is on his left wrist.** The video clearly shows the watch on the man's left arm, especially when he raises both hands at the beginning."
+  },
+  {
+    "qid": "0886-3",
+    "prediction": "Yes, the watch is worn on the left wrist of the man in black. It is clearly visible when he raises his arms at the beginning of the video and throughout the experiment."
+  },
+  {
+    "qid": "0886-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0895-0",
+    "prediction": "**Answer:** The scene cuts to a basketball hoop with a rim that appears to be made from or surrounded by a chainsaw chain.\n\n**Explanation:** The video shows the successful shot into the \"mini hoop\" ending around the 0:07 mark. Immediately following this, the scene changes to show a different basketball hoop, labeled \"chainsaw rim\" in the on-screen text, which has a distinctively modified rim resembling a chainsaw chain."
+  },
+  {
+    "qid": "0895-1",
+    "prediction": "The smaller basketball goes cleanly into the mini hoop, and a green checkmark appears on screen confirming the successful shot."
+  },
+  {
+    "qid": "0895-2",
+    "prediction": "**Yes**, the scene cuts from the person successfully shooting into the mini hoop to a scene where they shoot into a hoop with a chainsaw blade acting as the rim."
+  },
+  {
+    "qid": "0895-3",
+    "prediction": "Yes, the video cuts to a person shooting at a mini hoop immediately after the first shot attempt (at the spiked hoop). This transition occurs at the 0:03 mark."
+  },
+  {
+    "qid": "0895-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0898-0",
+    "prediction": "**Answer:** Towards the center of the whirlpool.\n\n**Explanation:** After the man places the first pillow on the digitally created water effect, it immediately begins to drift away from the couch and directly towards the central, darker area of the swirling vortex."
+  },
+  {
+    "qid": "0898-1",
+    "prediction": "**Answer:** Towards the center of the vortex.\n\n**Explanation:** Once the first pillow landed on the water effect near the edge, it immediately started moving inwards towards the central swirling point of the vortex."
+  },
+  {
+    "qid": "0898-2",
+    "prediction": "**No, the man did not move the first pillow closer to the camera after it was on the water.**\n\n**Explanation:** The video shows the man throwing the first pillow onto the floor effect. It lands and remains stationary. He then throws a second pillow and steps onto the pillows without adjusting the position of the first one after it landed."
+  },
+  {
+    "qid": "0898-3",
+    "prediction": "**No:** The man throws the first pillow onto the 'water', then throws a second pillow closer to himself and steps onto the second one. He does not interact with the first pillow again after throwing it."
+  },
+  {
+    "qid": "0898-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "0901-0",
+    "prediction": "**Answer:** 1\n\n**Explanation:** At the 00:00 mark of the video, there is visibly only one green rubber band stretched between the fingers of both hands."
+  },
+  {
+    "qid": "0901-1",
+    "prediction": "**Answer:** 1\n**Explanation:** At the start of the video (0:00), the person is holding a single green rubber band stretched between the fingers of both hands."
+  },
+  {
+    "qid": "0901-2",
+    "prediction": "No, the hand is holding only one green rubber band at the beginning of the video. It is stretched between the index finger and thumb of both hands."
+  },
+  {
+    "qid": "0901-3",
+    "prediction": "**Yes**, the video clearly shows only one green rubber band stretched between the fingers of both hands at the very beginning (0:00)."
+  },
+  {
+    "qid": "0901-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0905-0",
+    "prediction": "**Uphill (Apparent/Illusion)**\n\n**Explanation:** At the beginning of the video, from the specific camera angle shown, the slope where the marble is placed *appears* to be uphill. This is because when released, the marble rolls towards the center platform, which looks like the highest point of that ramp section in the optical illusion. The later part of the video reveals that all ramps actually slope downwards towards the center."
+  },
+  {
+    "qid": "0905-1",
+    "prediction": "**Answer:** Apparent Incline\n\n**Explanation:** At the start of the video, due to the specific camera angle and the design of the object (an optical illusion), the surface where the marble is placed visually appears to be an incline sloping upwards towards the center."
+  },
+  {
+    "qid": "0905-2",
+    "prediction": "Yes, the slope where the ball is located at the beginning of the video is a downhill slope.\n\n**Explanation:** Although the initial camera angle creates an optical illusion making it seem like the marble rolls uphill, the video later reveals (at 0:17) that the structure is actually composed of four ramps, all sloping downwards towards the center. The marble rolls towards the center because that is the lowest point, following the laws of gravity."
+  },
+  {
+    "qid": "0905-3",
+    "prediction": "**No, the slope is actually downhill.**\n\nThe video explains and demonstrates that the object is a 3D-printed optical illusion. While it appears the marble rolls uphill from the initial camera angle, rotating the object reveals that all four ramps actually slope downwards towards the center. The marble starts at the higher, outer edge and rolls down to the lower central point."
+  },
+  {
+    "qid": "0905-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0907-0",
+    "prediction": "The dog lands on the **grass** in the backyard.\n\n**Explanation:** After the man jumps on the seesaw, the dog is launched into the air and lands on the green, grassy surface of the yard."
+  },
+  {
+    "qid": "0907-1",
+    "prediction": "The dog lands on the grass to the right of the seesaw, near its starting position."
+  },
+  {
+    "qid": "0907-2",
+    "prediction": "**No**, the dog does not land on the man's body. It lands on the grass beside him, near his legs/buttocks area, after being launched by the seesaw."
+  },
+  {
+    "qid": "0907-3",
+    "prediction": "Yes, the dog lands on the grass at the end of the video. After being launched by the seesaw, the dog lands and rolls on the grassy lawn."
+  },
+  {
+    "qid": "0907-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "0910-0",
+    "prediction": "The man repeatedly picks up the child as a form of playful interaction. It appears to be a game between them, likely intended to keep the child entertained and happy while they are walking on the sidewalk."
+  },
+  {
+    "qid": "0910-1",
+    "prediction": "The man is repeatedly picking up the child as part of a playful interaction, likely for the purpose of filming content (e.g., for social media), aiming to be humorous or entertaining for both the child and potential viewers, as indicated by his pointing towards the camera near the end."
+  },
+  {
+    "qid": "0910-2",
+    "prediction": "Yes, this appears to be a social experiment.\n\n**Explanation:** The man repeatedly picks up the child in the same public area in front of different groups of people. This repetition, along with interactions like smiling and pointing towards the end (seen around 0:38-0:44), suggests the scenario is staged to observe how bystanders react, which is characteristic of a social experiment."
+  },
+  {
+    "qid": "0910-3",
+    "prediction": "**No.** The man picks up the child and immediately walks along the sidewalk towards a building entrance, not towards the street or in a manner suggesting they are about to cross it."
+  },
+  {
+    "qid": "0910-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0914-0",
+    "prediction": "The bottle is placed under the hot water faucet to shrink the plastic sleeve label onto it. The heat from the water causes the sleeve to contract and conform tightly to the shape of the bottle, effectively applying the label."
+  },
+  {
+    "qid": "0914-1",
+    "prediction": "The purpose is to use the running water to wash away a temporary, water-soluble black coating from the bottle. This reveals the actual product packaging underneath, showcasing a unique packaging feature."
+  },
+  {
+    "qid": "0914-2",
+    "prediction": "**Yes**, the video demonstrates how hot water causes the loose plastic sleeve label to shrink and conform tightly to the shape of the beer bottle."
+  },
+  {
+    "qid": "0914-3",
+    "prediction": "**No**, the bottle is placed under the faucet to apply a heat-shrink sleeve label using hot water, not to cool the beer. The faucet is marked \"Hot Water,\" and the heat causes the plastic sleeve to shrink tightly around the bottle."
+  },
+  {
+    "qid": "0914-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0918-0",
+    "prediction": "The man puts the soap in the box with his **right hand**.\n\nHe holds the container with his left hand and uses his right hand to pick up the soap shavings and place them inside."
+  },
+  {
+    "qid": "0918-1",
+    "prediction": "The man uses his **right hand** to place the soap shavings into the box, while holding the box with his left hand."
+  },
+  {
+    "qid": "0918-2",
+    "prediction": "Yes, the man uses his right hand to pick up the individual soap shavings and place them into the clear container he holds in his left hand."
+  },
+  {
+    "qid": "0918-3",
+    "prediction": "**No.** The man holds the container with his left hand and uses his right hand to pick up the soap shavings and place them inside the container."
+  },
+  {
+    "qid": "0918-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "0919-0",
+    "prediction": "The man creates the rainbow by drawing colored stripes onto clear packing tape using markers. He then shines a phone flashlight through this colored tape in a dark room. The marker ink acts as a filter, allowing the light to project the colored stripes onto the wall as a rainbow pattern."
+  },
+  {
+    "qid": "0919-1",
+    "prediction": "The man makes a rainbow appear by coloring the sticky side of clear packing tape with different colored markers in stripes. He then shines a phone flashlight through the center hole of the tape roll, using the colored tape section as a filter to project the colors onto the wall as a rainbow."
+  },
+  {
+    "qid": "0919-2",
+    "prediction": "**Yes**, the man creates the rainbow effect by coloring stripes onto the clear tape with markers. He then shines a light (from his phone's flashlight) through the colored sections of the tape, which acts as a filter, projecting the rainbow pattern onto the wall."
+  },
+  {
+    "qid": "0919-3",
+    "prediction": "**No**, the man does not use a prism. He creates the rainbow effect by coloring sections of clear tape with different colored markers. He then shines a light (from his phone's flashlight) through these colored sections, which act like filters, projecting the different colors onto the wall."
+  },
+  {
+    "qid": "0919-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "0924-0",
+    "prediction": "**Answer:** A red book.\n**Explanation:** At the end of the video, after the blue liquid is thrown, the red object that the woman in the white top was holding falls to the ground near her feet. This object is clearly identifiable as a book with a red cover."
+  },
+  {
+    "qid": "0924-1",
+    "prediction": "The red item the woman in the white top is holding is a **book**.\n\n**Explanation:** The item is rectangular, has a red cover, and when she drops it in surprise, white pages are visible inside. She is also holding it and looking down at it in a manner consistent with reading a book."
+  },
+  {
+    "qid": "0924-2",
+    "prediction": "**No, the woman in the white top is not holding the red book at the end of the video.** She drops it on the ground after being splashed with blue liquid, and it is seen lying beside her chair."
+  },
+  {
+    "qid": "0924-3",
+    "prediction": "No, the woman in the white top is not holding a red bottle at the end of the video. She was initially holding a book with a red cover, but after being splashed with blue liquid, she drops the book and is shown reacting with her hands empty."
+  },
+  {
+    "qid": "0924-7",
+    "prediction": "B"
   }
 ]
