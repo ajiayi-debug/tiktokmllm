@@ -1,7 +1,7 @@
 from datasets import load_dataset
 import pandas as pd
-from gemini_qa import *
-from rearrange import reorder
+from agents.gemini_qa import *
+from agents.rearrange import reorder
 import asyncio
 
 async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry,final_output, number_of_iterations=1, temperature=0, iterate_prompt="", video_upload=False, wait_time=30):

@@ -4,7 +4,7 @@ import traceback
 from tqdm import tqdm
 from collections import defaultdict
 import csv
-from gemini import GeminiAsync
+from agents.gemini import GeminiAsync
 import time
 import pandas as pd
 import asyncio
