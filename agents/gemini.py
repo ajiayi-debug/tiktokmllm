@@ -7,7 +7,6 @@ import time
 import asyncio
 from typing import List
 from tqdm import tqdm
-import re
 
 load_dotenv()
 
@@ -16,11 +15,11 @@ model="gemini-2.5-pro-preview-03-25"
 #model="gemini-2.5-flash-preview-04-17"
 
 
-def generate_question_then_solve(question):
-    prompt=f"""Generate questions to gather clues to solve the following question:
-    {question}
-    Then, solve each question you generated with reference to the video, then use the question answers to solve the main question. Output your final answer to the main question with the tag: 
-    [Final answer: (answer to main question)]"""
+def choose_best_answer_prompt(question,output):
+    prompt=f"""Based on the 8 answers and the video, determine the best answer to the question: {question}
+    The best answer can be a combination of answers from the top 8 answers. Just answer the question and dont explain why you chose that answer among the top 8 answer.
+    The 8 answers:
+    {output}"""
     return prompt
 
 class GeminiAsync:
@@ -66,12 +65,14 @@ class GeminiAsync:
         *,
         temperature: float = 0.0,
         wait_time: int = 30,
+        iterate_prompt: str = "",
     ) -> List[str]:
+        """Two‑step generation directly from a YouTube/URI video."""
         results: list[str] = []
-
         for q in tqdm(questions, desc="Answering questions", unit="q", leave=False):
-            full_q = generate_question_then_solve(q)
+            full_q = q if not iterate_prompt else f"{q} {iterate_prompt}"
 
+            # Step 1 – get 8 candidate answers in one shot
             contents = [
                 types.Content(
                     role="user",
@@ -81,30 +82,39 @@ class GeminiAsync:
                     ],
                 )
             ]
-
             try:
                 multi = await self._stream_text(contents, temperature)
             except Exception as e:
-                print("Gemini API error during multi‑answer gen:", e)
+                print(f"Gemini API error during multi‑answer gen: {e}")
                 results.append("Error")
                 continue
 
-            print("\nQ:", full_q)
+            print("\nQ:", full_q)          # shows the *exact* prompt sent
             print("Step‑1 answers:\n", multi, "\n")
 
-            # pull out [Final answer: ... ]
-            pattern = r"\[\s*Final\s+Answer:\s*(.*?)\s*\]"   # allow spaces, any case
-            match   = re.search(pattern, multi, flags=re.DOTALL | re.IGNORECASE)
-
-            if match:
-                answer = match.group(1).strip()
-                results.append(answer)          # ← append extracted answer
-                print("Extracted answer:", answer)
+            # Step 2 – optional: have Gemini pick the best
+            if iterate_prompt:
+                best_prompt = choose_best_answer_prompt(q, multi)
+                contents_best = [
+                    types.Content(
+                        role="user",
+                        parts=[
+                            types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
+                            types.Part.from_text(text=best_prompt),
+                        ],
+                    )
+                ]
+                try:
+                    best = await self._stream_text(contents_best, temperature)
+                    results.append(best)
+                except Exception as e:
+                    print(f"Gemini API error during best‑answer selection: {e}")
+                    results.append("Error")
             else:
-                results.append(multi)           # fallback: keep whole text
+                results.append(multi)
 
             await asyncio.sleep(wait_time)
-        return results[0]                          # ← return the correct list
+        return results
 
     async def generate_from_uploaded_video_file(
         self,
@@ -112,6 +122,7 @@ class GeminiAsync:
         question: str,
         *,
         temperature: float = 0.0,
+        iterate_prompt: str = "",
         wait_time: int = 30,
     ) -> str:
         """Uploads a local video then runs the two‑step QA flow."""
@@ -127,10 +138,10 @@ class GeminiAsync:
             uri,
             [question],
             temperature=temperature,
-            wait_time=wait_time
+            wait_time=wait_time,
+            iterate_prompt=iterate_prompt,
         )
-        await self.delete_file(uri)
-        return answers
+        return answers[0]
 
     async def generate(
         self, input_text: str, *, temperature: float = 0.7, stream: bool = False
@@ -148,25 +159,6 @@ class GeminiAsync:
             model=self.model, contents=contents, config=cfg
         )
         return resp.text.strip()
-   
-    async def delete_file(self, file_name_or_uri: str) -> None:
-        """
-        Delete a file you previously uploaded via Gemini API.
-
-        Examples
-        --------
-        await g.delete_file("files/abc123def")        # from list() call
-        await g.delete_file(uploaded_file.uri)        # after upload
-        """
-        # extract canonical file name if a full URI is passed
-        file_name = file_name_or_uri.split("/")[-1]
-        file_path = f"files/{file_name}"
-
-        try:
-            await self.aio.files.delete(name=file_path)
-            print(f"Deleted {file_path}")
-        except Exception as e:
-            print(f"File delete failed for {file_path}: {e}")
 
 
 # -------------------------------------------------------------------------
@@ -180,8 +172,9 @@ if __name__ == "__main__":
             [
                 "What is the difference between the action of the last person in the video and the actions of the first two people?"
             ],
+            iterate_prompt="Generate your top 8 highest confidence scoring answers. Dont rank the answers.",
             temperature=0,
         )
-        print("\nAnswer:", ans)
+        print("\nAnswer:", ans[0])
 
     asyncio.run(_demo())

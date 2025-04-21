@@ -19,6 +19,7 @@ async def gemini_video_fn_async(
     wait_time: float = 30,
     temperature: float = 0.0,
     local_video_path: str | None = None,
+    iterate_prompt: str = "",
     video_upload: bool = False,
     concurrency: int = 4,
 ) -> list[str]:
@@ -35,6 +36,7 @@ async def gemini_video_fn_async(
                     return await g.generate_from_uploaded_video_file(
                         local_video_path or "", q,
                         temperature=temperature,
+                        iterate_prompt=iterate_prompt,
                         wait_time=wait_time,
                     )
                 # try direct first
@@ -44,17 +46,20 @@ async def gemini_video_fn_async(
                             video_uri,
                             [q],
                             temperature=temperature,
+                            iterate_prompt=iterate_prompt,
                             wait_time=wait_time,
                         )
-                    )
+                    )[0]
                 except Exception as e:
-                    
-                    return await g.generate_from_uploaded_video_file(
-                        local_video_path,
-                        q,
-                        temperature=temperature,
-                        wait_time=wait_time,
-                    )
+                    if "403" in str(e) and local_video_path:
+                        return await g.generate_from_uploaded_video_file(
+                            local_video_path,
+                            q,
+                            temperature=temperature,
+                            iterate_prompt=iterate_prompt,
+                            wait_time=wait_time,
+                        )
+                    raise
             except Exception as final_err:
                 print("Fail", final_err)
                 return "Error"
@@ -82,6 +87,7 @@ async def process_all_video_questions_list_gemini(
     batch_size=5,
     temperature=0,
     filter_qids=None,
+    iterate_prompt="",
     video_upload=False,
     wait_time=30
 ):
@@ -133,7 +139,7 @@ async def process_all_video_questions_list_gemini(
                 print(f"Failed to build question for QID {qid}: {e}")
                 predictions.append({"qid": qid, "prediction": "Error"})
         try:
-            outputs = await gemini_video_fn_async(video_path, questions, num_repeats=iterations, wait_time=wait_time, temperature=temperature, local_video_path=video_mp4, video_upload=video_upload)
+            outputs = await gemini_video_fn_async(video_path, questions, num_repeats=iterations, wait_time=wait_time, temperature=temperature, local_video_path=video_mp4, iterate_prompt=iterate_prompt, video_upload=video_upload)
             print(outputs)
         except Exception as e:
             print(f"Error on video {video_id}: {e}")
@@ -158,75 +164,6 @@ async def process_all_video_questions_list_gemini(
 
     _save_checkpoint(predictions, checkpoint_path)
 
-
-
-# async def gemini_video_fn_async(
-#     *,
-#     video_uri: str,
-#     questions: Sequence[str],
-#     num_repeats: int = 1,
-#     wait_time: float = 30,
-#     temperature: float = 0.0,
-#     local_video_path: str | None = None,
-#     video_upload: bool = False,     # upload‑first when True
-#     concurrency: int = 4,
-# ) -> list[str]:
-#     """
-#     Ask Gemini questions about a video.
-#     • upload‑first if `video_upload` is True
-#     • If the first method throws 403 (quota) or 500 (INTERNAL),
-#       fall back to the other method.
-#     """
-#     g = GeminiAsync()
-#     sem = asyncio.Semaphore(concurrency)
-
-#     async def ask_via_uri(q: str) -> str:
-#         resp = await g.generate_from_video(
-#             video_uri, [q],
-#             temperature=temperature,
-#             wait_time=0,
-#         )
-#         return resp                      # generate_from_video returns a string
-
-#     async def ask_via_upload(q: str) -> str:
-#         if not local_video_path:
-#             raise FileNotFoundError("local_video_path is required for upload mode")
-#         return await g.generate_from_uploaded_video_file(
-#             local_video_path, q,
-#             temperature=temperature,
-#             wait_time=0,
-#         )
-
-#     async def _single(q: str) -> str:
-#         async with sem:
-#             primary, fallback = (ask_via_upload, ask_via_uri) if video_upload else (ask_via_uri, ask_via_upload)
-#             try:
-#                 return await primary(q)
-#             except Exception as e:
-#                 msg = str(e)
-#                 # decide when to flip strategies
-#                 must_switch = (
-#                     "403" in msg or "PERMISSION_DENIED" in msg or
-#                     "500" in msg or "INTERNAL" or "file" in msg
-#                 )
-#                 if must_switch:
-#                     print("↩️  primary failed; trying fallback:", msg.splitlines()[0])
-#                     try:
-#                         return await fallback(q)
-#                     except Exception as e2:
-#                         print("fallback failed:", e2)
-#                         return "Error"
-#                 print("primary failed (no fallback):", msg)
-#                 return "Error"
-
-#     results: list[str] = []
-#     for _ in range(num_repeats):
-#         batch = await asyncio.gather(*[_single(q) for q in questions])
-#         results.extend(batch)
-#         if wait_time:
-#             await asyncio.sleep(wait_time)
-
-#     return results
 
 def _save_checkpoint(predictions, path):
     with open(path, "w") as f:
@@ -383,6 +320,7 @@ async def process_all_video_questions_list_gemini_df(
     batch_size=5,
     temperature=0,
     filter_qids=None,
+    iterate_prompt="",
     video_upload=False,
     wait_time=30
 ):
@@ -448,6 +386,7 @@ async def process_all_video_questions_list_gemini_df(
                 wait_time=wait_time,
                 temperature=temperature,
                 local_video_path=local_video_path,
+                iterate_prompt=iterate_prompt,
                 video_upload=video_upload
             )
             print(outputs)

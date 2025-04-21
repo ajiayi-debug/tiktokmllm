@@ -13,6 +13,7 @@ async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry,final_output
         video_dir="Benchmark-AllVideos-HQ-Encoded-challenge",
         batch_size=1,
         temperature=temperature,
+        iterate_prompt=iterate_prompt,
         video_upload=video_upload,
         wait_time=wait_time
     )
@@ -29,6 +30,7 @@ async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry,final_output
         batch_size=1,
         temperature=temperature,
         filter_qids=error_qids,
+        iterate_prompt=iterate_prompt,
         video_upload=video_upload,
         wait_time=wait_time
     )
@@ -46,12 +48,13 @@ async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry,final_output
         csv_path=f"data/{final_output}.csv"
     )
 
-    reorder(f"data/{final_output}.csv",df,f"data/{final_output}_rearranged.csv")
+    reorder(f"data/{final_output}.csv",df,f"{final_output}_rearranged.csv")
 
 
 
 
 if __name__ == "__main__":
     #df=load_dataset("lmms-lab/AISG_Challenge")
+    iterate_prompt="""Generate your top 8 highest confidence scoring answers. Dont rank the answers."""
     df=pd.read_csv('data/data.csv')
-    asyncio.run(CotAgent(df, "Gemini_guided", "Gemini_guided_retry", "Gemini_guided_Final", number_of_iterations=1,video_upload=False, wait_time=10))
+    asyncio.run(CotAgent(df, "Gemini_top8", "Gemini_top8_retry", "Gemini_top8_Final", number_of_iterations=1, iterate_prompt=iterate_prompt, video_upload=True, wait_time=10))
