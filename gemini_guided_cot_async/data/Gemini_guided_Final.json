@@ -1153,7 +1153,7 @@
   },
   {
     "qid": "0358-3",
-    "prediction": "Error"
+    "prediction": "No. The woman in white avoided going onto the trampoline, but not because she jumped off herself. She remained seated on the ledge after declining the man's suggestion for her to jump."
   },
   {
     "qid": "0358-7",
@@ -2285,7 +2285,7 @@
   },
   {
     "qid": "0612-1",
-    "prediction": "Error"
+    "prediction": "The paper is divided into two sections to create a direct visual comparison between the results of coloring the same portrait using \"$0\" materials (free, unconventional items like coffee, burnt matches, grass) versus \"$300\" materials (expensive, professional colored pencils)."
   },
   {
     "qid": "0612-2",
@@ -2305,11 +2305,11 @@
   },
   {
     "qid": "0614-1",
-    "prediction": "Error"
+    "prediction": "The man's hands appear to \"tremble\" because he is deliberately acting clumsy and messy, likely as part of a prank or staged video intended to get a reaction from the waitress, rather than experiencing involuntary shaking due to a medical condition or nervousness."
   },
   {
     "qid": "0614-2",
-    "prediction": "Error"
+    "prediction": "Yes, the evidence in the video strongly suggests the man is pretending to have trembling hands, likely as a social experiment or test to see if someone, specifically the waitress, would help him. The key indicators are the severe trembling during the task, the waitress's intervention, and the immediate and complete cessation of the trembling once he reveals a pre-prepared gift as a reward for her kindness."
   },
   {
     "qid": "0614-3",
@@ -2549,11 +2549,11 @@
   },
   {
     "qid": "0664-2",
-    "prediction": "Error"
+    "prediction": "No, the woman did not roll the dice 9 times; she rolled them 10 times during the game shown."
   },
   {
     "qid": "0664-3",
-    "prediction": "Error"
+    "prediction": "No, the woman rolled the dice 10 times as shown in the sequence, not 11."
   },
   {
     "qid": "0664-7",
@@ -2565,7 +2565,7 @@
   },
   {
     "qid": "0667-1",
-    "prediction": "Error"
+    "prediction": "6"
   },
   {
     "qid": "0667-2",
@@ -2585,15 +2585,15 @@
   },
   {
     "qid": "0670-1",
-    "prediction": "Error"
+    "prediction": "3 children are shown jumping into the water from the dock in the video."
   },
   {
     "qid": "0670-2",
-    "prediction": "Error"
+    "prediction": "False"
   },
   {
     "qid": "0670-3",
-    "prediction": "Error"
+    "prediction": "No"
   },
   {
     "qid": "0670-7",
@@ -2681,7 +2681,7 @@
   },
   {
     "qid": "0690-0",
-    "prediction": "Error"
+    "prediction": "The child is lying on the ground voluntarily to watch her parents play a shell game on the coffee table."
   },
   {
     "qid": "0690-1",
@@ -2689,7 +2689,7 @@
   },
   {
     "qid": "0690-2",
-    "prediction": "Error"
+    "prediction": "No, the child is not lying on the ground to secretly take the money during the trick."
   },
   {
     "qid": "0690-3",
@@ -2697,7 +2697,7 @@
   },
   {
     "qid": "0690-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0695-0",
@@ -2709,15 +2709,15 @@
   },
   {
     "qid": "0695-2",
-    "prediction": "Error"
+    "prediction": "Yes, the woman won the game because she successfully arranged her cups to match the target order."
   },
   {
     "qid": "0695-3",
-    "prediction": "Error"
+    "prediction": "No, the man did not win the game. The woman won because she was the first to correctly arrange her cups to match the order of the man's cups, achieving four matches. The game is won by correctly matching the sequence, not solely by being faster at arranging the cups."
   },
   {
     "qid": "0695-7",
-    "prediction": "Error"
+    "prediction": "A"
   },
   {
     "qid": "0706-0",
@@ -2741,7 +2741,7 @@
   },
   {
     "qid": "0707-0",
-    "prediction": "Error"
+    "prediction": "The purpose of the person running towards the camera is to execute a planned video transition or visual effect, specifically to bring the drink they are holding into an abrupt, prominent close-up shot for their social media video content."
   },
   {
     "qid": "0707-1",
@@ -2753,11 +2753,11 @@
   },
   {
     "qid": "0707-3",
-    "prediction": "Error"
+    "prediction": "No, the person does not run towards the camera for a dynamic introduction; he initially runs *away* from the camera after starting the recording. His specific actions involve running away, then turning back to perform dance-like movements and poses while holding an iced beverage, sipping from it, and moving towards the camera at later points, notably bringing the beverage very close to the lens."
   },
   {
     "qid": "0707-7",
-    "prediction": "Error"
+    "prediction": "A"
   },
   {
     "qid": "0708-0",
@@ -2765,7 +2765,7 @@
   },
   {
     "qid": "0708-1",
-    "prediction": "Error"
+    "prediction": "The cat is yelling (a comedic sound effect/expression) in the final scene as a reaction to its owner bringing home and unpacking a large supply of new bath products, immediately replacing the ones the cat had just mischievously destroyed. The yell signifies the cat's mock evil frustration or defiance that its destructive act was rendered futile."
   },
   {
     "qid": "0708-2",
@@ -2777,7 +2777,7 @@
   },
   {
     "qid": "0708-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0721-0",
@@ -2801,7 +2801,7 @@
   },
   {
     "qid": "0724-0",
-    "prediction": "Error"
+    "prediction": "The pen appears to pass through the banknote because the note is folded in a specific way. It's folded lengthwise, then widthwise with one half slightly offset before creasing. This offset creates a hidden channel along the fold line. The pen is actually inserted into and passed through this channel, not through the paper itself. When the note is unfolded, it remains intact because it was never actually pierced."
   },
   {
     "qid": "0724-1",
@@ -2809,35 +2809,35 @@
   },
   {
     "qid": "0724-2",
-    "prediction": "Error"
+    "prediction": "Yes, the banknote remains intact because the pen is inserted through an opening or loop created by folding the banknote in a specific way, rather than piercing the actual paper."
   },
   {
     "qid": "0724-3",
-    "prediction": "Error"
+    "prediction": "Yes, the banknote is not broken. An illusion creates the appearance of penetration. While a pen with a hidden mechanism is one way this trick can be done, the video doesn't confirm this specific method; a common alternative involves folding the note so the pen passes through a gap without actually piercing the paper."
   },
   {
     "qid": "0724-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0725-0",
-    "prediction": "Error"
+    "prediction": "The amount of drink in the bottle decreased because the man first drank some of it and then poured the rest out into a beaker to modify the bottle for a magic trick."
   },
   {
     "qid": "0725-1",
-    "prediction": "Error"
+    "prediction": "The liquid level drops because there is a hidden balloon inflated inside the bottle underneath the liquid. When the person blows air with the straw (or opens the bottle), air escapes from the balloon through a hidden hole, causing the balloon to deflate. As the balloon shrinks, the liquid flows down to fill the space it previously occupied, resulting in a lower visible liquid level."
   },
   {
     "qid": "0725-2",
-    "prediction": "Error"
+    "prediction": "No, the drink level does not decrease because the balloon is deflating. The video demonstrates a trick where blowing air into the bottle's opening increases the pressure above the liquid, causing the liquid level to rise around an already inflated balloon fixed inside the bottle. The balloon does not deflate during this process."
   },
   {
     "qid": "0725-3",
-    "prediction": "Error"
+    "prediction": "No, the drink level is not decreasing because it is being consumed through the straw. The man is blowing air through the straw into a hidden balloon inside the bottle. As the balloon inflates, it displaces the liquid, causing the liquid level to rise in the bottle's neck, creating an illusion."
   },
   {
     "qid": "0725-7",
-    "prediction": "Error"
+    "prediction": "A"
   },
   {
     "qid": "0729-0",
@@ -2881,11 +2881,11 @@
   },
   {
     "qid": "0735-0",
-    "prediction": "Error"
+    "prediction": "The scenery on the artboard came about because the \"artboard\" is actually a mirror placed on an easel, which reflects the real sunset landscape in front of it. The man's action with the paintbrush is part of the creative setup or misdirection, not the method of creating the image itself."
   },
   {
     "qid": "0735-1",
-    "prediction": "Error"
+    "prediction": "The scenery appears on the artboard because the \"artboard\" is actually a mirror positioned on an easel to reflect the real sunset landscape in front of it."
   },
   {
     "qid": "0735-2",
@@ -2893,11 +2893,11 @@
   },
   {
     "qid": "0735-3",
-    "prediction": "Error"
+    "prediction": "No, the scenery on the object on the easel in the second segment was not painted. It was a reflection of the actual sunset over the water captured in a mirror."
   },
   {
     "qid": "0735-7",
-    "prediction": "Error"
+    "prediction": "B"
   },
   {
     "qid": "0738-0",
@@ -2965,27 +2965,27 @@
   },
   {
     "qid": "0743-1",
-    "prediction": "Error"
+    "prediction": "The solution to the third math problem (13+13) in the video is 26. This is shown when the man points to 26 and an arrow directs from the problem to the number 26."
   },
   {
     "qid": "0743-2",
-    "prediction": "Error"
+    "prediction": "Yes"
   },
   {
     "qid": "0743-3",
-    "prediction": "Error"
+    "prediction": "No"
   },
   {
     "qid": "0743-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0749-0",
-    "prediction": "Error"
+    "prediction": "In the first physics experiment shown, the yellow liquid (likely beaten eggs) can pass through the sieve. The wire mesh openings are large enough for the liquid to flow through, but too small for the granular material (rice/panko) to pass, and the powder (flour) adheres or clumps enough to be mostly retained on the sieve's surface during the brief interaction shown."
   },
   {
     "qid": "0749-1",
-    "prediction": "Error"
+    "prediction": "The materials able to pass through the sieve in the first experiment are the granular material (looks like rice), the yellow liquid (looks like beaten egg or oil), and the white powder (looks like flour). This is because their individual particles or their fluid nature allows them to fit through the openings in the sieve's mesh."
   },
   {
     "qid": "0749-2",
@@ -2993,11 +2993,11 @@
   },
   {
     "qid": "0749-3",
-    "prediction": "Error"
+    "prediction": "No, the flour does not pass through the sieve in the experiment shown. It adheres to the liquid previously coated onto the sieve wires."
   },
   {
     "qid": "0749-7",
-    "prediction": "Error"
+    "prediction": "A"
   },
   {
     "qid": "0757-0",
@@ -3029,7 +3029,7 @@
   },
   {
     "qid": "0762-2",
-    "prediction": "Error"
+    "prediction": "Yes, the video strongly implies the second boat is meant to represent paper, as indicated by the corresponding paper emoji (\ud83d\uddd2\ufe0f) and its immediate collapse and sinking when stepped upon, which is consistent with the properties of paper in water under load."
   },
   {
     "qid": "0762-3",
@@ -3037,11 +3037,11 @@
   },
   {
     "qid": "0762-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0763-0",
-    "prediction": "Error"
+    "prediction": "The canned coke that was taken away is the real one. The hand physically interacts with it by picking it up and removing it, which wouldn't be possible in the same way if it were just a drawing on a flat surface. The can left behind is likely the illusion (a drawing or cutout), fitting the video's theme of optical illusions being perceived as real."
   },
   {
     "qid": "0763-1",
@@ -3049,7 +3049,7 @@
   },
   {
     "qid": "0763-2",
-    "prediction": "Error"
+    "prediction": "No, the video does not provide evidence to suggest the can taken away was not real. The action shows one seemingly real can being replaced by another seemingly real can. While presented in the context of optical illusions, both cans appear physically genuine in the clip."
   },
   {
     "qid": "0763-3",
@@ -3057,7 +3057,7 @@
   },
   {
     "qid": "0763-7",
-    "prediction": "Error"
+    "prediction": "A"
   },
   {
     "qid": "0766-0",
@@ -3081,7 +3081,7 @@
   },
   {
     "qid": "0777-0",
-    "prediction": "Error"
+    "prediction": "14"
   },
   {
     "qid": "0777-1",
@@ -3089,15 +3089,15 @@
   },
   {
     "qid": "0777-2",
-    "prediction": "Error"
+    "prediction": "Yes"
   },
   {
     "qid": "0777-3",
-    "prediction": "Error"
+    "prediction": "No"
   },
   {
     "qid": "0777-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0779-0",
@@ -3141,7 +3141,7 @@
   },
   {
     "qid": "0794-0",
-    "prediction": "Error"
+    "prediction": "The caption \"POV: Never trust your friend \ud83d\udc80\" is referring to the second cat (the white one with black spots) as the \"friend\". This is because this cat is shown pushing the first cat off the ledge, an act portrayed as a betrayal of trust, directly aligning with the caption's warning."
   },
   {
     "qid": "0794-1",
@@ -3157,19 +3157,19 @@
   },
   {
     "qid": "0794-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0806-0",
-    "prediction": "Error"
+    "prediction": "4"
   },
   {
     "qid": "0806-1",
-    "prediction": "Error"
+    "prediction": "4"
   },
   {
     "qid": "0806-2",
-    "prediction": "Error"
+    "prediction": "Yes"
   },
   {
     "qid": "0806-3",
@@ -3177,7 +3177,7 @@
   },
   {
     "qid": "0806-7",
-    "prediction": "Error"
+    "prediction": "A"
   },
   {
     "qid": "0810-0",
@@ -3221,7 +3221,7 @@
   },
   {
     "qid": "0816-0",
-    "prediction": "Error"
+    "prediction": "In the second experiment, the person swirled the inverted bottle. This action creates a vortex, allowing air to enter easily through the center while water flows out around it, significantly speeding up the emptying process compared to simply inverting the bottle."
   },
   {
     "qid": "0816-1",
@@ -3237,7 +3237,7 @@
   },
   {
     "qid": "0816-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0818-0",
@@ -3249,7 +3249,7 @@
   },
   {
     "qid": "0818-2",
-    "prediction": "Error"
+    "prediction": "Yes"
   },
   {
     "qid": "0818-3",
@@ -3257,7 +3257,7 @@
   },
   {
     "qid": "0818-7",
-    "prediction": "Error"
+    "prediction": "D"
   },
   {
     "qid": "0827-0",
@@ -3285,7 +3285,7 @@
   },
   {
     "qid": "0833-1",
-    "prediction": "Error"
+    "prediction": "The fourth segment depicts the creation of a composite photograph showing a person seemingly levitating or having an out-of-body experience under a pier. It shows the setup where the person is supported horizontally on a stool, and the final image where the stool is edited out, leaving one image of the person lying on the sand and a semi-transparent image of them floating above."
   },
   {
     "qid": "0833-2",
@@ -3293,11 +3293,11 @@
   },
   {
     "qid": "0833-3",
-    "prediction": "Error"
+    "prediction": "No, the fourth segment does not show a person holding a glass jar with a drink. It shows the setup and result of a levitation photography trick under a pier."
   },
   {
     "qid": "0833-7",
-    "prediction": "Error"
+    "prediction": "D"
   },
   {
     "qid": "0835-0",
@@ -3305,19 +3305,19 @@
   },
   {
     "qid": "0835-1",
-    "prediction": "Error"
+    "prediction": "Inside the woman's mouth, her teeth, tongue, and a blue/metallic tongue piercing stud can be seen."
   },
   {
     "qid": "0835-2",
-    "prediction": "Error"
+    "prediction": "Yes"
   },
   {
     "qid": "0835-3",
-    "prediction": "Error"
+    "prediction": "No, there is no dental appliance or mouth guard visible in the woman's mouth. A blue tongue piercing is visible."
   },
   {
     "qid": "0835-7",
-    "prediction": "Error"
+    "prediction": "D"
   },
   {
     "qid": "0841-0",
@@ -3361,7 +3361,7 @@
   },
   {
     "qid": "0854-0",
-    "prediction": "Error"
+    "prediction": "The operator engages in conversation with the visitors primarily as a psychological tactic. By chatting casually or even pretending there's a problem with the ride, he distracts them and prevents them from mentally preparing for the imminent drop. When he suddenly activates the ride, this lack of preparedness maximizes the element of surprise and shock, thereby intensifying the thrill of the experience for the riders and making it more memorable."
   },
   {
     "qid": "0854-1",
@@ -3369,15 +3369,15 @@
   },
   {
     "qid": "0854-2",
-    "prediction": "Error"
+    "prediction": "Yes, the operator talks to visitors, sometimes using misdirection like pretending there's a malfunction, specifically to increase their nervousness or catch them by surprise before dropping the ride."
   },
   {
     "qid": "0854-3",
-    "prediction": "Error"
+    "prediction": "No, the operator's conversation is not meant to help visitors feel more at ease or prepared; it's described as a way to distract them before a sudden start or even trick them to enhance the shock."
   },
   {
     "qid": "0854-7",
-    "prediction": "Error"
+    "prediction": "D"
   },
   {
     "qid": "0857-0",
@@ -3405,19 +3405,19 @@
   },
   {
     "qid": "0858-1",
-    "prediction": "Error"
+    "prediction": "The man in the white short-sleeved shirt first tried to sit on the armrest located on the viewer's left side of the chair."
   },
   {
     "qid": "0858-2",
-    "prediction": "Error"
+    "prediction": "Yes, according to the video's explanation of the optical illusion, the man in the white short-sleeved shirt initially sat on the right armrest of the chair, even though it appeared otherwise due to the perspective."
   },
   {
     "qid": "0858-3",
-    "prediction": "Error"
+    "prediction": "No, the man did not initially sit on the left armrest. Although from the initial viewing angle it appeared he was attempting to sit on the left armrest, the video's narration clarifies this was an optical illusion and the structure he initially interacted with was actually the chair's right armrest."
   },
   {
     "qid": "0858-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0865-0",
@@ -3453,31 +3453,31 @@
   },
   {
     "qid": "0868-3",
-    "prediction": "Error"
+    "prediction": "Yes, the tool shown at the very beginning of the video has a red handle, although it is not being swung in that initial action."
   },
   {
     "qid": "0868-7",
-    "prediction": "Error"
+    "prediction": "B"
   },
   {
     "qid": "0870-0",
-    "prediction": "Error"
+    "prediction": "The man did not give his belongings to the photographer. The video shows the photographer pointing at the man's inadequate shelter (cardboard, hat) and small amount of money, likely to highlight his poverty and need for help, which is reinforced by the \"HELP ME\" text. The man's initial gesture is pleading. Subsequently, the photographer provides the man and his daughter with substantial help (an umbrella, food, drinks, and money), eliciting a grateful and emotional response. The interaction depicts an act of charity from the photographer towards the man."
   },
   {
     "qid": "0870-1",
-    "prediction": "Error"
+    "prediction": "The man handed over his belongings because the photographer gestured and prompted him to do so. He complied out of apparent desperation, confusion, and vulnerability in his situation, likely without understanding the photographer's ultimate intention, which was to perform an act of charity by replacing his meager items with much better provisions and money."
   },
   {
     "qid": "0870-2",
-    "prediction": "Error"
+    "prediction": "No, the man did not give his belongings to the photographer out of kindness. The video depicts the man and child as being in need and receiving assistance (an umbrella, snacks, money) from the photographer/videographer, who is the one performing the act of kindness."
   },
   {
     "qid": "0870-3",
-    "prediction": "Error"
+    "prediction": "No, the man did not give his belongings to the photographer in exchange for food and other necessities. The photographer provided these items as an act of help or charity."
   },
   {
     "qid": "0870-7",
-    "prediction": "Error"
+    "prediction": "E"
   },
   {
     "qid": "0871-0",
@@ -3501,43 +3501,43 @@
   },
   {
     "qid": "0872-0",
-    "prediction": "Error"
+    "prediction": "Towards the right"
   },
   {
     "qid": "0872-1",
-    "prediction": "Error"
+    "prediction": "The top water bottle pack was moved to the **right** from the camera's viewpoint after being placed down."
   },
   {
     "qid": "0872-2",
-    "prediction": "Error"
+    "prediction": "No, the man did not move just the upper water bottle pack; he moved the entire stack (both packs together) slightly to the left from the camera's perspective after placing them down."
   },
   {
     "qid": "0872-3",
-    "prediction": "Error"
+    "prediction": "Yes, the man did move the upper water bottle pack to the right, from the camera's perspective, after initially placing them down as a stack."
   },
   {
     "qid": "0872-7",
-    "prediction": "Error"
+    "prediction": "D"
   },
   {
     "qid": "0875-0",
-    "prediction": "Error"
+    "prediction": "1"
   },
   {
     "qid": "0875-1",
-    "prediction": "Error"
+    "prediction": "1"
   },
   {
     "qid": "0875-2",
-    "prediction": "Error"
+    "prediction": "No, there is only one cell phone visible resting on the piano. It has a dark case with a light-colored circular attachment. A green-cased phone is visible, but it is being held by someone in the audience, not placed on the piano."
   },
   {
     "qid": "0875-3",
-    "prediction": "Error"
+    "prediction": "Yes, there is only one cell phone visible resting on the piano surface, and it is positioned to the left of the pianist's hands."
   },
   {
     "qid": "0875-7",
-    "prediction": "Error"
+    "prediction": "D"
   },
   {
     "qid": "0879-0",
@@ -3589,7 +3589,7 @@
   },
   {
     "qid": "0886-2",
-    "prediction": "Error"
+    "prediction": "No"
   },
   {
     "qid": "0886-3",
@@ -3597,15 +3597,15 @@
   },
   {
     "qid": "0886-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0895-0",
-    "prediction": "Error"
+    "prediction": "The scene cut to after the smaller-than-standard basketball is thrown into the \"mini hoop\" is the \"chainsaw rim\" scene."
   },
   {
     "qid": "0895-1",
-    "prediction": "Error"
+    "prediction": "In the scene following the throw of a smaller basketball (aimed at a hoop on a moving car), a person throws a regular-sized basketball from a patio towards a hoop attached to a moving boat on the water, successfully making the shot."
   },
   {
     "qid": "0895-2",
@@ -3613,11 +3613,11 @@
   },
   {
     "qid": "0895-3",
-    "prediction": "Error"
+    "prediction": "No, the scene does not cut to a person shooting into a mini hoop immediately after the smaller basketball is thrown. While both events occur in the video, they happen in different segments and are not sequential in the way described."
   },
   {
     "qid": "0895-7",
-    "prediction": "Error"
+    "prediction": "B"
   },
   {
     "qid": "0898-0",
@@ -3657,7 +3657,7 @@
   },
   {
     "qid": "0901-7",
-    "prediction": "Error"
+    "prediction": "C"
   },
   {
     "qid": "0905-0",
@@ -4653,7 +4653,7 @@
   },
   {
     "qid": "1095-3",
-    "prediction": "Error"
+    "prediction": "No"
   },
   {
     "qid": "1095-7",
@@ -5101,7 +5101,7 @@
   },
   {
     "qid": "1175-0",
-    "prediction": "Error"
+    "prediction": "The bear on the ground is made to move using digital animation, specifically Computer-Generated Imagery (CGI) or a similar visual effect added to the video after filming. It is not a real bear physically present during the recording."
   },
   {
     "qid": "1175-1",
@@ -5113,15 +5113,15 @@
   },
   {
     "qid": "1175-3",
-    "prediction": "Error"
+    "prediction": "No, the bear on the ground is not a mechanical bear; it is a digital visual effect (CGI)."
   },
   {
     "qid": "1175-7",
-    "prediction": "Error"
+    "prediction": "B"
   },
   {
     "qid": "1176-0",
-    "prediction": "Error"
+    "prediction": "The plant grew larger after the man took it inside the greenhouse, which he claimed causes incredibly fast growth. The video uses a visual effect/editing trick to show this rapid size increase occurring within that environment."
   },
   {
     "qid": "1176-1",
@@ -5133,11 +5133,11 @@
   },
   {
     "qid": "1176-3",
-    "prediction": "Error"
+    "prediction": "No, the plant in the man's hand did not grow larger due to a change in perspective. The video shows him holding the same small plant after transitioning through the doorway, and then reveals a separate, much larger plant already existing within the new environment."
   },
   {
     "qid": "1176-7",
-    "prediction": "Error"
+    "prediction": "B"
   },
   {
     "qid": "1177-0",
@@ -5209,11 +5209,11 @@
   },
   {
     "qid": "1183-2",
-    "prediction": "Error"
+    "prediction": "Yes, the sky darkened because of a combination of lighting changes and post-production effects."
   },
   {
     "qid": "1183-3",
-    "prediction": "Error"
+    "prediction": "No, the sky did not darken because the person turned off lights in the room. The video depicts a fantastical event where the person appears to grab the sun from the sky, causing the view outside the window to instantly change from bright daylight to darkness, as if it became night. The person did not interact with any internal light switches."
   },
   {
     "qid": "1183-7",
@@ -5221,11 +5221,11 @@
   },
   {
     "qid": "1192-0",
-    "prediction": "Error"
+    "prediction": "The standing sprinkler appeared because the person threw a gauntlet-like device (identified as being from the Ratchet & Clank game) which is designed to turn into a sprinkler upon landing."
   },
   {
     "qid": "1192-1",
-    "prediction": "Error"
+    "prediction": "The sudden appearance of the standing sprinkler was caused by the man throwing an orange gauntlet-like device (identified as a Topiary Sprinkler from the Ratchet & Clank game) onto the ground, which then transformed into the sprinkler as its intended function."
   },
   {
     "qid": "1192-2",
@@ -5233,7 +5233,7 @@
   },
   {
     "qid": "1192-3",
-    "prediction": "Error"
+    "prediction": "No, the standing sprinkler did not appear suddenly from underground. The video shows a person throwing the sprinkler device (an orange and green object resembling a weapon from the Ratchet & Clank game) onto the grass. The device activates and starts spraying water upon impact with the ground, not because it was hidden underground or activated by a separate ball."
   },
   {
     "qid": "1192-7",
@@ -5241,11 +5241,11 @@
   },
   {
     "qid": "1203-0",
-    "prediction": "Error"
+    "prediction": "The man (Andrey) took out the towel without touching the stream by first twisting it tightly while it was under the faucet. This made the towel thin and compact like a rope, allowing him to pull it upwards and away from the stream without the main body of the fabric getting caught in the water flow."
   },
   {
     "qid": "1203-1",
-    "prediction": "Error"
+    "prediction": "The man used a twisting method. He twisted the ends of the towel in opposite directions, which caused the loop around the faucet to tighten and move upwards along the spout, lifting it above the water stream before he pulled it away."
   },
   {
     "qid": "1203-2",
@@ -5253,7 +5253,7 @@
   },
   {
     "qid": "1203-3",
-    "prediction": "Error"
+    "prediction": "No, the man did not use the detachable spray head; he grabbed the towel directly with his hands and pulled it off the faucet while it was under the water stream."
   },
   {
     "qid": "1203-7",
@@ -5277,11 +5277,11 @@
   },
   {
     "qid": "1206-7",
-    "prediction": "Error"
+    "prediction": "A"
   },
   {
     "qid": "1209-0",
-    "prediction": "Error"
+    "prediction": "It is impossible to determine the woman's speed from the final photograph shown in the video. A photograph captures a single moment in time and does not provide the necessary information (distance traveled over time) to calculate speed."
   },
   {
     "qid": "1209-1",
@@ -5293,7 +5293,7 @@
   },
   {
     "qid": "1209-3",
-    "prediction": "Error"
+    "prediction": "No, the woman in the photo is not necessarily running quickly. The video shows this is a staged photoshoot where she is intentionally stepping into the puddle to create a dramatic splash and pose for the camera, enhanced by dropped leaves, rather than captured during a fast run."
   },
   {
     "qid": "1209-7",
@@ -5429,7 +5429,7 @@
   },
   {
     "qid": "1233-2",
-    "prediction": "Error"
+    "prediction": "No, the final photo only shows one reflection. The panoramic function was used to capture a wide vertical view including the subject, her single reflection, and the sky from a low angle, not to create two reflections."
   },
   {
     "qid": "1233-3",
@@ -5541,7 +5541,7 @@
   },
   {
     "qid": "1255-0",
-    "prediction": "Error"
+    "prediction": "The man ran underneath after the color Yellow was called."
   },
   {
     "qid": "1255-1",
@@ -5549,7 +5549,7 @@
   },
   {
     "qid": "1255-2",
-    "prediction": "Error"
+    "prediction": "Yes"
   },
   {
     "qid": "1255-3",
@@ -5745,15 +5745,15 @@
   },
   {
     "qid": "1293-1",
-    "prediction": "Error"
+    "prediction": "The bottle cap was suspended in the desired position using a thin string or wire, which is visible during the setup phase (around 0:06-0:07). Water was sprayed to create droplets for effect, and the string was likely edited out of the final photograph."
   },
   {
     "qid": "1293-2",
-    "prediction": "Error"
+    "prediction": "Yes, the video shows the bottle cap suspended by a thin string (visible from 0:06-0:08), and the final photo uses a low camera angle, added water spray, and selective focus to create the illusion of it flying."
   },
   {
     "qid": "1293-3",
-    "prediction": "Error"
+    "prediction": "No, the bottle cap did not fly because someone flicked it. The video shows it was suspended from a thin string or wire to create the illusion of it floating for the photograph."
   },
   {
     "qid": "1293-7",

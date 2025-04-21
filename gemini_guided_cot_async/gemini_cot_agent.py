@@ -37,16 +37,23 @@ async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry,final_output
     merge_predictions(
         original_path=f"data/{checkpoint_path_initial}.json",
         retry_path=f"data/{checkpoint_path_retry}.json",
-        merged_output_path=f"data/{final_output}.json"
+        merged_output_path=f"data/{checkpoint_path_initial}.json"
     )
+
+    # delete the retry file – it's no longer needed
+    retry_path = f"data/{checkpoint_path_retry}.json"
+    if os.path.isfile(retry_path):
+        os.remove(retry_path)
+        print("🗑️  removed", retry_path)
+
 
     # Save final merged predictions to CSV
     save_predictions_to_csv(
-        json_path=f"data/{final_output}.json",
+        json_path=f"data/{checkpoint_path_initial}.json",
         csv_path=f"data/{final_output}.csv"
     )
 
-    reorder(f"data/{final_output}.csv",df,f"data/{final_output}_rearranged.csv")
+    reorder(f"data/{final_output}.csv",df,f"{final_output}_rearranged.csv")
 
 
 
@@ -54,4 +61,4 @@ async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry,final_output
 if __name__ == "__main__":
     #df=load_dataset("lmms-lab/AISG_Challenge")
     df=pd.read_csv('data/data.csv')
-    asyncio.run(CotAgent(df, "Gemini_guided", "Gemini_guided_retry", "Gemini_guided_Final", number_of_iterations=1,video_upload=True, wait_time=10))
+    asyncio.run(CotAgent(df, "Gemini_guided", "Gemini_guided_retry", "Gemini_guided_Final", number_of_iterations=1,video_upload=True, wait_time=30))
