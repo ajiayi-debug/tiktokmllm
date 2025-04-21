@@ -5078,5 +5078,445 @@
   {
     "qid": "1170-7",
     "prediction": "C"
+  },
+  {
+    "qid": "1173-0",
+    "prediction": "The person in the back seat disappeared due to video editing. The chaotic moment when all the drinks were spilled and splashed was used as a transition point to cut the person out of the video frame, creating the illusion of a sudden, impossible disappearance for comedic or entertainment purposes."
+  },
+  {
+    "qid": "1173-1",
+    "prediction": "The person in the back seat vanishes due to a video editing trick. The large splash of liquid and flying cups caused by the car hitting a bump were used as a visual distraction and transition point to cut the person out of the video, creating the illusion of a sudden disappearance."
+  },
+  {
+    "qid": "1173-2",
+    "prediction": "Yes, the person in the back seat disappeared due to post-production editing. The splash of liquid was used to mask a cut between a shot where the person was present and a shot showing the empty, messy seat."
+  },
+  {
+    "qid": "1173-3",
+    "prediction": "No, the person did not disappear, and the incident was caused by the car hitting a bump at speed, not by a sudden stop or a sharp turn, as evidenced by the passenger's warning and the nature of the jolt."
+  },
+  {
+    "qid": "1173-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "1175-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1175-1",
+    "prediction": "The technique used is Computer-Generated Imagery (CGI), also known as Visual Effects (VFX). The bear is digitally created and animated, then composited into the live-action footage of the street scene to make it appear as though the chalk drawing has come to life."
+  },
+  {
+    "qid": "1175-2",
+    "prediction": "Yes, the effect is achieved through visual effects, most likely CGI composited onto the footage, making the initial street painting appear to come alive, rather than just simple editing between a physical painting and a real bear."
+  },
+  {
+    "qid": "1175-3",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1175-7",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1176-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1176-1",
+    "prediction": "The plant appears larger due to video editing. The scene cuts from the man holding a small plant inside a large conservatory (presented as the greenhouse interior) to a shot featuring a giant version of the plant, likely a large prop or CGI, in the same location."
+  },
+  {
+    "qid": "1176-2",
+    "prediction": "Yes"
+  },
+  {
+    "qid": "1176-3",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1176-7",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1177-0",
+    "prediction": "The man suddenly appeared on the other boat through video editing. He likely dropped out of frame behind the towel on the pier, the video was cut, and then filming resumed with him positioned on the nearby boat. The man himself mentions that the trick is \"edited\"."
+  },
+  {
+    "qid": "1177-1",
+    "prediction": "The technique used is video editing. The video likely consists of at least two separate shots spliced together. The first shot ends as the man jumps behind the towel into the water from the pier. The second shot begins with him already standing on the boat. A sharp cut or transition, masked by the towel and the action, creates the illusion of instantaneous teleportation. The man's own comment \"it's edited\" confirms this method."
+  },
+  {
+    "qid": "1177-2",
+    "prediction": "Yes"
+  },
+  {
+    "qid": "1177-3",
+    "prediction": "No, the video does not show the man swimming to the other boat while using the towel as a distraction. He holds the towel up briefly, jumps in, and then seemingly instantly appears on the boat, suggesting a magic trick or illusion rather than a swim covered by the towel."
+  },
+  {
+    "qid": "1177-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "1178-0",
+    "prediction": "The laptop appears in the final scene because it is the last transformation applied to the smartphone using the video's time warp scan effect, following the sequence Smartphone -> Mini Smartphone -> Mini Mini Smartphone -> Phone -> Tablet -> Laptop."
+  },
+  {
+    "qid": "1178-1",
+    "prediction": "The \"laptop\" is shown at the end because the creator is demonstrating the versatility of the folding smartphone seen in the previous clips. By bending the phone at a 90-degree angle, it takes on a shape similar to a laptop, showcasing one of the multiple form factors the device can adopt."
+  },
+  {
+    "qid": "1178-2",
+    "prediction": "Yes, the laptop in the final scene is actually the phone transformed by a visual effect filter (specifically, a time warp scan or slit scan filter). The filter distorts the image along the scanning line, and by manipulating the phone's orientation and movement relative to the scan, it creates the illusion of transformation into different shapes, including the vertically stretched \"laptop\" form."
+  },
+  {
+    "qid": "1178-3",
+    "prediction": "No, the \"laptop\" in the final scene is not a real foldable device unfolding from a smartphone. It is a visual illusion created using a Time Warp Scan filter on a standard, rigid smartphone."
+  },
+  {
+    "qid": "1178-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "1181-0",
+    "prediction": "The Colosseum disappeared because the painter \"captured\" the real scene within his empty picture frame and then ran away with the frame, seemingly taking the actual Colosseum with him as part of a visual trick or magic effect."
+  },
+  {
+    "qid": "1181-1",
+    "prediction": "The technique used is an optical illusion involving an empty picture frame and forced perspective. The artist removes their initial painting and holds up the empty frame, aligning it precisely so that the real Colosseum is viewed *through* the frame, making it appear as if a realistic picture is now on the easel."
+  },
+  {
+    "qid": "1181-2",
+    "prediction": "No, the Colosseum did not disappear. The effect is a visual trick using an empty frame perfectly aligned with the real Colosseum and actors. The actors running \"out\" of the frame create the illusion, but the Colosseum remains visible in the background throughout, viewed through the empty frame. The trick relies on perspective and framing, not post-production removal of the landmark."
+  },
+  {
+    "qid": "1181-3",
+    "prediction": "No, the Colosseum did not seem to disappear because of a painting. The effect seen is a visual illusion created by holding an empty frame that perfectly aligns with the actual Colosseum, making the real view look like a photorealistic painting within the frame."
+  },
+  {
+    "qid": "1181-7",
+    "prediction": "E"
+  },
+  {
+    "qid": "1183-0",
+    "prediction": "The sky suddenly darkened because the video portrays a fantastical event where the man seemingly \"grabbed\" the sun (the source of the bright light outside the window), causing it to disappear from the sky and transform into the glowing, hot orb he holds in his hands. The darkness outside signifies the removal of that light source."
+  },
+  {
+    "qid": "1183-1",
+    "prediction": "The sky became dark so quickly because the video uses a special effect to show the man seemingly \"catching\" the sun, transforming it into a glowing orb in his hands. This impossible action instantly removes the source of daylight from the scene, plunging the room and the view outside into darkness."
+  },
+  {
+    "qid": "1183-2",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1183-3",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1183-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "1192-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1192-1",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1192-2",
+    "prediction": "Yes, the standing sprinkler's sudden appearance was due to creative video editing or special effects. The thrown object instantly morphs into a fully functional sprinkler upon landing, accompanied by visual effects, which is not physically possible in real life."
+  },
+  {
+    "qid": "1192-3",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1192-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "1203-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1203-1",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1203-2",
+    "prediction": "No, the man did not manage to remove the towel by moving the open end of the towel to the other side of the water flow. Although he successfully removed it, he used a different technique: crossing the ends under the faucet and pulling down."
+  },
+  {
+    "qid": "1203-3",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1203-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "1206-0",
+    "prediction": "The blue paint is seemingly spilling unusually because the video is filmed from a low angle, looking up at the man who is likely lying on his back. When he tilts the can towards the camera, he is actually tilting it downwards in the direction of gravity, causing the paint to fall normally onto his face."
+  },
+  {
+    "qid": "1206-1",
+    "prediction": "The blue paint appears to spill upwards because the video is shot from a low angle, looking directly up at the man. He pours the paint downwards towards the camera (and himself), and gravity pulls the paint straight down onto his face. The upward perspective of the camera makes this downward fall look like an upward splash within the video frame."
+  },
+  {
+    "qid": "1206-2",
+    "prediction": "No, the paint is not spilling upwards due to an upside-down set. The video is shot from a low angle looking up. The man pours the paint downwards onto his face, and gravity acts normally, pulling the paint down. The perspective creates the illusion, but the physics are standard."
+  },
+  {
+    "qid": "1206-3",
+    "prediction": "No"
+  },
+  {
+    "qid": "1206-7",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1209-0",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1209-1",
+    "prediction": "The speed of the woman in the final image cannot be determined because the image is a still photograph representing a single moment in time, and speed requires measuring movement over a duration."
+  },
+  {
+    "qid": "1209-2",
+    "prediction": "Yes, the appearance of the woman moving fast in the final photo is largely an illusion created by the photo composition (low angle, focus on the splash) and technique (freezing the motion of the water and leaves at the peak moment of action)."
+  },
+  {
+    "qid": "1209-3",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1209-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "1210-0",
+    "prediction": "There is no significant change in the focus of the video shooting; the focus remains consistently on the framed photograph hanging on the wall throughout the clip."
+  },
+  {
+    "qid": "1210-1",
+    "prediction": "The focus remains consistently on the framed photograph on the wall throughout the video. The person in the foreground is intentionally kept out of focus for the entire duration."
+  },
+  {
+    "qid": "1210-2",
+    "prediction": "Yes, the focus of the video remains on the photograph of the two birds throughout the sequence, even with a slight camera pan."
+  },
+  {
+    "qid": "1210-3",
+    "prediction": "No, the focus of the video does not shift from the background to the foreground. The focus remains consistently on the framed photograph in the background throughout the video, while the person in the foreground stays slightly out of focus."
+  },
+  {
+    "qid": "1210-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "1214-0",
+    "prediction": "The motion of the shot is an upward and backward pull-back (or crane up and back) along the curve of the spiral staircase."
+  },
+  {
+    "qid": "1214-1",
+    "prediction": "The camera starts relatively close above the woman, looking straight down, and then moves vertically upwards along the central axis of the spiral staircase, pulling back to reveal the wider environment while maintaining a consistent top-down perspective."
+  },
+  {
+    "qid": "1214-2",
+    "prediction": "Yes, the camera creates a zoom-in effect, making the woman appear progressively closer and larger in the frame throughout the short clip."
+  },
+  {
+    "qid": "1214-3",
+    "prediction": "Yes, the camera is moving away from the woman (or zooming out digitally), creating a zoom-out effect as evidenced by the woman appearing smaller and more of the surrounding staircase becoming visible throughout the clip."
+  },
+  {
+    "qid": "1214-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "1223-0",
+    "prediction": "In the last throw, the camera zooms in significantly to focus on the ball going into the cup, whereas in the other throws shown, the camera remains static with a wider, fixed view of the entire setup."
+  },
+  {
+    "qid": "1223-1",
+    "prediction": "The camera angle zooms in or moves closer for the final throw compared to the earlier ones. While the earlier throws are filmed with a relatively static, wider medium shot showing more of the person and the room, the final successful throw is framed more tightly, focusing more closely on the pans, the ball, and the target cup, cropping out some of the previously visible surroundings."
+  },
+  {
+    "qid": "1223-2",
+    "prediction": "Yes"
+  },
+  {
+    "qid": "1223-3",
+    "prediction": "No, the camera does not change angle for the last throw. The viewpoint remains consistent throughout the entire video clip, showing all attempts from the same static position and angle."
+  },
+  {
+    "qid": "1223-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "1225-0",
+    "prediction": "The shorter man is mainly visible when the first camera zoom is complete. The zoom focuses on his surprised reaction as he enters the house, making him the central subject of the shot at that moment."
+  },
+  {
+    "qid": "1225-1",
+    "prediction": "The shorter man (wearing a grey shirt and black shorts) is prominently seen when the camera finishes zooming in for the first time."
+  },
+  {
+    "qid": "1225-2",
+    "prediction": "Yes"
+  },
+  {
+    "qid": "1225-3",
+    "prediction": "No"
+  },
+  {
+    "qid": "1225-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "1229-0",
+    "prediction": "The object (pawn) is different from its reflection (king) in the final image because the image is not a simple photograph taken at one instant. It is likely a composite image created using a smartphone camera trick (like a sweep panorama) or digital editing, capturing elements from the scene at different moments (before and potentially during/after the pieces were swapped) to create the illusion."
+  },
+  {
+    "qid": "1229-1",
+    "prediction": "The discrepancy is caused by the use of a sequential image capture mode on the phone (like panorama or sweep). The camera captured the reflection of the king *before* it was swapped out, and then captured the pawn *after* the swap occurred, stitching these different moments into a single composite image."
+  },
+  {
+    "qid": "1229-2",
+    "prediction": "No"
+  },
+  {
+    "qid": "1229-3",
+    "prediction": "No, the difference between the object and its reflection is not because the mirror is a special type. The video provides clear evidence (inconsistencies between object and reflection, phone interface showing an editing/AR process) that the effect is created through digital manipulation or a special camera feature, not through optics."
+  },
+  {
+    "qid": "1229-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "1231-0",
+    "prediction": "The waterfall appears to flow backwards/upwards at the end because the video first records the upside-down reflection of the scene in a puddle, and then the entire recorded frame is rotated 90 degrees. This rotation makes the person look upright while preserving the inverted appearance of the waterfall from the reflection, making it seem like it's flowing upwards."
+  },
+  {
+    "qid": "1231-1",
+    "prediction": "The waterfall appears to flow in reverse because the video primarily shows the *reflection* of the waterfall in a puddle. In the reflection, the downward flow appears inverted (flowing upwards relative to the reflected ground). The entire video clip is then rotated 90 degrees counter-clockwise, making the reflected scene appear upright, which results in the inverted waterfall seeming to flow upwards."
+  },
+  {
+    "qid": "1231-2",
+    "prediction": "No, the backward flow of the waterfall at the end of the video is not due to reverse video processing; it is an optical illusion created by filming the reflection of the normally downward-flowing water in a puddle and then rotating the camera/video frame 180 degrees."
+  },
+  {
+    "qid": "1231-3",
+    "prediction": "No"
+  },
+  {
+    "qid": "1231-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "1233-0",
+    "prediction": "The photo shows two reflections because it's a panoramic image created by capturing the reflection in the puddle sequentially. The man was present and his reflection was captured at the beginning of the panoramic sweep; he then walked away. The camera continued its sweep, capturing the woman and her reflection. The final image stitches these moments together, showing the woman but both reflections."
+  },
+  {
+    "qid": "1233-1",
+    "prediction": "The image shows two reflections because it was taken using the phone's panoramic mode. The camera captured the scene sequentially while being moved upwards. It recorded the man's reflection at the beginning of the panoramic sweep *before* he walked away, and then recorded the woman's reflection as the sweep continued. The final panoramic image stitches these moments together, making it appear as if both reflections were present simultaneously."
+  },
+  {
+    "qid": "1233-2",
+    "prediction": "Error"
+  },
+  {
+    "qid": "1233-3",
+    "prediction": "No, the reason for the reflections of the woman and the sky in the photo is not due to image synthesis technology. The video clearly shows the photographer using a smartphone's panorama feature while holding the phone upside down near a puddle. This technique captures the natural reflection present in the water, combining the subject and the wide expanse of the sky into a single panoramic shot."
+  },
+  {
+    "qid": "1233-7",
+    "prediction": "A"
+  },
+  {
+    "qid": "1235-0",
+    "prediction": "37"
+  },
+  {
+    "qid": "1235-1",
+    "prediction": "37"
+  },
+  {
+    "qid": "1235-2",
+    "prediction": "No"
+  },
+  {
+    "qid": "1235-3",
+    "prediction": "No"
+  },
+  {
+    "qid": "1235-7",
+    "prediction": "D"
+  },
+  {
+    "qid": "1236-0",
+    "prediction": "Yes, the method is useful and produces the correct calculation result for the specific type of problem shown (dividing a multiple of 10 by 5). It simplifies the calculation by replacing division by 5 with removing a zero and multiplying by 2."
+  },
+  {
+    "qid": "1236-1",
+    "prediction": "Yes, the method demonstrated in the video effectively yields accurate calculation results for the types of problems shown (dividing numbers ending in zero by 5)."
+  },
+  {
+    "qid": "1236-2",
+    "prediction": "Yes, the method shown in the video is effective in producing accurate results for the division problems presented."
+  },
+  {
+    "qid": "1236-3",
+    "prediction": "No, the method shown in the video is not ineffective; it correctly solves the division problems presented. Furthermore, the method does not involve squaring the numbers; it involves removing the trailing zero and doubling the remaining digit, which is a valid shortcut for dividing multiples of 10 by 5."
+  },
+  {
+    "qid": "1236-7",
+    "prediction": "C"
+  },
+  {
+    "qid": "1237-0",
+    "prediction": "63"
+  },
+  {
+    "qid": "1237-1",
+    "prediction": "63"
+  },
+  {
+    "qid": "1237-2",
+    "prediction": "Yes"
+  },
+  {
+    "qid": "1237-3",
+    "prediction": "No, according to the pattern in the video (a * (a - 2)), 9 + 9 equals 63, not 72."
+  },
+  {
+    "qid": "1237-7",
+    "prediction": "B"
+  },
+  {
+    "qid": "1239-0",
+    "prediction": "Yes, the method shown is useful to produce the correct calculation results for the 19 times table from 19x1 to 19x10."
+  },
+  {
+    "qid": "1239-1",
+    "prediction": "Yes, the method shown helps in achieving accurate calculation results for the 19 times table from 1 to 10. The specific two-part pattern demonstrated (writing consecutive odd numbers followed by digits 9 down to 0) correctly generates the multiples of 19 within this range."
+  },
+  {
+    "qid": "1239-2",
+    "prediction": "Yes, the method is effective in producing correct results for the multiplication table of 19 from 1 to 10."
+  },
+  {
+    "qid": "1239-3",
+    "prediction": "No, while the method correctly produces the 19 times table results from 1 to 10, it is generally less efficient than standard multiplication methods. The trick relies on generating the entire sequence through specific patterns and is not practical for calculating individual products or for understanding the underlying mathematics."
+  },
+  {
+    "qid": "1239-7",
+    "prediction": "B"
   }
 ]
