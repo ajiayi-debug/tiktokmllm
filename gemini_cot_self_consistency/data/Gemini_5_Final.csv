@@ -1,0 +1,278 @@
+qid,pred
+0008-0,"Okay, here's the difference:
+
+*   **Difference:** The first two people attempted to knock the **cap** off the bottle, while the last person **broke the neck of the bottle** off below the cap.
+
+*   **Explanation:** The first two individuals were shown using a technique involving tapping the edge of the bottle cap, presumably aiming to use leverage and vibration to pop *just the cap* off while leaving the bottle intact. The last person, after mimicking the tapping, performed an action (presented as a magic trick/effect) that resulted in the glass neck of the bottle shearing off cleanly, taking the cap with it."
+0008-1,"Okay, here's the difference:
+
+The first two individuals successfully open their bottles using a physical technique, repeatedly striking the edge of the bottle cap with an object to pry it off.
+
+The last individual attempts a similar tapping method with a chopstick but fails. He then performs a hand gesture (which appears to be a video trick or edit) causing the entire top portion of the glass bottle neck to break off cleanly, taking the cap with it, rather than just removing the cap itself."
+0008-2,"**Yes.**
+
+**Explanation:** The last person tapped the bottle cap with a chopstick but then put it down. He opened the bottle by striking the top/cap area sharply with his hand, causing the cap to pop off. No knife was used in the action that opened the bottle."
+0008-3,"**No.**
+
+**Explanation:**
+
+The last person in the video successfully opens the Coca-Cola bottle, but he does not use a knife. After initially tapping the cap with a chopstick-like object and then a piece of paper without success, he opens the bottle by striking the cap sharply with the side of his hand/fingers. The first two people attempt to open their bottles by tapping the caps with small objects, but the video cuts before showing whether they succeeded or failed."
+0008-7,D
+0038-0,"**Answer:** The last person succeeded because they delivered a sharp, forceful strike with the side of their hand to the edge of the cap or the bottle neck just below it.
+
+**Brief Explanation:** Unlike the first two people who only tapped the top of the cap, the last person's sharp impact dislodged the cap's grip on the bottle's rim. This action, combined with the internal pressure from the carbonated drink, provided the necessary force to pop the cap off. The initial tapping and flicking were ineffective; the final hand strike was the crucial step."
+0038-1,"**Reason:** The last person tapped the **side of the glass bottle neck** repeatedly just below the cap, and then tapped the **top of the cap**.
+
+**Explanation:** Tapping the side of the neck introduces vibrations and stress into the glass right where the cap is crimped on. This repeated action weakens the glass lip under the cap. The final tap on the top of the cap provides the force needed to fracture the already weakened glass, causing the top of the bottle neck to break off cleanly along with the cap. The first two people only tapped the sides without the crucial final tap on the cap after weakening the glass."
+0038-2,"Yes, the last person successfully broke the bottle.
+
+**Explanation:** The video shows the last person making a chopping motion with their hand towards the Coca-Cola bottle, and immediately after this action, the bottom of the bottle cleanly breaks off."
+0038-3,"**No.**
+
+**Explanation:**
+The last person in the video uses what appears to be a folded piece of paper or card, not a lighter. He initially taps the cap with this object, but ultimately opens the bottle by striking the cap sharply with the side of his hand, rather than using the paper object as a lever against the bottle neck."
+0038-7,C
+0012-0,"There are **4** robot figures shown in the video.
+
+**Explanation:**
+The video first shows one robot figure walking. Later, it shows this same figure standing in a line with three other distinct robot figures, making a total of four."
+0012-1,"There are a total of **4** robot figures shown in the video.
+
+**Explanation:**
+The video first shows one robot (white, blue, and black) walking. It then shows this robot standing with three other distinct robot figures (one silver/grey, one black/silver, and one red/gold) in front of a display."
+0012-2,"Yes, the video displays four robot figures in total.
+
+**Explanation:**
+The video initially shows one robot figure walking. Later scenes show a lineup on a stage featuring the initial robot plus three others with different designs (silver/grey, black, and red/gold), making a total of four distinct robot figures."
+0012-3,"No, there are more than two robot figures shown in the video.
+
+**Explanation:** While the video initially focuses on one robot walking, starting around the 0:03 mark, it pans to reveal a stage with at least four distinct robot figures standing side-by-side. They have different color schemes and designs (white/blue/black, silver/black, black/silver, and red/gold/black)."
+0012-7,C
+0016-0,"This image is an optical illusion, designed to be perceived in two different ways:
+
+1.  **Facing Forward:** The person appears to be looking mostly towards the viewer, slightly angled to their own left (the viewer's right). You see the left eye, nose, lips, chin, and left ear.
+2.  **Facing Right (Profile):** The person appears to be looking directly to the right, shown in profile. The right edge forms the silhouette of a forehead, nose, lips, and chin.
+
+Therefore, there isn't a single definitive direction; the perceived direction depends on how your brain interprets the ambiguous visual cues."
+0016-1,"The person in the image can be perceived as looking in **two different directions**:
+
+1.  **Looking Forward (slightly to the viewer's left):** You see the person's left eye, nose, mouth, and chin facing somewhat towards the viewer.
+2.  **Looking Sideways (in profile, to the viewer's right):** You see the profile of the person's face, with the same features forming a side view looking towards the right edge of the image.
+
+**Explanation:** This is an optical illusion known as an ambiguous figure. The image is constructed so that the brain can interpret the same lines and shapes in two distinct, equally valid ways, causing perception to switch between the front view and the profile view."
+0016-2,"**Yes**, the person appears to be facing both sideways and forward due to **photo editing or digital manipulation**.
+
+**Explanation:**
+
+The image presents an optical illusion created by combining features from two different perspectives: a near-frontal view (specifically the eye looking towards the viewer) and a profile view (the silhouette of the nose, lips, and chin). This combination is anatomically impossible to capture in a single, unedited photograph from one viewpoint. Therefore, techniques like digital compositing (merging parts of different images) or significant warping were used to create this effect."
+0016-3,"**No, the perception of the person facing forward isn't *solely* because of the symmetry of the shoulders, although the shoulders contribute significantly to that interpretation.**
+
+**Explanation:**
+
+This image is a classic optical illusion designed to be ambiguous.
+
+1.  **Facial Ambiguity:** The core of the illusion lies in the facial features. The single visible eye looks directly forward, suggesting a frontal view. However, the strong silhouette of the nose, lips, and chin forms a clear profile view looking to the right.
+2.  **Role of Shoulders:** The relatively symmetrical appearance of the shoulders and the t-shirt neckline *supports* the interpretation of the person facing forward. If the shoulders were distinctly turned sideways, it would strongly contradict the forward-facing perception and make the profile view dominant.
+3.  **Conclusion:** The brain switches between two valid interpretations based on the conflicting cues. The symmetrical shoulders make the *forward-facing* interpretation plausible and stable, but the ambiguity originates primarily from the dual interpretation possible with the facial features themselves."
+0016-7,B
+0036-0,Error
+0036-1,"The machine achieves thin slicing despite the apparent blade speed through a combination of factors:
+
+1.  **High Effective Blade Speed:** While the central rotation might not look extremely fast, the outer edge of the blades (the tip speed) where cutting occurs is moving much faster. Furthermore, the presence of multiple blades increases the frequency of cuts per single rotation.
+2.  **Controlled Feed Rate:** The green conveyor belt mechanism pushes the zucchini into the blades at a very precise, slow, and constant speed.
+
+**Brief Explanation:** The slice thickness is determined by how far the zucchini advances between each pass of a blade. By combining a high frequency of cuts (due to multiple blades moving quickly at their tips) with a very slow forward push of the zucchini, the machine rapidly produces consistently thin slices."
+0036-2,"**No.**
+
+**Explanation:**
+
+The machine cuts the zucchini thinly because of its **mechanical design**, specifically the sharp blades and the set gap or feed rate that determines how much material is sliced off with each pass. The high speed of the blades ensures a quick and clean cut.
+
+The **stroboscopic effect** is a *visual illusion* related to how rapidly moving objects are perceived under specific lighting conditions or captured by a camera's frame rate. It can make things look slowed down or frozen but does not affect the physical thickness of the slices being produced."
+0036-3,Error
+0036-7,C
+0037-0,Error
+0037-1,Error
+0037-2,"Yes, the video is edited in multiple parts using visual effects to create the effect of video game glitches.
+
+**Explanation:**
+
+The video employs several post-production editing techniques and visual effects (VFX) to simulate common video game bugs. These include:
+
+1.  **Object Physics Glitches:** The red cup shakes violently and moves erratically across the counter.
+2.  **T-Posing:** The person suddenly freezes with arms outstretched, a classic animation glitch.
+3.  **Texture/Model Errors:** The person's appearance changes, first becoming pixelated and then showing a ""missing texture"" checkerboard pattern. The appearance of the red ""ERROR"" text further emphasizes this.
+4.  **Duplication/Spawning Glitches:** A smaller version of the person appears briefly, and multiple ping pong balls suddenly spawn and bounce unnaturally.
+5.  **Audio Glitches:** The background audio repeats and stutters throughout the clip.
+
+These effects are impossible to achieve in a single, unedited real-life take and are clearly added digitally to mimic the experience of encountering glitches in a video game."
+0037-3,"**No**, the video is edited in **multiple parts** to create the effect of various video game glitches.
+
+**Explanation:**
+
+The video showcases several different types of glitches occurring sequentially, not just one effect in a single segment. These distinct effects, such as the cup shaking, the man T-posing, texture changes (low-poly, missing texture), character duplication, and object spawning (multiple balls), appear at different points in the video, indicating that editing was applied to multiple segments or elements throughout the clip."
+0037-7,Error
+0064-0,"The room went dark after the stick figure closed the door because **someone or something else, already inside the dark room, turned off the light.**
+
+**Explanation:** The lamp inside the bedroom was on when the character entered and closed the door. A distinct ""click"" sound is heard right after the door closes, immediately followed by the room going dark. This, combined with the appearance of a second pair of eyes, indicates the unseen presence turned off the light source from within the room."
+0064-1,"Based on the video:
+
+The room became dark because **the lamp on the dresser turned off** immediately after the stick figure character shut the door.
+
+**Explanation:** The lamp was the only visible light source in the bedroom. When the character slammed the door, the lamp simultaneously extinguished, plunging the room into darkness."
+0064-2,"**No.**
+
+**Explanation:**
+
+The stick figure first turns off the light switch in the hallway, causing the initial darkness. Later, after running into the bedroom and closing the door, the lamp inside the room is still on. The lamp then turns off (accompanied by a clicking sound), plunging the room into darkness, but it does not fall or break as a result of the door closing."
+0064-3,"**No.**
+
+**Explanation:**
+
+The video shows the stick figure character hitting the light switch in the hallway with its hand around the 0:01 mark, causing the hallway light to immediately go out. This happens *before* the character runs away from that area and into the bedroom. The character then closes the bedroom door at the 0:06 mark, which is a separate action that occurs after the hallway light has already been extinguished. The light going out was caused by hitting the switch, not by closing the door."
+0064-7,E
+0070-0,"The person poured the water **2** times.
+
+**Explanation:**
+1. He pours water from the green mug into the black mug at the beginning of the video (approximately 0:00-0:05).
+2. He stops pouring, pauses as if thinking, and then starts pouring again (approximately 0:08 until the end)."
+0070-1,"The person pours water **2** times in the video.
+
+**Explanation:**
+1. He pours water from the green M&M mug into the black gun mug from approximately 0:01 to 0:06.
+2. After a brief pause where he appears to think, he resumes pouring water from the green mug into the black mug starting around 0:08 until the video ends."
+0070-2,"Yes, the person in the video poured the water twice.
+
+**Explanation:** He pours water from the green M&M mug into the black gun mug initially, pauses thoughtfully, and then starts pouring again a second time."
+0070-3,"No.
+
+**Explanation:** The person pours water initially, pauses while reacting and thinking, and then resumes pouring water a second time."
+0070-7,D
+0080-0,"The purpose of beating the balloon is **to break the inner packet(s) containing vinegar and/or baking soda.**
+
+**Explanation:**
+Inside the balloon, vinegar and baking soda are kept separate in small packets (one made from a glove finger for vinegar, another potentially from a balloon piece for baking soda, or the baking soda might be loose). Beating the balloon ruptures these inner packets, allowing the vinegar and baking soda to mix. This initiates a chemical reaction that produces carbon dioxide gas, inflating the balloon from the inside."
+0080-1,"You need to hit the balloon **to break the inner packets containing vinegar and baking soda.**
+
+**Explanation:**
+Inside the main balloon are two smaller, sealed packets: one with vinegar and one with baking soda. Hitting the balloon forcefully causes these inner packets to rupture. This allows the vinegar and baking soda to mix, triggering a chemical reaction that produces carbon dioxide gas, which then inflates the balloon from the inside, making it puff up."
+0080-2,"Yes, the purpose of hitting/squeezing the balloon is to create a fun and interactive toy.
+
+**Explanation:**
+
+Hitting or squeezing the balloon is intended to break an inner pouch (containing vinegar) within the outer balloon (containing baking soda). This mixes the two substances, causing a chemical reaction that produces carbon dioxide gas. The gas rapidly inflates the balloon, making it puff up like the pufferfish drawn on it, creating a surprising and interactive effect, thus forming a fun toy."
+0080-3,"No, the purpose of hitting the balloon is not to make it pop loudly.
+
+**Explanation:**
+Hitting or squeezing the balloon packet is done to break the inner container (the glove finger holding vinegar) inside the outer container (the balloon piece holding baking soda). This allows the vinegar and baking soda to mix, initiating a chemical reaction that produces carbon dioxide gas. The gas inflates the balloon packet, creating a firm, squishy object, similar to a stress ball, as shown in the final frames. The goal is the inflation caused by the chemical reaction, not a loud pop."
+0080-7,A
+0081-0,"Based on the video and the provided answers:
+
+The man puts his hand on his face likely as a brief reaction of **playful embarrassment, amusement, or slight shyness** as the woman begins her cute, cat-like dance moves for the video."
+0081-1,"Based on the video and the provided analyses:
+
+The man covers his face likely out of **playful embarrassment or amusement** as the woman begins her cute, cat-themed dance routine for the video trend, while both have the animated filter applied."
+0081-2,"Yes, it appears the man covered his face to transfer the cat face filter to the girl next to him.
+
+**Explanation:**
+
+Initially, the cat filter is applied to the man's face. When he briefly covers his face with his hand, the filter immediately disappears from him and appears on the girl's face. This action seems to trigger the filter's transfer mechanism, likely by temporarily obscuring the primary detected face, causing the application to apply the filter to the next available face."
+0081-3,"**No.**
+
+**Explanation:**
+
+The man puts his hand to his face at the very beginning (around 0:01) just as the woman starts a pointing gesture. This initial hand-to-face action is not mirrored by the woman, nor is it repeated by the man as part of the subsequent, more clearly attempted synchronized moves (like pointing and finger hearts). It appears to be an incidental or spontaneous gesture rather than a planned part of the dance routine."
+0081-7,D
+0083-0,"The video showcases a concept car, identified as a Porsche, featuring futuristic color-changing technology.
+
+**Explanation:** It's not the same daughter entering repeatedly, but different individuals walking past the car. Each time someone passes, the car instantly changes its color (and sometimes wheel color) to perfectly match the person's outfit—light blue, purple, green, and then red. This repeated demonstration serves to highlight the car's advanced capability for extreme personalization and adaptability, emphasizing innovation and creating a ""wow"" factor around this potential future feature."
+0083-1,"Based on the video and the provided answers:
+
+The video does not show a daughter repeatedly entering a room. It shows a car changing its color to match the outfits of different people walking past it on the street.
+
+The message conveyed by this repeated action is one of **futuristic personalization, dynamic adaptability, and cutting-edge automotive innovation**. It showcases a conceptual technology where the car can instantly alter its appearance to match individual style or surroundings, highlighting the brand's focus on advanced features and customization."
+0083-2,"**No.**
+
+**Explanation:**
+
+The video does not show a daughter, a mother, or a pet dog. It features people at an outdoor cafe reacting with surprise as a car parked on the street changes color multiple times, matching the outfits of pedestrians walking by. The focus is on the color-changing car, not on family relationships or feelings about a pet."
+0083-3,"No, the video does not show a daughter repeatedly entering a room to announce a pet dog or highlight cultural differences.
+
+**Explanation:** The video shows people sitting at an outdoor cafe reacting with surprise as a car parked across the street appears to change its color to match the outfits of different pedestrians walking past it."
+0083-7,E
+0099-0,"There are **2** zoomed-in close-ups in the video.
+
+**Explanation:**
+
+1.  **First Close-up (around 0:09 - 0:16):** After the initial pattern starts forming, the view zooms in significantly to provide a closer look at the moving point and the intersecting lines as the pattern develops.
+2.  **Second Close-up (around 0:55 - 0:59):** Towards the end, after the pattern has become very dense, the view zooms in extremely close, focusing tightly on the moving point and the intricate web of lines immediately surrounding it before the video concludes."
+0099-1,"There are **4** zoomed-in close-ups in the video.
+
+**Explanation:**
+
+1.  Around **0:09**, the view zooms in from the initial wide shot.
+2.  Around **0:12**, the view zooms in further for a closer perspective.
+3.  Around **0:54**, after the pattern becomes dense, the view zooms in again significantly.
+4.  Around **0:57**, there is a final, extreme zoom-in focusing tightly on the tracing point."
+0099-2,"Yes, there are two zoomed-in close-ups in the video focusing on the geometric pattern.
+
+**Explanation:**
+
+1.  The first zoom occurs around the 0:09-0:10 mark, providing a moderately closer view of the pattern as it develops.
+2.  The second, much more significant zoom happens near the end, around the 0:54-0:55 mark, offering an extreme close-up of the dense line structure and the moving point within the completed pattern."
+0099-3,"No, the video does not contain 10 zoomed-in close-ups of the geometric pattern.
+
+**Explanation:**
+Reviewing the video reveals only a few instances where the view zooms in significantly on the pattern. These occur around the 0:09-0:15 mark and again around the 0:54-0:59 mark. While there are multiple progressive zooms within these short periods, the total number of distinct close-up shots is significantly fewer than 10 (approximately 2 to 5, depending on how distinct zooms are counted)."
+0099-7,C
+0101-0,"Based on the video:
+
+1.  The man disappears from the doorway under a blanket.
+2.  He is briefly shown via a visual effect **inside the Bookshelf**.
+3.  He is then revealed hiding **inside the Sofa**.
+4.  Next, he pops out from **inside the Cardboard Box**.
+5.  Finally, he crawls out on the floor near the doorway.
+
+The sequence of locations the man appears to teleport *into* is:
+
+1.  **Bookshelf**
+2.  **Sofa**
+3.  **Cardboard Box**
+
+**Explanation:** The video uses editing tricks to create the illusion of the man instantly appearing inside different objects after initially disappearing under the blanket in the doorway. He is sequentially revealed inside the bookshelf (visual effect), inside the sofa structure, and inside the cardboard box before finally reappearing normally on the floor."
+0101-1,"Okay, here is the order of locations where the man appears after teleporting in the video:
+
+1.  **Inside the bookshelf/cabinet:** He first appears within the shelves of the white built-in unit.
+2.  **Inside the sofa:** He then pops up from inside the grey sofa, lifting a cushion.
+3.  **Inside the cardboard box:** Next, he appears inside a cardboard box placed on the floor."
+0101-2,"No, the man does not actually teleport in the video.
+
+**Explanation:**
+The video uses editing techniques and visual effects to create the illusion that the man is instantly appearing in different hiding spots (bookshelf, inside the couch, inside the box). This is achieved through cuts and digital effects, not actual teleportation. He physically crawls back into view from under the blanket at the end while the dog is distracted."
+0101-3,"No, that is not the correct order.
+
+**Explanation:**
+
+The man first appears hiding in the **bookshelf**, then inside the **couch**, then inside the **cardboard box**, and finally reveals himself crawling out from **under the blanket**."
+0101-7,B
+0113-0,"There are **2** buildings/structures demolished in the video.
+
+**Explanation:**
+
+1.  **Skyscraper (0:30 - 0:38):** A tall glass skyscraper is demolished using controlled explosives.
+2.  **Water Tower (0:55 - 0:59):** A brick water tower is demolished by an excavator undermining its base, causing it to fall."
+0113-1,"There are **2** buildings/structures taken down in the video.
+
+**Explanation:**
+1.  A tall glass skyscraper is demolished via implosion (0:30-0:38).
+2.  A brick water tower is demolished using an excavator (0:55-0:59)."
+0113-2,"No, only one conventional building is demolished in the video.
+
+**Explanation:**
+
+1.  The video shows a tall glass skyscraper being demolished via controlled implosion (around 0:30-0:38).
+2.  Later, a brick water tower is demolished using an excavator (around 0:55-0:59). While the water tower is a large structure, it is not typically classified as a building in the same way the skyscraper is."
+0113-3,"No, more than one structure is demolished in the video.
+
+**Explanation:** The video clearly shows the demolition of a tall glass skyscraper via implosion (around 0:30) and the demolition of a brick water tower using an excavator (around 0:55)."
+0113-7,A

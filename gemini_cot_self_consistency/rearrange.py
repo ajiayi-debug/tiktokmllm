@@ -28,5 +28,3 @@ def reorder(csv, data, final):
     df_reordered.to_csv(f"data/{final}", index=False)
 
     print(f"Reordered output, saved to data/{final}")
-
-
