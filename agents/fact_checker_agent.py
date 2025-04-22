@@ -1,12 +1,16 @@
-# fact_checker_agent.py
-
 import openai
 import json
 
-def fact_check_answer(question, context, final_answer, api_key):
+def fact_check(question: str, context: list[str], qid: str, final_answer: str, api_key: str) -> dict:
     """
-    Verifies if the final answer is supported by the context using OpenAI GPT.
-    Returns a structured JSON response with support status and explanation.
+    Checks if the final_answer is consistent with the provided context.
+
+    Returns:
+        {
+            "is_supported": True/False,
+            "explanation": "...",
+            "qid": "..."
+        }
     """
     openai.api_key = api_key
     context_text = "\n".join(f"- {line}" for line in context)
@@ -43,36 +47,48 @@ Respond ONLY in valid JSON using one of the formats below.
 }}
 """.strip()
 
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        temperature=0.3
-    )
-
-    reply = response['choices'][0]['message']['content']
     try:
-        return json.loads(reply)
-    except json.JSONDecodeError:
-        return {"error": "Could not parse response", "raw_response": reply}
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            temperature=0.3
+        )
+        reply = response['choices'][0]['message']['content']
+        result = json.loads(reply)
+
+        return {
+            "is_supported": result.get("is_supported", False),
+            "explanation": result.get("explanation", "No explanation provided."),
+            "qid": qid
+        }
+    except Exception as e:
+        return {
+            "is_supported": False,
+            "explanation": f"Error during fact check: {e}",
+            "qid": qid
+        }
+
 
 # Example test run
 if __name__ == "__main__":
-    import os
     from dotenv import load_dotenv
+    import os
 
-    load_dotenv()  
+    load_dotenv()
+    api_key = os.getenv("OPENAI_API_KEY")
 
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    result = fact_check(
+        question="Why did the person pour the wine down the sink?",
+        context=[
+            "The person uncorks a wine bottle.",
+            "They pour the wine into a glass and drink it."
+        ],
+        qid="Q001",
+        final_answer="They poured it down the sink because it smelled off.",
+        api_key=api_key
+    )
 
-    question = "Why did the person pour the wine down the sink?"
-    context = [
-        "The person uncorks a wine bottle.",
-        "They pour the wine into a glass and drink it."
-    ]
-    final_answer = "They poured it down the sink because it smelled off."
-
-    result = fact_check_answer(question, context, final_answer, OPENAI_API_KEY)
     print(json.dumps(result, indent=2))
