@@ -2,11 +2,15 @@
 from agents.cot_agent.gemini_cot_agent import CotAgent
 import asyncio
 import pandas as pd
+from pathlib import Path
 
 async def main():
     #run_format_prompt_agent()
-    iteration=32         
-    iterate_prompt=f"""Generate your top {iteration} highest confidence scoring answers. Dont rank the answers. For multiple choice answers, provide a brief explanation on why that choice is chosen (ignore the second instruction of the question)."""
+    iteration=32  
+    prompt_path = Path(__file__).parent / "templates"/"iterate_prompt.txt" 
+    template = prompt_path.read_text(encoding="utf-8").strip()
+    iterate_prompt = template.format(iteration=iteration)      
+    
     df = pd.read_csv('data/data.csv') 
     await CotAgent(                    
         df, "Gemini_top8", "Gemini_top8_retry",
