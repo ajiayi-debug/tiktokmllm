@@ -1,11 +1,11 @@
-#from agents.format_prompt_agent import run_format_prompt_agent
+from agents.format_prompt_agent import run_format_prompt_agent
 from agents.cot_agent.gemini_cot_agent import CotAgent
 import asyncio
 import pandas as pd
 from pathlib import Path
 
 async def main():
-    #run_format_prompt_agent()
+    run_format_prompt_agent()
     iteration=32  
     prompt_path = Path(__file__).parent / "templates"/"iterate_prompt.txt" 
     template = prompt_path.read_text(encoding="utf-8").strip()
