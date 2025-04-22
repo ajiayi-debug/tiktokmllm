@@ -1,11 +1,11 @@
-from agents.format_prompt_agent import run_format_prompt_agent
+#from agents.format_prompt_agent import run_format_prompt_agent
 from agents.cot_agent.gemini_cot_agent import CotAgent
 import asyncio
 import pandas as pd
 from pathlib import Path
 
 async def main():
-    run_format_prompt_agent()
+    #run_format_prompt_agent()
     iteration=32  
     prompt_path = Path(__file__).parent / "templates"/"iterate_prompt.txt" 
     template = prompt_path.read_text(encoding="utf-8").strip()
@@ -13,7 +13,7 @@ async def main():
     
     df = pd.read_csv('data/data.csv') 
     await CotAgent(                    
-        df, "Gemini_top8", "Gemini_top8_retry",
+        df, f"Gemini_{iteration}", f"Gemini_{iteration}_retry",
         number_of_iterations=1,
         iterate_prompt=iterate_prompt,
         video_upload=True,
