@@ -4,12 +4,16 @@ import traceback
 from tqdm import tqdm
 from collections import defaultdict
 import csv
-from agents.gemini import GeminiAsync
+from agents.cot_agent.gemini import GeminiAsync
 import time
 import pandas as pd
 import asyncio
 from typing import Iterable, List, Sequence
 
+
+class RateLimitError(Exception):
+    """Raised when we hit a 429 and want to abort the entire run."""
+    pass
 
 async def gemini_video_fn_async(
     *,
@@ -21,7 +25,8 @@ async def gemini_video_fn_async(
     local_video_path: str | None = None,
     iterate_prompt: str = "",
     video_upload: bool = False,
-    concurrency: int = 4,
+    iteration_in_prompt=8,
+    concurrency: int = 5,
 ) -> list[str]:
     """Async drop‑in replacement for the old gemini_video_fn."""
 
@@ -38,6 +43,7 @@ async def gemini_video_fn_async(
                         temperature=temperature,
                         iterate_prompt=iterate_prompt,
                         wait_time=wait_time,
+                        iteration_in_prompt=iteration_in_prompt
                     )
                 # try direct first
                 try:
@@ -48,6 +54,7 @@ async def gemini_video_fn_async(
                             temperature=temperature,
                             iterate_prompt=iterate_prompt,
                             wait_time=wait_time,
+                            iteration_in_prompt=iteration_in_prompt
                         )
                     )[0]
                 except Exception as e:
@@ -58,18 +65,34 @@ async def gemini_video_fn_async(
                             temperature=temperature,
                             iterate_prompt=iterate_prompt,
                             wait_time=wait_time,
+                            iteration_in_prompt=iteration_in_prompt
                         )
+                    # if it’s a 429, bail out
+                    if "429" in str(e):
+                        print(f"[RateLimit] Question `{q}` hit 429; skipping.")
+                        return "Error:RateLimit"
+                    # otherwise re‑raise so outer catches it
                     raise
+            except RateLimitError:
+                # re‑raise so the outer gather catches it
+                raise
             except Exception as final_err:
                 print("Fail", final_err)
                 return "Error"
 
     all_preds: list[str] = []
     for _ in range(num_repeats):
-        batch = await asyncio.gather(*[_single(q) for q in questions])
+        try:
+            # if any _single raises RateLimitError, gather will raise it here
+            batch = await asyncio.gather(*[_single(q) for q in questions])
+        except RateLimitError:
+            print("[RateLimit] Received 429; aborting remaining iterations.")
+            break
+
         all_preds.extend(batch)
         if wait_time:
             await asyncio.sleep(wait_time)
+
     return all_preds
 
 def format_gemini_prompt(question, prompt):
@@ -322,7 +345,8 @@ async def process_all_video_questions_list_gemini_df(
     filter_qids=None,
     iterate_prompt="",
     video_upload=False,
-    wait_time=30
+    wait_time=30,
+    iteration_in_prompt=8
 ):
     """
     Processes grouped questions per video using a vision-language model.
@@ -387,7 +411,8 @@ async def process_all_video_questions_list_gemini_df(
                 temperature=temperature,
                 local_video_path=local_video_path,
                 iterate_prompt=iterate_prompt,
-                video_upload=video_upload
+                video_upload=video_upload,
+                iteration_in_prompt=iteration_in_prompt
             )
             print(outputs)
         except Exception as e:

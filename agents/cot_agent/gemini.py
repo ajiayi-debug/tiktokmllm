@@ -15,10 +15,10 @@ model="gemini-2.5-pro-preview-03-25"
 #model="gemini-2.5-flash-preview-04-17"
 
 
-def choose_best_answer_prompt(question,output):
-    prompt=f"""Based on the 8 answers and the video, determine the best answer to the question: {question}
-    The best answer can be a combination of answers from the top 8 answers. Just answer the question and dont explain why you chose that answer among the top 8 answer.
-    The 8 answers:
+def choose_best_answer_prompt(question,output,iteration_in_prompt):
+    prompt=f"""Based on the {iteration_in_prompt} answers and the video, determine the best answer to the question: {question}
+    The best answer can be a combination of answers from the top {iteration_in_prompt} answers. Just answer the question and dont explain why you chose that answer among the top {iteration_in_prompt} answer.
+    The {iteration_in_prompt} answers:
     {output}"""
     return prompt
 
@@ -43,7 +43,10 @@ class GeminiAsync:
         resp = await self.aio.models.generate_content(
             model=self.model, contents=contents, config=cfg
         )
-        return resp.text.strip()
+        if resp.text:
+            return resp.text.strip()
+        else:
+            return None
 
     async def _wait_until_file_active(self, file_obj, timeout: int = 30, poll: int = 2):
         """Polls until the uploaded file reaches ACTIVE state."""
@@ -66,13 +69,14 @@ class GeminiAsync:
         temperature: float = 0.0,
         wait_time: int = 30,
         iterate_prompt: str = "",
+        iteration_in_prompt=8
     ) -> List[str]:
         """Two‑step generation directly from a YouTube/URI video."""
         results: list[str] = []
         for q in tqdm(questions, desc="Answering questions", unit="q", leave=False):
             full_q = q if not iterate_prompt else f"{q} {iterate_prompt}"
 
-            # Step 1 – get 8 candidate answers in one shot
+            # Step 1 – get n candidate answers in one shot
             contents = [
                 types.Content(
                     role="user",
@@ -85,6 +89,9 @@ class GeminiAsync:
             try:
                 multi = await self._stream_text(contents, temperature)
             except Exception as e:
+                if "429" in str(e):
+                    print(f"[RateLimit] question `{q}` hit 429; aborting entire loop.")
+                    return results
                 print(f"Gemini API error during multi‑answer gen: {e}")
                 results.append("Error")
                 continue
@@ -94,7 +101,7 @@ class GeminiAsync:
 
             # Step 2 – optional: have Gemini pick the best
             if iterate_prompt:
-                best_prompt = choose_best_answer_prompt(q, multi)
+                best_prompt = choose_best_answer_prompt(q, multi, iteration_in_prompt)
                 contents_best = [
                     types.Content(
                         role="user",
@@ -108,6 +115,9 @@ class GeminiAsync:
                     best = await self._stream_text(contents_best, temperature)
                     results.append(best)
                 except Exception as e:
+                    if "429" in str(e):
+                        print(f"[RateLimit] question `{q}` hit 429; aborting entire loop.")
+                        return results
                     print(f"Gemini API error during best‑answer selection: {e}")
                     results.append("Error")
             else:
@@ -123,6 +133,7 @@ class GeminiAsync:
         *,
         temperature: float = 0.0,
         iterate_prompt: str = "",
+        iteration_in_prompt=8,
         wait_time: int = 30,
     ) -> str:
         """Uploads a local video then runs the two‑step QA flow."""
@@ -140,6 +151,7 @@ class GeminiAsync:
             temperature=temperature,
             wait_time=wait_time,
             iterate_prompt=iterate_prompt,
+            iteration_in_prompt=iteration_in_prompt
         )
         return answers[0]
 
