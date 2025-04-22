@@ -1,0 +1,20 @@
+[
+    {
+      "qid": "0008-0",
+      "Unnamed: 0": 0,
+      "video_id": "sj81PWrerDk",
+      "question_type": "Primary Open-ended Question",
+      "capability": "Plot Attribute (Montage)",
+      "Question": "What is the difference between the action of the last person in the video and the actions of the first two people? Please state your answer with a brief explanation.",
+      "duration": 8.85,
+      "question_prompt": "Please state your answer with a brief explanation.",
+      "answer": null,
+      "youtube_url": "https://www.youtube.com/shorts/sj81PWrerDk",
+      "context": "The video shows three different people interacting with capped glass bottles. The first person, a man with a beard, taps the top of a beer bottle with a small object. The second person, a woman in an Adidas sweatshirt, taps the top of a Corona beer bottle with her finger. In both these instances, the bottle cap remains securely on the bottle. The third person, a man in a black shirt, first taps the top of a Coca-Cola bottle with a chopstick, then waves his hand over it, then taps the side of the bottle near the bottom with his knuckles, and finally waves his hand over the top again. After the final hand wave, the bottle cap pops off, and the soda fizzes.",
+      "is_contextual": true,
+      "explanation": "The question is factually aligned with the video. The actions of the first two people involve simple tapping on the bottle cap area with no resulting change. The action of the last person involves a sequence of different taps and hand gestures, culminating in the removal of the bottle cap.",
+      "corrected_question": null,
+      "question": "What is the difference between the action of the last person in the video and the actions of the first two people?",
+      "question_with_prompt": "Please state your answer with a brief explanation. What is the difference between the action of the last person in the video and the actions of the first two people?"
+    }
+]  

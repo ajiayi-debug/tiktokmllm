@@ -67,5 +67,6 @@ if __name__ == "__main__":
     #df=load_dataset("lmms-lab/AISG_Challenge")
     iteration=8
     iterate_prompt=f"""Generate your top {iteration} highest confidence scoring answers. Dont rank the answers."""
-    df=pd.read_csv('data/data.csv')
-    asyncio.run(CotAgent(df, "Gemini_top8", "Gemini_top8_retry", number_of_iterations=1, iterate_prompt=iterate_prompt, video_upload=True, wait_time=10, iteration_in_prompt=iteration))
+    # df=pd.read_csv('data/data.csv')
+    df=pd.read_json('testjson.json')
+    asyncio.run(CotAgent(df, "Gemini_test", "Gemini_test_retry", number_of_iterations=1, iterate_prompt=iterate_prompt, video_upload=True, wait_time=10, iteration_in_prompt=iteration))

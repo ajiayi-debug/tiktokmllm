@@ -19,7 +19,7 @@ class RateLimitError(Exception):
 async def gemini_video_fn_async(
     *,
     video_uri: str,
-    questions: Sequence[str],
+    questions: Sequence[list],
     num_repeats: int = 1,
     wait_time: float = 30,
     temperature: float = 0.0,
@@ -302,10 +302,15 @@ async def process_all_video_questions_list_gemini_df(
         for s in samples:
             qid = s.get("qid", "UNKNOWN")
             try:
-                question = s["question"]
-                prompt = s.get("question_prompt", "")
-                formatted_prompt = format_gemini_prompt(question, prompt)
-                questions.append(formatted_prompt)
+                # question = s["original_question"]
+                # prompt = s.get("question_prompt", "")
+                context = s.get("context", "")
+                corrected_question = s.get("corrected_question", "")
+                # formatted_prompt = format_gemini_prompt(question, prompt)
+                formatted_prompt=s['Question']
+                if pd.isna(corrected_question):
+                    corrected_question = formatted_prompt
+                questions.append([formatted_prompt,context,corrected_question])
             except Exception as e:
                 print(f"Failed to build question for QID {qid}: {e}")
                 predictions.append({"qid": qid, "prediction": "Error"})
