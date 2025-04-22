@@ -9,6 +9,7 @@ import time
 import pandas as pd
 import asyncio
 from typing import Iterable, List, Sequence
+import openai
 
 
 class RateLimitError(Exception):
@@ -99,93 +100,6 @@ def format_gemini_prompt(question, prompt):
     return f"""\
 {str(question or '').strip()}
 {str(prompt or '').strip()}"""
-
-
-
-async def process_all_video_questions_list_gemini(
-    ds,
-    iterations=1,
-    checkpoint_path="geminipredictions.json",
-    video_dir="Benchmark-AllVideos-HQ-Encoded-challenge",
-    batch_size=5,
-    temperature=0,
-    filter_qids=None,
-    iterate_prompt="",
-    video_upload=False,
-    wait_time=30
-):
-    """
-    Processes grouped questions per video using a vision-language model.
-
-    Args:
-        ds: a dataset (or a dict containing a list in ds['test']) with fields 'qid', 'video_id', 'question' and optionally 'question_prompt'
-        video_fn: function(video_path, list_of_questions) -> list_of_predictions
-        iterations: Number of times model repeats output for each question
-        checkpoint_path: path to save intermediate and final predictions
-        video_dir: folder containing videos named as <video_id>.mp4
-        batch_size: number of predictions before intermediate save
-    """
-    # Load checkpoint
-    if os.path.exists(checkpoint_path):
-        with open(checkpoint_path, "r") as f:
-            predictions = json.load(f)
-        processed_qids = {p["qid"] for p in predictions}
-        print(f"Loaded {len(predictions)} predictions from checkpoint.")
-    else:
-        predictions = []
-        processed_qids = set()
-
-    # Group by video
-    video_to_samples = defaultdict(list)
-    for sample in ds["test"]:
-        if sample["qid"] not in processed_qids and (filter_qids is None or sample["qid"] in filter_qids):
-            video_to_samples[sample["youtube_url"]].append(sample)
-
-    # Inference loop
-    for video_id, samples in tqdm(video_to_samples.items(), desc="Processing grouped videos"):
-        # video_path = os.path.join(video_dir, f"{video_id}.mp4")
-        video_path=video_id
-        print(video_id)
-        # questions = [s["question"] + (s.get("question_prompt") or "") for s in samples]
-
-        questions = []
-        for s in samples:
-            qid = s.get("qid", "UNKNOWN")
-            try:
-                question = s.get("question") or ""
-                prompt = s.get("question_prompt") or ""
-                video=s.get("video_id") or ""
-                video_mp4=video+".mp4"
-                formatted_prompt = format_gemini_prompt(question, prompt)
-                questions.append(formatted_prompt)
-            except Exception as e:
-                print(f"Failed to build question for QID {qid}: {e}")
-                predictions.append({"qid": qid, "prediction": "Error"})
-        try:
-            outputs = await gemini_video_fn_async(video_path, questions, num_repeats=iterations, wait_time=wait_time, temperature=temperature, local_video_path=video_mp4, iterate_prompt=iterate_prompt, video_upload=video_upload)
-            print(outputs)
-        except Exception as e:
-            print(f"Error on video {video_id}: {e}")
-            traceback.print_exc()
-            for s in samples:
-                predictions.append({
-                    "qid": s["qid"],
-                    "prediction": "Error"
-                })
-            _save_checkpoint(predictions, checkpoint_path)
-            continue
-
-        for sample, response in zip(samples, outputs):
-            predictions.append({
-                "qid": sample["qid"],
-                "prediction": response
-            })
-            print(f"{sample['qid']}: {response}")
-
-        if len(predictions) % batch_size == 0:
-            _save_checkpoint(predictions, checkpoint_path)
-
-    _save_checkpoint(predictions, checkpoint_path)
 
 
 def _save_checkpoint(predictions, path):
@@ -431,3 +345,4 @@ async def process_all_video_questions_list_gemini_df(
             _save_checkpoint(predictions, checkpoint_path)
 
     _save_checkpoint(predictions, checkpoint_path)
+
