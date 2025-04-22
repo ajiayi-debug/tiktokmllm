@@ -6,17 +6,18 @@ import logging
 import pandas as pd
 from collections import defaultdict
 from typing import Dict, Any, List, Set, Optional
+import json
 
 from agents.cot_agent.gemini import GeminiAsync
 from agents.cot_agent.rearrange import reorder
 from agents.context_retriever_agent.config import (
     DEFAULT_VIDEO_DIR, DEFAULT_TEMPERATURE, DEFAULT_WAIT_TIME, 
-    DEFAULT_BATCH_SIZE, get_checkpoint_path, get_output_path
+    DEFAULT_BATCH_SIZE, get_checkpoint_path
 )
 from agents.context_retriever_agent.context_builder import get_context_for_questions
 from agents.context_retriever_agent.utils import (
     load_checkpoint, save_checkpoint, get_processed_qids, 
-    load_error_qids, merge_predictions, save_context_to_csv,
+    load_error_qids, merge_predictions,
     merge_with_original_data
 )
 
@@ -42,7 +43,7 @@ async def process_videos_for_context_retrieval(
         video_dir: Directory containing local video files
         batch_size: Number of videos to process before saving
         temperature: Temperature for generation
-        filter_qids: Optional set of QIDs to process
+        filter_qids: QIDs to process
         video_upload: Whether to upload local video files
         wait_time: Wait time between API calls
     """
@@ -93,57 +94,61 @@ async def ContextRetrieverAgent(
     df: pd.DataFrame,
     checkpoint_path_initial: str,
     checkpoint_path_retry: str,
-    final_output: str,
-    number_of_iterations: int = 1,  
+    final_output_suffix: str,
+    number_of_iterations: int = 1,
     temperature: float = DEFAULT_TEMPERATURE,
     video_upload: bool = False,
     wait_time: int = DEFAULT_WAIT_TIME
-):
+) -> str:
     """
     Main Context Retriever Agent function.
-    
+    Generates context predictions and merges them with original data,
+    saving the final result to data/Step1_Context_<final_output_suffix>.json.
+
     Args:
         df: DataFrame containing video data
         checkpoint_path_initial: Initial checkpoint path suffix
         checkpoint_path_retry: Retry checkpoint path suffix
-        final_output: Final output filename suffix
+        final_output_suffix: Suffix for naming intermediate and final files
         number_of_iterations: Not used but kept for API compatibility
         temperature: Temperature for generation
         video_upload: Whether to upload local video files
         wait_time: Wait time between API calls
-        
+
     Returns:
-        Tuple of (final_csv_path, final_json_path) for the output files
+        The absolute path to the final merged JSON file (e.g., data/Step1_Context_<final_output_suffix>.json)
     """
     logger.info("Starting Context Retriever Agent")
-    
-    initial_path = get_checkpoint_path(checkpoint_path_initial)
-    retry_path = get_checkpoint_path(checkpoint_path_retry)
-    final_json_path = get_checkpoint_path(final_output)
-    final_csv_path = get_output_path(final_output)
-    final_reordered_csv_path = get_output_path(f"{final_output}_reordered")
-    final_complete_csv_path = get_output_path(f"{final_output}_complete")
-    
+
+    # --- Path Setup ---
+    initial_checkpoint_path = get_checkpoint_path(checkpoint_path_initial)
+    retry_checkpoint_path = get_checkpoint_path(checkpoint_path_retry)
+    # Path to the JSON holding predictions before merging with original data
+    intermediate_json_path = get_checkpoint_path(final_output_suffix)
+    # Define the final output path directly
+    final_merged_json_path = os.path.join("data", f"Step1_Context_{final_output_suffix}.json")
+    # Ensure the final output directory exists
+    os.makedirs(os.path.dirname(final_merged_json_path), exist_ok=True)
+
+    # --- Initial Processing --- 
     logger.info("Starting initial processing run")
     await process_videos_for_context_retrieval(
         ds=df,
-        checkpoint_path=initial_path,
+        checkpoint_path=initial_checkpoint_path,
         video_dir=DEFAULT_VIDEO_DIR,
         batch_size=DEFAULT_BATCH_SIZE,
         temperature=temperature,
         video_upload=video_upload,
         wait_time=wait_time
     )
-    
-    # load QIDs with errors
-    error_qids = load_error_qids(initial_path)
-    
-    # then, retry only those with errors
+
+    # --- Error Handling and Retries --- 
+    error_qids = load_error_qids(initial_checkpoint_path)
     if error_qids:
         logger.info(f"Retrying {len(error_qids)} questions with errors")
         await process_videos_for_context_retrieval(
             ds=df,
-            checkpoint_path=retry_path,
+            checkpoint_path=retry_checkpoint_path,
             video_dir=DEFAULT_VIDEO_DIR,
             batch_size=DEFAULT_BATCH_SIZE,
             temperature=temperature,
@@ -151,40 +156,34 @@ async def ContextRetrieverAgent(
             video_upload=video_upload,
             wait_time=wait_time
         )
-    
-        logger.info("Merging initial and retry results")
+
+        logger.info("Merging initial and retry results into intermediate JSON")
         merge_predictions(
-            original_path=initial_path,
-            retry_path=retry_path,
-            merged_output_path=final_json_path
+            original_path=initial_checkpoint_path,
+            retry_path=retry_checkpoint_path,
+            merged_output_path=intermediate_json_path # Save merged predictions here
         )
     else:
-        logger.info("No errors to retry")
+        logger.info("No errors to retry, copying initial checkpoint to intermediate path")
         import shutil
-        shutil.copy2(initial_path, final_json_path)
-    
-    # Save final results to CSV
-    logger.info("Saving final results to CSV")
-    predictions = load_checkpoint(final_json_path)
-    save_context_to_csv(predictions, final_csv_path)
-    
-    # Reorder to match original data.csv order
-    logger.info("Reordering results to match original data")
-    reorder(final_csv_path, df, final_reordered_csv_path)
-    
-    # Merge with original data
-    logger.info("Merging with original data")
-    final_csv, final_json = merge_with_original_data(
-        context_csv=final_reordered_csv_path,
-        original_csv="data/data.csv",  # Original data path
-        output_csv=final_complete_csv_path
+        # Copy the initial results to be the intermediate results
+        shutil.copy2(initial_checkpoint_path, intermediate_json_path)
+
+    # --- Final Merging Step (JSON only) --- 
+    logger.info("Merging intermediate predictions with original data")
+    # The merge_with_original_data function now handles saving directly to final_merged_json_path
+    final_json_output_path = merge_with_original_data(
+        intermediate_json_path=intermediate_json_path,
+        original_csv_path="data/data.csv",  # Original data path
+        output_json_path=final_merged_json_path # Target final file path
     )
-    
+
+    # Removed CSV saving and reordering steps
+
     logger.info(f"Context Retriever Agent completed successfully.")
-    logger.info(f"Final CSV output: {final_csv}")
-    logger.info(f"Final JSON output: {final_json}")
-    
-    return final_csv, final_json
+    logger.info(f"Final JSON output: {final_json_output_path}")
+
+    return final_json_output_path # Return the path to the single final JSON file
 
 
 if __name__ == "__main__":
@@ -193,17 +192,48 @@ if __name__ == "__main__":
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
     
-    # EXAMPLE USAGE
+    # EXAMPLE USAGE (Updated)
+    print("Running standard ContextRetrieverAgent example...")
     df = pd.read_csv('data/data.csv')
-    csv_path, json_path = asyncio.run(ContextRetrieverAgent(
+    
+    # Define a suffix for this run's files
+    run_suffix = "Final"
+    
+    # Agent now only returns the final JSON path
+    final_json_path = asyncio.run(ContextRetrieverAgent(
         df=df,
-        checkpoint_path_initial="ContextRetriever_initial",
-        checkpoint_path_retry="ContextRetriever_retry",
-        final_output="ContextRetriever_Final",
+        checkpoint_path_initial=f"ContextRetriever_initial_{run_suffix}",
+        checkpoint_path_retry=f"ContextRetriever_retry_{run_suffix}",
+        final_output_suffix=f"ContextRetriever_{run_suffix}", # Suffix used for intermediate checkpoint
         temperature=DEFAULT_TEMPERATURE,
-        video_upload=True,
+        video_upload=True, # Adjust as needed
         wait_time=DEFAULT_WAIT_TIME
     ))
     
-    print(f"Generated CSV output: {csv_path}")
-    print(f"Generated JSON output: {json_path}") 
+    # Print the path to the final JSON file
+    print(f"\nGenerated final JSON output: {final_json_path}") 
+    # Expected path: data/Step1_Context_ContextRetriever_Final.json
+
+
+# TO DO: Test using test_single_video.py to confirm the output is as expected
+
+#     [
+#   {
+#     "qid": "0",
+#     "video_id": "0008-0",
+#     "question_type": "Primary Open-ended Question",
+#     "capability": "Plot Attribute (Montage)",
+#     "question": "What is the difference between the two scenes?",
+#     "duration": "15.2",
+#     "question_prompt": "Watch this video and answer the following question...",
+#     "answer": "The first scene shows a person walking in a park, while the second scene shows a different person at a beach.",
+#     "youtube_url": "https://www.youtube.com/watch?v=sj81PWrerDk",
+#     "context": "This video shows two distinct scenes. In the first scene, a person is walking through a park with trees and a pathway. In the second scene, there is a different person standing on a beach with waves in the background.",
+#     "is_contextual": true,
+#     "explanation": "The question asks about the difference between scenes and requires visual context from the video.",
+#     "corrected_question": "What is the difference between the park scene and the beach scene shown in this video?"
+#   },
+#   {
+#     // next question entry
+#   }
+# ]

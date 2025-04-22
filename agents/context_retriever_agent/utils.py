@@ -153,33 +153,6 @@ def load_error_qids(path: str) -> Set[str]:
     return error_qids
 
 
-def save_context_to_csv(predictions: List[Dict[str, Any]], csv_path: str):
-    """
-    Convert JSON predictions to CSV with context fields.
-    
-    Args:
-        predictions: List of prediction dictionaries
-        csv_path: Path to save the CSV file
-    """
-    rows = []
-    for item in predictions:
-        qid = str(item.get("qid", "")).strip()
-        prediction = item.get("prediction", {})
-        
-        row = {
-            "qid": qid,
-            "context": prediction.get("context", ""),
-            "is_contextual": prediction.get("is_contextual", False),
-            "explanation": prediction.get("explanation", ""),
-            "corrected_question": prediction.get("corrected_question", "")
-        }
-        rows.append(row)
-    
-    df = pd.DataFrame(rows)
-    df.to_csv(csv_path, index=False)
-    logger.info(f"Saved {len(rows)} context predictions to {csv_path}")
-
-
 def merge_predictions(original_path: str, retry_path: str, merged_output_path: str):
     """
     Merge original and retry predictions.
@@ -216,40 +189,81 @@ def merge_predictions(original_path: str, retry_path: str, merged_output_path: s
     logger.info(f"Total predictions: {len(merged)}, Updated: {updated_count}")
 
 
-def merge_with_original_data(context_csv: str, original_csv: str, output_csv: str):
+def merge_with_original_data(intermediate_json_path: str, original_csv_path: str, output_json_path: str) -> str:
     """
-    Merge context data with original dataset.
-    
+    Merge intermediate prediction JSON data with the original dataset CSV 
+    and save the final merged data as a JSON file.
+
     Args:
-        context_csv: Path to context predictions CSV
-        original_csv: Path to original data CSV
-        output_csv: Path to save merged CSV
+        intermediate_json_path: Path to the intermediate JSON file 
+                                  (contains list of {'qid': ..., 'prediction': {...}}).
+        original_csv_path: Path to the original data CSV file.
+        output_json_path: Path to save the final merged JSON file.
+
+    Returns:
+        The path to the saved final merged JSON file.
     """
     try:
-        # Load datasets
-        context_df = pd.read_csv(context_csv)
-        original_df = pd.read_csv(original_csv)
+        # Load intermediate predictions (JSON)
+        intermediate_preds = load_checkpoint(intermediate_json_path)
+        if not intermediate_preds:
+            logger.warning(f"Intermediate predictions file is empty or not found: {intermediate_json_path}")
+            # Decide how to handle this - perhaps return empty structure or raise error
+            # For now, let's try to proceed assuming original data might still be useful alone
+            # or create an empty output file.
+            intermediate_preds_map = {}
+        else:
+             # Convert list to dict keyed by qid for easier lookup
+             # Ensure qids are strings for consistent merging
+            intermediate_preds_map = {str(item['qid']): item.get('prediction', {}) 
+                                      for item in intermediate_preds}
+
+        # Load original data (CSV)
+        if not os.path.exists(original_csv_path):
+            logger.error(f"Original data CSV not found: {original_csv_path}")
+            raise FileNotFoundError(f"Original data CSV not found: {original_csv_path}")
+        original_df = pd.read_csv(original_csv_path)
+        # Drop the 'Unnamed: 0' column if it exists (often created when saving CSV with index)
+        if 'Unnamed: 0' in original_df.columns:
+            logger.info("Dropping 'Unnamed: 0' column from original data.")
+            original_df = original_df.drop(columns=['Unnamed: 0'])
+
+        # Convert qid to string in the original DataFrame as well
+        if 'qid' in original_df.columns:
+             original_df['qid'] = original_df['qid'].astype(str)
+        else:
+             logger.error(f"'qid' column not found in {original_csv_path}")
+             raise ValueError(f"'qid' column not found in {original_csv_path}")
+
+        # Perform the merge logic
+        merged_data_list = []
+        for _, row in original_df.iterrows():
+            original_item = row.to_dict()
+            qid_str = original_item['qid'] # Already ensured to be string
+            prediction_data = intermediate_preds_map.get(qid_str, {}) # Get prediction by string qid
+
+            # Combine original data with prediction data
+            merged_item = original_item.copy() # Start with original data
+            merged_item.update(prediction_data) # Add/overwrite with prediction fields
+            
+            # Optionally recreate combined question fields if needed (example from old logic)
+            # merged_item['original_question'] = merged_item.get('question', '')
+            # merged_item['question_with_prompt'] = f"{merged_item.get('question_prompt', '')} {merged_item.get('original_question', '')}".strip()
+            # merged_item['question'] = merged_item['question_with_prompt']
+            
+            merged_data_list.append(merged_item)
+
+        # Save the merged data to the output JSON file
+        # Ensure the output directory exists
+        os.makedirs(os.path.dirname(output_json_path), exist_ok=True)
         
-        # Set index for easy merging
-        context_df = context_df.set_index("qid")
-        original_df = original_df.set_index("qid")
+        with open(output_json_path, "w") as f:
+            json.dump(merged_data_list, f, indent=2)
         
-        # Merge datasets
-        merged_df = original_df.join(context_df, how="left")
-        
-        # Reset index to bring qid back as column
-        merged_df = merged_df.reset_index()
-        
-        # Save to CSV
-        merged_df.to_csv(output_csv, index=False)
-        logger.info(f"Merged data saved to: {output_csv} ({len(merged_df)} rows)")
-        
-        # Also save to JSON for easier consumption by format_prompt_agent
-        output_json = output_csv.replace(".csv", ".json")
-        merged_df.to_json(output_json, orient="records")
-        logger.info(f"Merged data also saved to JSON: {output_json}")
-        
-        return output_csv, output_json
+        logger.info(f"Merged data saved to: {output_json_path} ({len(merged_data_list)} rows)")
+        return output_json_path
+
     except Exception as e:
-        logger.error(f"Error merging data: {e}")
-        return output_csv, None 
+        logger.error(f"Error merging data and saving to JSON {output_json_path}: {e}")
+        # Depending on desired behavior, re-raise, return None, or return the path anyway
+        raise # Re-raise the exception to indicate failure 
