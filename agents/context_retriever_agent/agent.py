@@ -214,6 +214,31 @@ if __name__ == "__main__":
     print(f"\nGenerated final JSON output: {final_json_path}") 
     # Expected path: data/Step1_Context_ContextRetriever_Final.json
 
+    # --- Log Final JSON Content (Sample) ---
+    try:
+        if final_json_path and os.path.exists(final_json_path):
+            with open(final_json_path, 'r') as f:
+                final_data = json.load(f)
+            # Log a sample (e.g., first item) or summary to avoid flooding logs
+            log_output = "Final JSON Content Sample (First Item):\n"
+            if isinstance(final_data, list) and len(final_data) > 0:
+                log_output += json.dumps(final_data[0], indent=2)
+            elif isinstance(final_data, dict):
+                 log_output += json.dumps(final_data, indent=2) # If it's not a list for some reason
+            else:
+                 log_output += str(final_data)[:500] # Log first 500 chars if not list/dict
+            
+            # Use the logger from the agent module
+            logger.info(log_output)
+        elif final_json_path:
+             logger.warning(f"Final JSON file not found at: {final_json_path}. Cannot log content.")
+        else:
+             logger.warning("Final JSON path was not returned by agent. Cannot log content.")
+            
+    except Exception as e:
+        logger.error(f"Error reading or logging final JSON content from {final_json_path}: {e}")
+    # --- End Log Final JSON Content ---
+
 
 # TO DO: Test using test_single_video.py to confirm the output is as expected
 

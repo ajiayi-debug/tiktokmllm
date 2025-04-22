@@ -5,17 +5,19 @@ import json
 import logging
 import pandas as pd
 from typing import Dict, Any, List, Set, Optional
+import re # Import regex module (Keep import in case needed elsewhere, or remove if truly unused)
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
-logger = logging.getLogger("context_retriever")
+logger = logging.getLogger("context_retriever.utils")
 
 
 def parse_context_response(response: str) -> Dict[str, Any]:
     """
-    Parse the response from Gemini to extract structured context data.
+    Parse the context response string (expected JSON) into a dictionary.
+    Handles potential JSON decoding errors and missing keys robustly.
     
     Args:
         response: The raw response string from Gemini
@@ -23,53 +25,64 @@ def parse_context_response(response: str) -> Dict[str, Any]:
     Returns:
         A dictionary containing the parsed context data
     """
-    # Default values in case parsing fails
-    default_context = {
-        "context": "Failed to extract context",
+    # Define the default error structure
+    default_error_output = {
+        "context": "Error: Failed to parse response",
         "is_contextual": False,
-        "explanation": "Response parsing error",
+        "explanation": "Could not decode or extract valid fields from the model output.",
         "corrected_question": None
     }
     
+    if not response or not isinstance(response, str):
+        logger.warning(f"Received empty or non-string response to parse: {response!r}")
+        return default_error_output.copy() # Return a copy
+
     try:
-        # Try to find and parse JSON in the response
-        # Look for JSON-like structure
-        start_idx = response.find('{')
-        end_idx = response.rfind('}')
+        # Clean the response: remove potential markdown code fences
+        cleaned_response = response.strip()
+        if cleaned_response.startswith("```json"):
+            cleaned_response = cleaned_response[len("```json"):].strip()
+        if cleaned_response.startswith("```"):
+             cleaned_response = cleaned_response[len("```"):].strip()
+        if cleaned_response.endswith("```"):
+            cleaned_response = cleaned_response[:-len("```")]
+
+        # Attempt to parse the JSON
+        data = json.loads(cleaned_response)
         
-        if start_idx >= 0 and end_idx > start_idx:
-            json_str = response[start_idx:end_idx + 1]
-            context_data = json.loads(json_str)
-            
-            # Ensure all required fields are present
-            result = {
-                "context": context_data.get("context", default_context["context"]),
-                "is_contextual": context_data.get("is_contextual", default_context["is_contextual"]),
-                "explanation": context_data.get("explanation", default_context["explanation"]),
-                "corrected_question": context_data.get("corrected_question", default_context["corrected_question"])
-            }
-            return result
+        # Validate required keys and types carefully
+        parsed_output = {}
+        parsed_output["context"] = str(data.get("context", default_error_output["context"]))
+        
+        # Handle is_contextual: check type, default to False
+        is_contextual_val = data.get("is_contextual")
+        if isinstance(is_contextual_val, bool):
+            parsed_output["is_contextual"] = is_contextual_val
         else:
-            # If no JSON structure found, treat the entire response as context
-            logger.warning("No JSON structure found in response, using raw text as context")
-            return {
-                "context": response,
-                "is_contextual": True,  # Assume it's contextual
-                "explanation": "Direct context extraction without validation",
-                "corrected_question": None
-            }
-    except json.JSONDecodeError:
-        logger.warning("Failed to parse JSON from response")
-        # If JSON parsing fails, use the raw response as context
-        return {
-            "context": response,
-            "is_contextual": True,  # Assume it's contextual
-            "explanation": "Failed to parse structured context; using raw response",
-            "corrected_question": None
-        }
+            logger.warning(f"Invalid type for 'is_contextual': {type(is_contextual_val)}. Defaulting to False.")
+            parsed_output["is_contextual"] = False # Default to False on type mismatch
+            
+        parsed_output["explanation"] = str(data.get("explanation", default_error_output["explanation"]))
+        # Corrected question is optional, default to None
+        parsed_output["corrected_question"] = data.get("corrected_question") # Allow None or string
+
+        # Add a check: if essential fields defaulted, log it
+        if parsed_output["context"] == default_error_output["context"]:
+             logger.warning(f"Could not find 'context' field in parsed JSON: {cleaned_response}")
+        if parsed_output["explanation"] == default_error_output["explanation"]:
+             logger.warning(f"Could not find 'explanation' field in parsed JSON: {cleaned_response}")
+
+
+        logger.debug(f"Successfully parsed context response for QID (unknown here): {parsed_output}")
+        return parsed_output
+
+    except json.JSONDecodeError as e:
+        logger.error(f"JSONDecodeError parsing context response: {e}. Response was: {response!r}")
+        return default_error_output.copy()
     except Exception as e:
-        logger.error(f"Error parsing context response: {e}")
-        return default_context
+        # Catch any other unexpected errors during parsing/validation
+        logger.error(f"Unexpected error parsing context response: {e}. Response was: {response!r}")
+        return default_error_output.copy()
 
 
 def save_checkpoint(predictions: List[Dict[str, Any]], path: str):
@@ -191,11 +204,12 @@ def merge_predictions(original_path: str, retry_path: str, merged_output_path: s
 
 def merge_with_original_data(intermediate_json_path: str, original_csv_path: str, output_json_path: str) -> str:
     """
-    Merge intermediate prediction JSON data with the original dataset CSV 
-    and save the final merged data as a JSON file.
+    Merge intermediate predictions with original data and save to a final JSON file.
+    Also handles concatenating 'question' and 'question_prompt' into the 'question' field
+    and removing the original 'question_prompt' field.
 
     Args:
-        intermediate_json_path: Path to the intermediate JSON file 
+        intermediate_json_path: Path to the intermediate JSON predictions file
                                   (contains list of {'qid': ..., 'prediction': {...}}).
         original_csv_path: Path to the original data CSV file.
         output_json_path: Path to save the final merged JSON file.
@@ -203,14 +217,12 @@ def merge_with_original_data(intermediate_json_path: str, original_csv_path: str
     Returns:
         The path to the saved final merged JSON file.
     """
+    logger.info(f"Merging intermediate predictions from {intermediate_json_path} with {original_csv_path} into {output_json_path}")
     try:
         # Load intermediate predictions (JSON)
         intermediate_preds = load_checkpoint(intermediate_json_path)
         if not intermediate_preds:
-            logger.warning(f"Intermediate predictions file is empty or not found: {intermediate_json_path}")
-            # Decide how to handle this - perhaps return empty structure or raise error
-            # For now, let's try to proceed assuming original data might still be useful alone
-            # or create an empty output file.
+            logger.warning(f"Intermediate predictions file is empty or not found: {intermediate_json_path}. Output will only contain original data.")
             intermediate_preds_map = {}
         else:
              # Convert list to dict keyed by qid for easier lookup
@@ -235,23 +247,76 @@ def merge_with_original_data(intermediate_json_path: str, original_csv_path: str
              logger.error(f"'qid' column not found in {original_csv_path}")
              raise ValueError(f"'qid' column not found in {original_csv_path}")
 
-        # Perform the merge logic
+        def get_combined_question(row):
+            # Always try to combine question and prompt if prompt exists
+            q_text = row.get("question", "") # Get original value safely
+            prompt_text = row.get("question_prompt", "") # Get prompt value safely
+            
+            # Use logger for potential debugging if needed later
+            # logger.info(f"Processing QID {row.get('qid', 'N/A')}: HasQText={bool(q_text)}, HasPrompt={bool(prompt_text)}")
+
+            if prompt_text: # Check if prompt_text is not None and not empty
+                # Concatenate using the format from format_gemini_prompt (strip and join with newline)
+                combined = f"{str(q_text or '').strip()}\n{str(prompt_text or '').strip()}"
+                # logger.info(f"QID {row.get('qid', 'N/A')}: Returning COMBINED question: {combined[:100]}...")
+                return combined
+            else:
+                # Otherwise, return the original 'question' value from the row (stripped)
+                original_q_in_row = str(q_text or '').strip()
+                # logger.info(f"QID {row.get('qid', 'N/A')}: Returning ORIGINAL question: {original_q_in_row[:100]}...")
+                return original_q_in_row
+
+        # Apply the function to update the 'question' column in the DataFrame
+        # Remove the check for specific columns needed only for MC logic if always concatenating
+        logger.info("Applying question concatenation logic to DataFrame for all rows.")
+        # Ensure 'question' and 'question_prompt' columns exist before applying
+        required_cols_for_concat = ['qid', 'question'] # 'question_prompt' is optional
+        if all(col in original_df.columns for col in required_cols_for_concat):
+            # Make sure 'question_prompt' exists if we need it, handle gracefully if not
+            if 'question_prompt' not in original_df.columns:
+                 logger.warning("'question_prompt' column not found. Concatenation will only use 'question' field.")
+                 # Create an empty 'question_prompt' column to avoid errors in apply
+                 original_df['question_prompt'] = "" 
+                 
+            original_df['question'] = original_df.apply(get_combined_question, axis=1)
+            logger.info("Question concatenation applied.")
+        else:
+             missing = [col for col in required_cols_for_concat if col not in original_df.columns]
+             logger.warning(f"Skipping question concatenation due to missing essential columns: {missing}")
+
+
+        # --- End Concatenation in DataFrame --- 
+
+        # Perform the merge logic (now uses the potentially modified original_df)
         merged_data_list = []
         for _, row in original_df.iterrows():
             original_item = row.to_dict()
             qid_str = original_item['qid'] # Already ensured to be string
-            prediction_data = intermediate_preds_map.get(qid_str, {}) # Get prediction by string qid
-
+            # Get prediction data from the intermediate map, default to empty dict if not found
+            prediction_data = intermediate_preds_map.get(qid_str, {}) 
+            
             # Combine original data with prediction data
             merged_item = original_item.copy() # Start with original data
-            merged_item.update(prediction_data) # Add/overwrite with prediction fields
-            
-            # Optionally recreate combined question fields if needed (example from old logic)
-            # merged_item['original_question'] = merged_item.get('question', '')
-            # merged_item['question_with_prompt'] = f"{merged_item.get('question_prompt', '')} {merged_item.get('original_question', '')}".strip()
-            # merged_item['question'] = merged_item['question_with_prompt']
-            
+            merged_item.update(prediction_data) # Add/overwrite with prediction fields (context, is_contextual, etc.)
+
+            # --- Remove original question_prompt field ---
+            merged_item.pop('question_prompt', None) # Remove the key if it exists, do nothing otherwise
+
+            # --- Replace NaN values with None for JSON compatibility ---
+            for key, value in merged_item.items():
+                # Use pandas.isna() as it handles various NaN types robustly
+                if pd.isna(value):
+                    merged_item[key] = None
+            # --- End NaN Replacement ---
+
             merged_data_list.append(merged_item)
+
+        # --- Debug Log Before Save ---
+        for item in merged_data_list:
+            if item.get('qid') == '0008-7':
+                 logger.info(f"DEBUG QID 0008-7: Final 'question' value BEFORE saving: {item.get('question', 'NOT FOUND')[:150]}...") # DEBUG
+                 break # Found it, no need to check further
+        # --- End Debug Log ---
 
         # Save the merged data to the output JSON file
         # Ensure the output directory exists
@@ -265,5 +330,4 @@ def merge_with_original_data(intermediate_json_path: str, original_csv_path: str
 
     except Exception as e:
         logger.error(f"Error merging data and saving to JSON {output_json_path}: {e}")
-        # Depending on desired behavior, re-raise, return None, or return the path anyway
         raise # Re-raise the exception to indicate failure 

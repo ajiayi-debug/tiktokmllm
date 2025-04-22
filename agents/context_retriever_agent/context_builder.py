@@ -4,6 +4,7 @@ import logging
 import asyncio
 from typing import Dict, Any, List, Optional
 from collections import defaultdict
+import json
 
 from agents.cot_agent.gemini import GeminiAsync
 from agents.context_retriever_agent.prompts import combined_context_prompt
@@ -169,7 +170,7 @@ async def get_context_for_questions(
         gemini: Optional GeminiAsync instance
         
     Returns:
-        List of prediction dictionaries
+        List of prediction dictionaries in the format {'qid': ..., 'prediction': ...}
     """
     builder = ContextBuilder(
         gemini=gemini,
@@ -178,21 +179,51 @@ async def get_context_for_questions(
         video_dir=video_dir
     )
     
-    predictions = []
+    all_predictions = []
     
     for video_url, questions in video_questions.items():
         logger.info(f"Processing video: {video_url} ({len(questions)} questions)")
         
+        # Get the results for this video (list of (qid, context_data) tuples)
         results = await builder.batch_process_video_questions(
             video_url=video_url,
             questions=questions,
             use_local_file=use_local_files
         )
         
+        # --- Logging Intermediate Results Per Video --- 
+        try:
+            # Create a map for easy lookup
+            results_map = {str(qid): data for qid, data in results}
+            
+            log_data_for_video = []
+            for original_question_data in questions:
+                qid_str = str(original_question_data.get("qid", "UNKNOWN"))
+                # Get the prediction, default to an error dict if somehow missing
+                prediction_data = results_map.get(qid_str, {
+                    "context": "Error: Prediction missing after batch processing",
+                    "is_contextual": False,
+                    "explanation": "Prediction data not found in results map.",
+                    "corrected_question": None
+                })
+                
+                # Combine original data with the prediction for logging
+                log_item = original_question_data.copy()
+                log_item.update(prediction_data) # Add context fields
+                log_data_for_video.append(log_item)
+            
+            # Log the combined data for this video as formatted JSON
+            logger.info(f"Intermediate results for video {video_url}:\\n{json.dumps(log_data_for_video, indent=2)}")
+            
+        except Exception as log_e:
+            logger.error(f"Error generating intermediate log for video {video_url}: {log_e}")
+        # --- End Logging --- 
+        
+        # Add results to the final list in the expected format
         for qid, context_data in results:
-            predictions.append({
+            all_predictions.append({
                 "qid": qid,
                 "prediction": context_data
             })
-    
-    return predictions 
+            
+    return all_predictions 
