@@ -6,12 +6,13 @@ from pathlib import Path
 
 async def main():
     #run_format_prompt_agent()
-    iteration=8  
+    iteration=16  
     prompt_path = Path(__file__).parent / "templates"/"iterate_prompt.txt" 
     template = prompt_path.read_text(encoding="utf-8").strip()
     iterate_prompt = template.format(iteration=iteration)      
     
     df = pd.read_json("data/testjson.json")
+    print(df)
     await CotAgent(                    
         df, f"Gemini_{iteration}", f"Gemini_{iteration}_retry",
         number_of_iterations=1,

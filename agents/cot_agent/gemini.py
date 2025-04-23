@@ -8,6 +8,7 @@ import asyncio
 from typing import List
 from tqdm import tqdm
 from agents.cot_agent.fact_checker_agent import fact_check
+#from fact_checker_agent import fact_check
 
 load_dotenv()
 
@@ -15,6 +16,12 @@ model="gemini-2.5-pro-preview-03-25"
 
 #model="gemini-2.5-flash-preview-04-17"
 
+def refiner(question, answer, iteration_in_prompt, explanation):
+    prompt=f"""The previous answer was '{answer}', but it contradicts the question '{question}' because {explanation}. Please answer the question '{question}' correctly by refining your answer based on the explanation and the video.
+            Return the refined answer ONLY and make sure it answers the question: {question}.
+            """
+    return prompt
+    
 
 def choose_best_answer_prompt(question,output,iteration_in_prompt):
     prompt=f"""Based on the {iteration_in_prompt} answers and the video, determine the best answer to the question: {question}
@@ -74,7 +81,6 @@ class GeminiAsync:
         wait_time: int = 30,
         iterate_prompt: str = "",
         iteration_in_prompt: int = 8,
-        step4_prompt_template: str = ""
     ) -> list[str]:
         """
         Runs QA in three phases: 
@@ -104,7 +110,7 @@ class GeminiAsync:
                 except Exception as e:
                     print(f"Gemini API error in step 1: {e}")
                     final_answers.append("Error")
-                    continue
+                    raise
                 print(f"Step 1 answers for '{q[2]}':\n{multi}\n")
 
                 # ---- Step 2: pick best answer from candidates ----
@@ -124,7 +130,7 @@ class GeminiAsync:
                 except Exception as e:
                     print(f"Gemini API error in step 2: {e}")
                     final_answers.append("Error")
-                    continue
+                    raise
             else:
                 # if no iterate_prompt, single-shot QA
                 contents = [
@@ -141,46 +147,47 @@ class GeminiAsync:
                 except Exception as e:
                     print(f"Gemini API error in single-shot: {e}")
                     final_answers.append("Error")
-                    continue
+                    raise
 
-            # ---- Iterative Step 3 & 4: fact-check & refine ----
-            while True:
-                print(f"Context: {q[1]}")
-                is_supported, explanation = await asyncio.to_thread(
-                    fact_check,
-                    question=q[0],
-                    context=[q[1]],
-                    final_answer=answer
-                )
-                print(is_supported)
-                print(explanation)
-                if is_supported or not step4_prompt_template:
-                    break
+            # # ---- Iterative Step 3 & 4: fact-check & refine ----
+            # while True:
+            #     print(f"Context: {q[1]}")
+            #     is_supported, explanation = await asyncio.to_thread(
+            #         fact_check,
+            #         question=q[0],
+            #         context=[q[1]],
+            #         final_answer=answer
+            #     )
+            #     print(is_supported)
+            #     print(explanation)
+            #     if is_supported:
+            #         break
 
-                # refine prompt using explanation
-                prompt = step4_prompt_template.format(
-                    question=q,
-                    answer=answer,
-                    explanation=explanation
-                )
-                print(prompt)
-                contents_refine = [
-                    types.Content(
-                        role="user",
-                        parts=[
-                            types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-                            types.Part.from_text(text=prompt),
-                        ],
-                    )
-                ]
-                try:
-                    answer = await self._stream_text(contents_refine, temperature)
-                    print(f"step4 answer:{answer}")
-                except Exception as e:
-                    print(f"Gemini API error in step 4 refine: {e}")
-                    break
-                # throttle before next fact-check
-                await asyncio.sleep(wait_time)
+            #     # refine prompt using explanation
+            #     prompt = refiner(
+            #         question=q[0],
+            #         answer=answer,
+            #         iteration_in_prompt=multi,
+            #         explanation=explanation
+            #     )
+            #     print(prompt)
+            #     contents_refine = [
+            #         types.Content(
+            #             role="user",
+            #             parts=[
+            #                 types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
+            #                 types.Part.from_text(text=prompt),
+            #             ],
+            #         )
+            #     ]
+            #     try:
+            #         answer = await self._stream_text(contents_refine, temperature)
+            #         print(f"step4 answer:{answer}")
+            #     except Exception as e:
+            #         print(f"Gemini API error in step 4 refine: {e}")
+            #         break
+            #     # throttle before next fact-check
+            #     await asyncio.sleep(wait_time)
 
             final_answers.append(answer)
             # throttle between Qs
@@ -246,9 +253,6 @@ if __name__ == "__main__":
             questions=[["Did the last person in the video open the bottle with a knife while the first two people failed in their attempts? Please state your answer with a brief explanation.","The video displays three separate clips. In the first clip, a man with a beard taps the cap of a glass bottle (appears to be Bundaberg Ginger Beer) with a small object, possibly a lighter or another cap. The clip ends before the outcome is shown. In the second clip, a woman taps the cap of a Corona beer bottle with a thin, stick-like object. This clip also ends before the outcome is revealed. In the third clip, a man attempts to open a Coca-Cola bottle. He first taps the cap with a chopstick, then tries flicking it with a folded piece of paper, taps it again with the chopstick, and finally makes a sweeping hand gesture towards the bottle, after which the cap appears to fly off. This final action seems like a magic trick or video edit rather than using a physical tool like a knife.","What methods did the individuals in the video use to try and open their bottles, and did the final person appear to successfully open the bottle using an unconventional technique or trick?"]],
             iterate_prompt="Generate your top 8 highest confidence scoring answers. Dont rank the answers.",
             iteration_in_prompt=8,
-            step4_prompt_template=(
-                "The previous answer was '{answer}', but it was contradicted because {explanation}. Please answer the question '{question}' correctly."
-            ),
             temperature=0,
             wait_time=10
         )
