@@ -7,8 +7,8 @@ import time
 import asyncio
 from typing import List
 from tqdm import tqdm
-#from agents.cot_agent.fact_checker_agent import fact_check
-from fact_checker_agent import fact_check
+from agents.cot_agent.fact_checker_agent import fact_check
+#from fact_checker_agent import fact_check
 
 load_dotenv()
 
