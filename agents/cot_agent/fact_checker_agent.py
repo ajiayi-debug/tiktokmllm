@@ -1,10 +1,11 @@
 import os
 import json
 from dotenv import load_dotenv
-import openai
+from openai import OpenAI
 
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def fact_check(
     question: str,
@@ -46,7 +47,7 @@ Respond ONLY in valid JSON using one of the formats below.
 """.strip()
 
     try:
-        resp = openai.ChatCompletion.create(
+        resp = client.chat.completions.create(
             model="gpt-4",
             temperature=0,
             messages=[
@@ -67,10 +68,6 @@ Respond ONLY in valid JSON using one of the formats below.
         return (False, f"Error during fact check: {e}")
 
 if __name__ == "__main__":
-    from dotenv import load_dotenv
-    import os
-
-    load_dotenv()
 
     test_cases = [
         ("What is the difference in the action between the first two people and the last person? Please state your answer with a brief explanation.", "The first two people tap to open a bottle while the last person flicks his finger to open a bottle"),
@@ -83,6 +80,7 @@ if __name__ == "__main__":
     for i, (question, final_answer) in enumerate(test_cases, 1):
         is_supported, explanation = fact_check(question, final_answer)
         status = "✅ Reasonable" if is_supported else "❌ Not Reasonable"
+        print(f"supported?: {is_supported}")
         print(f"\nTest {i}: {status}")
         print(f"Q: {question}")
         print(f"A: {final_answer}")
