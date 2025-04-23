@@ -9,4 +9,4 @@ Context:
 
 Original Question: {question}
 
-Rewritten Question:
+
