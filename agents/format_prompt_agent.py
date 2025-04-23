@@ -24,7 +24,7 @@ def rewrite_question_with_context(question: str, context_chunks: list[str], temp
     )
     return response.choices[0].message.content.strip()
 
-def run_format_prompt_agent(qid: str, question: str, context_text: str, youtube_url: str):
+def run_format_prompt_agent(qid: str, question: str, context_text: str, video_id: str, youtube_url: str):
     context_chunks = [chunk.strip() for chunk in context_text.split('.') if chunk.strip()]
     revised_question_raw = rewrite_question_with_context(question, context_chunks)
     revised_question = revised_question_raw.replace("Rewritten Question:", "").strip(' "\n')
@@ -33,6 +33,7 @@ def run_format_prompt_agent(qid: str, question: str, context_text: str, youtube_
         "question": question,
         "youtube_url": youtube_url,
         "context": context_chunks,
+        "video_id": video_id,
         "corrected_question": revised_question
     }
 
@@ -53,9 +54,10 @@ if __name__ == "__main__":
         qid = item.get("qid", "")
         question = item.get("question_with_prompt", "")
         context_text = item.get("context", "")
+        video_id = item.get("video_id", "")
         youtube_url = item.get("youtube_url", "")
 
-        formatted = run_format_prompt_agent(qid, question, context_text, youtube_url)
+        formatted = run_format_prompt_agent(qid, question, context_text, video_id, youtube_url)
         results.append(formatted)
 
     with open(output_path, "w", encoding="utf-8") as f:

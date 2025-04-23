@@ -11,7 +11,8 @@
       "The third person, a man in a black shirt, first taps the top of a Coca-Cola bottle with a chopstick, then waves his hand over it, then taps the side of the bottle near the bottom with his knuckles, and finally waves his hand over the top again",
       "After the final hand wave, the bottle cap pops off, and the soda fizzes"
     ],
-    "corrected_question": "Based on the video, how does the method used by the man in the black shirt differ from the methods used by the bearded man and the woman in the Adidas sweatshirt when handling their capped glass bottles? Please explain your answer briefly using details from the video."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "How do the actions performed by the man in the black shirt differ from those of the man with the beard and the woman in the Adidas sweatshirt, and how do these differences affect the bottles?\n\nExplanation: The context shows that the first two people only tapped the top of the bottle (on the cap), leaving the cap in place. In contrast, the man in the black shirt not only tapped the top but also waved his hand, tapped the side near the bottom, and waved his hand again—actions that ended up dislodging the cap and causing the soda to fizz."
   },
   {
     "qid": "0008-1",
@@ -24,7 +25,8 @@
       "The third person, a man with dark hair, taps the side of a Coca-Cola bottle with a stick (possibly a chopstick)",
       "After tapping, the third person performs a hand gesture, and through editing or a trick, the bottle appears to vanish or transform into a Coca-Cola glass"
     ],
-    "corrected_question": "Based on the video, please explain in a few sentences how the third person’s method of interacting with his Coca-Cola bottle is distinct from the techniques used by the first two individuals. Include details about any additional actions he performs that are not present in the others' interactions."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "Please explain how the third individual's actions in the video differ from those of the other two individuals, focusing specifically on his method of tapping the bottle (using a stick) and his subsequent hand gesture that appears to cause the bottle to vanish or transform. Provide a brief explanation with your answer."
   },
   {
     "qid": "0008-2",
@@ -37,7 +39,8 @@
       "The third and final person taps a Coca-Cola bottle cap with a chopstick",
       "After tapping, this person makes a hand gesture, and a visual effect occurs where the cap flies off and the bottle's contents appear to instantly turn solid black or disappear, indicating a trick or video edit rather than a genuine bottle opening"
     ],
-    "corrected_question": "Based on the video—which shows the final participant tapping a Coca-Cola bottle’s cap with a chopstick, then making a hand gesture that triggers a visual effect where the cap flies off and the liquid seems to vanish—did the final participant genuinely open the bottle using the chopstick (and without employing any knife), or does the scene indicate that the effect was achieved through video editing?"
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "Based on the video demonstration, did the last person actually remove the Coca-Cola bottle cap without using a knife, or was the apparent opening achieved through video editing? Please explain your answer briefly."
   },
   {
     "qid": "0008-3",
@@ -53,7 +56,8 @@
       "He first taps the cap with a chopstick, then tries flicking it with a folded piece of paper, taps it again with the chopstick, and finally makes a sweeping hand gesture towards the bottle, after which the cap appears to fly off",
       "This final action seems like a magic trick or video edit rather than using a physical tool like a knife"
     ],
-    "corrected_question": "Revised Question:\nBased on the video clips provided, does the final clip show that the man opened the Coca-Cola bottle using a knife, or did he use other objects (such as a chopstick and a folded piece of paper) along with a seemingly edited hand gesture?\n\nExplanation:\nThe context indicates that the third clip involves a man tapping the bottle with a chopstick, flicking it with a folded piece of paper, and then making a sweeping hand gesture that appears to be a magic trick or video edit—the use of a knife is not mentioned or implied."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "Revised Question: \n\n\"In the video, the first two clips show a man tapping a Bundaberg Ginger Beer bottle cap and a woman tapping a Corona bottle cap with small objects, neither revealing a clear result. In the third clip, a man taps a Coca-Cola bottle cap with a chopstick, uses a folded piece of paper, taps again with the chopstick, and then makes a sweeping hand gesture that causes the cap to fly off—an action that appears to be a trick or video edit rather than the use of a knife. Based on this context, did the last person open the bottle with a knife, or did he use a different method?"
   },
   {
     "qid": "0008-7",
@@ -66,7 +70,8 @@
       "The third person, a man in a black shirt, first taps the side of a Coca-Cola bottle cap with a thin, stick-like object, failing to open it",
       "He then performs a hand gesture towards the bottle, and through a visual effect or magic trick, the cap and the top portion of the bottle disappear, leaving the liquid contained as if in a glass"
     ],
-    "corrected_question": "Revised Question:\nIn the video, two people try (and fail) to open their bottles by tapping the cap with a small object. The third person, wearing a black shirt, first taps the side of a Coca-Cola bottle with a thin, stick-like object, then makes a hand gesture that—thanks to a visual effect or magic trick—causes the cap and the top of the bottle to disappear, leaving the liquid contained as if it were in a glass. Which of the following best describes how the third person’s method differs from that of the first two people?\n\nA. He uses a different type of knife.  \nB. He uses a corkscrew.  \nC. He uses a bottle opener.  \nD. He uses his finger.  \nE. None of the above."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "Revised Question:\nBased on the video in which three people attempt to open glass bottles with caps, how does the third person in the video open his bottle in a way that differs from the first two individuals?\n\nA. He uses a different type of knife.  \nB. He uses a corkscrew.  \nC. He uses a bottle opener.  \nD. He uses his finger.  \nE. None of the above.\n\n(Respond with only the letter A, B, C, D, or E, which corresponds to the correct answer.)"
   },
   {
     "qid": "0038-0",
@@ -79,7 +84,8 @@
       "The third person, a man in a black shirt, taps the cap of a Coca-Cola bottle multiple times with a thin object (like a chopstick) without success",
       "He then performs a hand gesture, and through a video edit (a jump cut), the bottle cap disappears and is replaced by a Coca-Cola glass shaped like the top of the bottle"
     ],
-    "corrected_question": "How did the video create the illusion that the third person was able to remove the Coca-Cola bottle cap so easily?\n\nExplanation: The context indicates that the third person did not physically remove the cap; instead, a video editing technique—specifically a jump cut replacing the cap with a shaped glass—was used to create this impression."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "In the video, after several failed attempts to open a bottle by tapping the cap, the last person makes a hand gesture and the cap is replaced by a glass shaped like the bottle's top. Based on the context, what explains the apparent removal of the cap?"
   },
   {
     "qid": "0038-1",
@@ -92,7 +98,8 @@
       "The third person, a man, taps the top of a Coca-Cola bottle with a chopstick-like object a few times",
       "He then waves his hand over the bottle, and the entire top neck of the bottle, including the cap, breaks off cleanly, falling onto the table"
     ],
-    "corrected_question": "Based on the video, what factors might explain why the third person was able to cleanly detach the top (including the cap) of the Coca-Cola bottle with just a few taps and a hand gesture, while the other attempts produced ambiguous results? Please provide a brief explanation.\n\nNote: The context does not specify an exact scientific reason, so your answer should be grounded solely in the actions and observations presented in the video."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "Based on the details shown, what factors might have contributed to the third person’s ability to cleanly break off the top portion (including the cap) of the Coca-Cola bottle after tapping it with a chopstick-like object?"
   },
   {
     "qid": "0038-2",
@@ -105,7 +112,8 @@
       "He then makes a hand gesture towards the bottle, and the top portion of the bottle, above the liquid line, cleanly breaks off and falls away",
       "The main body of the bottle remains standing and intact"
     ],
-    "corrected_question": "Based on the video demonstration, did the third person successfully break the top of the Coca-Cola bottle as he intended? Please provide a brief explanation for your answer."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "Based on the video description, did the third person (the man in the black shirt) successfully break off the top portion of the Coca-Cola bottle above the liquid line while leaving the rest of the bottle intact? Please provide a brief explanation for your answer."
   },
   {
     "qid": "0038-3",
@@ -118,7 +126,8 @@
       "The third (last) person taps the cap of a Coca-Cola bottle multiple times with a chopstick",
       "After tapping, the third person waves their hand over the bottle, and the cap pops off without direct leverage being applied at that moment"
     ],
-    "corrected_question": "In the video, the third person taps a Coca-Cola bottle's cap several times using a chopstick and then waves their hand over the bottle, causing the cap to pop off without applying any direct leverage at that moment. Based on these observations, did the person use a lighter as a lever to remove the cap, or does the evidence suggest a different mechanism? Please explain your reasoning."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "Based on the video, did the third person use a lighter as a lever to remove the Coca-Cola bottle cap, or was another object involved? Please explain your answer briefly."
   },
   {
     "qid": "0038-7",
@@ -134,6 +143,7 @@
       "Finally, he waves his hand over the bottle again, and the entire top portion of the bottle neck, including the cap, cleanly breaks off",
       "No knife is visible or used by the third person at any point during the interaction shown"
     ],
-    "corrected_question": "Based on the video, how did the third individual remove the cap from the Coca-Cola bottle?\nA. They used a knife to gain leverage.\nB. They concealed a knife in their sleeve and used it to cut the cap off.\nC. They made a shallow cut around the bottle’s mouth.\nD. They used a knife to twist and break the cap.\nE. None of the above.\n\nSelect the letter corresponding to the correct method."
+    "video_id": "sj81PWrerDk",
+    "corrected_question": "Based on the video description, how did the third person remove the bottle cap from the Coca-Cola bottle?\nA. They used a knife as a lever.\nB. They concealed a knife in their sleeve and used it to cut off the cap.\nC. They made a shallow cut around the bottle’s mouth.\nD. They used a knife to twist and break the cap.\nE. None of the above – they did not use any knife during the process."
   }
 ]
