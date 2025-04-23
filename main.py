@@ -23,3 +23,6 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+# TO DO: Redo to call all the agents in one go

@@ -7,6 +7,7 @@ import pandas as pd
 from collections import defaultdict
 from typing import Dict, Any, List, Set, Optional
 import json
+import time # Import time module
 
 from agents.cot_agent.gemini import GeminiAsync
 from agents.cot_agent.rearrange import reorder
@@ -32,7 +33,8 @@ async def process_videos_for_context_retrieval(
     temperature: float = DEFAULT_TEMPERATURE,
     filter_qids: Optional[Set[str]] = None,
     video_upload: bool = False,
-    wait_time: int = DEFAULT_WAIT_TIME
+    wait_time: int = DEFAULT_WAIT_TIME,
+    concurrency_limit: int = 10
 ):
     """
     Process videos to extract context and validate questions.
@@ -46,6 +48,7 @@ async def process_videos_for_context_retrieval(
         filter_qids: QIDs to process
         video_upload: Whether to upload local video files
         wait_time: Wait time between API calls
+        concurrency_limit: Max concurrent API calls within context builder
     """
     predictions = load_checkpoint(checkpoint_path)
     processed_qids = get_processed_qids(predictions)
@@ -72,22 +75,56 @@ async def process_videos_for_context_retrieval(
     gemini = GeminiAsync()
     
     video_batches = list(video_to_samples.items())
+    total_batches = (len(video_batches) + batch_size - 1) // batch_size
+    logger.info(f"Processing {len(video_batches)} videos in {total_batches} batches (batch size: {batch_size})")
+
     for i in range(0, len(video_batches), batch_size):
+        batch_start_time = time.time() # Start timer for batch
+        current_batch_num = (i // batch_size) + 1
         batch = dict(video_batches[i:i+batch_size])
+        batch_video_urls = list(batch.keys()) # Get URLs for logging
+        logger.info(f"Processing batch {current_batch_num}/{total_batches} (Videos: {batch_video_urls})")
         
-        
-        batch_predictions = await get_context_for_questions(
-            video_questions=batch,
-            temperature=temperature,
-            wait_time=wait_time,
-            video_dir=video_dir,
-            use_local_files=video_upload,
-            gemini=gemini
-        )
-        
-        
-        predictions.extend(batch_predictions)
-        save_checkpoint(predictions, checkpoint_path)
+        try:
+            batch_predictions = await get_context_for_questions(
+                video_questions=batch,
+                temperature=temperature,
+                wait_time=wait_time,
+                video_dir=video_dir,
+                use_local_files=video_upload,
+                gemini=gemini,
+                concurrency_limit=concurrency_limit
+            )
+            
+            predictions.extend(batch_predictions)
+            save_checkpoint(predictions, checkpoint_path)
+
+        except Exception as e:
+            # Log error for the specific batch
+            logger.error(f"Error processing batch {current_batch_num} (Videos: {batch_video_urls}): {e}", exc_info=True)
+            # Add error placeholders for all questions in the failed batch
+            for video_url, samples in batch.items():
+                for s in samples:
+                     predictions.append({
+                         "qid": s.get("qid", "UNKNOWN"),
+                         "prediction": {
+                              "context": "Error: Batch processing failed",
+                              "is_contextual": False,
+                              "explanation": f"Error during batch processing: {str(e)}",
+                              "corrected_question": None
+                         }
+                     })
+            # Save checkpoint even after batch error to record the errors
+            logger.warning(f"Saving checkpoint after batch {current_batch_num} error to record failed QIDs.")
+            save_checkpoint(predictions, checkpoint_path)
+            # Optional: decide whether to continue to the next batch or raise/stop
+            # continue # Continue to next batch (default behavior)
+
+        finally:
+             # Log time taken for the batch regardless of success or failure
+             batch_end_time = time.time()
+             batch_duration = batch_end_time - batch_start_time
+             logger.info(f"Batch {current_batch_num}/{total_batches} (Videos: {batch_video_urls}) finished processing in {batch_duration:.2f} seconds.")
 
 
 async def ContextRetrieverAgent(
@@ -98,7 +135,8 @@ async def ContextRetrieverAgent(
     number_of_iterations: int = 1,
     temperature: float = DEFAULT_TEMPERATURE,
     video_upload: bool = False,
-    wait_time: int = DEFAULT_WAIT_TIME
+    wait_time: int = DEFAULT_WAIT_TIME,
+    concurrency_limit: int = 10
 ) -> str:
     """
     Main Context Retriever Agent function.
@@ -114,10 +152,12 @@ async def ContextRetrieverAgent(
         temperature: Temperature for generation
         video_upload: Whether to upload local video files
         wait_time: Wait time between API calls
+        concurrency_limit: Max concurrent API calls
 
     Returns:
         The absolute path to the final merged JSON file (e.g., data/Step1_Context_<final_output_suffix>.json)
     """
+    total_start_time = time.time() # Start total timer
     logger.info("Starting Context Retriever Agent")
 
     # --- Path Setup ---
@@ -139,7 +179,8 @@ async def ContextRetrieverAgent(
         batch_size=DEFAULT_BATCH_SIZE,
         temperature=temperature,
         video_upload=video_upload,
-        wait_time=wait_time
+        wait_time=wait_time,
+        concurrency_limit=concurrency_limit
     )
 
     # --- Error Handling and Retries --- 
@@ -154,7 +195,8 @@ async def ContextRetrieverAgent(
             temperature=temperature,
             filter_qids=error_qids,
             video_upload=video_upload,
-            wait_time=wait_time
+            wait_time=wait_time,
+            concurrency_limit=concurrency_limit
         )
 
         logger.info("Merging initial and retry results into intermediate JSON")
@@ -166,8 +208,11 @@ async def ContextRetrieverAgent(
     else:
         logger.info("No errors to retry, copying initial checkpoint to intermediate path")
         import shutil
-        # Copy the initial results to be the intermediate results
-        shutil.copy2(initial_checkpoint_path, intermediate_json_path)
+        # Added check to ensure source file exists before copying
+        if os.path.exists(initial_checkpoint_path):
+             shutil.copy2(initial_checkpoint_path, intermediate_json_path)
+        else:
+             logger.warning(f"Initial checkpoint {initial_checkpoint_path} not found. Cannot copy to intermediate path. Intermediate file may be missing or empty.")
 
     # --- Final Merging Step (JSON only) --- 
     logger.info("Merging intermediate predictions with original data")
@@ -181,6 +226,15 @@ async def ContextRetrieverAgent(
     # Removed CSV saving and reordering steps
 
     logger.info(f"Context Retriever Agent completed successfully.")
+    
+    # --- Total Time Logging --- 
+    total_end_time = time.time()
+    total_duration_seconds = total_end_time - total_start_time
+    total_minutes = int(total_duration_seconds // 60)
+    total_seconds = int(total_duration_seconds % 60)
+    logger.info(f"Total execution time: {total_minutes} minutes, {total_seconds} seconds.")
+    # --- End Total Time Logging ---
+    
     logger.info(f"Final JSON output: {final_json_output_path}")
 
     return final_json_output_path # Return the path to the single final JSON file
@@ -207,7 +261,8 @@ if __name__ == "__main__":
         final_output_suffix=f"ContextRetriever_{run_suffix}", # Suffix used for intermediate checkpoint
         temperature=DEFAULT_TEMPERATURE,
         video_upload=True, # Adjust as needed
-        wait_time=DEFAULT_WAIT_TIME
+        wait_time=DEFAULT_WAIT_TIME, # Keep for underlying client if needed
+        concurrency_limit=10 # Set desired concurrency for the run
     ))
     
     # Print the path to the final JSON file

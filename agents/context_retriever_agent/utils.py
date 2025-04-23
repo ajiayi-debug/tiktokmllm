@@ -302,6 +302,9 @@ def merge_with_original_data(intermediate_json_path: str, original_csv_path: str
             # --- Remove original question_prompt field ---
             merged_item.pop('question_prompt', None) # Remove the key if it exists, do nothing otherwise
 
+            # --- Explicitly remove 'Unnamed: 0' if it survived the DataFrame drop ---
+            merged_item.pop('Unnamed: 0', None)
+            
             # --- Replace NaN values with None for JSON compatibility ---
             for key, value in merged_item.items():
                 # Use pandas.isna() as it handles various NaN types robustly

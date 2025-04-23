@@ -39,18 +39,27 @@ async def test_single_video():
     print(f"Video URL: {video_url}")
     print(f"Number of questions: {num_questions}")
     
-    # Create output suffix for this test
+    # Create output suffix for this test - SIMPLIFIED
     # Include the video ID to make intermediate/final names unique per video test
-    test_suffix = f"ContextRetriever_test_{first_video_id}"
+    # test_suffix = f"ContextRetriever_test_{first_video_id}" # Original Long version
+    test_suffix = f"test_{first_video_id}" # Shorter version
+
+    # Use shorter checkpoint/suffix names
+    initial_ckpt_name = f"initial_{test_suffix}"
+    retry_ckpt_name = f"retry_{test_suffix}"
+    intermediate_suffix = f"intermediate_{test_suffix}" # Used for intermediate json and final json name
 
     # Run the agent on just this video
     # It now returns only the path to the final merged JSON
     print("\nProcessing video...")
     final_json_path = await ContextRetrieverAgent(
         df=df_single_video,
-        checkpoint_path_initial=f"ContextRetriever_initial_{test_suffix}", # Checkpoint names can remain detailed
-        checkpoint_path_retry=f"ContextRetriever_retry_{test_suffix}",     # Checkpoint names can remain detailed
-        final_output_suffix=test_suffix, # Used for intermediate JSON and final JSON name
+        # checkpoint_path_initial=f"ContextRetriever_initial_{test_suffix}", # Original Long version
+        # checkpoint_path_retry=f"ContextRetriever_retry_{test_suffix}",     # Original Long version
+        # final_output_suffix=test_suffix, # Original Long version
+        checkpoint_path_initial=initial_ckpt_name, # Shorter name
+        checkpoint_path_retry=retry_ckpt_name,     # Shorter name
+        final_output_suffix=intermediate_suffix, # Shorter name
         video_upload=True,
         wait_time=10
     )
