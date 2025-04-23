@@ -1,31 +1,25 @@
-
 import os
 import json
 from dotenv import load_dotenv
-from openai import OpenAI
+import openai
 
 load_dotenv()
-
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def fact_check(
     question: str,
-    context: list[str],
     final_answer: str
 ) -> tuple[bool, str]:
     """
-    Checks if the final_answer is consistent with the provided context.
+    Checks if the final_answer is a sound and reasonable response to the question.
     Returns:
       (is_supported: bool, explanation: str)
     """
-    context_text = "\n".join(f"- {line}" for line in context)
     system_prompt = (
-        "You are a fact-checking assistant that checks consistency between answers and context."
+        "You are a fact-checking assistant. Your job is to check if a given final answer is a reasonable and logically sound response to the provided question."
     )
-    user_prompt = f"""
-Context:
-{context_text}
 
+    user_prompt = f"""
 Question:
 {question}
 
@@ -33,26 +27,26 @@ Final Answer:
 "{final_answer}"
 
 Instructions:
-Check if the answer is consistent with the context.
+Assess if the final answer makes sense as a response to the question. 
+It should be relevant, logically coherent, and plausible.
 
 Respond ONLY in valid JSON using one of the formats below.
 
 ✔️ Supported:
 {{ 
   "is_supported": true, 
-  "final_verified_answer": "<same as final_answer>", 
   "explanation": "..." 
 }}
 
-❌ Contradiction:
+❌ Unsupported:
 {{ 
   "is_supported": false, 
-  "revised_answer": "<a corrected version>", 
   "explanation": "..." 
 }}
 """.strip()
+
     try:
-        resp = client.chat.completions.create(
+        resp = openai.ChatCompletion.create(
             model="gpt-4",
             temperature=0,
             messages=[
@@ -71,6 +65,29 @@ Respond ONLY in valid JSON using one of the formats below.
         )
     except Exception as e:
         return (False, f"Error during fact check: {e}")
+
+if __name__ == "__main__":
+    from dotenv import load_dotenv
+    import os
+
+    load_dotenv()
+
+    test_cases = [
+        ("What is the difference in the action between the first two people and the last person? Please state your answer with a brief explanation.", "The first two people tap to open a bottle while the last person flicks his finger to open a bottle"),
+        ("What is the difference in the action between the first two people and the last person? Please state your answer with a brief explanation.", "Person 1 and 2 were holding a knife while person 3 is holding nothing"),
+        ("What is the capital of France?", "Paris"),
+        ("What is the capital of France?", "France is known for wine and cheese."),
+        
+    ]
+
+    for i, (question, final_answer) in enumerate(test_cases, 1):
+        is_supported, explanation = fact_check(question, final_answer)
+        status = "✅ Reasonable" if is_supported else "❌ Not Reasonable"
+        print(f"\nTest {i}: {status}")
+        print(f"Q: {question}")
+        print(f"A: {final_answer}")
+        print(f"→ Explanation: {explanation}")
+
 
 
 # # Example test run
