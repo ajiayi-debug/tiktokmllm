@@ -24,10 +24,19 @@ def refiner(question, answer, explanation):
     
 
 def choose_best_answer_prompt(question,output,iteration_in_prompt):
-    prompt=f"""Based on the {iteration_in_prompt} answers and the video, determine the best answer to the question: {question}
-    The best answer can be a combination of answers from the top {iteration_in_prompt} answers. Just answer the question and dont explain why you chose that answer among the top {iteration_in_prompt} answer and dont reference the answers.
+    prompt=f"""Based on the {iteration_in_prompt} answers and the video, select/craft an answer to the question using the {iteration_in_prompt} answers.
+    If the question '{question}' is a multiple choice question:
+        -If the {iteration_in_prompt} answers selects E as all of its option, IGNORE THE {iteration_in_prompt} ANSWERS and watch the video yourself to determine the answer.
+        -If you conclude the answer as 'E: None of the above', rewatch the video and re-evaluate your options as E is NOT A answer. If you still think it's 'E', just choose the NEXT BEST PLAUSIBLE ANSWER.
+        -ELSE: If the {iteration_in_prompt} answers is NOT E, select from there your final answer after confirming by watching the video.
+    else:
+        -Final answer can be a combination of answers from the {iteration_in_prompt} answers OR you select the most logical answers OR you use the answers to create the final answer.
+    Just answer the question and dont explain why you gave that answer among the top {iteration_in_prompt} answer and dont reference the answers.
     The {iteration_in_prompt} answers:
-    {output}"""
+    {output}
+    The question to answer: 
+    {question}
+    Your answer:"""
     return prompt
 
 class GeminiAsync:
@@ -149,43 +158,43 @@ class GeminiAsync:
                     final_answers.append("Error")
                     raise
 
-            # ---- Iterative Step 3 & 4: fact-check & refine ----
-            while True:
-                print(f"Context: {q[1]}")
-                is_supported, explanation = await asyncio.to_thread(
-                    fact_check,
-                    question=q[0],
-                    final_answer=answer
-                )
-                print(is_supported)
-                print(explanation)
-                if is_supported:
-                    break
+            # # ---- Iterative Step 3 & 4: fact-check & refine ----
+            # while True:
+            #     print(f"Context: {q[1]}")
+            #     is_supported, explanation = await asyncio.to_thread(
+            #         fact_check,
+            #         question=q[0],
+            #         final_answer=answer
+            #     )
+            #     print(is_supported)
+            #     print(explanation)
+            #     if is_supported:
+            #         break
 
-                # refine prompt using explanation
-                prompt = refiner(
-                    question=q[0],
-                    answer=answer,
-                    explanation=explanation
-                )
-                print(prompt)
-                contents_refine = [
-                    types.Content(
-                        role="user",
-                        parts=[
-                            types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-                            types.Part.from_text(text=prompt),
-                        ],
-                    )
-                ]
-                try:
-                    answer = await self._stream_text(contents_refine, temperature)
-                    print(f"step4 answer:{answer}")
-                except Exception as e:
-                    print(f"Gemini API error in step 4 refine: {e}")
-                    break
-                # throttle before next fact-check
-                await asyncio.sleep(wait_time)
+            #     # refine prompt using explanation
+            #     prompt = refiner(
+            #         question=q[0],
+            #         answer=answer,
+            #         explanation=explanation
+            #     )
+            #     print(prompt)
+            #     contents_refine = [
+            #         types.Content(
+            #             role="user",
+            #             parts=[
+            #                 types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
+            #                 types.Part.from_text(text=prompt),
+            #             ],
+            #         )
+            #     ]
+            #     try:
+            #         answer = await self._stream_text(contents_refine, temperature)
+            #         print(f"step4 answer:{answer}")
+            #     except Exception as e:
+            #         print(f"Gemini API error in step 4 refine: {e}")
+            #         break
+            #     # throttle before next fact-check
+            #     await asyncio.sleep(wait_time)
 
             final_answers.append(answer)
             # throttle between Qs

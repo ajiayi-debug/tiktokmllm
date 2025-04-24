@@ -58,8 +58,8 @@ async def CotAgent(df,checkpoint_path_initial,checkpoint_path_retry, number_of_i
         json_path=f"data/{checkpoint_path_initial}.json",
         csv_path=f"data/{checkpoint_path_initial}.csv"
     )
-
-    reorder(f"data/{checkpoint_path_initial}.csv",df,f"{checkpoint_path_initial}_rearranged.csv")
+    original_df=pd.read_csv("data/data.csv")
+    reorder(f"data/{checkpoint_path_initial}.csv",original_df,f"{checkpoint_path_initial}_rearranged.csv")
 
 
 

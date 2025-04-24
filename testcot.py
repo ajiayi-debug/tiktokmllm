@@ -10,8 +10,8 @@ async def main():
     prompt_path = Path(__file__).parent / "templates"/"iterate_prompt.txt" 
     template = prompt_path.read_text(encoding="utf-8").strip()
     iterate_prompt = template.format(iteration=iteration)      
-    
-    df = pd.read_json("data/testjson.json")
+    #df=pd.read_json('data/testjson.json')
+    df = pd.read_json("data/recommended_formatted_output.json")
     print(df)
     await CotAgent(                    
         df, f"Gemini_{iteration}", f"Gemini_{iteration}_retry",
