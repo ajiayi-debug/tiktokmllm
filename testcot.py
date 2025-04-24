@@ -6,7 +6,7 @@ from pathlib import Path
 
 async def main():
     #run_format_prompt_agent()
-    iteration=16  
+    iteration=32  
     prompt_path = Path(__file__).parent / "templates"/"iterate_prompt.txt" 
     template = prompt_path.read_text(encoding="utf-8").strip()
     iterate_prompt = template.format(iteration=iteration)      

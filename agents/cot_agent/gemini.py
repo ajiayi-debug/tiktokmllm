@@ -16,7 +16,7 @@ model="gemini-2.5-pro-preview-03-25"
 
 #model="gemini-2.5-flash-preview-04-17"
 
-def refiner(question, answer, iteration_in_prompt, explanation):
+def refiner(question, answer, explanation):
     prompt=f"""The previous answer was '{answer}', but it contradicts the question '{question}' because {explanation}. Please answer the question '{question}' correctly by refining your answer based on the explanation and the video.
             Return the refined answer ONLY and make sure it answers the question: {question}.
             """
@@ -166,7 +166,6 @@ class GeminiAsync:
                 prompt = refiner(
                     question=q[0],
                     answer=answer,
-                    iteration_in_prompt=multi,
                     explanation=explanation
                 )
                 print(prompt)
