@@ -25,6 +25,7 @@ import random
 from dotenv import load_dotenv
 from pathlib import Path
 import argparse
+import re
 from tqdm.asyncio import tqdm 
 
 
@@ -649,7 +650,7 @@ async def main(input_path_str: str, output_path_str: str, template_path_str: str
 if __name__ == "__main__":
     # Set up default paths relative to script location
     base_dir = Path(__file__).resolve().parent.parent 
-    default_input = base_dir / "data" / "test_output.json"
+    default_input = base_dir / "data" / "updated_original.json"
     default_output = base_dir / "data" / "recommended_formatted_output.json"
     default_template = base_dir / "templates" / "prompt_template.txt"
 
