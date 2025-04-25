@@ -1,10 +1,10 @@
 # Team: Sherlin's Squad
 
-- Sherlin Choo
-- Ang Jia Yi
-- Chloe Ong
-- Eunice Lor
-- Gabriel Wong
+- Sherlin Choo (Team Leader)
+- Ang Jia Yi (Developer)
+- Chloe Ong (Developer)
+- Eunice Lor (Developer)
+- Gabriel Wong (Developer)
 
 ## Abstract
 
