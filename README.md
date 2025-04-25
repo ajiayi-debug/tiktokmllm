@@ -111,7 +111,7 @@ The script will load the dataset, process videos and questions through the `CotA
 ## Configuration
 
 - **API Keys:** Configure your `GEMINI_API_KEY` in the `.env` file.
-- **Pipeline Parameters:** Key parameters like the number of candidate generation iterations (`iteration`), API call wait times (`wait_time`), and output file naming conventions can be modified directly within `main.py`.
+- **Pipeline Parameters:** Key parameters like the number of candidate generation iterations (N) (`iteration`), API call wait times (`wait_time`), and output file naming conventions can be modified directly within `main.py`. We found that N=32 performs the most optimally in terms of improvements in accuracy.
 - **Model:** The specific Gemini model used (`gemini-2.5-pro-preview-03-25`) is set within `agents/cot_agent/gemini.py`.
 
 ## Deployment Instructions
