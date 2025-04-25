@@ -30,7 +30,7 @@ The primary goal is to move beyond simple video description towards deeper seman
 
 ## Architecture Diagram
 
-![Pipeline Architecture Diagram](public/architecture_diagram.png)
+![Pipeline Architecture Diagram](public/architecture_diagram.jpg)
 
 ## Tech Stack
 
