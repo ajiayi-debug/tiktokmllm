@@ -305,11 +305,11 @@ async def process_all_video_questions_list_gemini_df(
                 # question = s["original_question"]
                 # prompt = s.get("question_prompt", "")
                 context = s.get("context", "")
-                corrected_question = s.get("corrected_question", "")
+                #corrected_question = s.get("corrected_question", "")
                 # formatted_prompt = format_gemini_prompt(question, prompt)
                 formatted_prompt=s['question']
-                if pd.isna(corrected_question):
-                    corrected_question = formatted_prompt
+                #if pd.isna(corrected_question):
+                corrected_question = formatted_prompt
                 questions.append([formatted_prompt,context,corrected_question])
                 print(questions)
             except Exception as e:

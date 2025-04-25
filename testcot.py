@@ -14,7 +14,7 @@ async def main():
     df = pd.read_json("data/recommended_formatted_output.json")
     print(df)
     await CotAgent(                    
-        df, f"Gemini_{iteration}", f"Gemini_{iteration}_retry",
+        df, f"Gemini_{iteration}_context", f"Gemini_{iteration}_retry_context",
         number_of_iterations=1,
         iterate_prompt=iterate_prompt,
         video_upload=True,

@@ -26,9 +26,11 @@ def refiner(question, answer, explanation):
 def choose_best_answer_prompt(question,output,iteration_in_prompt):
     prompt=f"""Based on the {iteration_in_prompt} answers and the video, select/craft an answer to the question using the {iteration_in_prompt} answers.
     If the question '{question}' is a multiple choice question:
+        -If you only see one selected answer, check if you agree with the answer after watching the video before giving your answer in reference to the video.
         -If the {iteration_in_prompt} answers selects E as all of its option, IGNORE THE {iteration_in_prompt} ANSWERS and watch the video yourself to determine the answer.
         -If you conclude the answer as 'E: None of the above', rewatch the video and re-evaluate your options as E is NOT A answer. If you still think it's 'E', just choose the NEXT BEST PLAUSIBLE ANSWER.
         -ELSE: If the {iteration_in_prompt} answers is NOT E, select from there your final answer after confirming by watching the video.
+        -IF multiple multiple choice questions CAN be the answer (e.g A and B can be the answer), you select E as NONE of the multiple choice answer IS the answer (make sure E stands for None of the above).
     else:
         -Final answer can be a combination of answers from the {iteration_in_prompt} answers OR you select the most logical answers OR you use the answers to create the final answer.
     Just answer the question and dont explain why you gave that answer among the top {iteration_in_prompt} answer and dont reference the answers.
@@ -37,6 +39,37 @@ def choose_best_answer_prompt(question,output,iteration_in_prompt):
     The question to answer: 
     {question}
     Your answer:"""
+    return prompt
+
+
+def use_context(context,iteration,question):
+    prompt=f"""Here is some textual context of the video: {context}
+
+    Watch the video and then, generate your top {iteration} highest confidence scoring answers to the question. 
+    Dont rank the answers. For multiple choice answers, provide a brief explanation on why that choice is chosen for each answer. 
+
+    Some special cases:
+    Try to answer the question in terms of the context of the video. DONT simply answer the question AS WHAT YOU SEE. REMEMBER YOUR CONTEXT (both from watching the video and from the text if it makes sense) 
+    For example:
+    A girl is hanging on a basketball rim with the help of a boy and she is shown hanging on the rim at the end of the video.
+    Sample question: What is the girl doing at the end of the video
+    Sample Answer: The girl is PRETENDING to dunk.
+
+    Sometimes the actions are also a causation due to external actions OUTSIDE THE VIDEO (e.g a cut on a bottle is made, allowing one to just smack the bottle open easily using their finger). TRY not to assume everything is video editing or magic and think about what other kind of plausible external physical causation can cause what happen in the video for incidents that are unexplainable in the video.
+    
+    Consider the exact activity or context or situation that is going on, and ensure that EVERY WORD in the user’s question is mapped to this exact activity or context or situation. For example, in golf a successful hit is “golf club makes contact with ball and hits the target” and NOT JUST “golf club makes contact with ball” do not assume the meaning of the word in the user’s question but LINK IT BACK TO THE SITUATION”
+    E.g: The video shows a golf ball flying past a lamp
+    Sample question: Did the golfer successfully hit the lamp
+    Sample answer: As the ball flew past the lamp, the golfer did NOT successfully hit the lamp.
+    
+    For simple questions, if the video shows details that go beyong the question, try to incorporate the details in your answer, then conclude your answer after thinking about the details. For example:
+    The video shows a real panda and a human dressed as a panda.
+    Sample question: How many pandas are in the video?
+    Sample answer: There is one real panda and one human dressed like a panda, so therefore, only one panda.
+    
+    Question:{question}
+
+    Your {iteration} answers: """
     return prompt
 
 class GeminiAsync:
@@ -51,6 +84,25 @@ class GeminiAsync:
     # ---------------------------------------------------------------------
     # Helpers
     # ---------------------------------------------------------------------
+
+    async def delete_file(self, file_name_or_uri: str) -> None:
+        """
+        Delete a file you previously uploaded via Gemini API.
+
+        Examples
+        --------
+        await g.delete_file("files/abc123def")        # from list() call
+        await g.delete_file(uploaded_file.uri)        # after upload
+        """
+        # extract canonical file name if a full URI is passed
+        file_name = file_name_or_uri.split("/")[-1]
+        file_path = f"files/{file_name}"
+
+        try:
+            await self.aio.files.delete(name=file_path)
+            print(f"Deleted {file_path}")
+        except Exception as e:
+            print(f"File delete failed for {file_path}: {e}")
     async def _stream_text(self, contents: list[types.Content], temperature: float = 0.0) -> str:
         cfg = types.GenerateContentConfig(
             temperature=temperature, response_mime_type="text/plain"
@@ -98,11 +150,12 @@ class GeminiAsync:
         3) iteratively fact-check and refine until supported.
         Returns the final answers only.
         """
+        context=''
         final_answers: list[str] = []
 
         for q in tqdm(questions, desc="Answering questions", unit="q", leave=False):
             # ---- Step 1: generate multiple answers ----
-            print(q[2])
+            step1=use_context(context,iteration_in_prompt,q[0])
             if iterate_prompt:
                 # build prompt with iterate_prompt to get candidates
                 contents_multi = [
@@ -110,7 +163,8 @@ class GeminiAsync:
                         role="user",
                         parts=[
                             types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-                            types.Part.from_text(text=f"{q[2]} {iterate_prompt}"),
+                            # types.Part.from_text(text=f"{q[2]} {iterate_prompt}"),
+                            types.Part.from_text(text=step1),
                         ],
                     )
                 ]
@@ -170,29 +224,30 @@ class GeminiAsync:
             #     print(explanation)
             #     if is_supported:
             #         break
+            #     else:
 
-            #     # refine prompt using explanation
-            #     prompt = refiner(
-            #         question=q[0],
-            #         answer=answer,
-            #         explanation=explanation
-            #     )
-            #     print(prompt)
-            #     contents_refine = [
-            #         types.Content(
-            #             role="user",
-            #             parts=[
-            #                 types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-            #                 types.Part.from_text(text=prompt),
-            #             ],
+            #         # refine prompt using explanation
+            #         prompt = refiner(
+            #             question=q[0],
+            #             answer=answer,
+            #             explanation=explanation
             #         )
-            #     ]
-            #     try:
-            #         answer = await self._stream_text(contents_refine, temperature)
-            #         print(f"step4 answer:{answer}")
-            #     except Exception as e:
-            #         print(f"Gemini API error in step 4 refine: {e}")
-            #         break
+            #         print(prompt)
+            #         contents_refine = [
+            #             types.Content(
+            #                 role="user",
+            #                 parts=[
+            #                     types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
+            #                     types.Part.from_text(text=prompt),
+            #                 ],
+            #             )
+            #         ]
+            #         try:
+            #             answer = await self._stream_text(contents_refine, temperature)
+            #             print(f"step4 answer:{answer}")
+            #         except Exception as e:
+            #             print(f"Gemini API error in step 4 refine: {e}")
+            #             break
             #     # throttle before next fact-check
             #     await asyncio.sleep(wait_time)
 
@@ -229,6 +284,7 @@ class GeminiAsync:
             iterate_prompt=iterate_prompt,
             iteration_in_prompt=iteration_in_prompt
         )
+        await self.delete_file(uri)
         return answers[0]
 
     async def generate(

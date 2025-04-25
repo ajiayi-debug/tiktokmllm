@@ -31,6 +31,8 @@ Instructions:
 Assess if the final answer makes sense as a response to the question. 
 It should be relevant, logically coherent, and plausible.
 
+If the question is a multiple choice question, the answer should be ONLY a letter from one of the multiple choice options.
+
 Respond ONLY in valid JSON using one of the formats below.
 
 ✔️ Supported:
