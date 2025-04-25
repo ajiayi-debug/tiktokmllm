@@ -31,6 +31,7 @@ def choose_best_answer_prompt(question,output,iteration_in_prompt):
         -If you conclude the answer as 'E: None of the above', rewatch the video and re-evaluate your options as E is NOT A answer. If you still think it's 'E', just choose the NEXT BEST PLAUSIBLE ANSWER.
         -ELSE: If the {iteration_in_prompt} answers is NOT E, select from there your final answer after confirming by watching the video.
         -IF multiple multiple choice questions CAN be the answer (e.g A and B can be the answer), you select E as NONE of the multiple choice answer IS the answer (make sure E stands for None of the above).
+        -ALWAYS MAKE SURE YOUR FINAL ANSWER TO MULTIPLE CHOICE QUESTION IS A SINGULAR LETTER FROM THE OPTIONS.
     else:
         -Final answer can be a combination of answers from the {iteration_in_prompt} answers OR you select the most logical answers OR you use the answers to create the final answer.
     Just answer the question and dont explain why you gave that answer among the top {iteration_in_prompt} answer and dont reference the answers.
