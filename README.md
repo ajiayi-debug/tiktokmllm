@@ -30,6 +30,8 @@ The primary goal is to move beyond simple video description towards deeper seman
 
 ## Architecture Diagram
 
+![Pipeline Architecture Diagram](public/architecture_diagram.png)
+
 ## Tech Stack
 
 - **Core:** Python 3.10+
@@ -85,7 +87,6 @@ Follow these steps to set up the project locally:
 
 The pipeline is executed via the `main.py` script located in the project root.
 
-
 **Running the Pipeline:**
 
 1.  Activate your virtual environment (`source venv/bin/activate` or `venv\Scripts\activate`).
@@ -95,7 +96,7 @@ The pipeline is executed via the `main.py` script located in the project root.
     python main.py
     ```
 
-The script will load the dataset, process videos and questions through the `CotAgent`, log progress to the console and `pipeline.log`, and save checkpoints and final results to the `data/` directory. 
+The script will load the dataset, process videos and questions through the `CotAgent`, log progress to the console and `pipeline.log`, and save checkpoints and final results to the `data/` directory.
 
 ## Configuration
 
