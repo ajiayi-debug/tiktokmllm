@@ -1,7 +1,10 @@
-# Multimodal Video QA Pipeline using Gemini
+# Team: Sherlin's Squad
 
-<!-- Optional: Add badges here using shields.io if you set up CI/CD or testing -->
-<!-- e.g., [![Build Status](...)]() [![Code Coverage](...)]() [![License](...)]() -->
+- Sherlin Choo
+- Ang Jia Yi
+- Chloe Ong
+- Eunice Lor
+- Gabriel Wong
 
 ## Abstract
 
