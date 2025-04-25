@@ -3,11 +3,16 @@
 <!-- Optional: Add badges here using shields.io if you set up CI/CD or testing -->
 <!-- e.g., [![Build Status](...)]() [![Code Coverage](...)]() [![License](...)]() -->
 
-## Overview / Abstract
+## Abstract
 
-This project implements an asynchronous pipeline designed for advanced questioning answering on diverse, short-form video content (e.g., TikToks, YouTube Shorts) as part of the TikTok Track National Student AI Challenge. Leveraging the multimodal capabilities of Google's Gemini 2.5 Pro model, the system analyzes videos loaded directly from the Hugging Face Hub (`https://huggingface.co/datasets/lmms-lab/AISG_Challenge`) and applies a Chain-of-Thought (CoT) inspired reasoning process to generate answers to user-provided questions associated with each video.
+This project implements an asynchronous pipeline featuring an **agentic workflow** for advanced Question Answering (QA) on diverse, short-form videos sourced from the `https://huggingface.co/datasets/lmms-lab/AISG_Challeng` on Hugging Face. The system utilizes Google's Gemini 2.5 Pro model as the core reasoning engine, orchestrated primarily by the `CotAgent`.
 
-The primary goal is to move beyond simple video description towards deeper semantic understanding and accurate responses, even for complex or nuanced queries. The project is structured with modularity in mind, allowing for potential future enhancements in visual perception and reasoning capabilities.
+For each video-question pair, the `CotAgent` leverages the `GeminiAsync` class to execute a structured, multi-step reasoning process:
+
+1.  **Candidate Answer Generation:** Gemini is first prompted using detailed instructions and few-shot examples (`use_context` prompt) to analyze the video and generate multiple high-confidence candidate answers relevant to the specific question.
+2.  **Answer Selection & Synthesis:** Gemini is then prompted again (`choose_best_answer_prompt`), this time tasked with analyzing the previously generated candidate answers. It selects the most appropriate response or synthesizes a final answer based on the candidates, applying specific heuristics for different question formats (e.g., multiple-choice).
+
+This agentic, multi-prompt approach aims to enhance the depth, reasoning quality, and accuracy of the generated answers compared to simpler, single-shot prompting, enabling a more nuanced understanding of the video content. The asynchronous nature of the pipeline ensures efficient processing.
 
 ## Features
 
@@ -26,7 +31,6 @@ The primary goal is to move beyond simple video description towards deeper seman
 - **Improved Fact-Checking:** Re-integration or enhancement of the fact-checking loop to further validate and refine generated answers.
 - **Advanced Error Handling:** More granular error handling and reporting throughout the pipeline.
 - **Configuration Management:** Externalize more parameters from `main.py` into a dedicated configuration file (e.g., YAML).
-- **Comprehensive Testing Suite:** Addition of unit, integration, and end-to-end tests.
 
 ## Architecture Diagram
 
