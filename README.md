@@ -90,6 +90,10 @@ Follow these steps to set up the project locally:
       ```
     - **Note:** Ensure your Gemini API key has sufficient quota. **Tier 2 access (or higher) is recommended** to avoid frequent `429 Rate Limit Exceeded` errors when processing many videos/questions.
 
+5. **Upload video dataset:**
+   - Head to [huggingface](https://huggingface.co/datasets/lmms-lab/AISG_Challenge/blob/main/Benchmark-AllVideos-HQ-Encoded-challenge.zip) to download the video dataset
+   - Unzip the dataset and place it in the root directory of the project (as it is).
+     
 ## Usage Guide
 
 The pipeline is executed via the `main.py` script located in the project root.
