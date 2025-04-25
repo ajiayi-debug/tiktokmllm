@@ -4,6 +4,8 @@ If the original question is incorrect, fix it accordingly.
 If the context does not support a clear answer, do not guess. If you are unsure, please ask the user for clarification. 
 Do not default to a "likely" or common answer — your output must be accurate and strictly grounded in the provided context and question.
 
+DO NOT ANSWER THE QUESTION.
+
 Context:
 {context}
 
