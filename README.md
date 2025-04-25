@@ -83,7 +83,7 @@ Follow these steps to set up the project locally:
     _(This installs libraries like `google-generativeai`, `pandas`, `datasets`, etc.)_
 
 4.   **Install Video Dataset**
-    - Download the video dataset from Hugging Face: https://huggingface.co/datasets/lmms-lab/AISG_Challenge/blob/main/Benchmark-AllVideos-HQ-Encoded-challenge.zip
+    - Download the video dataset from Hugging Face: https://huggingface.co/datasets/lmms-lab/AISG_Challenge/blob/main/Benchmark-AllVideos-HQ-Encoded-challenge.zip and place the folder into the root directory.
 
 5.   **Configure API Keys:**
     - Create a file named `.env` in the project root directory (`tiktokmllm`).
@@ -92,10 +92,6 @@ Follow these steps to set up the project locally:
       GEMINI_API_KEY="YOUR_GEMINI_API_KEY_HERE"
       ```
     - **Note:** Ensure your Gemini API key has sufficient quota. **Tier 2 access (or higher) is recommended** to avoid frequent `429 Rate Limit Exceeded` errors when processing many videos/questions.
-
-6. **Upload video dataset:**
-   - Head to [huggingface](https://huggingface.co/datasets/lmms-lab/AISG_Challenge/blob/main/Benchmark-AllVideos-HQ-Encoded-challenge.zip) to download the video dataset
-   - Unzip the dataset and place it in the root directory of the project (as it is).
      
 ## Usage Guide
 
