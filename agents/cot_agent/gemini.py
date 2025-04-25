@@ -150,12 +150,11 @@ class GeminiAsync:
         3) iteratively fact-check and refine until supported.
         Returns the final answers only.
         """
-        context=''
         final_answers: list[str] = []
 
         for q in tqdm(questions, desc="Answering questions", unit="q", leave=False):
             # ---- Step 1: generate multiple answers ----
-            step1=use_context(context,iteration_in_prompt,q[0])
+            step1=use_context(q[1],iteration_in_prompt,q[0])
             if iterate_prompt:
                 # build prompt with iterate_prompt to get candidates
                 contents_multi = [
@@ -212,44 +211,6 @@ class GeminiAsync:
                     final_answers.append("Error")
                     raise
 
-            # # ---- Iterative Step 3 & 4: fact-check & refine ----
-            # while True:
-            #     print(f"Context: {q[1]}")
-            #     is_supported, explanation = await asyncio.to_thread(
-            #         fact_check,
-            #         question=q[0],
-            #         final_answer=answer
-            #     )
-            #     print(is_supported)
-            #     print(explanation)
-            #     if is_supported:
-            #         break
-            #     else:
-
-            #         # refine prompt using explanation
-            #         prompt = refiner(
-            #             question=q[0],
-            #             answer=answer,
-            #             explanation=explanation
-            #         )
-            #         print(prompt)
-            #         contents_refine = [
-            #             types.Content(
-            #                 role="user",
-            #                 parts=[
-            #                     types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-            #                     types.Part.from_text(text=prompt),
-            #                 ],
-            #             )
-            #         ]
-            #         try:
-            #             answer = await self._stream_text(contents_refine, temperature)
-            #             print(f"step4 answer:{answer}")
-            #         except Exception as e:
-            #             print(f"Gemini API error in step 4 refine: {e}")
-            #             break
-            #     # throttle before next fact-check
-            #     await asyncio.sleep(wait_time)
 
             final_answers.append(answer)
             # throttle between Qs
