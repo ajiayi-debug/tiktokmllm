@@ -23,7 +23,7 @@ However, we also observed that Gemini sometimes prematurely defaulted to “E: N
 To mitigate this failure mode, we embedded strict fallback prevention strategies into the aggregation process. If all candidate answers suggest “E,” Gemini is instructed to ignore the candidate responses and independently re-evaluate the video context. The selection of “E” is only permitted if, after rewatching and careful reconsideration, no plausible option matches the evidence.
 This two-layer aggregation approach for the candidate aggregation agent—combining candidate-guided meta-reasoning with explicit fallback control—significantly improved QA robustness and final answer quality compared to baselines that lacked candidate context or fallback safeguards.
 
-This agentic, multi-prompt approach aims to enhance the depth, reasoning quality, and accuracy of the generated answers compared to simpler, single-shot prompting, enabling a more nuanced understanding of the video content, leading to a ~4% imrovement in accuracy compared to the base gemini 2.5 pro model. The asynchronous nature of the pipeline ensures efficient processing.
+This agentic, multi-prompt approach aims to enhance the depth, reasoning quality, and accuracy of the generated answers compared to simpler, single-shot prompting, enabling a more nuanced understanding of the video content, leading to a ~4% improvement in accuracy compared to the base gemini 2.5 pro model. The asynchronous nature of the pipeline ensures efficient processing.
 
 ## Features
 
