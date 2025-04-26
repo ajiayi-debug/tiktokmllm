@@ -15,13 +15,13 @@ For each video-question pair, the `CotAgent` leverages the `GeminiAsync` class t
 1.  **Candidate Answer Generation by iterative prompt agent:** Gemini is first prompted using detailed instructions and few-shot examples (`use_context` prompt) to analyze the video and generate multiple high-confidence candidate answers relevant to the specific question in one iteration. Unlike the original Self-Consistency approach, which generates candidates across multiple stochastic forward passes (varying temperatures), we found that Gemini 2.5 Pro can produce diverse and meaningful answers in just one pass when guided by a carefully engineered, context-rich prompt. This design removed the need for repeated sampling, reduced inference latency, and improved overall accuracy. 
 
 2.  **Answer Selection & Synthesis by aggregator agent:** Gemini is then prompted again (`choose_best_answer_prompt`), this time tasked with analyzing the previously generated candidate answers. It selects the most appropriate response or synthesizes a final answer based on the candidates, applying specific heuristics for different question formats (e.g., multiple-choice). Through empirical evaluation, we observed that Gemini’s Chain-of-Thought (CoT) reasoning becomes more accurate and reliable when candidate options are provided as context during aggregation. Specifically, providing candidate answers helps Gemini to:
-	•	Anchor its reasoning: grounding thought processes within a plausible solution space.
-	•	Focus evidence evaluation: systematically aligning reasoning with video context rather than speculative guessing.
-	•	Reduce reasoning drift: avoiding irrelevant or overgeneralized conclusions.
+- Anchor its reasoning: grounding thought processes within a plausible solution space.
+- Focus evidence evaluation: systematically aligning reasoning with video context rather than speculative guessing.
+- Reduce reasoning drift: avoiding irrelevant or overgeneralized conclusions.
 We also observed that Gemini sometimes prematurely defaulted to “E: None of the above” even when its intermediate reasoning suggested that a valid option existed, which can be explained by the model’s tendency to overestimate uncertainty in ambiguous scenarios.
 To mitigate this failure mode, we embedded strict fallback prevention strategies:
-	•	If all candidate answers suggest “E,” the model is instructed to ignore the candidates and independently re-evaluate the video context.
-	•	Selection of “E” is only permitted if, after rewatching, no plausible option matches the evidence.
+- If all candidate answers suggest “E,” the model is instructed to ignore the candidates and independently re-evaluate the video context.
+- Selection of “E” is only permitted if, after rewatching, no plausible option matches the evidence.
 This two-layer aggregation approach for the candidate aggregation agent — candidate-guided meta-reasoning combined with explicit fallback control — significantly improved QA robustness and final answer quality compared to baselines that lacked candidate context or fallback safeguards.
 
 This agentic, multi-prompt approach aims to enhance the depth, reasoning quality, and accuracy of the generated answers compared to simpler, single-shot prompting, enabling a more nuanced understanding of the video content, leading to a ~4% imrovement in accuracy compared to the base gemini 2.5 pro model. The asynchronous nature of the pipeline ensures efficient processing.
