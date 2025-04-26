@@ -8,9 +8,9 @@
 
 ## Abstract
 
-This project implements an asynchronous pipeline featuring an **agentic workflow** for advanced Question Answering (QA) on diverse, short-form videos sourced from the `https://huggingface.co/datasets/lmms-lab/AISG_Challenge` on Hugging Face. The system utilizes Google's Gemini 2.5 Pro model as the core reasoning engine, orchestrated primarily by the `CotAgent`.
+This project implements an asynchronous pipeline featuring an **agentic workflow** for advanced Question Answering (QA) on diverse, short-form videos sourced from the `https://huggingface.co/datasets/lmms-lab/AISG_Challenge` on Hugging Face. The system utilizes Google's Gemini 2.5 Pro model as the core reasoning engine, orchestrated primarily by the multi-agent system `CotAgent`.
 
-For each video-question pair, the `CotAgent` leverages the `GeminiAsync` class to execute a structured, multi-step reasoning process, inspired by the proposed algorithm from [Self-Consistency improves Chain of Thought reasoning in Language Models](https://arxiv.org/abs/2203.11171) as well as the proposed multi agent algorithm [Sequential workflow agent pattern design](https://microsoft.github.io/autogen/stable/user-guide/core-user-guide/design-patterns/sequential-workflow.html):
+For each video-question pair, the `CotAgent` leverages the `GeminiAsync` class to execute a structured, multi-step, multi-agent reasoning process, inspired by the proposed algorithm from [Self-Consistency improves Chain of Thought reasoning in Language Models](https://arxiv.org/abs/2203.11171) as well as the proposed multi agent algorithm [Sequential workflow agent pattern design](https://microsoft.github.io/autogen/stable/user-guide/core-user-guide/design-patterns/sequential-workflow.html):
 
 1.  **Candidate Answer Generation:** Gemini is first prompted using detailed instructions and few-shot examples (`use_context` prompt) to analyze the video and generate multiple high-confidence candidate answers relevant to the specific question.
 2.  **Answer Selection & Synthesis:** Gemini is then prompted again (`choose_best_answer_prompt`), this time tasked with analyzing the previously generated candidate answers. It selects the most appropriate response or synthesizes a final answer based on the candidates, applying specific heuristics for different question formats (e.g., multiple-choice).
