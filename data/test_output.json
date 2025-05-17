@@ -1,0 +1,72 @@
+[
+  {
+    "qid": "0162-0",
+    "video_id": "mLbuK7IU7_Y",
+    "question_type": "Primary Open-ended Question",
+    "capability": "Event Counting",
+    "question": "How many times does the golfer in the video successfully hit the target?\nPlease state your answer with a brief explanation.",
+    "duration": 17.15,
+    "answer": null,
+    "youtube_url": "https://www.youtube.com/shorts/mLbuK7IU7_Y",
+    "context": "The video displays a compilation of golf trick shots. In each segment, a golfer attempts to hit a specific target placed in the foreground with a golf ball. The targets vary and include: a copper bell, an egg, a lit candle (extinguishing the flame), a red balloon (popping it), another egg, a golf ball on a tee, a glass of Guinness (spilling it), a lightbulb (breaking it), a Terry's Chocolate Orange, another egg, and finally another golf ball on a tee. In all eleven instances shown, the golfer successfully hits the target.",
+    "is_contextual": false,
+    "explanation": "The question asks about 'the golfer' (singular), implying only one person is taking the shots. However, the video clearly shows at least two different individuals taking shots at different times. Therefore, the premise of a single golfer is incorrect.",
+    "corrected_question": "How many times do the golfers in the video successfully hit their targets?"
+  },
+  {
+    "qid": "0162-1",
+    "video_id": "mLbuK7IU7_Y",
+    "question_type": "Paraphrased Open-ended Question",
+    "capability": "Event Counting",
+    "question": "How many successful target hits does the golfer achieve in the video?\nPlease state your answer with a brief explanation.",
+    "duration": 17.15,
+    "answer": null,
+    "youtube_url": "https://www.youtube.com/shorts/mLbuK7IU7_Y",
+    "context": "The video displays a montage of eleven separate golf trick shots. In each instance, a golfer successfully hits a target object placed some distance away. The targets vary and include: a copper bell, an egg (hit twice in separate shots), a lit candle, a red balloon, another golf ball on a tee (hit twice in separate shots), a full pint glass of Guinness, a lightbulb, and a Terry's Chocolate Orange. Every attempt shown in the video results in the target being struck and either broken, moved, extinguished, or rung.",
+    "is_contextual": true,
+    "explanation": "The question asks for the number of successful target hits shown in the video. The video exclusively shows successful hits, making the question directly answerable by counting the distinct shots presented.",
+    "corrected_question": null
+  },
+  {
+    "qid": "0162-2",
+    "video_id": "mLbuK7IU7_Y",
+    "question_type": "Correctly-led Open-ended Question",
+    "capability": "Event Counting",
+    "question": "Does the golfer hit the target only once in the video?\nPlease state your answer with a brief explanation.",
+    "duration": 17.15,
+    "answer": null,
+    "youtube_url": "https://www.youtube.com/shorts/mLbuK7IU7_Y",
+    "context": "The video is a compilation of multiple golf trick shots performed by one or more golfers. In each segment, a different object is placed on a stand or tee in the foreground, and a golfer in the background attempts to hit it with a golf ball. The objects targeted include a copper bell, an egg (hit multiple times), a lit candle (flame extinguished), a red balloon, a golf ball on a tee (hit multiple times), a glass of Guinness, a lightbulb, and a Terry's Chocolate Orange. In every shot shown in the compilation, the golfer successfully hits the target object.",
+    "is_contextual": true,
+    "explanation": "The question asks if the golfer hits the target *only once*. This is factually incorrect based on the video, which shows the golfer successfully hitting the target multiple times (in fact, in every shot presented).",
+    "corrected_question": "How many times does the golfer successfully hit the target in the video?"
+  },
+  {
+    "qid": "0162-3",
+    "video_id": "mLbuK7IU7_Y",
+    "question_type": "Wrongly-led Open-ended Question",
+    "capability": "Event Counting",
+    "question": "Does the golfer manage to hit the target 10 times in the video?\nPlease state your answer with a brief explanation.",
+    "duration": 17.15,
+    "answer": null,
+    "youtube_url": "https://www.youtube.com/shorts/mLbuK7IU7_Y",
+    "context": "The video is a compilation of short clips showing a golfer attempting trick shots. In each clip, a different small object is placed on a stand or tee in the foreground, and the golfer, positioned further back on a grassy area (likely a golf course or practice range), attempts to hit the object with a golf ball. The objects successfully hit include: a copper bell, an egg (hit twice), a lit candle (extinguishing the flame), a red balloon, a golf ball (hit twice), a glass of Guinness, a lightbulb, and a Terry's Chocolate Orange. In total, the video shows 11 successful hits on various targets.",
+    "is_contextual": false,
+    "explanation": "The question asks if the golfer hits the target 10 times. While the golfer does hit the target multiple times, the video compilation actually shows 11 successful hits, not 10. Therefore, the specific number mentioned in the question is incorrect based on the video's content.",
+    "corrected_question": "How many times does the golfer successfully hit the target in the video?"
+  },
+  {
+    "qid": "0162-7",
+    "video_id": "mLbuK7IU7_Y",
+    "question_type": "Multiple-choice Question with a Single Correct Answer",
+    "capability": "Event Counting",
+    "question": "How many times does the golfer successfully hit the target in the video?\r\nA. 0\r\nB. 1\r\nC. 10\r\nD. 5\nE. None of the above\r\nSelect one best answer to the above multiple-choice question based on the video. Respond with only the letter (A, B, C, D or E) of the correct option.",
+    "duration": 17.15,
+    "answer": null,
+    "youtube_url": "https://www.youtube.com/shorts/mLbuK7IU7_Y",
+    "context": "The video displays a compilation of golf trick shots. A golfer is seen successfully hitting various targets placed on stands or tees in the foreground. The targets include: a copper bell, an egg, a lit candle (extinguishing it), a red balloon, another egg, a golf ball on a tee, a pint glass of Guinness, a lightbulb, a Terry's Chocolate Orange, a third egg, and another golf ball on a tee. Each shot shown results in the golfer successfully hitting the intended target. There are a total of 11 successful shots shown in the compilation.",
+    "is_contextual": true,
+    "explanation": "The question asks for the number of successful hits shown in the video. Based on the video content, the golfer successfully hits the target 11 times. However, none of the provided multiple-choice options (A=0, B=1, C=10, D=5) accurately reflect this number. Option C (10) is the closest but is still incorrect.",
+    "corrected_question": "How many times does the golfer successfully hit the target in the video? (Note: The correct answer based on the video is 11, which is not provided in the original options A, B, C, or D.)"
+  }
+]

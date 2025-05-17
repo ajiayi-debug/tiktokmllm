@@ -58,7 +58,7 @@ def use_context(context,iteration,question):
 
     Sometimes the actions are also a causation due to external actions OUTSIDE THE VIDEO (e.g a cut on a bottle is made, allowing one to just smack the bottle open easily using their finger). TRY not to assume everything is video editing or magic and think about what other kind of plausible external physical causation can cause what happen in the video for incidents that are unexplainable in the video.
     
-    Consider the exact activity or context or situation that is going on, and ensure that EVERY WORD in the user’s question is mapped to this exact activity or context or situation. For example, in golf a successful hit is “golf club makes contact with ball and hits the target” and NOT JUST “golf club makes contact with ball” do not assume the meaning of the word in the user’s question but LINK IT BACK TO THE SITUATION”
+    Consider the exact activity or context or situation that is going on, and ensure that EVERY WORD in the user's question is mapped to this exact activity or context or situation. For example, in golf a successful hit is "golf club makes contact with ball and hits the target" and NOT JUST "golf club makes contact with ball" do not assume the meaning of the word in the user's question but LINK IT BACK TO THE SITUATION"
     E.g: The video shows a golf ball flying past a lamp
     Sample question: Did the golfer successfully hit the lamp
     Sample answer: As the ball flew past the lamp, the golfer did NOT successfully hit the lamp.
@@ -74,7 +74,7 @@ def use_context(context,iteration,question):
     return prompt
 
 class GeminiAsync:
-    """Async wrapper around Google Gen‑AI Video QA pipeline (two‑step logic)."""
+    """Async wrapper around Google Gen‑AI Video QA pipeline (two‑step logic)."""
 
     def __init__(self, api_key: str | None = None, model: str = model) -> None:
         # sync client is still handy for file uploads
@@ -116,6 +116,17 @@ class GeminiAsync:
         if resp.text:
             return resp.text.strip()
         else:
+            print("Gemini API returned no text. Full response object:")
+            try:
+                print(f"Response: {resp}")
+                if resp.prompt_feedback:
+                    print(f"Prompt Feedback: {resp.prompt_feedback}")
+                if resp.candidates and resp.candidates[0].finish_reason:
+                    print(f"Candidate Finish Reason: {resp.candidates[0].finish_reason}")
+                    if resp.candidates[0].safety_ratings:
+                        print(f"Candidate Safety Ratings: {resp.candidates[0].safety_ratings}")
+            except Exception as e:
+                print(f"Error printing full response details: {e}")
             return None
 
     async def _wait_until_file_active(self, file_obj, timeout: int = 30, poll: int = 2):
@@ -137,87 +148,90 @@ class GeminiAsync:
     async def generate_from_video(
         self,
         video_uri: str,
-        questions: list[str],
+        questions: list[list[str]],
         *,
         temperature: float = 0.0,
         wait_time: int = 30,
         iterate_prompt: str = "",
         iteration_in_prompt: int = 8,
-    ) -> list[str]:
-        """
-        Runs QA in three phases: 
-        1) generate n candidate answers,
-        2) select the best answer,
-        3) iteratively fact-check and refine until supported.
-        Returns the final answers only.
-        """
-        final_answers: list[str] = []
+    ) -> list[tuple[str, str | None]]:
+        final_results: list[tuple[str, str | None]] = []
 
-        for q in tqdm(questions, desc="Answering questions", unit="q", leave=False):
-            # ---- Step 1: generate multiple answers ----
-            step1=use_context(q[1],iteration_in_prompt,q[0])
-            if iterate_prompt:
-                # build prompt with iterate_prompt to get candidates
-                contents_multi = [
-                    types.Content(
-                        role="user",
-                        parts=[
-                            types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-                            # types.Part.from_text(text=f"{q[2]} {iterate_prompt}"),
-                            types.Part.from_text(text=step1),
-                        ],
-                    )
-                ]
-                try:
-                    multi = await self._stream_text(contents_multi, temperature)
-                except Exception as e:
-                    print(f"Gemini API error in step 1: {e}")
-                    final_answers.append("Error")
-                    raise
-                print(f"Step 1 answers for '{q[2]}':\n{multi}\n")
+        for q_data in tqdm(questions, desc="Answering questions", unit="q", leave=False):
+            current_question = q_data[0]
+            current_context = q_data[1]
+            
+            answer: str 
+            thoughts: str | None = None
 
-                # ---- Step 2: pick best answer from candidates ----
-                best_prompt = choose_best_answer_prompt(q[0], multi, iteration_in_prompt)
-                contents_best = [
-                    types.Content(
-                        role="user",
-                        parts=[
-                            types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-                            types.Part.from_text(text=best_prompt),
-                        ],
-                    )
-                ]
-                try:
-                    answer = await self._stream_text(contents_best, temperature)
-                    print(f"step 2 answer: {answer}")
-                except Exception as e:
-                    print(f"Gemini API error in step 2: {e}")
-                    final_answers.append("Error")
-                    raise
-            else:
-                # if no iterate_prompt, single-shot QA
-                contents = [
-                    types.Content(
-                        role="user",
-                        parts=[
-                            types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-                            types.Part.from_text(text=q),
-                        ],
-                    )
-                ]
-                try:
-                    answer = await self._stream_text(contents, temperature)
-                except Exception as e:
-                    print(f"Gemini API error in single-shot: {e}")
-                    final_answers.append("Error")
-                    raise
+            try:
+                if iterate_prompt:
+                    step1_prompt_text = use_context(current_context, iteration_in_prompt, current_question)
+                    contents_multi = [
+                        types.Content(
+                            role="user",
+                            parts=[
+                                types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
+                                types.Part.from_text(text=step1_prompt_text),
+                            ],
+                        )
+                    ]
+                    multi_answers_text_from_step1 = await self._stream_text(contents_multi, temperature)
+                    
+                    if multi_answers_text_from_step1 is None or multi_answers_text_from_step1.strip() == "":
+                        thoughts = "Step 1 (Thought Process): No detailed candidate answers were generated or output was empty."
+                        print(f"Step 1 for '{current_question}' yielded no text or was empty.")
+                    else:
+                        thoughts = multi_answers_text_from_step1
+                    print(f"Step 1 (multi-answers/thoughts) for '{current_question}':\\n{thoughts}\\n")
 
-
-            final_answers.append(answer)
-            # throttle between Qs
+                    best_answer_prompt_text = choose_best_answer_prompt(current_question, thoughts, iteration_in_prompt)
+                    contents_best = [
+                        types.Content(
+                            role="user",
+                            parts=[
+                                types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
+                                types.Part.from_text(text=best_answer_prompt_text),
+                            ],
+                        )
+                    ]
+                    selected_answer = await self._stream_text(contents_best, temperature)
+                    if selected_answer is None:
+                        answer = "Error: No response from best-answer selection (Step 2)."
+                    else:
+                        print(f"Step 2 (selected best answer) for '{current_question}': {selected_answer}")
+                        answer = selected_answer
+                else:
+                    # Single-shot QA (Gemini Alone)
+                    thoughts = None 
+                    actual_question_text = q_data[0]
+                    contents_single = [
+                        types.Content(
+                            role="user",
+                            parts=[
+                                types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
+                                types.Part.from_text(text=actual_question_text),
+                            ],
+                        )
+                    ]
+                    single_shot_answer = await self._stream_text(contents_single, temperature)
+                    if single_shot_answer is None:
+                        answer = "Error: No response from single-shot QA."
+                    else:
+                        answer = single_shot_answer
+            
+            except Exception as e:
+                print(f"Exception during Gemini processing for '{current_question}': {e}")
+                answer = f"Error during processing: {str(e)[:100]}" 
+                # thoughts might have been set before the error, or it might be None
+                # If thoughts is still the progress message, update to reflect error in that stage
+                if isinstance(thoughts, str) and thoughts.startswith("Processing Step"):
+                    thoughts = f"Error occurred during: {thoughts.split(': ')[1]}"
+            
+            final_results.append((answer, thoughts))
             await asyncio.sleep(wait_time)
 
-        return final_answers
+        return final_results
 
     async def generate_from_uploaded_video_file(
         self,

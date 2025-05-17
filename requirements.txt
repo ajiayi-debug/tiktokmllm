@@ -1,6 +1,6 @@
-python-dotenv
+streamlit
+google-generativeai
 openai
-google.genai
+python-dotenv
 pandas
 tqdm
-datasets
