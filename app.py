@@ -63,11 +63,14 @@ if selected_option == custom_option_label:
     custom_num = st.sidebar.number_input(
         "Enter custom number:",
         min_value=1,
-        max_value=50,
-        value=st.session_state.custom_candidate_num, 
+        max_value=32,
+        value=min(st.session_state.custom_candidate_num, 32), 
         step=1,
         key='custom_num_input_key'
     )
+    if custom_num > 32:
+        st.sidebar.warning("Please enter a value between 1 and 32.")
+        custom_num = 32
     st.session_state.custom_candidate_num = custom_num 
     num_candidate_answers_to_use = custom_num
 elif selected_option is not None: 
