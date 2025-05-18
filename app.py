@@ -226,11 +226,6 @@ async def run_analysis_async(v_url, u_question, num_candidates_val, progress_pla
     st.session_state.agentic_workflow_ans = res_agentic_tuple[0]
     st.session_state.agentic_workflow_thoughts = res_agentic_tuple[1]
     
-    print(f"DEBUG: Gemini Alone Answer for UI: {st.session_state.gemini_alone_ans}, Type: {type(st.session_state.gemini_alone_ans)}")
-    print(f"DEBUG: Gemini Alone Thoughts for UI: {st.session_state.gemini_alone_thoughts}, Type: {type(st.session_state.gemini_alone_thoughts)}")
-    print(f"DEBUG: Agentic Workflow Answer for UI: {st.session_state.agentic_workflow_ans}, Type: {type(st.session_state.agentic_workflow_ans)}")
-    print(f"DEBUG: Agentic Workflow Thoughts for UI: {st.session_state.agentic_workflow_thoughts}, Type: {type(st.session_state.agentic_workflow_thoughts)}")
-
 if submit_button and video_url and user_question:
     if not st.session_state.processing:
         # Use the resolved num_candidate_answers_to_use
