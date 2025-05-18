@@ -25,6 +25,16 @@ This two-layer aggregation approach for the candidate aggregation agent—combin
 
 This agentic, multi-prompt approach aims to enhance the depth, reasoning quality, and accuracy of the generated answers compared to simpler, single-shot prompting, enabling a more nuanced understanding of the video content, leading to a ~4% improvement in accuracy compared to the base gemini 2.5 pro model. The asynchronous nature of the pipeline ensures efficient processing.
 
+### Evaluation Results
+
+| Iterations               | Results (%) |
+|--------------------------|-------------|
+| 1 (Original single pass) | 51.80%      |
+| 8                        | 53.00%      |
+| 32                       | 55.07%      |
+
+> **Note**: Results measured on the official benchmark provided at [lmms-lab/AISG_Challenge](https://huggingface.co/datasets/lmms-lab/AISG_Challenge).
+
 ## Features
 
 - **Gemini 2.5 Pro Integration:** Utilizes the state-of-the-art multimodal model for core video understanding and QA.
