@@ -16,11 +16,11 @@ class VideoProcessingService:
             response_list = await gemini_client.generate_from_video(
                 video_uri=video_url,
                 questions=formatted_question_list,
-                iterate_prompt="",
-                temperature=0.1
+                iterate_prompt=False,
+                temperature=0.0
             )
             if response_list and len(response_list) > 0:
-                return response_list[0] 
+                return response_list[0]
             else:
                 return ("Error: No response from Gemini.", None)
         except Exception as e:
@@ -36,12 +36,12 @@ class VideoProcessingService:
             response_list = await gemini_client.generate_from_video(
                 video_uri=video_url,
                 questions=formatted_question_list,
-                iterate_prompt="activate_multi_step_and_refinement",
+                iterate_prompt=True,
                 iteration_in_prompt=num_candidates,
-                temperature=0.1 
+                temperature=0.0 
             )
             if response_list and len(response_list) > 0:
-                return response_list[0] 
+                return response_list[0]
             else:
                 return ("Error: No response from Agentic Workflow.", None)
         except Exception as e:

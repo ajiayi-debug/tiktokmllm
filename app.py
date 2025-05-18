@@ -3,6 +3,7 @@ from services.video_processing_service import VideoProcessingService
 import asyncio
 import os
 from dotenv import load_dotenv
+import time  
 
 load_dotenv() 
 
@@ -26,7 +27,7 @@ user_question = st.sidebar.text_area("Your Question:", placeholder="e.g., What d
 st.sidebar.markdown("##### Number of candidate answers:")
 
 if 'selected_candidate_option' not in st.session_state:
-    st.session_state.selected_candidate_option = 8 # Default to 8
+    st.session_state.selected_candidate_option = 32 # Default to 8
 if 'custom_candidate_num' not in st.session_state:
     st.session_state.custom_candidate_num = st.session_state.selected_candidate_option
 
@@ -70,6 +71,11 @@ elif selected_option is not None:
     st.session_state.custom_candidate_num = num_candidate_answers_to_use 
 else: 
     num_candidate_answers_to_use = 8 
+
+if 'gemini_time' not in st.session_state:
+    st.session_state.gemini_time = 0.0
+if 'agentic_time' not in st.session_state:
+    st.session_state.agentic_time = 0.0
 
 submit_button = st.sidebar.button("Analyze & Compare")
 
@@ -155,12 +161,19 @@ async def run_analysis_async(v_url, u_question, num_candidates_val, progress_pla
         await update_progress_and_start_pulsing("Analyzing video... Starting workflows.", main_step_delay_after=0.2)
 
         await update_progress_and_start_pulsing("Executing Gemini Alone workflow...")
+        # ---- Gemini Alone Timer ----
+        gemini_start = time.time()
         res_alone_tuple = await video_service.get_gemini_alone_response(v_url, u_question)
+        gemini_end = time.time()
+        st.session_state.gemini_time = round(gemini_end - gemini_start, 2)  # seconds
+
         
-        await update_progress_and_start_pulsing(f"Agent 1: Candidate Generation Agent - Generating the top {num_candidates_val} answers...")
-        res_agentic_tuple = await video_service.get_agentic_workflow_response(v_url, u_question, num_candidates_val) 
-        
-        await update_progress_and_start_pulsing("Agent 2: Answer Aggregation Agent - Selecting the best answer from generated candidates.", main_step_delay_after=0.5)
+        await update_progress_and_start_pulsing(f"Agent 1: Candidate Generation Agent - Generating the top {num_candidates_val} answers and Agent 2: Choosing/creating best answer from {num_candidates_val} answers...")
+        # ---- Agentic Workflow Timer ----
+        agentic_start = time.time()
+        res_agentic_tuple = await video_service.get_agentic_workflow_response(v_url, u_question, num_candidates_val)
+        agentic_end = time.time()
+        st.session_state.agentic_time = round(agentic_end - agentic_start, 2)
         
         st.session_state.progress_log.append("Processing complete. Populating results.")
         # Stop the last pulsing task before final message
@@ -205,6 +218,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("🤖 Gemini 2.5 Pro (Alone)")
+    st.caption(f"⏱️ Time taken: {st.session_state.gemini_time} seconds")
     st.markdown(st.session_state.gemini_alone_ans if st.session_state.gemini_alone_ans else "Awaiting input...")
     if st.session_state.gemini_alone_thoughts and st.session_state.gemini_alone_thoughts.strip() != "":
         with st.expander("View Thought Process (Gemini Alone)"):
@@ -212,6 +226,7 @@ with col1:
     
 with col2:
     st.subheader("✨ Gemini 2.5 Pro + Agentic Workflow")
+    st.caption(f"⏱️ Time taken: {st.session_state.agentic_time} seconds")
     st.markdown(st.session_state.agentic_workflow_ans if st.session_state.agentic_workflow_ans else "Awaiting input...")
     if st.session_state.agentic_workflow_thoughts and st.session_state.agentic_workflow_thoughts.strip() != "":
         with st.expander("View Thought Process (Agentic Workflow)"):

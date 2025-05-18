@@ -24,7 +24,7 @@ async def gemini_video_fn_async(
     wait_time: float = 30,
     temperature: float = 0.0,
     local_video_path: str | None = None,
-    iterate_prompt: str = "",
+    iterate_prompt: bool = True,
     video_upload: bool = False,
     iteration_in_prompt=8,
     concurrency: int = 5,
@@ -178,7 +178,7 @@ async def process_all_video_questions_list_gemini_df(
     batch_size=5,
     temperature=0,
     filter_qids=None,
-    iterate_prompt="",
+    iterate_prompt=True,
     video_upload=False,
     wait_time=30,
     iteration_in_prompt=8
@@ -223,15 +223,9 @@ async def process_all_video_questions_list_gemini_df(
         for s in samples:
             qid = s.get("qid", "UNKNOWN")
             try:
-                # question = s["original_question"]
-                # prompt = s.get("question_prompt", "")
-                context = ''
-                #corrected_question = s.get("corrected_question", "")
-                # formatted_prompt = format_gemini_prompt(question, prompt)
                 formatted_prompt=s['question']
-                #if pd.isna(corrected_question):
-                corrected_question = formatted_prompt
-                questions.append([formatted_prompt,context,corrected_question])
+                
+                questions.append([formatted_prompt])
                 print(questions)
             except Exception as e:
                 print(f"Failed to build question for QID {qid}: {e}")
