@@ -8,16 +8,13 @@ from datasets import load_dataset
 async def main():
     ds = load_dataset("lmms-lab/AISG_Challenge")
     ds['test'].to_csv("Data.csv", index=False)
-    iteration=32  
-    prompt_path = Path(__file__).parent / "templates"/"iterate_prompt.txt" 
-    template = prompt_path.read_text(encoding="utf-8").strip()
-    iterate_prompt = template.format(iteration=iteration)      
+    iteration=32   
     
     df=pd.read_csv('data/Data.csv') 
     await CotAgent(                    
-        df, f"Gemini_{iteration}", f"Gemini_{iteration}_retry",
+        df, f"Gemini_{iteration}_test", f"Gemini_{iteration}_retry_test",
         number_of_iterations=1,
-        iterate_prompt=iterate_prompt,
+        iterate_prompt=True,
         video_upload=True,
         wait_time=10,
         iteration_in_prompt=iteration
@@ -26,5 +23,3 @@ async def main():
 if __name__ == "__main__":
     asyncio.run(main())
 
-
-# TO DO: Redo to call all the agents in one go

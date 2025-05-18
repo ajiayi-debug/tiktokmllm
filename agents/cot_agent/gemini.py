@@ -7,8 +7,7 @@ import time
 import asyncio
 from typing import List
 from tqdm import tqdm
-from agents.cot_agent.fact_checker_agent import fact_check
-#from fact_checker_agent import fact_check
+
 
 load_dotenv()
 
@@ -16,11 +15,6 @@ model="gemini-2.5-pro-preview-03-25"
 
 #model="gemini-2.5-flash-preview-04-17"
 
-def refiner(question, answer, explanation):
-    prompt=f"""The previous answer was '{answer}', but it contradicts the question '{question}' because {explanation}. Please answer the question '{question}' correctly by refining your answer based on the explanation and the video.
-            Return the refined answer ONLY and make sure it answers the question: {question}.
-            """
-    return prompt
     
 
 def choose_best_answer_prompt(question,output,iteration_in_prompt):
@@ -43,8 +37,8 @@ def choose_best_answer_prompt(question,output,iteration_in_prompt):
     return prompt
 
 
-def use_context(context,iteration,question):
-    prompt=f"""Here is some textual context of the video: {context}
+def generate_n_answers(iteration,question):
+    prompt=f""" 
 
     Watch the video and then, generate your top {iteration} highest confidence scoring answers to the question. 
     Dont rank the answers. For multiple choice answers, provide a brief explanation on why that choice is chosen for each answer. 
@@ -141,8 +135,8 @@ class GeminiAsync:
         *,
         temperature: float = 0.0,
         wait_time: int = 30,
-        iterate_prompt: str = "",
-        iteration_in_prompt: int = 8,
+        iterate_prompt: bool = True,
+        iteration_in_prompt: int = 32,
     ) -> list[str]:
         """
         Runs QA in three phases: 
@@ -155,15 +149,14 @@ class GeminiAsync:
 
         for q in tqdm(questions, desc="Answering questions", unit="q", leave=False):
             # ---- Step 1: generate multiple answers ----
-            step1=use_context(q[1],iteration_in_prompt,q[0])
+            step1=generate_n_answers(iteration_in_prompt,q[0])
             if iterate_prompt:
-                # build prompt with iterate_prompt to get candidates
+                # build prompt with generate n answer to get candidates
                 contents_multi = [
                     types.Content(
                         role="user",
                         parts=[
                             types.Part.from_uri(file_uri=video_uri, mime_type="video/*"),
-                            # types.Part.from_text(text=f"{q[2]} {iterate_prompt}"),
                             types.Part.from_text(text=step1),
                         ],
                     )
@@ -225,7 +218,7 @@ class GeminiAsync:
         question: str,
         *,
         temperature: float = 0.0,
-        iterate_prompt: str = "",
+        iterate_prompt: bool = True,
         iteration_in_prompt=8,
         wait_time: int = 30,
     ) -> str:
@@ -276,7 +269,7 @@ if __name__ == "__main__":
         answers = await g.generate_from_video(
             video_uri="https://youtu.be/sj81PWrerDk",
             questions=[["Did the last person in the video open the bottle with a knife while the first two people failed in their attempts? Please state your answer with a brief explanation.","The video displays three separate clips. In the first clip, a man with a beard taps the cap of a glass bottle (appears to be Bundaberg Ginger Beer) with a small object, possibly a lighter or another cap. The clip ends before the outcome is shown. In the second clip, a woman taps the cap of a Corona beer bottle with a thin, stick-like object. This clip also ends before the outcome is revealed. In the third clip, a man attempts to open a Coca-Cola bottle. He first taps the cap with a chopstick, then tries flicking it with a folded piece of paper, taps it again with the chopstick, and finally makes a sweeping hand gesture towards the bottle, after which the cap appears to fly off. This final action seems like a magic trick or video edit rather than using a physical tool like a knife.","What methods did the individuals in the video use to try and open their bottles, and did the final person appear to successfully open the bottle using an unconventional technique or trick?"]],
-            iterate_prompt="Generate your top 8 highest confidence scoring answers. Dont rank the answers.",
+            iterate_prompt=True,
             iteration_in_prompt=8,
             temperature=0,
             wait_time=10

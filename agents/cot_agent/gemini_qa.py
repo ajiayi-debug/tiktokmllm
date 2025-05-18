@@ -24,7 +24,7 @@ async def gemini_video_fn_async(
     wait_time: float = 30,
     temperature: float = 0.0,
     local_video_path: str | None = None,
-    iterate_prompt: str = "",
+    iterate_prompt: bool = True,
     video_upload: bool = False,
     iteration_in_prompt=8,
     concurrency: int = 5,
@@ -178,7 +178,7 @@ async def process_all_video_questions_list_gemini_df(
     batch_size=5,
     temperature=0,
     filter_qids=None,
-    iterate_prompt="",
+    iterate_prompt=True,
     video_upload=False,
     wait_time=30,
     iteration_in_prompt=8
