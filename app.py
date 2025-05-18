@@ -20,6 +20,10 @@ st.title("🎬 Video Analysis: Gemini vs. Agentic Workflow")
 
 live_progress_placeholder = st.empty()
 
+# initialise cache in session state
+if 'analysis_cache' not in st.session_state:
+    st.session_state.analysis_cache = {}
+
 st.sidebar.header("Inputs")
 video_url = st.sidebar.text_input("Video URL:", placeholder="Enter YouTube or other video link")
 user_question = st.sidebar.text_area("Your Question:", placeholder="e.g., What did the capybara do?", height=150)
@@ -27,7 +31,7 @@ user_question = st.sidebar.text_area("Your Question:", placeholder="e.g., What d
 st.sidebar.markdown("##### Number of candidate answers:")
 
 if 'selected_candidate_option' not in st.session_state:
-    st.session_state.selected_candidate_option = 32 # Default to 8
+    st.session_state.selected_candidate_option = 32 
 if 'custom_candidate_num' not in st.session_state:
     st.session_state.custom_candidate_num = st.session_state.selected_candidate_option
 
@@ -71,6 +75,12 @@ elif selected_option is not None:
     st.session_state.custom_candidate_num = num_candidate_answers_to_use 
 else: 
     num_candidate_answers_to_use = 8 
+
+# to clear the cache
+if st.sidebar.button("Clear Analysis Cache"):
+    st.session_state.analysis_cache = {}
+    st.sidebar.success("Analysis cache cleared!")
+    st.rerun() 
 
 if 'gemini_time' not in st.session_state:
     st.session_state.gemini_time = 0.0
@@ -160,20 +170,37 @@ async def run_analysis_async(v_url, u_question, num_candidates_val, progress_pla
     try:
         await update_progress_and_start_pulsing("Analyzing video... Starting workflows.", main_step_delay_after=0.2)
 
-        await update_progress_and_start_pulsing("Executing Gemini Alone workflow...")
-        # ---- Gemini Alone Timer ----
-        gemini_start = time.time()
-        res_alone_tuple = await video_service.get_gemini_alone_response(v_url, u_question)
-        gemini_end = time.time()
-        st.session_state.gemini_time = round(gemini_end - gemini_start, 2)  # seconds
-
+        # ---- Gemini Alone Workflow with Caching ----
+        gemini_cache_key = ("gemini_alone", v_url, u_question)
+        if gemini_cache_key in st.session_state.analysis_cache:
+            await update_progress_and_start_pulsing("Fetching Gemini Alone result from cache...", main_step_delay_after=0.1)
+            res_alone_tuple = st.session_state.analysis_cache[gemini_cache_key]
+            st.session_state.gemini_time = 0.01 # Indicate cache hit was fast
+        else:
+            await update_progress_and_start_pulsing("Executing Gemini Alone workflow...", main_step_delay_after=0.1)
+            gemini_start_time = time.time()
+            res_alone_tuple = await video_service.get_gemini_alone_response(v_url, u_question)
+            gemini_end_time = time.time()
+            st.session_state.gemini_time = round(gemini_end_time - gemini_start_time, 2)
+            st.session_state.analysis_cache[gemini_cache_key] = res_alone_tuple
+            await update_progress_and_start_pulsing("Gemini Alone workflow complete.", main_step_delay_after=0.1)
         
-        await update_progress_and_start_pulsing(f"Agent 1: Candidate Generation Agent - Generating the top {num_candidates_val} answers and Agent 2: Choosing/creating best answer from {num_candidates_val} answers...")
-        # ---- Agentic Workflow Timer ----
-        agentic_start = time.time()
-        res_agentic_tuple = await video_service.get_agentic_workflow_response(v_url, u_question, num_candidates_val)
-        agentic_end = time.time()
-        st.session_state.agentic_time = round(agentic_end - agentic_start, 2)
+        # ---- Agentic Workflow with Caching ----
+        agentic_cache_key = ("agentic", v_url, u_question, num_candidates_val)
+        if agentic_cache_key in st.session_state.analysis_cache:
+            await update_progress_and_start_pulsing(f"Fetching Agentic Workflow result from cache (Candidates: {num_candidates_val})...", main_step_delay_after=0.1)
+            res_agentic_tuple = st.session_state.analysis_cache[agentic_cache_key]
+            st.session_state.agentic_time = 0.01 # Indicate cache hit was fast
+        else:
+            await update_progress_and_start_pulsing(f"Executing Agentic Workflow (Candidates: {num_candidates_val})...", main_step_delay_after=0.1) 
+            # The original longer message is now part of the general step above
+            # await update_progress_and_start_pulsing(f"Agent 1: Candidate Generation Agent - Generating the top {num_candidates_val} answers and Agent 2: Choosing/creating best answer from {num_candidates_val} answers...")
+            agentic_start_time = time.time()
+            res_agentic_tuple = await video_service.get_agentic_workflow_response(v_url, u_question, num_candidates_val)
+            agentic_end_time = time.time()
+            st.session_state.agentic_time = round(agentic_end_time - agentic_start_time, 2)
+            st.session_state.analysis_cache[agentic_cache_key] = res_agentic_tuple
+            await update_progress_and_start_pulsing("Agentic Workflow complete.", main_step_delay_after=0.1)
         
         st.session_state.progress_log.append("Processing complete. Populating results.")
         # Stop the last pulsing task before final message
