@@ -85,7 +85,7 @@ async def gemini_video_fn_async(
     for _ in range(num_repeats):
         try:
             # if any _single raises RateLimitError, gather will raise it here
-            batch = await asyncio.gather(*[_single(q) for q in questions])
+            batch = [res[0] if isinstance(res, tuple) else res for res in await asyncio.gather(*[_single(q) for q in questions])]
         except RateLimitError:
             print("[RateLimit] Received 429; aborting remaining iterations.")
             break
