@@ -138,6 +138,12 @@ The script will load the dataset, process videos and questions through the `CotA
 - **Future Considerations:** For more scalable or portable deployments:
   - **Containerization:** Package the application using Docker for easier environment management and deployment.
   - **Cloud Execution:** Adapt the script to run on cloud platforms (e.g., Google Cloud Vertex AI, AWS SageMaker) for access to more powerful compute resources and better integration with cloud storage and APIs. This would likely involve modifications for data loading/saving and potentially using cloud-native services for task orchestration.
+ 
+## Streamlit Demo Instructions
+
+To run demo/comparison of base `Gemini 2.5 pro` and our solution, run the following command in root directory after setting up configurations:
+
+```streamlit run app.py```
 
 ## Acknowledgements
 
