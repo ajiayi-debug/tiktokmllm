@@ -6,6 +6,10 @@
 - Eunice Lor (Developer)
 - Gabriel Wong (Developer)
 
+## Demo
+
+[![Screenshot 2025-05-25 at 11 37 07 PM](https://github.com/user-attachments/assets/47c723dd-49f8-44be-856a-cb73b260998b)
+](https://drive.google.com/file/d/1Wi04CwZYtlwBxzOGgmBelW5rDuyo9QHG/view?usp=drive_link)
 ## Abstract
 
 This project implements an asynchronous pipeline featuring an **agentic workflow** for advanced Question Answering (QA) on diverse, short-form videos sourced from the `https://huggingface.co/datasets/lmms-lab/AISG_Challenge` on Hugging Face. The system utilizes Google's Gemini 2.5 Pro model as the core reasoning engine, orchestrated primarily by the multi-agent system `CotAgent`.
