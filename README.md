@@ -10,6 +10,8 @@
 
 [Reference video in demo](https://www.youtube.com/shorts/YfbZV7u3kMM)
 
+Click the following image to watch the demo
+
 [![Screenshot](https://github.com/user-attachments/assets/258fc657-f191-4252-9261-2ef02c4fcd60)](https://drive.google.com/file/d/1DI3wC7vcabDjAexEG2a2qyBPeApGEM2h/view?usp=sharing)
 ## Abstract
 
