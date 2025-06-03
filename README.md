@@ -1,4 +1,6 @@
-# Team: Sherlin's Squad
+# Team: Two Stage Self Consistency Aggregation Agent Pattern
+
+[link to slides](https://www.canva.com/design/DAGoLwxRkoM/i7J-_gSglYpKkfFZYKlLaA/view?utm_content=DAGoLwxRkoM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0cfd0d4b9d)
 
 - Sherlin Choo (Team Leader)
 - Ang Jia Yi (Developer)
